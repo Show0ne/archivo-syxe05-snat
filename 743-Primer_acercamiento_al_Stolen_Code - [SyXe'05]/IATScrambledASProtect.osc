@@ -1,0 +1,133 @@
+//********************************************************
+//* Script para ASProtect 1.2x-1.3x [Registered]
+//* Objetivos: Recuperar la iat y la tabla de saltos
+//* Author: SyXe'05 .::[CracksLatinoS]::.
+//* Email: syxe05@gmail.com
+//* S.O: WinXP SP1, OllyDbg v1.10, OllyScript v0.92
+//********************************************************
+
+var Flag                  // Actuará como una bandera
+var Api                   // Contendrá la api tratada
+var Base                  // Tendrá la base de la DLL actual
+var Direc                 // Dirección JMP/CALL a reparar
+var PosIat                // Donde quedó la api salvada
+
+bphws 012A3AEE, "x"       // Colocamos el primer HBP
+bphws 012A5E4F, "x"       // Colocamos el tercer HBP
+bphws 012A5D53, "x"       // Colocamos el cuarto HBP
+bphws 014E03C5, "x"       // Colocamos el segundo HBP
+
+mov PosIat, 4DA750        // Aquí ubicaremos la tabla
+mov Flag, 0               // Inicializamos la bandera
+
+Inicio:
+eob Vamos                 // Si Excep/BP salta a "Vamos"
+run                       // dejamos que corra..
+
+Vamos:
+cmp eip, 012A3AEE         // Estamos en la zona de CALLs?
+je Calls                  // Si es así salta a Calls
+cmp eip, 014E03C5         // Estamos en la zona 014E03C5?
+je IATScrambled           // Si es así salta a IATScrambled
+cmp eip, 012A5E4F         // Estamos en la zona de saltos?
+je JMPs                   // Si es así salta a JMPs
+cmp eip, 012A5D53         // Estamos en la zona de saltos?
+je JMPs                   // Si es así salta a JMPs
+jmp Termina               // Sino termina el script
+
+// Procedimiento Calls
+Calls:
+mov Api, ebp               // Guardamos la Api
+log Api                    // La logueamos
+cmp Flag, 0                // Es la primera vez?
+jne OtraVez                // Salvamos directamente en la iat
+GMI Api, MODULEBASE        // Obtenemos su imagebase
+mov Base, $RESULT          // Y la guardamos en "Base"
+
+Iguales:
+mov [PosIat], Api          // Guardamos la Api en la iat
+mov  [ebx], #FF25#         // Reparamos el call
+add ebx, 2                 // Reajustamos el puntero
+mov  [ebx], PosIat         // Lo dejamos apuntando a la iat
+log PosIat                 // Logueamos su valor
+add PosIat, 4              // Apuntamos al siguiente DWORD
+mov Flag, 1                // Activamos la bandera
+mov eip, 012A3AF4          // Salteamos el EIP
+jmp Inicio                 // Y salta al inicio del script
+
+OtraVez:
+GMI Api, MODULEBASE        // Obtenemos su imagebase
+cmp Base, $RESULT          // Y la comparamos con "Base"
+je Iguales                 // Salta si apis del mismo tipo
+mov Base, $RESULT          // Sino actualizamos la variable
+add PosIat, 4              // Dejamos una separación de ceros
+jmp Iguales                // Y Vamos a salvarla igualmente
+
+// Procedimiento IATScrambled
+IATScrambled:
+mov Api, esi               // Guardamos la Api en su variable
+log Api                    // Y la logueamos
+cmp Flag, 0                // Miramos si es la primera pasada
+jne NoEs                   // Saltará si no es la primera
+GMI api, MODULEBASE        // Obtenemos su imagebase
+mov Base, $RESULT          // Y la guardamos en "Base"
+
+Guardo:
+mov [PosIat], Api          // Guardamos la Api en la iat
+mov Direc, edi             // Dirección de la JMP Table
+sub Direc, 2               // Ajustamos para insertar Opcode
+mov [Direc], #FF25#        // y lo insertamos en su lugar
+mov [edi], PosIat          // Reparamos el salto a la iat
+log PosIat                 // Logueamos su valor
+add PosIat, 4              // Apuntamos al siguiente DWORD
+mov Flag, 1                // Activamos la bandera
+mov eip, 014E03C7          // Modificamos el EIP
+jmp Inicio                 // Saltamos al inicio del script
+
+NoEs:
+GMI Api, MODULEBASE        // Obtenemos su imagebase
+cmp Base, $RESULT          // Y la comparamos con "Base"
+je Guardo                  // Salta si apis del mismo tipo
+mov Base, $RESULT          // Sino actualizamos la variable
+add PosIat, 4              // Dejamos una separación de ceros
+jmp Guardo                 // Y ahora sí Vamos a guardarla
+
+// Procedimiento JMPs
+JMPs:
+mov Api, ebp               // Guardamos la Api en su variable
+log Api                    // Y la logueamos
+cmp Flag, 0                // Miramos si es la primera pasada
+jne Sgute                  // Saltará si no es la primera
+GMI Api, MODULEBASE        // Obtenemos su imagebase
+mov Base, $RESULT          // Y la guardamos en "Base"
+
+Salvo:
+mov [PosIat], Api          // Guardamos la Api en la iat
+mov [esi], PosIat          // Reparamos el salto a la iat
+log PosIat                 // Logueamos el destino del salto
+add PosIat, 4              // Apuntamos al siguiente DWORD
+mov Flag, 1                // Activamos la bandera
+add eip, 2                 // Modificamos el EIP
+jmp Inicio
+
+Sgute:
+GMI Api, MODULEBASE        // Obtenemos su imagebase
+cmp Base, $RESULT          // Y la comparamos con "Base"
+je Salvo                   // Salta si apis del mismo tipo
+mov Base, $RESULT          // Sino actualizamos la variable
+add PosIat, 4              // Dejamos una separación de ceros
+jmp Salvo                  // Y Vamos a salvarla
+
+// Etiqueta Paso
+Paso:
+esti                       // Shift+F7
+jmp Inicio                 // Saltamos al Inicio del script
+
+// Terminamos el trabajo
+Termina:
+cmp eip, 012A4C86         // Excepión de GetProcAddress?
+je Paso                   // Si es así la pasamos
+cmp eip, 012A4CC9         // Excepión de GetProcAddress?
+je Paso                   // Si es así la pasamos
+msg "trabajo terminado ;)"// Mostramos mensaje por pantalla
+ret                       // Termina el script :)

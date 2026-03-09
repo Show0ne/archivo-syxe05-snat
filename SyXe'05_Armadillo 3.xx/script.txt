@@ -1,0 +1,12 @@
+start:
+eob break
+run
+
+break:
+cmp eip, 131EAEA   
+jne exit
+mov eip, 131EAEC
+jmp start
+
+exit:
+ret

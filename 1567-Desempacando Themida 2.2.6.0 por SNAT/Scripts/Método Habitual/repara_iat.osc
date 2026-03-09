@@ -1,0 +1,72 @@
+var api
+var direccionIAT
+var direccionJMP
+
+var APIenEAX
+var APIenEAX2
+var salvaAPI
+var reajustaJMP
+var OEP
+
+mov APIenEAX, 005F4A6E
+mov APIenEAX2, 005F460E		; caso especial
+mov salvaAPI, 005F7517
+mov reajustaJMP, 005F7B1E
+mov OEP, 00401128
+
+bphws APIenEAX, "x"
+bphws APIenEAX2, "x"
+bphws salvaAPI, "x"
+bphws reajustaJMP, "x"
+BPRM OEP, 5
+
+lclr
+lc
+
+inicio:
+eob rompe
+run
+
+rompe:
+cmp eip, APIenEAX
+je EsAPIenEAX
+cmp eip, APIenEAX2
+je EsAPIenEAX
+cmp eip, salvaAPI
+je EsSalvaAPI
+cmp eip, reajustaJMP
+je ProcesaREAJUSTA
+cmp eip, OEP
+jne inicio
+jmp Termina
+
+EsAPIenEAX:
+log "//////// **************"
+mov api, eax
+log api
+jmp inicio
+
+EsSalvaAPI:
+mov [eax], api
+mov direccionIAT, eax
+jmp inicio
+
+ProcesaREAJUSTA:
+mov direccionJMP, edi
+sub direccionJMP, 5
+eval "jmp dword ptr [{direccionIAT}]"    
+Log direccionJMP
+Log direccionIAT
+Log $RESULT   
+asm direccionJMP, $RESULT
+log ""
+jmp inicio
+
+Termina:
+bpmc
+bphwc APIenEAX
+bphwc APIenEAX2
+bphwc salvaAPI
+bphwc reajustaJMP
+ret
+

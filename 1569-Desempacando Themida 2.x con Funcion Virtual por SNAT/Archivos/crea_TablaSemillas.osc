@@ -1,0 +1,119 @@
+var imageBase
+var tabla_exportacion
+
+var base_exportacion
+var number_of_functions
+var number_of_names
+var address_of_functions
+var address_of_names
+var address_of_name_ordinals
+
+var offset_tabla_semillas
+var offset_tabla_encriptadora
+var puntero_tabla
+var contador
+
+mov imageBase, 71AA0000                		// ** leída de una tabla iterativamente
+
+alloc 1000
+mov offset_tabla_semillas, $RESULT
+log offset_tabla_semillas
+
+mov offset_tabla_encriptadora, 02D90000
+mov puntero_tabla, offset_tabla_semillas
+mov contador, 0
+
+lc
+lclr
+
+xor     eax, eax                         
+xor     ecx, ecx                         
+xor     edx, edx
+mov     ecx, imageBase
+mov     edi, 3C
+mov     esi, ecx                         
+add     esi, edi                         	// ** puntero a offset PE Signature
+mov     eax, [esi]                          // ** offset PE Signature
+add     eax, ecx                          	// ** rva PE Signature
+mov     ebx, eax                         
+add     ebx, 78                         	// ** desplazamiento Export Table
+mov     esi, [ebx]              			// ** offset Export Table
+add     esi, ecx                         	// ** rva Export Table
+mov     tabla_exportacion, esi
+mov     base_exportacion, [esi+10]
+mov     number_of_functions, [esi+14]
+mov     number_of_names, [esi+18]
+mov     address_of_functions, [esi+1C]
+mov     address_of_names, [esi+20]
+mov     address_of_name_ordinals, [esi+24]
+
+log tabla_exportacion
+log base_exportacion
+log number_of_functions
+log number_of_names
+log address_of_functions
+log address_of_names
+log address_of_name_ordinals
+
+mov ecx, address_of_names
+add ecx, imageBase
+
+mov edi, ecx			// ** offset_nombre_api
+mov esi, edi
+mov esi, [esi]
+add esi, imageBase
+
+crea_semilla:
+mov edi, esi
+
+cmp contador, number_of_names
+je termina
+
+xor al, al
+
+exec
+repne scasb
+ende
+
+sub edi, esi
+log edi
+
+xor ecx, ecx
+dec ecx
+
+inicio_loop:
+xor eax, eax
+mov al, [esi]
+xor al, cl
+inc esi
+mov ebx, eax
+shl ebx, 2
+mov edx, offset_tabla_encriptadora
+add ebx, edx
+mov eax, [ebx]
+
+exec
+stc
+ende
+
+shr ecx, 8
+xor ecx, eax
+
+exec
+cmc
+ende
+
+dec edi
+cmp edi, 0
+jnz inicio_loop
+
+not ecx
+mov [puntero_tabla], ecx
+log ecx
+
+inc contador
+add puntero_tabla, 4
+jmp crea_semilla
+
+termina:
+ret

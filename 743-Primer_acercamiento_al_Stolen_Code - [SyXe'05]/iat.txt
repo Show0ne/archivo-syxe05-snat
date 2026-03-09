@@ -1,0 +1,600 @@
+; Syntax for each function in a thunk (the separator is a TAB)
+; ------------------------------------------------------------
+; Flag   RVA   ModuleName   Ordinal   Name
+;
+; Details for <Valid> parameter:
+; ------------------------------
+; Flag:  0 = valid: no  -> - Name contains the address of the redirected API (you can set
+;                            it to zero if you edit it).
+;                          - Ordinal is not considered but you should let '0000' as value.
+;                          - ModuleName is not considered but you should let '?' as value.
+;
+;        1 = valid: yes -> All next parameters on the line will be considered.
+;                          Function imported by ordinal must have no name (the 4th TAB must
+;                                                                          be there though).
+;
+;        2 = Equivalent to 0 but it is for the loader.
+;
+;        3 = Equivalent to 1 but it is for the loader.
+;
+;        4 = Equivalent to 0 with (R) tag.
+;
+;        5 = Equivalent to 1 with (R) tag.
+;
+; And finally, edit this file as your own risk! :-)
+
+Target: C:\Archivos de programa\UFU\Useful File Utilities.exe
+OEP: 00001000	IATRVA: 000DA750	IATSize: 00000850
+
+FThunk: 000DA750	NbFunc: 0000000A
+1	000DA750	kernel32.dll	0030	CloseHandle
+1	000DA754	kernel32.dll	004E	CreateFileA
+1	000DA758	kernel32.dll	0158	GetFileType
+1	000DA75C	kernel32.dll	01B5	GetSystemTime
+1	000DA760	kernel32.dll	0155	GetFileSize
+1	000DA764	kernel32.dll	01A8	GetStdHandle
+1	000DA768	kernel32.dll	0290	RaiseException
+1	000DA76C	kernel32.dll	029D	ReadFile
+1	000DA770	kernel32.dll	0191	GetProcAddress
+1	000DA774	kernel32.dll	02BE	RtlUnwind
+
+FThunk: 000DA77C	NbFunc: 00000004
+1	000DA77C	kernel32.dll	02F7	SetEndOfFile
+1	000DA780	kernel32.dll	0300	SetFilePointer
+1	000DA784	kernel32.dll	0351	UnhandledExceptionFilter
+1	000DA788	kernel32.dll	0385	WriteFile
+
+FThunk: 000DA790	NbFunc: 00000001
+1	000DA790	user32.dll	002B	CharNextA
+
+FThunk: 000DA798	NbFunc: 00000003
+1	000DA798	kernel32.dll	006A	CreateThread
+1	000DA79C	kernel32.dll	00B1	ExitThread
+1	000DA7A0	kernel32.dll	00B0	ExitProcess
+
+FThunk: 000DA7A8	NbFunc: 00000001
+1	000DA7A8	user32.dll	01DD	MessageBoxA
+
+FThunk: 000DA7B0	NbFunc: 00000005
+1	000DA7B0	kernel32.dll	00C6	FindClose
+1	000DA7B4	kernel32.dll	00CA	FindFirstFileA
+1	000DA7B8	kernel32.dll	00EA	FreeLibrary
+1	000DA7BC	kernel32.dll	0103	GetCommandLineA
+1	000DA7C0	kernel32.dll	0133	GetCurrentDirectoryA
+
+FThunk: 000DA7C8	NbFunc: 00000001
+1	000DA7C8	ntdll.dll	0256	RtlGetLastWin32Error
+
+FThunk: 000DA7D0	NbFunc: 00000006
+1	000DA7D0	kernel32.dll	0165	GetLocaleInfoA
+1	000DA7D4	kernel32.dll	016D	GetModuleFileNameA
+1	000DA7D8	kernel32.dll	016F	GetModuleHandleA
+1	000DA7DC	kernel32.dll	01A6	GetStartupInfoA
+1	000DA7E0	kernel32.dll	01C6	GetThreadLocale
+1	000DA7E4	kernel32.dll	023C	LoadLibraryExA
+
+FThunk: 000DA7EC	NbFunc: 00000001
+1	000DA7EC	user32.dll	01C9	LoadStringA
+
+FThunk: 000DA7F4	NbFunc: 00000003
+1	000DA7F4	kernel32.dll	03A9	lstrcpyn
+1	000DA7F8	kernel32.dll	03AC	lstrlen
+1	000DA7FC	kernel32.dll	025E	MultiByteToWideChar
+
+FThunk: 000DA804	NbFunc: 00000003
+1	000DA804	advapi32.dll	01C9	RegCloseKey
+1	000DA808	advapi32.dll	01E2	RegOpenKeyExA
+1	000DA80C	advapi32.dll	01EC	RegQueryValueExA
+
+FThunk: 000DA814	NbFunc: 00000003
+1	000DA814	kernel32.dll	02F1	SetCurrentDirectoryA
+1	000DA818	kernel32.dll	0378	WideCharToMultiByte
+1	000DA81C	kernel32.dll	036C	VirtualQuery
+
+FThunk: 000DA824	NbFunc: 00000003
+1	000DA824	oleaut32.dll	0004	SysAllocStringLen
+1	000DA828	oleaut32.dll	0005	SysReAllocStringLen
+1	000DA82C	oleaut32.dll	0006	SysFreeString
+
+FThunk: 000DA834	NbFunc: 00000008
+1	000DA834	kernel32.dll	0217	InterlockedIncrement
+1	000DA838	kernel32.dll	0213	InterlockedDecrement
+1	000DA83C	kernel32.dll	0138	GetCurrentThreadId
+1	000DA840	kernel32.dll	0241	LocalAlloc
+1	000DA844	kernel32.dll	0245	LocalFree
+1	000DA848	kernel32.dll	0364	VirtualAlloc
+1	000DA84C	kernel32.dll	0367	VirtualFree
+1	000DA850	kernel32.dll	020F	InitializeCriticalSection
+
+FThunk: 000DA858	NbFunc: 00000003
+1	000DA858	ntdll.dll	0210	RtlEnterCriticalSection
+1	000DA85C	ntdll.dll	02A5	RtlLeaveCriticalSection
+1	000DA860	ntdll.dll	01EB	RtlDeleteCriticalSection
+
+FThunk: 000DA868	NbFunc: 00000001
+1	000DA868	user32.dll	0128	GetKeyboardType
+
+FThunk: 000DA870	NbFunc: 00000004
+1	000DA870	kernel32.dll	016F	GetModuleHandleA
+1	000DA874	kernel32.dll	0241	LocalAlloc
+1	000DA878	kernel32.dll	0347	TlsGetValue
+1	000DA87C	kernel32.dll	0348	TlsSetValue
+
+FThunk: 000DA884	NbFunc: 00000006
+1	000DA884	advapi32.dll	01C9	RegCloseKey
+1	000DA888	advapi32.dll	01CD	RegCreateKeyExA
+1	000DA88C	advapi32.dll	01DB	RegFlushKey
+1	000DA890	advapi32.dll	01E2	RegOpenKeyExA
+1	000DA894	advapi32.dll	01EC	RegQueryValueExA
+1	000DA898	advapi32.dll	01F9	RegSetValueExA
+
+FThunk: 000DA8A0	NbFunc: 00000008
+1	000DA8A0	kernel32.dll	0030	CloseHandle
+1	000DA8A4	kernel32.dll	0035	CompareFileTime
+1	000DA8A8	kernel32.dll	0036	CompareStringA
+1	000DA8AC	kernel32.dll	0046	CreateDirectoryA
+1	000DA8B0	kernel32.dll	004A	CreateEventA
+1	000DA8B4	kernel32.dll	004E	CreateFileA
+1	000DA8B8	kernel32.dll	005B	CreateMutexA
+1	000DA8BC	kernel32.dll	006A	CreateThread
+
+FThunk: 000DA8C4	NbFunc: 00000001
+1	000DA8C4	ntdll.dll	01EB	RtlDeleteCriticalSection
+
+FThunk: 000DA8CC	NbFunc: 00000001
+1	000DA8CC	kernel32.dll	007D	DeleteFileA
+
+FThunk: 000DA8D4	NbFunc: 00000001
+1	000DA8D4	ntdll.dll	0210	RtlEnterCriticalSection
+
+FThunk: 000DA8DC	NbFunc: 00000017
+1	000DA8DC	kernel32.dll	0091	EnumCalendarInfoA
+1	000DA8E0	kernel32.dll	00BC	FileTimeToLocalFileTime
+1	000DA8E4	kernel32.dll	00BD	FileTimeToSystemTime
+1	000DA8E8	kernel32.dll	00C6	FindClose
+1	000DA8EC	kernel32.dll	00CA	FindFirstFileA
+1	000DA8F0	kernel32.dll	00D3	FindNextFileA
+1	000DA8F4	kernel32.dll	00D9	FindResourceA
+1	000DA8F8	kernel32.dll	00E5	FormatMessageA
+1	000DA8FC	kernel32.dll	00EA	FreeLibrary
+1	000DA900	kernel32.dll	00EC	FreeResource
+1	000DA904	kernel32.dll	00F0	GetACP
+1	000DA908	kernel32.dll	00F7	GetCPInfo
+1	000DA90C	kernel32.dll	0136	GetCurrentProcessId
+1	000DA910	kernel32.dll	0138	GetCurrentThreadId
+1	000DA914	kernel32.dll	0139	GetDateFormatA
+1	000DA918	kernel32.dll	013F	GetDiskFreeSpaceA
+1	000DA91C	kernel32.dll	0145	GetDriveTypeA
+1	000DA920	kernel32.dll	014D	GetExitCodeThread
+1	000DA924	kernel32.dll	0150	GetFileAttributesA
+1	000DA928	kernel32.dll	0151	GetFileAttributesExA
+1	000DA92C	kernel32.dll	0154	GetFileInformationByHandle
+1	000DA930	kernel32.dll	0155	GetFileSize
+1	000DA934	kernel32.dll	0157	GetFileTime
+
+FThunk: 000DA93C	NbFunc: 00000001
+1	000DA93C	ntdll.dll	0256	RtlGetLastWin32Error
+
+FThunk: 000DA944	NbFunc: 0000001B
+1	000DA944	kernel32.dll	0164	GetLocalTime
+1	000DA948	kernel32.dll	0165	GetLocaleInfoA
+1	000DA94C	kernel32.dll	0169	GetLogicalDrives
+1	000DA950	kernel32.dll	016D	GetModuleFileNameA
+1	000DA954	kernel32.dll	016F	GetModuleHandleA
+1	000DA958	kernel32.dll	018D	GetPrivateProfileStringA
+1	000DA95C	kernel32.dll	01A1	GetProfileStringA
+1	000DA960	kernel32.dll	01A8	GetStdHandle
+1	000DA964	kernel32.dll	01AA	GetStringTypeExA
+1	000DA968	kernel32.dll	01B2	GetSystemInfo
+1	000DA96C	kernel32.dll	01B5	GetSystemTime
+1	000DA970	kernel32.dll	01C6	GetThreadLocale
+1	000DA974	kernel32.dll	01CB	GetTickCount
+1	000DA978	kernel32.dll	01D4	GetVersion
+1	000DA97C	kernel32.dll	01D5	GetVersionExA
+1	000DA980	kernel32.dll	01D7	GetVolumeInformationA
+1	000DA984	kernel32.dll	01DF	GetWindowsDirectoryA
+1	000DA988	kernel32.dll	01E2	GlobalAddAtomA
+1	000DA98C	kernel32.dll	01E4	GlobalAlloc
+1	000DA990	kernel32.dll	01E6	GlobalDeleteAtom
+1	000DA994	kernel32.dll	01E7	GlobalFindAtomA
+1	000DA998	kernel32.dll	01EB	GlobalFree
+1	000DA99C	kernel32.dll	01EF	GlobalLock
+1	000DA9A0	kernel32.dll	01EE	GlobalHandle
+1	000DA9A4	kernel32.dll	01F2	GlobalReAlloc
+1	000DA9A8	kernel32.dll	01F6	GlobalUnlock
+1	000DA9AC	kernel32.dll	020F	InitializeCriticalSection
+
+FThunk: 000DA9B4	NbFunc: 00000001
+1	000DA9B4	ntdll.dll	02A5	RtlLeaveCriticalSection
+
+FThunk: 000DA9BC	NbFunc: 0000001F
+1	000DA9BC	kernel32.dll	023B	LoadLibraryA
+1	000DA9C0	kernel32.dll	0240	LoadResource
+1	000DA9C4	kernel32.dll	0243	LocalFileTimeToFileTime
+1	000DA9C8	kernel32.dll	024E	LockResource
+1	000DA9CC	kernel32.dll	0257	MoveFileA
+1	000DA9D0	kernel32.dll	025D	MulDiv
+1	000DA9D4	kernel32.dll	025E	MultiByteToWideChar
+1	000DA9D8	kernel32.dll	029D	ReadFile
+1	000DA9DC	kernel32.dll	02AA	ReleaseMutex
+1	000DA9E0	kernel32.dll	02AC	RemoveDirectoryA
+1	000DA9E4	kernel32.dll	02B6	ResetEvent
+1	000DA9E8	kernel32.dll	02B9	ResumeThread
+1	000DA9EC	kernel32.dll	02F7	SetEndOfFile
+1	000DA9F0	kernel32.dll	02FA	SetErrorMode
+1	000DA9F4	kernel32.dll	02FB	SetEvent
+1	000DA9F8	kernel32.dll	02FE	SetFileAttributesA
+1	000DA9FC	kernel32.dll	0300	SetFilePointer
+1	000DAA00	kernel32.dll	0304	SetFileTime
+1	000DAA04	kernel32.dll	0326	SetThreadLocale
+1	000DAA08	kernel32.dll	0327	SetThreadPriority
+1	000DAA0C	kernel32.dll	0337	SizeofResource
+1	000DAA10	kernel32.dll	0338	Sleep
+1	000DAA14	kernel32.dll	033D	SystemTimeToFileTime
+1	000DAA18	kernel32.dll	0364	VirtualAlloc
+1	000DAA1C	kernel32.dll	036C	VirtualQuery
+1	000DAA20	kernel32.dll	0374	WaitForSingleObject
+1	000DAA24	kernel32.dll	0385	WriteFile
+1	000DAA28	kernel32.dll	038A	WritePrivateProfileStringA
+1	000DAA2C	kernel32.dll	03A0	lstrcmp
+1	000DAA30	kernel32.dll	03A6	lstrcpy
+1	000DAA34	kernel32.dll	03AC	lstrlen
+
+FThunk: 000DAA3C	NbFunc: 00000003
+1	000DAA3C	mpr.dll	0017	WNetConnectionDialog
+1	000DAA40	mpr.dll	001C	WNetDisconnectDialog
+1	000DAA44	mpr.dll	0028	WNetGetConnectionA
+
+FThunk: 000DAA4C	NbFunc: 00000003
+1	000DAA4C	version.dll	0001	GetFileVersionInfoA
+1	000DAA50	version.dll	0002	GetFileVersionInfoSizeA
+1	000DAA54	version.dll	000B	VerQueryValueA
+
+FThunk: 000DAA5C	NbFunc: 00000053
+1	000DAA5C	gdi32.dll	0013	BitBlt
+1	000DAA60	gdi32.dll	0022	CombineRgn
+1	000DAA64	gdi32.dll	0024	CopyEnhMetaFileA
+1	000DAA68	gdi32.dll	0028	CreateBitmap
+1	000DAA6C	gdi32.dll	002A	CreateBrushIndirect
+1	000DAA70	gdi32.dll	002D	CreateCompatibleBitmap
+1	000DAA74	gdi32.dll	002E	CreateCompatibleDC
+1	000DAA78	gdi32.dll	002F	CreateDCA
+1	000DAA7C	gdi32.dll	0033	CreateDIBSection
+1	000DAA80	gdi32.dll	0034	CreateDIBitmap
+1	000DAA84	gdi32.dll	003B	CreateFontIndirectA
+1	000DAA88	gdi32.dll	0040	CreateHalftonePalette
+1	000DAA8C	gdi32.dll	0042	CreateICA
+1	000DAA90	gdi32.dll	0046	CreatePalette
+1	000DAA94	gdi32.dll	0049	CreatePenIndirect
+1	000DAA98	gdi32.dll	004C	CreateRectRgn
+1	000DAA9C	gdi32.dll	0051	CreateSolidBrush
+1	000DAAA0	gdi32.dll	008D	DeleteDC
+1	000DAAA4	gdi32.dll	008E	DeleteEnhMetaFile
+1	000DAAA8	gdi32.dll	0090	DeleteObject
+1	000DAAAC	gdi32.dll	0095	Ellipse
+1	000DAAB0	gdi32.dll	0097	EndDoc
+1	000DAAB4	gdi32.dll	0099	EndPage
+1	000DAAB8	gdi32.dll	00D8	ExcludeClipRect
+1	000DAABC	gdi32.dll	00D9	ExtCreatePen
+1	000DAAC0	gdi32.dll	00DE	ExtTextOutA
+1	000DAAC4	gdi32.dll	014B	GetBitmapBits
+1	000DAAC8	gdi32.dll	0151	GetBrushOrgEx
+1	000DAACC	gdi32.dll	0161	GetClipBox
+1	000DAAD0	gdi32.dll	0166	GetCurrentPositionEx
+1	000DAAD4	gdi32.dll	0168	GetDCOrgEx
+1	000DAAD8	gdi32.dll	016A	GetDIBColorTable
+1	000DAADC	gdi32.dll	016B	GetDIBits
+1	000DAAE0	gdi32.dll	016C	GetDeviceCaps
+1	000DAAE4	gdi32.dll	0172	GetEnhMetaFileBits
+1	000DAAE8	gdi32.dll	0175	GetEnhMetaFileHeader
+1	000DAAEC	gdi32.dll	0176	GetEnhMetaFilePaletteEntries
+1	000DAAF0	gdi32.dll	0196	GetObjectA
+1	000DAAF4	gdi32.dll	019B	GetPaletteEntries
+1	000DAAF8	gdi32.dll	019D	GetPixel
+1	000DAAFC	gdi32.dll	01A5	GetRgnBox
+1	000DAB00	gdi32.dll	01A6	GetStockObject
+1	000DAB04	gdi32.dll	01AA	GetSystemPaletteEntries
+1	000DAB08	gdi32.dll	01AC	GetTextAlign
+1	000DAB0C	gdi32.dll	01B1	GetTextExtentExPointA
+1	000DAB10	gdi32.dll	01B5	GetTextExtentPoint32A
+1	000DAB14	gdi32.dll	01BD	GetTextMetricsA
+1	000DAB18	gdi32.dll	01C2	GetWinMetaFileBits
+1	000DAB1C	gdi32.dll	01C4	GetWindowOrgEx
+1	000DAB20	gdi32.dll	01C8	IntersectClipRect
+1	000DAB24	gdi32.dll	01CE	LineTo
+1	000DAB28	gdi32.dll	01CF	MaskBlt
+1	000DAB2C	gdi32.dll	01D2	MoveToEx
+1	000DAB30	gdi32.dll	01DE	PatBlt
+1	000DAB34	gdi32.dll	01E0	Pie
+1	000DAB38	gdi32.dll	01E1	PlayEnhMetaFile
+1	000DAB3C	gdi32.dll	01EB	PolyPolyline
+1	000DAB40	gdi32.dll	01EF	Polyline
+1	000DAB44	gdi32.dll	01F4	RealizePalette
+1	000DAB48	gdi32.dll	01F6	RectVisible
+1	000DAB4C	gdi32.dll	01F7	Rectangle
+1	000DAB50	gdi32.dll	0201	RestoreDC
+1	000DAB54	gdi32.dll	0208	SaveDC
+1	000DAB58	gdi32.dll	020F	SelectObject
+1	000DAB5C	gdi32.dll	0210	SelectPalette
+1	000DAB60	gdi32.dll	0216	SetBkColor
+1	000DAB64	gdi32.dll	0217	SetBkMode
+1	000DAB68	gdi32.dll	021A	SetBrushOrgEx
+1	000DAB6C	gdi32.dll	021F	SetDIBColorTable
+1	000DAB70	gdi32.dll	0223	SetEnhMetaFileBits
+1	000DAB74	gdi32.dll	022C	SetMapMode
+1	000DAB78	gdi32.dll	0232	SetPixel
+1	000DAB7C	gdi32.dll	0236	SetROP2
+1	000DAB80	gdi32.dll	0239	SetStretchBltMode
+1	000DAB84	gdi32.dll	023B	SetTextAlign
+1	000DAB88	gdi32.dll	023D	SetTextColor
+1	000DAB8C	gdi32.dll	023F	SetViewportExtEx
+1	000DAB90	gdi32.dll	0240	SetViewportOrgEx
+1	000DAB94	gdi32.dll	0242	SetWinMetaFileBits
+1	000DAB98	gdi32.dll	0243	SetWindowExtEx
+1	000DAB9C	gdi32.dll	0244	SetWindowOrgEx
+1	000DABA0	gdi32.dll	024A	StretchBlt
+1	000DABA4	gdi32.dll	0253	UnrealizeObject
+
+FThunk: 000DABAC	NbFunc: 000000B7
+1	000DABAC	user32.dll	0001	ActivateKeyboardLayout
+1	000DABB0	user32.dll	0003	AdjustWindowRectEx
+1	000DABB4	user32.dll	0027	CharLowerA
+1	000DABB8	user32.dll	000E	BeginPaint
+1	000DABBC	user32.dll	001B	CallNextHookEx
+1	000DABC0	user32.dll	001C	CallWindowProcA
+1	000DABC4	user32.dll	0027	CharLowerA
+1	000DABC8	user32.dll	0028	CharLowerBuffA
+1	000DABCC	user32.dll	0029	CharLowerBuffW
+1	000DABD0	user32.dll	002B	CharNextA
+1	000DABD4	user32.dll	0032	CharToOemBuffA
+1	000DABD8	user32.dll	0035	CharUpperA
+1	000DABDC	user32.dll	0036	CharUpperBuffA
+1	000DABE0	user32.dll	0037	CharUpperBuffW
+1	000DABE4	user32.dll	003A	CheckMenuItem
+1	000DABE8	user32.dll	0041	ClientToScreen
+1	000DABEC	user32.dll	0043	CloseClipboard
+1	000DABF0	user32.dll	0058	CreateIcon
+1	000DABF4	user32.dll	005E	CreateMenu
+1	000DABF8	user32.dll	005F	CreatePopupMenu
+1	000DABFC	user32.dll	0061	CreateWindowExA
+1	000DAC00	user32.dll	008A	DefFrameProcA
+1	000DAC04	user32.dll	008C	DefMDIChildProcA
+1	000DAC08	user32.dll	008F	DefWindowProcA
+1	000DAC0C	user32.dll	0092	DeleteMenu
+1	000DAC10	user32.dll	0096	DestroyCursor
+1	000DAC14	user32.dll	0096	DestroyCursor
+1	000DAC18	user32.dll	0098	DestroyMenu
+1	000DAC1C	user32.dll	009A	DestroyWindow
+1	000DAC20	user32.dll	00A2	DispatchMessageA
+1	000DAC24	user32.dll	00B3	DrawEdge
+1	000DAC28	user32.dll	00B4	DrawFocusRect
+1	000DAC2C	user32.dll	00B6	DrawFrameControl
+1	000DAC30	user32.dll	00B7	DrawIcon
+1	000DAC34	user32.dll	00B8	DrawIconEx
+1	000DAC38	user32.dll	00B9	DrawMenuBar
+1	000DAC3C	user32.dll	00BD	DrawTextA
+1	000DAC40	user32.dll	00BE	DrawTextExA
+1	000DAC44	user32.dll	00C2	EmptyClipboard
+1	000DAC48	user32.dll	00C3	EnableMenuItem
+1	000DAC4C	user32.dll	00C4	EnableScrollBar
+1	000DAC50	user32.dll	00C5	EnableWindow
+1	000DAC54	user32.dll	00C9	EndPaint
+1	000DAC58	user32.dll	00CD	EnumClipboardFormats
+1	000DAC5C	user32.dll	00DC	EnumThreadWindows
+1	000DAC60	user32.dll	00DF	EnumWindows
+1	000DAC64	user32.dll	00E0	EqualRect
+1	000DAC68	user32.dll	00E3	FillRect
+1	000DAC6C	user32.dll	00E4	FindWindowA
+1	000DAC70	user32.dll	00EA	FrameRect
+1	000DAC74	user32.dll	00EC	GetActiveWindow
+1	000DAC78	user32.dll	00F4	GetCapture
+1	000DAC7C	user32.dll	00F6	GetCaretPos
+1	000DAC80	user32.dll	00F7	GetClassInfoA
+1	000DAC84	user32.dll	00FD	GetClassNameA
+1	000DAC88	user32.dll	0100	GetClientRect
+1	000DAC8C	user32.dll	0102	GetClipboardData
+1	000DAC90	user32.dll	0109	GetCursor
+1	000DAC94	user32.dll	010C	GetCursorPos
+1	000DAC98	user32.dll	010D	GetDC
+1	000DAC9C	user32.dll	010E	GetDCEx
+1	000DACA0	user32.dll	010F	GetDesktopWindow
+1	000DACA4	user32.dll	0112	GetDlgItem
+1	000DACA8	user32.dll	0116	GetDoubleClickTime
+1	000DACAC	user32.dll	0117	GetFocus
+1	000DACB0	user32.dll	0118	GetForegroundWindow
+1	000DACB4	user32.dll	011B	GetIconInfo
+1	000DACB8	user32.dll	0120	GetKeyNameTextA
+1	000DACBC	user32.dll	0122	GetKeyState
+1	000DACC0	user32.dll	0123	GetKeyboardLayout
+1	000DACC4	user32.dll	0124	GetKeyboardLayoutList
+1	000DACC8	user32.dll	0127	GetKeyboardState
+1	000DACCC	user32.dll	0129	GetLastActivePopup
+1	000DACD0	user32.dll	012D	GetMenu
+1	000DACD4	user32.dll	0133	GetMenuItemCount
+1	000DACD8	user32.dll	0134	GetMenuItemID
+1	000DACDC	user32.dll	0135	GetMenuItemInfoA
+1	000DACE0	user32.dll	0138	GetMenuState
+1	000DACE4	user32.dll	0139	GetMenuStringA
+1	000DACE8	user32.dll	013E	GetMessageTime
+1	000DACEC	user32.dll	016B	GetWindow
+1	000DACF0	user32.dll	0146	GetParent
+1	000DACF4	user32.dll	014B	GetPropA
+1	000DACF8	user32.dll	0156	GetScrollInfo
+1	000DACFC	user32.dll	0157	GetScrollPos
+1	000DAD00	user32.dll	0158	GetScrollRange
+1	000DAD04	user32.dll	015A	GetSubMenu
+1	000DAD08	user32.dll	015B	GetSysColor
+1	000DAD0C	user32.dll	015D	GetSystemMenu
+1	000DAD10	user32.dll	015E	GetSystemMetrics
+1	000DAD14	user32.dll	0164	GetTopWindow
+1	000DAD18	user32.dll	016B	GetWindow
+1	000DAD1C	user32.dll	016D	GetWindowDC
+1	000DAD20	user32.dll	016F	GetWindowLongA
+1	000DAD24	user32.dll	0174	GetWindowPlacement
+1	000DAD28	user32.dll	0175	GetWindowRect
+1	000DAD2C	user32.dll	0178	GetWindowTextA
+1	000DAD30	user32.dll	017C	GetWindowThreadProcessId
+1	000DAD34	user32.dll	017C	GetWindowThreadProcessId
+1	000DAD38	user32.dll	018B	InflateRect
+1	000DAD3C	user32.dll	018E	InsertMenuA
+1	000DAD40	user32.dll	018F	InsertMenuItemA
+1	000DAD44	user32.dll	0193	IntersectRect
+1	000DAD48	user32.dll	0194	InvalidateRect
+1	000DAD4C	user32.dll	0197	IsCharAlphaA
+1	000DAD50	user32.dll	0198	IsCharAlphaNumericA
+1	000DAD54	user32.dll	019F	IsChild
+1	000DAD58	user32.dll	01A1	IsDialogMessage
+1	000DAD5C	user32.dll	01A7	IsIconic
+1	000DAD60	user32.dll	01A9	IsRectEmpty
+1	000DAD64	user32.dll	01AC	IsWindow
+1	000DAD68	user32.dll	01AD	IsWindowEnabled
+1	000DAD6C	user32.dll	01B0	IsWindowVisible
+1	000DAD70	user32.dll	01B1	IsZoomed
+1	000DAD74	user32.dll	01B3	KillTimer
+1	000DAD78	user32.dll	01B6	LoadBitmapA
+1	000DAD7C	user32.dll	01B8	LoadCursorA
+1	000DAD80	user32.dll	01BC	LoadIconA
+1	000DAD84	user32.dll	01C0	LoadKeyboardLayoutA
+1	000DAD88	user32.dll	01C9	LoadStringA
+1	000DAD8C	user32.dll	01D4	MapVirtualKeyA
+1	000DAD90	user32.dll	01D8	MapWindowPoints
+1	000DAD94	user32.dll	01DC	MessageBeep
+1	000DAD98	user32.dll	01DD	MessageBoxA
+1	000DAD9C	user32.dll	01EB	MsgWaitForMultipleObjects
+1	000DADA0	user32.dll	01EF	OemToCharA
+1	000DADA4	user32.dll	01F3	OffsetRect
+1	000DADA8	user32.dll	01F4	OpenClipboard
+1	000DADAC	user32.dll	01FE	PeekMessageA
+1	000DADB0	user32.dll	0200	PostMessageA
+1	000DADB4	user32.dll	0202	PostQuitMessage
+1	000DADB8	user32.dll	020C	PtInRect
+1	000DADBC	user32.dll	0216	RedrawWindow
+1	000DADC0	user32.dll	0217	RegisterClassA
+1	000DADC4	user32.dll	021B	RegisterClipboardFormatA
+1	000DADC8	user32.dll	021B	RegisterClipboardFormatA
+1	000DADCC	user32.dll	022A	ReleaseCapture
+1	000DADD0	user32.dll	022B	ReleaseDC
+1	000DADD4	user32.dll	022C	RemoveMenu
+1	000DADD8	user32.dll	022D	RemovePropA
+1	000DADDC	user32.dll	0232	ScreenToClient
+1	000DADE0	user32.dll	0235	ScrollWindow
+1	000DADE4	user32.dll	0236	ScrollWindowEx
+1	000DADE8	user32.dll	0237	SendDlgItemMessageA
+1	000DADEC	user32.dll	023C	SendMessageA
+1	000DADF0	user32.dll	0244	SetActiveWindow
+1	000DADF4	user32.dll	0245	SetCapture
+1	000DADF8	user32.dll	0248	SetClassLongA
+1	000DADFC	user32.dll	024B	SetClipboardData
+1	000DAE00	user32.dll	024E	SetCursor
+1	000DAE04	user32.dll	0257	SetFocus
+1	000DAE08	user32.dll	0258	SetForegroundWindow
+1	000DAE0C	user32.dll	025A	SetKeyboardState
+1	000DAE10	user32.dll	025E	SetMenu
+1	000DAE14	user32.dll	0263	SetMenuItemInfoA
+1	000DAE18	user32.dll	026B	SetPropA
+1	000DAE1C	user32.dll	026D	SetRect
+1	000DAE20	user32.dll	026F	SetScrollInfo
+1	000DAE24	user32.dll	0270	SetScrollPos
+1	000DAE28	user32.dll	0271	SetScrollRange
+1	000DAE2C	user32.dll	027B	SetTimer
+1	000DAE30	user32.dll	0281	SetWindowLongA
+1	000DAE34	user32.dll	0283	SetWindowPlacement
+1	000DAE38	user32.dll	0284	SetWindowPos
+1	000DAE3C	user32.dll	0287	SetWindowTextA
+1	000DAE40	user32.dll	028B	SetWindowsHookExA
+1	000DAE44	user32.dll	028F	ShowCursor
+1	000DAE48	user32.dll	0290	ShowOwnedPopups
+1	000DAE4C	user32.dll	0291	ShowScrollBar
+1	000DAE50	user32.dll	0293	ShowWindow
+1	000DAE54	user32.dll	029A	SystemParametersInfoA
+1	000DAE58	user32.dll	02A1	ToAsciiEx
+1	000DAE5C	user32.dll	02A5	TrackPopupMenu
+1	000DAE60	user32.dll	02AA	TranslateMDISysAccel
+1	000DAE64	user32.dll	02AB	TranslateMessage
+1	000DAE68	user32.dll	02AF	UnhookWindowsHookEx
+1	000DAE6C	user32.dll	02B0	UnionRect
+1	000DAE70	user32.dll	02B4	UnregisterClassA
+1	000DAE74	user32.dll	02BC	UpdateWindow
+1	000DAE78	user32.dll	02C6	ValidateRect
+1	000DAE7C	user32.dll	02D1	WaitMessage
+1	000DAE80	user32.dll	02D3	WinHelpA
+1	000DAE84	user32.dll	02D6	WindowFromPoint
+
+FThunk: 000DAE8C	NbFunc: 00000001
+1	000DAE8C	kernel32.dll	0338	Sleep
+
+FThunk: 000DAE94	NbFunc: 0000000C
+1	000DAE94	oleaut32.dll	0008	VariantInit
+1	000DAE98	oleaut32.dll	0009	VariantClear
+1	000DAE9C	oleaut32.dll	000A	VariantCopy
+1	000DAEA0	oleaut32.dll	000B	VariantCopyInd
+1	000DAEA4	oleaut32.dll	0093	VariantChangeTypeEx
+1	000DAEA8	oleaut32.dll	000F	SafeArrayCreate
+1	000DAEAC	oleaut32.dll	0028	SafeArrayRedim
+1	000DAEB0	oleaut32.dll	0014	SafeArrayGetLBound
+1	000DAEB4	oleaut32.dll	0013	SafeArrayGetUBound
+1	000DAEB8	oleaut32.dll	0019	SafeArrayGetElement
+1	000DAEBC	oleaut32.dll	001A	SafeArrayPutElement
+1	000DAEC0	oleaut32.dll	0094	SafeArrayPtrOfIndex
+
+FThunk: 000DAEC8	NbFunc: 00000004
+1	000DAEC8	ole32.dll	003B	CoInitialize
+1	000DAECC	ole32.dll	0069	CoUninitialize
+1	000DAED0	ole32.dll	0012	CoCreateInstance
+1	000DAED4	ole32.dll	0008	CLSIDFromProgID
+
+FThunk: 000DAEDC	NbFunc: 00000002
+1	000DAEDC	oleaut32.dll	0006	SysFreeString
+1	000DAEE0	oleaut32.dll	00C8	GetErrorInfo
+
+FThunk: 000DAEE8	NbFunc: 00000018
+1	000DAEE8	comctl32.dll	0011	InitCommonControls
+1	000DAEEC	comctl32.dll	002C	ImageList_Create
+1	000DAEF0	comctl32.dll	002D	ImageList_Destroy
+1	000DAEF4	comctl32.dll	003C	ImageList_GetImageCount
+1	000DAEF8	comctl32.dll	0027	ImageList_Add
+1	000DAEFC	comctl32.dll	0046	ImageList_ReplaceIcon
+1	000DAF00	comctl32.dll	004B	ImageList_SetBkColor
+1	000DAF04	comctl32.dll	0037	ImageList_GetBkColor
+1	000DAF08	comctl32.dll	0032	ImageList_Draw
+1	000DAF0C	comctl32.dll	0045	ImageList_Replace
+1	000DAF10	comctl32.dll	0033	ImageList_DrawEx
+1	000DAF14	comctl32.dll	0044	ImageList_Remove
+1	000DAF18	comctl32.dll	002A	ImageList_BeginDrag
+1	000DAF1C	comctl32.dll	0036	ImageList_EndDrag
+1	000DAF20	comctl32.dll	002E	ImageList_DragEnter
+1	000DAF24	comctl32.dll	002F	ImageList_DragLeave
+1	000DAF28	comctl32.dll	0030	ImageList_DragMove
+1	000DAF2C	comctl32.dll	004C	ImageList_SetDragCursorImage
+1	000DAF30	comctl32.dll	0031	ImageList_DragShowNolock
+1	000DAF34	comctl32.dll	0038	ImageList_GetDragImage
+1	000DAF38	comctl32.dll	0043	ImageList_Read
+1	000DAF3C	comctl32.dll	0052	ImageList_Write
+1	000DAF40	comctl32.dll	003B	ImageList_GetIconSize
+1	000DAF44	comctl32.dll	004F	ImageList_SetIconSize
+
+FThunk: 000DAF4C	NbFunc: 00000004
+1	000DAF4C	winspool.drv	0086	ClosePrinter
+1	000DAF50	winspool.drv	00B1	DocumentPropertiesA
+1	000DAF54	winspool.drv	00EA	EnumPrintersA
+1	000DAF58	winspool.drv	0103	OpenPrinterA
+
+FThunk: 000DAF60	NbFunc: 0000000A
+1	000DAF60	shell32.dll	0120	SHFileOperation
+1	000DAF64	shell32.dll	012B	SHGetFileInfo
+1	000DAF68	shell32.dll	0167	ShellExecuteA
+1	000DAF6C	shell32.dll	0168	ShellExecuteEx
+1	000DAF70	shell32.dll	0110	SHBrowseForFolder
+1	000DAF74	shell32.dll	0127	SHGetDesktopFolder
+1	000DAF78	shell32.dll	0136	SHGetMalloc
+1	000DAF7C	shell32.dll	0138	SHGetPathFromIDList
+1	000DAF80	shell32.dll	013C	SHGetSpecialFolderLocation
+1	000DAF84	shell32.dll	013D	SHGetSpecialFolderPathA
+
+FThunk: 000DAF8C	NbFunc: 00000002
+1	000DAF8C	comdlg32.dll	006E	GetOpenFileNameA
+1	000DAF90	comdlg32.dll	0067	ChooseFontA
+
+FThunk: 000DAF98	NbFunc: 00000001
+1	000DAF98	kernel32.dll	025D	MulDiv
+

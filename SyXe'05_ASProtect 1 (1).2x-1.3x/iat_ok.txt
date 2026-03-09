@@ -1,0 +1,646 @@
+; Syntax for each function in a thunk (the separator is a TAB)
+; ------------------------------------------------------------
+; Flag   RVA   ModuleName   Ordinal   Name
+;
+; Details for <Valid> parameter:
+; ------------------------------
+; Flag:  0 = valid: no  -> - Name contains the address of the redirected API (you can set
+;                            it to zero if you edit it).
+;                          - Ordinal is not considered but you should let '0000' as value.
+;                          - ModuleName is not considered but you should let '?' as value.
+;
+;        1 = valid: yes -> All next parameters on the line will be considered.
+;                          Function imported by ordinal must have no name (the 4th TAB must
+;                                                                          be there though).
+;
+;        2 = Equivalent to 0 but it is for the loader.
+;
+;        3 = Equivalent to 1 but it is for the loader.
+;
+;        4 = Equivalent to 0 with (R) tag.
+;
+;        5 = Equivalent to 1 with (R) tag.
+;
+; And finally, edit this file as your own risk! :-)
+
+Target: C:\Archivos de programa\CloneDVD 3.6\CloneDVD.exe
+OEP: 0001EBCA	IATRVA: 00028000	IATSize: 00000964
+
+FThunk: 00028000	NbFunc: 00000008
+1	00028000	advapi32.dll	01CC	RegCreateKeyA
+1	00028004	advapi32.dll	014C	LookupPrivilegeValueA
+1	00028008	advapi32.dll	01A9	OpenProcessToken
+1	0002800C	advapi32.dll	01C9	RegCloseKey
+1	00028010	advapi32.dll	01EC	RegQueryValueExA
+1	00028014	advapi32.dll	001E	AdjustTokenPrivileges
+1	00028018	advapi32.dll	01F9	RegSetValueExA
+1	0002801C	advapi32.dll	01E2	RegOpenKeyExA
+
+FThunk: 00028024	NbFunc: 00000003
+1	00028024	comctl32.dll	004B	ImageList_Remove
+1	00028028	comctl32.dll	003E	ImageList_GetImageCount
+1	0002802C	comctl32.dll	004D	ImageList_ReplaceIcon
+
+FThunk: 00028034	NbFunc: 00000002
+1	00028034	dvdiocontroldll.dll	0001	CreateDVDFileIOControl
+1	00028038	dvdiocontroldll.dll	0002	CreateDVDIOControl
+
+FThunk: 00028040	NbFunc: 00000029
+1	00028040	gdi32.dll	00DE	ExtTextOutA
+1	00028044	gdi32.dll	00D5	Escape
+1	00028048	gdi32.dll	014D	GetBkColor
+1	0002804C	gdi32.dll	01CA	LPtoDP
+1	00028050	gdi32.dll	01A5	GetRgnBox
+1	00028054	gdi32.dll	01EF	PtInRegion
+1	00028058	gdi32.dll	016C	GetDeviceCaps
+1	0002805C	gdi32.dll	0048	CreatePen
+1	00028060	gdi32.dll	01B0	GetTextColor
+1	00028064	gdi32.dll	01B5	GetTextExtentPoint32A
+1	00028068	gdi32.dll	0248	StretchBlt
+1	0002806C	gdi32.dll	004C	CreateRectRgn
+1	00028070	gdi32.dll	004E	CreateRoundRectRgn
+1	00028074	gdi32.dll	004D	CreateRectRgnIndirect
+1	00028078	gdi32.dll	024D	TextOutA
+1	0002807C	gdi32.dll	002E	CreateCompatibleDC
+1	00028080	gdi32.dll	0196	GetObjectA
+1	00028084	gdi32.dll	008D	DeleteDC
+1	00028088	gdi32.dll	0090	DeleteObject
+1	0002808C	gdi32.dll	0022	CombineRgn
+1	00028090	gdi32.dll	00DA	ExtCreateRegion
+1	00028094	gdi32.dll	0013	BitBlt
+1	00028098	gdi32.dll	020D	SelectObject
+1	0002809C	gdi32.dll	0033	CreateDIBSection
+1	000280A0	gdi32.dll	019D	GetPixel
+1	000280A4	gdi32.dll	0214	SetBkColor
+1	000280A8	gdi32.dll	022A	SetMapMode
+1	000280AC	gdi32.dll	018E	GetMapMode
+1	000280B0	gdi32.dll	01F4	RectVisible
+1	000280B4	gdi32.dll	00EE	FrameRgn
+1	000280B8	gdi32.dll	01F0	PtVisible
+1	000280BC	gdi32.dll	01FF	RestoreDC
+1	000280C0	gdi32.dll	0237	SetStretchBltMode
+1	000280C4	gdi32.dll	0206	SaveDC
+1	000280C8	gdi32.dll	01A6	GetStockObject
+1	000280CC	gdi32.dll	020B	SelectClipRgn
+1	000280D0	gdi32.dll	002D	CreateCompatibleBitmap
+1	000280D4	gdi32.dll	0028	CreateBitmap
+1	000280D8	gdi32.dll	0051	CreateSolidBrush
+1	000280DC	gdi32.dll	003B	CreateFontIndirectA
+1	000280E0	gdi32.dll	0052	DPtoLP
+
+FThunk: 000280E8	NbFunc: 0000003B
+1	000280E8	kernel32.dll	016F	GetModuleHandleA
+1	000280EC	kernel32.dll	0136	GetCurrentProcessId
+1	000280F0	kernel32.dll	026E	OpenProcess
+1	000280F4	kernel32.dll	019A	GetProcessTimes
+1	000280F8	kernel32.dll	01B5	GetSystemTime
+1	000280FC	kernel32.dll	033D	SystemTimeToFileTime
+1	00028100	kernel32.dll	0338	Sleep
+1	00028104	kernel32.dll	038A	WritePrivateProfileStringA
+1	00028108	kernel32.dll	0187	GetPrivateProfileIntA
+1	0002810C	kernel32.dll	018D	GetPrivateProfileStringA
+1	00028110	kernel32.dll	003E	CopyFileA
+1	00028114	kernel32.dll	02F1	SetCurrentDirectoryA
+1	00028118	kernel32.dll	005B	CreateMutexA
+1	0002811C	kernel32.dll	0155	GetFileSize
+1	00028120	kernel32.dll	02F7	SetEndOfFile
+1	00028124	kernel32.dll	0352	UnlockFile
+1	00028128	kernel32.dll	024C	LockFile
+1	0002812C	kernel32.dll	00E0	FlushFileBuffers
+1	00028130	kernel32.dll	0300	SetFilePointer
+1	00028134	kernel32.dll	0185	GetOverlappedResult
+1	00028138	kernel32.dll	0386	WriteFileEx
+1	0002813C	kernel32.dll	0385	WriteFile
+1	00028140	kernel32.dll	029E	ReadFileEx
+1	00028144	kernel32.dll	029D	ReadFile
+1	00028148	kernel32.dll	004E	CreateFileA
+1	0002814C	kernel32.dll	039D	lstrcat
+1	00028150	kernel32.dll	0030	CloseHandle
+1	00028154	kernel32.dll	01C2	GetTempPathA
+1	00028158	kernel32.dll	025D	MulDiv
+1	0002815C	kernel32.dll	0135	GetCurrentProcess
+1	00028160	kernel32.dll	0162	GetLastError
+1	00028164	kernel32.dll	03A3	lstrcmpi
+1	00028168	kernel32.dll	01E4	GlobalAlloc
+1	0002816C	kernel32.dll	01EF	GlobalLock
+1	00028170	kernel32.dll	01F6	GlobalUnlock
+1	00028174	kernel32.dll	01F2	GlobalReAlloc
+1	00028178	kernel32.dll	01EB	GlobalFree
+1	0002817C	kernel32.dll	00EA	FreeLibrary
+1	00028180	kernel32.dll	023B	LoadLibraryA
+1	00028184	kernel32.dll	0191	GetProcAddress
+1	00028188	kernel32.dll	00CA	FindFirstFileA
+1	0002818C	kernel32.dll	00D3	FindNextFileA
+1	00028190	kernel32.dll	007D	DeleteFileA
+1	00028194	kernel32.dll	00C6	FindClose
+1	00028198	kernel32.dll	0165	GetLocaleInfoA
+1	0002819C	kernel32.dll	0145	GetDriveTypeA
+1	000281A0	kernel32.dll	03A6	lstrcpy
+1	000281A4	kernel32.dll	03AC	lstrlen
+1	000281A8	kernel32.dll	01D7	GetVolumeInformationA
+1	000281AC	kernel32.dll	0140	GetDiskFreeSpaceExA
+1	000281B0	kernel32.dll	0046	CreateDirectoryA
+1	000281B4	kernel32.dll	02AC	RemoveDirectoryA
+1	000281B8	kernel32.dll	03A9	lstrcpyn
+1	000281BC	kernel32.dll	016D	GetModuleFileNameA
+1	000281C0	kernel32.dll	01D5	GetVersionExA
+1	000281C4	kernel32.dll	02AA	ReleaseMutex
+1	000281C8	kernel32.dll	0374	WaitForSingleObject
+1	000281CC	kernel32.dll	01DF	GetWindowsDirectoryA
+1	000281D0	kernel32.dll	01A6	GetStartupInfoA
+
+FThunk: 000281D8	NbFunc: 0000014B
+1	000281D8	mfc42.dll	0497	
+1	000281DC	mfc42.dll	04EE	
+1	000281E0	mfc42.dll	0B01	
+1	000281E4	mfc42.dll	0A36	
+1	000281E8	mfc42.dll	1241	
+1	000281EC	mfc42.dll	10B2	
+1	000281F0	mfc42.dll	1186	
+1	000281F4	mfc42.dll	09FA	
+1	000281F8	mfc42.dll	09D0	
+1	000281FC	mfc42.dll	1663	
+1	00028200	mfc42.dll	0F52	
+1	00028204	mfc42.dll	0441	
+1	00028208	mfc42.dll	144F	
+1	0002820C	mfc42.dll	095C	
+1	00028210	mfc42.dll	0D12	
+1	00028214	mfc42.dll	14B4	
+1	00028218	mfc42.dll	14B6	
+1	0002821C	mfc42.dll	0FEF	
+1	00028220	mfc42.dll	125A	
+1	00028224	mfc42.dll	14BB	
+1	00028228	mfc42.dll	1652	
+1	0002822C	mfc42.dll	120E	
+1	00028230	mfc42.dll	0E9A	
+1	00028234	mfc42.dll	0231	
+1	00028238	mfc42.dll	032F	
+1	0002823C	mfc42.dll	0A3D	
+1	00028240	mfc42.dll	04B5	
+1	00028244	mfc42.dll	046E	
+1	00028248	mfc42.dll	14A9	
+1	0002824C	mfc42.dll	0AA5	
+1	00028250	mfc42.dll	031E	
+1	00028254	mfc42.dll	07CD	
+1	00028258	mfc42.dll	1559	
+1	0002825C	mfc42.dll	144A	
+1	00028260	mfc42.dll	0215	
+1	00028264	mfc42.dll	1040	
+1	00028268	mfc42.dll	0E3E	
+1	0002826C	mfc42.dll	018D	
+1	00028270	mfc42.dll	02BB	
+1	00028274	mfc42.dll	0B19	
+1	00028278	mfc42.dll	15D8	
+1	0002827C	mfc42.dll	0D6D	
+1	00028280	mfc42.dll	10B5	
+1	00028284	mfc42.dll	039A	
+1	00028288	mfc42.dll	0ACB	
+1	0002828C	mfc42.dll	038F	
+1	00028290	mfc42.dll	083B	
+1	00028294	mfc42.dll	154A	
+1	00028298	mfc42.dll	1540	
+1	0002829C	mfc42.dll	18EF	
+1	000282A0	mfc42.dll	18FA	
+1	000282A4	mfc42.dll	0D09	
+1	000282A8	mfc42.dll	0EE3	
+1	000282AC	mfc42.dll	10B6	
+1	000282B0	mfc42.dll	04A4	
+1	000282B4	mfc42.dll	068F	
+1	000282B8	mfc42.dll	112C	
+1	000282BC	mfc42.dll	0E38	
+1	000282C0	mfc42.dll	028E	
+1	000282C4	mfc42.dll	0C11	
+1	000282C8	mfc42.dll	1777	
+1	000282CC	mfc42.dll	1AE8	
+1	000282D0	mfc42.dll	1AFB	
+1	000282D4	mfc42.dll	0F9E	
+1	000282D8	mfc42.dll	16E2	
+1	000282DC	mfc42.dll	0155	
+1	000282E0	mfc42.dll	1A13	
+1	000282E4	mfc42.dll	0CD6	
+1	000282E8	mfc42.dll	0D2A	
+1	000282EC	mfc42.dll	02AE	
+1	000282F0	mfc42.dll	02B5	
+1	000282F4	mfc42.dll	0830	
+1	000282F8	mfc42.dll	0180	
+1	000282FC	mfc42.dll	1093	
+1	00028300	mfc42.dll	0F9C	
+1	00028304	mfc42.dll	1A28	
+1	00028308	mfc42.dll	10BC	
+1	0002830C	mfc42.dll	0B2E	
+1	00028310	mfc42.dll	0C42	
+1	00028314	mfc42.dll	0E9E	
+1	00028318	mfc42.dll	0332	
+1	0002831C	mfc42.dll	192A	
+1	00028320	mfc42.dll	04D1	
+1	00028324	mfc42.dll	0E23	
+1	00028328	mfc42.dll	1025	
+1	0002832C	mfc42.dll	10C9	
+1	00028330	mfc42.dll	169B	
+1	00028334	mfc42.dll	01D8	
+1	00028338	mfc42.dll	1AE6	
+1	0002833C	mfc42.dll	0834	
+1	00028340	mfc42.dll	084B	
+1	00028344	mfc42.dll	105B	
+1	00028348	mfc42.dll	0A52	
+1	0002834C	mfc42.dll	0322	
+1	00028350	mfc42.dll	021E	
+1	00028354	mfc42.dll	081E	
+1	00028358	mfc42.dll	0B9B	
+1	0002835C	mfc42.dll	167F	
+1	00028360	mfc42.dll	1830	
+1	00028364	mfc42.dll	167C	
+1	00028368	mfc42.dll	182A	
+1	0002836C	mfc42.dll	10EA	
+1	00028370	mfc42.dll	182D	
+1	00028374	mfc42.dll	1785	
+1	00028378	mfc42.dll	16F1	
+1	0002837C	mfc42.dll	0685	
+1	00028380	mfc42.dll	162E	
+1	00028384	mfc42.dll	1668	
+1	00028388	mfc42.dll	15CB	
+1	0002838C	mfc42.dll	15C3	
+1	00028390	mfc42.dll	17AC	
+1	00028394	mfc42.dll	16E8	
+1	00028398	mfc42.dll	039E	
+1	0002839C	mfc42.dll	0FB7	
+1	000283A0	mfc42.dll	19CD	
+1	000283A4	mfc42.dll	043D	
+1	000283A8	mfc42.dll	15E1	
+1	000283AC	mfc42.dll	0AC2	
+1	000283B0	mfc42.dll	1832	
+1	000283B4	mfc42.dll	0E7A	
+1	000283B8	mfc42.dll	022C	
+1	000283BC	mfc42.dll	10CB	
+1	000283C0	mfc42.dll	0C19	
+1	000283C4	mfc42.dll	0329	
+1	000283C8	mfc42.dll	084A	
+1	000283CC	mfc42.dll	0B2F	
+1	000283D0	mfc42.dll	175D	
+1	000283D4	mfc42.dll	0F74	
+1	000283D8	mfc42.dll	175E	
+1	000283DC	mfc42.dll	0283	
+1	000283E0	mfc42.dll	1028	
+1	000283E4	mfc42.dll	0149	
+1	000283E8	mfc42.dll	0440	
+1	000283EC	mfc42.dll	08FD	
+1	000283F0	mfc42.dll	093B	
+1	000283F4	mfc42.dll	08F1	
+1	000283F8	mfc42.dll	18BE	
+1	000283FC	mfc42.dll	047A	
+1	00028400	mfc42.dll	1837	
+1	00028404	mfc42.dll	068F	
+1	00028408	mfc42.dll	068F	
+1	0002840C	mfc42.dll	0E46	
+1	00028410	mfc42.dll	0986	
+1	00028414	mfc42.dll	0997	
+1	00028418	mfc42.dll	187E	
+1	0002841C	mfc42.dll	066C	
+1	00028420	mfc42.dll	0268	
+1	00028424	mfc42.dll	0AE0	
+1	00028428	mfc42.dll	0656	
+1	0002842C	mfc42.dll	1AE3	
+1	00028430	mfc42.dll	1861	
+1	00028434	mfc42.dll	0C1A	
+1	00028438	mfc42.dll	068F	
+1	0002843C	mfc42.dll	03F8	
+1	00028440	mfc42.dll	068F	
+1	00028444	mfc42.dll	068F	
+1	00028448	mfc42.dll	112E	
+1	0002844C	mfc42.dll	0D4A	
+1	00028450	mfc42.dll	0DFE	
+1	00028454	mfc42.dll	0F21	
+1	00028458	mfc42.dll	1AE9	
+1	0002845C	mfc42.dll	1778	
+1	00028460	mfc42.dll	0FA0	
+1	00028464	mfc42.dll	0CD7	
+1	00028468	mfc42.dll	1A14	
+1	0002846C	mfc42.dll	101D	
+1	00028470	mfc42.dll	0ACC	
+1	00028474	mfc42.dll	106C	
+1	00028478	mfc42.dll	0E6D	
+1	0002847C	mfc42.dll	0AC1	
+1	00028480	mfc42.dll	0B67	
+1	00028484	mfc42.dll	0DF5	
+1	00028488	mfc42.dll	04A9	
+1	0002848C	mfc42.dll	0868	
+1	00028490	mfc42.dll	047F	
+1	00028494	mfc42.dll	12C9	
+1	00028498	mfc42.dll	011B	
+1	0002849C	mfc42.dll	06E8	
+1	000284A0	mfc42.dll	1A7A	
+1	000284A4	mfc42.dll	16BD	
+1	000284A8	mfc42.dll	0E4E	
+1	000284AC	mfc42.dll	16E2	
+1	000284B0	mfc42.dll	019E	
+1	000284B4	mfc42.dll	02C9	
+1	000284B8	mfc42.dll	17FC	
+1	000284BC	mfc42.dll	0C14	
+1	000284C0	mfc42.dll	1847	
+1	000284C4	mfc42.dll	0490	
+1	000284C8	mfc42.dll	108A	
+1	000284CC	mfc42.dll	0942	
+1	000284D0	mfc42.dll	08FE	
+1	000284D4	mfc42.dll	096E	
+1	000284D8	mfc42.dll	0E4F	
+1	000284DC	mfc42.dll	0E2A	
+1	000284E0	mfc42.dll	0339	
+1	000284E4	mfc42.dll	0A5C	
+1	000284E8	mfc42.dll	010C	
+1	000284EC	mfc42.dll	061F	
+1	000284F0	mfc42.dll	04F7	
+1	000284F4	mfc42.dll	021D	
+1	000284F8	mfc42.dll	0321	
+1	000284FC	mfc42.dll	188A	
+1	00028500	mfc42.dll	188B	
+1	00028504	mfc42.dll	04B0	
+1	00028508	mfc42.dll	0B2B	
+1	0002850C	mfc42.dll	0CE0	
+1	00028510	mfc42.dll	1256	
+1	00028514	mfc42.dll	0628	
+1	00028518	mfc42.dll	1256	
+1	0002851C	mfc42.dll	10AF	
+1	00028520	mfc42.dll	0DDA	
+1	00028524	mfc42.dll	032A	
+1	00028528	mfc42.dll	0E95	
+1	0002852C	mfc42.dll	1695	
+1	00028530	mfc42.dll	0DF6	
+1	00028534	mfc42.dll	112C	
+1	00028538	mfc42.dll	0F22	
+1	0002853C	mfc42.dll	0B63	
+1	00028540	mfc42.dll	15C4	
+1	00028544	mfc42.dll	16F3	
+1	00028548	mfc42.dll	101B	
+1	0002854C	mfc42.dll	181C	
+1	00028550	mfc42.dll	0B30	
+1	00028554	mfc42.dll	0B2C	
+1	00028558	mfc42.dll	169B	
+1	0002855C	mfc42.dll	094B	
+1	00028560	mfc42.dll	0121	
+1	00028564	mfc42.dll	0265	
+1	00028568	mfc42.dll	1835	
+1	0002856C	mfc42.dll	10B3	
+1	00028570	mfc42.dll	0290	
+1	00028574	mfc42.dll	0237	
+1	00028578	mfc42.dll	0E1A	
+1	0002857C	mfc42.dll	1148	
+1	00028580	mfc42.dll	14AA	
+1	00028584	mfc42.dll	06F0	
+1	00028588	mfc42.dll	03F8	
+1	0002858C	mfc42.dll	0337	
+1	00028590	mfc42.dll	17FF	
+1	00028594	mfc42.dll	16E5	
+1	00028598	mfc42.dll	0164	
+1	0002859C	mfc42.dll	0AD2	
+1	000285A0	mfc42.dll	0ADD	
+1	000285A4	mfc42.dll	0CF7	
+1	000285A8	mfc42.dll	029C	
+1	000285AC	mfc42.dll	1ADD	
+1	000285B0	mfc42.dll	164E	
+1	000285B4	mfc42.dll	1021	
+1	000285B8	mfc42.dll	03AD	
+1	000285BC	mfc42.dll	03AC	
+1	000285C0	mfc42.dll	01D6	
+1	000285C4	mfc42.dll	1AE0	
+1	000285C8	mfc42.dll	0143	
+1	000285CC	mfc42.dll	0668	
+1	000285D0	mfc42.dll	1699	
+1	000285D4	mfc42.dll	180D	
+1	000285D8	mfc42.dll	0280	
+1	000285DC	mfc42.dll	02F3	
+1	000285E0	mfc42.dll	1266	
+1	000285E4	mfc42.dll	0217	
+1	000285E8	mfc42.dll	039C	
+1	000285EC	mfc42.dll	0669	
+1	000285F0	mfc42.dll	1741	
+1	000285F4	mfc42.dll	0B02	
+1	000285F8	mfc42.dll	03AB	
+1	000285FC	mfc42.dll	16A2	
+1	00028600	mfc42.dll	0219	
+1	00028604	mfc42.dll	17FC	
+1	00028608	mfc42.dll	19F8	
+1	0002860C	mfc42.dll	0994	
+1	00028610	mfc42.dll	094D	
+1	00028614	mfc42.dll	0261	
+1	00028618	mfc42.dll	068F	
+1	0002861C	mfc42.dll	0ED5	
+1	00028620	mfc42.dll	18D6	
+1	00028624	mfc42.dll	0789	
+1	00028628	mfc42.dll	031B	
+1	0002862C	mfc42.dll	0E89	
+1	00028630	mfc42.dll	0144	
+1	00028634	mfc42.dll	021C	
+1	00028638	mfc42.dll	035C	
+1	0002863C	mfc42.dll	035A	
+1	00028640	mfc42.dll	0320	
+1	00028644	mfc42.dll	0281	
+1	00028648	mfc42.dll	0DF3	
+1	0002864C	mfc42.dll	0E0D	
+1	00028650	mfc42.dll	1149	
+1	00028654	mfc42.dll	1213	
+1	00028658	mfc42.dll	03F3	
+1	0002865C	mfc42.dll	03F8	
+1	00028660	mfc42.dll	0B3C	
+1	00028664	mfc42.dll	0B3C	
+1	00028668	mfc42.dll	0EF6	
+1	0002866C	mfc42.dll	0BA0	
+1	00028670	mfc42.dll	0C09	
+1	00028674	mfc42.dll	0BA9	
+1	00028678	mfc42.dll	0CBE	
+1	0002867C	mfc42.dll	0C40	
+1	00028680	mfc42.dll	06F0	
+1	00028684	mfc42.dll	03F8	
+1	00028688	mfc42.dll	03F8	
+1	0002868C	mfc42.dll	03F8	
+1	00028690	mfc42.dll	0102	
+1	00028694	mfc42.dll	084C	
+1	00028698	mfc42.dll	098E	
+1	0002869C	mfc42.dll	148D	
+1	000286A0	mfc42.dll	06BF	
+1	000286A4	mfc42.dll	13C9	
+1	000286A8	mfc42.dll	03F8	
+1	000286AC	mfc42.dll	18E8	
+1	000286B0	mfc42.dll	0807	
+1	000286B4	mfc42.dll	0A58	
+1	000286B8	mfc42.dll	1159	
+1	000286BC	mfc42.dll	12E5	
+1	000286C0	mfc42.dll	0ED6	
+1	000286C4	mfc42.dll	14A0	
+1	000286C8	mfc42.dll	1101	
+1	000286CC	mfc42.dll	18E6	
+1	000286D0	mfc42.dll	142B	
+1	000286D4	mfc42.dll	0951	
+1	000286D8	mfc42.dll	0102	
+1	000286DC	mfc42.dll	1137	
+1	000286E0	mfc42.dll	06EF	
+1	000286E4	mfc42.dll	0B3C	
+1	000286E8	mfc42.dll	17A4	
+1	000286EC	mfc42.dll	09D2	
+1	000286F0	mfc42.dll	068F	
+1	000286F4	mfc42.dll	12F5	
+1	000286F8	mfc42.dll	1118	
+1	000286FC	mfc42.dll	0E0C	
+1	00028700	mfc42.dll	0102	
+
+FThunk: 00028708	NbFunc: 00000001
+1	00028708	mpegcompressordll.dll	0001	CreateMPEGCompressor
+
+FThunk: 00028710	NbFunc: 00000001
+1	00028710	msimg32.dll	0002	AlphaBlend
+
+FThunk: 00028718	NbFunc: 00000029
+1	00028718	msvcrt.dll	02AB	ftell
+1	0002871C	msvcrt.dll	02A9	fseek
+1	00028720	msvcrt.dll	02A4	fread
+1	00028724	msvcrt.dll	02DF	memmove
+1	00028728	msvcrt.dll	006C	__dllonexit
+1	0002872C	msvcrt.dll	01B4	_onexit
+1	00028730	msvcrt.dll	01DE	_setmbcp
+1	00028734	msvcrt.dll	021F	_vsnprintf
+1	00028738	msvcrt.dll	02F9	sprintf
+1	0002873C	msvcrt.dll	029E	fopen
+1	00028740	msvcrt.dll	02AD	fwrite
+1	00028744	msvcrt.dll	0293	fclose
+1	00028748	msvcrt.dll	02FC	sscanf
+1	0002874C	msvcrt.dll	0119	_ftol
+1	00028750	msvcrt.dll	0308	strncpy
+1	00028754	msvcrt.dll	0284	atoi
+1	00028758	msvcrt.dll	007A	__p___argc
+1	0002875C	msvcrt.dll	007B	__p___argv
+1	00028760	msvcrt.dll	01FC	_strnicmp
+1	00028764	msvcrt.dll	01F4	_strcmpi
+1	00028768	msvcrt.dll	018B	_mbsdup
+1	0002876C	msvcrt.dll	0054	__CxxFrameHandler
+1	00028770	msvcrt.dll	02A5	free
+1	00028774	msvcrt.dll	0186	_mbscmp
+1	00028778	msvcrt.dll	00EE	_except_handler3
+1	0002877C	msvcrt.dll	0035	?terminate@@YAXXZ
+1	00028780	msvcrt.dll	00F7	_exit
+1	00028784	msvcrt.dll	0050	_XcptFilter
+1	00028788	msvcrt.dll	0290	exit
+1	0002878C	msvcrt.dll	00A9	_acmdln
+1	00028790	msvcrt.dll	006F	__getmainargs
+1	00028794	msvcrt.dll	013B	_initterm
+1	00028798	msvcrt.dll	009C	__setusermatherr
+1	0002879C	msvcrt.dll	00B7	_adjust_fdiv
+1	000287A0	msvcrt.dll	0082	__p__commode
+1	000287A4	msvcrt.dll	0087	__p__fmode
+1	000287A8	msvcrt.dll	009A	__set_app_type
+1	000287AC	msvcrt.dll	00D7	_controlfp
+1	000287B0	msvcrt.dll	030E	strtok
+1	000287B4	msvcrt.dll	01C1	_purecall
+1	000287B8	msvcrt.dll	0010	??1type_info@@UAE@XZ
+
+FThunk: 000287C0	NbFunc: 00000001
+1	000287C0	olepro32.dll	00FB	OleLoadPicture
+
+FThunk: 000287C8	NbFunc: 00000004
+1	000287C8	shell32.dll	0136	SHGetMalloc
+1	000287CC	shell32.dll	0110	SHBrowseForFolder
+1	000287D0	shell32.dll	0167	ShellExecuteA
+1	000287D4	shell32.dll	0138	SHGetPathFromIDList
+
+FThunk: 000287DC	NbFunc: 00000011
+1	000287DC	shlwapi.dll	024D	PathFindFileNameA
+1	000287E0	shlwapi.dll	028D	PathRemoveFileSpecA
+1	000287E4	shlwapi.dll	025D	PathIsDirectoryA
+1	000287E8	shlwapi.dll	0249	PathFileExistsA
+1	000287EC	shlwapi.dll	0299	PathStripToRootA
+1	000287F0	shlwapi.dll	02FB	StrCmpNIA
+1	000287F4	shlwapi.dll	028B	PathRemoveExtensionA
+1	000287F8	shlwapi.dll	026B	PathIsRootA
+1	000287FC	shlwapi.dll	031E	StrStrIA
+1	00028800	shlwapi.dll	0287	PathRemoveBackslashA
+1	00028804	shlwapi.dll	0235	PathAddBackslashA
+1	00028808	shlwapi.dll	024B	PathFindExtensionA
+1	0002880C	shlwapi.dll	0243	PathCompactPathA
+1	00028810	shlwapi.dll	026D	PathIsSameRootA
+1	00028814	shlwapi.dll	028F	PathRenameExtensionA
+1	00028818	shlwapi.dll	0239	PathAppendA
+1	0002881C	shlwapi.dll	0244	PathCompactPathExA
+
+FThunk: 00028824	NbFunc: 00000044
+1	00028824	user32.dll	0175	GetWindowRect
+1	00028828	user32.dll	00C5	EnableWindow
+1	0002882C	user32.dll	026D	SetRect
+1	00028830	user32.dll	00E2	ExitWindowsEx
+1	00028834	user32.dll	023C	SendMessageA
+1	00028838	user32.dll	0146	GetParent
+1	0002883C	user32.dll	0100	GetClientRect
+1	00028840	user32.dll	0194	InvalidateRect
+1	00028844	user32.dll	01B8	LoadCursorA
+1	00028848	user32.dll	0200	PostMessageA
+1	0002884C	user32.dll	0035	CharUpperA
+1	00028850	user32.dll	021B	RegisterClipboardFormatA
+1	00028854	user32.dll	026E	SetRectEmpty
+1	00028858	user32.dll	004B	CopyRect
+1	0002885C	user32.dll	02D9	wsprintfA
+1	00028860	user32.dll	015B	GetSysColor
+1	00028864	user32.dll	0009	AppendMenuA
+1	00028868	user32.dll	015D	GetSystemMenu
+1	0002886C	user32.dll	0285	SetWindowRgn
+1	00028870	user32.dll	022B	ReleaseDC
+1	00028874	user32.dll	01F3	OffsetRect
+1	00028878	user32.dll	015E	GetSystemMetrics
+1	0002887C	user32.dll	0111	GetDlgCtrlID
+1	00028880	user32.dll	0232	ScreenToClient
+1	00028884	user32.dll	0041	ClientToScreen
+1	00028888	user32.dll	00CC	EnumChildWindows
+1	0002888C	user32.dll	01BC	LoadIconA
+1	00028890	user32.dll	00C3	EnableMenuItem
+1	00028894	user32.dll	015A	GetSubMenu
+1	00028898	user32.dll	01C4	LoadMenuA
+1	0002889C	user32.dll	013D	GetMessagePos
+1	000288A0	user32.dll	027B	SetTimer
+1	000288A4	user32.dll	01B3	KillTimer
+1	000288A8	user32.dll	010C	GetCursorPos
+1	000288AC	user32.dll	00B3	DrawEdge
+1	000288B0	user32.dll	01E5	ModifyMenuA
+1	000288B4	user32.dll	029A	SystemParametersInfoA
+1	000288B8	user32.dll	0138	GetMenuState
+1	000288BC	user32.dll	0139	GetMenuStringA
+1	000288C0	user32.dll	0134	GetMenuItemID
+1	000288C4	user32.dll	0133	GetMenuItemCount
+1	000288C8	user32.dll	0245	SetCapture
+1	000288CC	user32.dll	004A	CopyImage
+1	000288D0	user32.dll	024E	SetCursor
+1	000288D4	user32.dll	01AC	IsWindow
+1	000288D8	user32.dll	0049	CopyIcon
+1	000288DC	user32.dll	01DC	MessageBeep
+1	000288E0	user32.dll	016F	GetWindowLongA
+1	000288E4	user32.dll	02D6	WindowFromPoint
+1	000288E8	user32.dll	00F4	GetCapture
+1	000288EC	user32.dll	00EC	GetActiveWindow
+1	000288F0	user32.dll	01A9	IsRectEmpty
+1	000288F4	user32.dll	016D	GetWindowDC
+1	000288F8	user32.dll	010F	GetDesktopWindow
+1	000288FC	user32.dll	022A	ReleaseCapture
+1	00028900	user32.dll	00E3	FillRect
+1	00028904	user32.dll	018B	InflateRect
+1	00028908	user32.dll	0176	GetWindowRgn
+1	0002890C	user32.dll	020C	PtInRect
+1	00028910	user32.dll	02BC	UpdateWindow
+1	00028914	user32.dll	029C	TabbedTextOutA
+1	00028918	user32.dll	00BD	DrawTextA
+1	0002891C	user32.dll	01FE	PeekMessageA
+1	00028920	user32.dll	01DD	MessageBoxA
+1	00028924	user32.dll	017E	GrayStringA
+1	00028928	user32.dll	010D	GetDC
+1	0002892C	user32.dll	0216	RedrawWindow
+1	00028930	user32.dll	0011	BroadcastSystemMessage
+
+FThunk: 00028938	NbFunc: 00000003
+1	00028938	version.dll	000B	VerQueryValueA
+1	0002893C	version.dll	0001	GetFileVersionInfoA
+1	00028940	version.dll	0002	GetFileVersionInfoSizeA
+
+FThunk: 00028948	NbFunc: 00000001
+1	00028948	winmm.dll	000C	PlaySound
+
+FThunk: 00028950	NbFunc: 00000002
+1	00028950	comdlg32.dll	0070	GetSaveFileNameA
+1	00028954	comdlg32.dll	006E	GetOpenFileNameA
+
+FThunk: 0002895C	NbFunc: 00000001
+1	0002895C	ole32.dll	0092	CreateStreamOnHGlobal
+

@@ -1,0 +1,36 @@
+
+///////////// **********               ****************
+///////////// ********** Inicio SCRIPT ****************
+Tabla semillas 0x880000h
+Tabla Encriptación en: 0x2530000h
+
+Actualizando nueva DLL 0x79000000h
+Informacion DLL
+----------------------
+Tabla Exportacion    : 79001268
+Base Exportacion     : 11
+NumberOfFunctions    : 7E
+NumberOfNames        : 7B
+AddressOfFunctions   : 79001290
+AddressOfNames       : 79001488
+AddressOfNameOrdinals: 79001674
+
+el archivo C:\Archivos de programa\Direct Access 2.8.0.0\79000000.bin NO existe
+Creando Semillas para: 0x79000000
+********** Tabla Semillas creadas para DLL 0x79000000
+
+///////////// ********** Informacion REGISTRO 0x1h
+punteroTabla: 115EF961
+semilla: FD6BBE66
+posicion semilla: 77
+EsKernel para 79000000 termina con valor: FFFFFFFF
+Es_Ntdll para 79004DDB termina con valor: FFFFFFFF
+api: mscoree._CorExeMain
+Desencripta IAT obtiene: 0x11002000h
+Repara IAT mov [11002000], 79004DDB
+EsCampoValido para C0082DE5 termina con valor: 1
+Desencripta Instruccion obtiene: 0x11416F2Eh
+opcode instruccion 0xFFh
+EsCampoValido para AAAAAAAA termina con valor: 0
+EsCampoValido para FFFFFFFF termina con valor: 0
+Se Repararon 0x1h REGISTROS

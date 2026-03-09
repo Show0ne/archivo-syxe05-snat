@@ -1,0 +1,63 @@
+ var direc
+ var api
+ var pos
+ mov pos, 41f400
+
+ inicio:
+ mov ebx, pos
+ mov ebx, [ebx]
+ cmp ebx, 0
+ je termina
+ mov eip, ebx
+ bphws [pos], "x"
+ eob empiezo
+ run
+
+ empiezo:
+ cmp eip, [pos]
+ jne vamos
+ run
+
+ vamos:
+ cmp eip, 0BF5E83
+ jne no_direc
+ mov direc, eax
+ eob no_direc
+ run
+
+ no_direc:
+ cmp eip, 0BF6258
+ jne revisa
+ mov api, eax
+ mov ebx, 418000
+
+ loop:
+ mov ecx, [ebx]
+ cmp ecx, api
+ je tengo
+ add ebx, 4
+ cmp ebx, 418930
+ je termina
+ jmp loop
+
+ tengo:
+ mov eax, direc
+ mov [eax], #FF15#
+ add eax, 2
+ mov [eax], ebx
+ mov eip, 0BF62B4
+ eob otro
+ run
+
+ otro:
+ bphwc [pos]
+ add pos, 4
+ jmp inicio
+
+ revisa:
+ cmp eip, [pos]
+ jne termina
+ jmp otro
+ 
+ termina:
+ ret

@@ -1,0 +1,438 @@
+
+ Los p@rches aparecen según su orden de realización, by: [SyXe]
+						         hAcK-c0d3d
+  1: Link200
+  2: Wizard Brush 3.0
+  3: PCInvestigator v2.05
+  4: WinLock 1.0
+  5: Win-eXpose Registry 1.00
+  6: Win-eXpose I/O 2.00
+  7: Lockout v3.1
+  8: PCGuard v3.0
+  9: NeverHack v1.20
+ 10: BurnItTest 3.0
+ 11: SafeInstall98 v2.3
+ 12: DietMP3 03.00.03
+ 13: Anti-Hack 2.0
+ 14: UnWWWrap
+ 15: CC Get MAC Address
+ 16: UltraEdit32 v.700
+ 17: Konvertor 2.12
+ 18: GIF Movie Gear 2.63
+ 19: Flash 4
+ 20: HTML Webmaster 2.0
+ 21: Babylon Pro v3.2.40
+ 22: Folder Guard 4.14
+ 23: SleepTimer2
+ 24: ElectrofanteBox 1.2.0
+ 25: Noah's Ark v1.1
+ 26: Chess Partner v5.2
+ 27: Folder Guard v2.3
+ 28: All MEdia Library v7.11
+ 29: Super Cipher v1.0
+ 30: AxMan v3.12
+ 31: Winrar v2.04
+ 32: TaskTracker v1.0.352
+ 33: ACDSee32 v2.41
+ 34: Winamp Pro v5.03
+ 35: Audio MP3 Maker 1.06
+ 36: mecawin
+ 37: e-wall v2.5
+ 38: vtrain v4.5
+ 39: Atomica Deluxe 2.52
+ 40: Quiztotal v0.82
+ 41: Dinomite Deluxe 2.71
+ 42: Any Capture Screen v2.36
+ 43: Enigmo_dl
+ 44: Mummy Maze v1.1
+ 45: Seven Seas Deluxe v.1.13
+ 46: Big Money Deluxe v1.22
+ 47: snowball run
+ 48: CD-Recorder 3.0 Plus
+ 49: HexWorkShop v2.53
+ 50: Sanity Media Master v1.0.0.1
+ 51: Hedit v2.0.04
+ 52: WinRescue98 v5.02
+ 53: Acces Administrator v3.9
+ 54: Cover Your Tracks v3.6
+ 55: ReadPlease Plus 2003.1.10
+ 56: The Bat v3.0
+ 57: Alcohol v1.4.3 (Build 410)
+ 58: ON SPEED
+ 59: Super Jigsaw Puzzle v1.2.1
+ 60: Acces Administrator v3.9
+ 61: Combo Chaos v1.1
+ 62: Dominoes v1.0.1.1
+ 63: MamSoft CD-Run v1.0
+ 64: ImageRecall3 v1.0
+ 65: DVD-Lab v1.3
+ 66: Winamp Pro v5.07
+ 67: Irfan_view v3.95
+ 68: Winpix v1.0
+ 69: Turbo Photo v3.0.0.1
+ 70: PhotoLightning v2.3
+ 71: Winamp Pro v5.05
+ 72: XnView v1.66
+ 73: Info Tel v5.00
+ 74: Organizer Plus v1.0
+ 75: Techfacts XP v2.60
+ 76: Hangman v2.0 (juego para Win95)
+ 77: New Year Slots (juego)
+ 78: Absolute Spades v1.2 (juego)
+ 79: St Patrick Slots
+ 80: Time Jumper v1.0 (juego)
+ 81: Piano v2.6.160
+ 82: Excellent Killer v2.10
+ 83: Magix MP3 Maker v1.06
+ 84: Othello v2.1 (juego)
+ 85: Poker Patience Pack v1.0.0.0 (juego)
+ 86: FreshUI V6.20
+ 87: Fresh Diagnose v6.00
+ 88: Acey Ducey Backgammon (juego)
+ 89: Buzzsaw CD-Ripper v3.0
+ 90: Wav Editor v3.2.0.1
+ 91: Advanced Uninstaller Pro 2002
+ 92: Blue Knight Shield v1.1.0
+ 93: WinRar v3.0
+ 94: Backup My Drivers v2.21
+ 95: Rasputín v1.6
+ 96: Absolutely On-Line v2.9 Build 40
+ 97: Super Cleaner v2.43
+ 98: Sicyon v3.0
+ 99: BoDetect v3.5
+100: Serene Scren Aquarium 2.0
+101: WinRar v3.20
+102: WinRar v3.30
+103: MP3Codec v1.64
+104: WinRar v3.40
+105: CD-Rippper v2.82
+106: Winamp v5.0 Pro
+107: Winamp v5.03c Pro
+108: Super DVD Ripper v1.68
+109: Super DVD Ripper v1.89
+110: Zero Popup v3.1
+111: Acoustica v2.25b
+112: Dr.Tag Plus v1.00.1
+113: RelayFax v5.0.2
+114: SmartDrawPhoto v2.03
+115: Digital Cookbook v2.5
+116: CalcMat v2.0
+117: Babylon Translator v3.1
+118: File Safe 2.1
+119: Add Remove Plus! 2002 v3.0
+120: WinZip v8.0
+121: Winzip v8.1
+122: WinRar v2.90
+123: PhotoToFilm v1.2.0.37
+124: avast32 v3.0-247
+125: Secure Anti-Trojan v2.14
+126: Ricochet Xtreme (juego)
+127: Danu TermiNET
+128: Ashampoo Security Manager 2000 v1.2
+129: Icon Lock-It 2000
+130: FotoFinish v3.01
+131: Visual Fincas v4.5
+132: UltraEdit-32 v6.20b
+133: WinZip v9.0
+134: WinZip v7.0
+135: UltraEdit32 v11.00
+136: UltraEdit32 v8.00a
+137: Numega SmartCheck v6.03
+138: ACDSee v2.43
+139: IP Sniffer v3.91 Build 0738
+140: Big Balloon Blowout v1.2
+141: PE Explorer v1.96
+142: Magic Inlay 
+143: Fusion
+144: Chainz
+145: 5 Spots
+146: ULtraBall
+147: Rumble Cube Deluxe
+148: Tip Top
+149: Equilibra
+150: Search & Replace 1.9.3 (Build 98)
+151: Advanced Archive Password Recovery 2.20
+152: Perfect KeyLogger 1.5.3.3
+153: Perfect KeyLogger Lite
+154: Perfect KeyLogger 1.44
+155: Super Pool 1.7.0.0
+156: Cue Master 9.0.0.383
+157: AKoff Music Composer 1.45
+158: IE Doctor 3.2 (Build 1.339)
+159: PurgeIE 4.02
+160: Advanced Registry Tracer 1.67
+161: TuneUp Utilities 2003 3.1.2005
+162: KeeLogger
+163: GIFmation 2.22
+164: FlashGet 1.60a
+165: CDCheck 3.0.1.43
+166: Green Browser 2.3 (Build 0820)
+167: CPUIdle 5.8
+168: CofeeCup Direct FTP 6.1
+169: ImageKeep Express 1.0.1
+170: iProtect Portable 1.5
+171: ReGet Deluxe 3.2 (Build 156)
+172: DVD2one 1.00
+173: PhotoTags 2.5
+174: Digibook 1.0
+175: MicroDVD 1.2
+176: Exifer 2.1.5 (Build 263)
+177: ReGetJr 2.2 (Build 143)
+178: Agent Ransack 1.7.3
+179: RAM Idle Professional 3.4
+180: NeoWatch 2.0
+181: Sun-Moon-Calendar 7.0.0.1
+182: Tweak Manager 2.1
+183: Browse Anywhere 1.21
+184: Offline Explorer 2.9
+185: Cerberus FTP Server 2.16
+186: F-Secure AntiVirus 4.09.2430
+187: ANTIDOTE AntiVirus 2000
+188: Norman Virus Control 4.81
+189: RAV for Windows v.8
+190: McAfee VirusScan 5.15.002
+191: AVX Professional 5.9.0
+192: The Cleaner 3.2
+193: Dr.Web 4.23
+194: Norman Firewall 1.0
+195: CD-R Diagnostic 0.1.2.0
+196: CdrWin 3.7a
+197: Nero Burning-Rom 4.0.7.5
+198: Nero Burning-Rom 4.0.7.0
+199: Startup Organizer 1.7
+200: Xara3D5
+201: Xara X1
+202: ScreenLock 7.1.8
+203: Cinematograph 2.1.3.0
+204: Gif-Gif-Gif
+205: Floppy Image 2.1
+206: The Cleaner 3.5
+207: IMS Mensajes en espera
+208: Outpost Firewall 2.1.303.4009
+209: PowerDVD 2.55
+210: The Bat 3.0
+211: SilverFast 6.4.0r3
+212: Paint Shop Pro 7.02
+213: CloneDVD 1.1.7.1
+214: CloneCD 4.0.0.1
+215: Omniquad Set Me Up 98
+216: jv16 PowerTools 1.4
+217: WinISO 5.3
+218: FileBack PC 3.26b
+219: SoftIce 4.01
+220: Offline Explorer 1.9
+221: Express Thumbnail Creator 1.45
+222: cam2pc 4.4
+223: IMatch 3.4
+224: Red Eye Remover 1.7
+225: VCW VicMan's Photo Editor PRO 7.84
+226: Corel Painter IX
+227: Nero Burning-Rom 6.6.0.0
+228: DeviceLock Me 1.2
+229: Align It! 2.07
+230: Nero Burning-Rom 6.3.0.0
+231: Nero Burning-Rom 6.0.0.11
+232: Nero Burning-Rom 6.6.0.0
+233: CloneCD 4.0.1.10
+234: CloneCD 4.1.0.1
+235: CloneCD 4.2.0.2
+236: CloneCD 4.3.1.7
+237: Partition Magic 8.0
+238: Advanced Administrative Tools 4.30
+239: Advanced Tetric 3.61
+240: HyperSnap-DX 4.12.01
+241: SuperDIR 2000 8.13
+242: Cacheman 5.50
+243: Terragen 0.8
+244: 4th Dimension 4.10
+245: Netron
+244: Hex Workshop 4.23
+246: EZ Extractor Resource 1.77
+247: TaskInfo 5.0.1.104
+248: CDRoller 5.33
+249: Acoustica CD/DVD Label Maker 2.34
+250: Acoustica MP3 Audio Mixer 2.471
+251: Active@ File Recovery 5.1
+252: Arithmogriph 2.0
+253: BadCopy Pro 3.75
+254: DeskCalc 3.0.7
+255: PECompact2 GUI
+256: CloneCD 5.0.3.1
+257: CloneCD 4.0.0.0
+258: eXeScope 6.41
+259: Sweet Little Piano 1.82
+260: The Customiser
+261: Sweet Little Piano 1.6
+262: MathCad 7.0 Pro
+263: ACDSee 5.0
+264: Restorator 3.00
+265: Macro Magic 4.1t
+266: Omniquad Detective 2.1e
+267: Drive Scrubber Professional 2.0a
+268: Omniquad ErgoSense 2.0.2
+269: ProtectX Standard Edition 4.02
+270: ApySpy32 2.4
+271: ACDSee 4.0.1
+272: ACDSee 3.1
+273: Omniquad Remote Control 2.29
+274: Omniquad File Encryptor 1.0.1
+275: Omniquad Password Organizer 1.0.0
+276: Omniquad PopUpSlasher
+277: Search & Recover2 2.5
+278: Omniquad Surfwall Home Ed 1.1
+279: System Mechanic 5.5a
+280: System Shield 2.1a
+281: Omniquad Total Security 2.0.0
+282: Visual Protect 3.5.4
+283: PKLite32 1.1
+284: Xara3D5 5.01
+285: WTM Register Maker 1.2
+286: TextPad 4.7.3
+287: Update Toolkit
+288: WildEdit 1.1
+289: Drive Bar 2.2
+290: Runtime's DiskExplorer for NTFS
+291: Directory Toolkit 4.8
+292: Application Mover
+293: Application Inventori 2.1
+294: Search & Replace 5.1
+295: Directory Snoop 5.00
+296: Dr. Hardware 2004 5.5.0e
+297: AutoDialogs 2.3.144
+298: Desk Tool 3.0
+299: TrayIcon Pro 1.5
+300: Startup Organizer 2.5
+301: Offline Explorer 3.7
+302: Visual Workshop 4.2
+303: TrayIcon 3.1.153
+304: File Merge 2.6
+305: Cool Mouse 3.4 (ASProtect)
+306: WinGo 1.6.74
+307: Offline Explorer Pro 3.7
+308: Links Organizer 1.9
+309: LighPad 4.2
+310: Advanced Grapher 2.08
+311: Alchemy Network Inventory 1.4.12 (ASProtect)
+312: MecaNet 4.0
+313: PhotoCleaner 2.3.0.110
+314: MetaProducts Integra 1.0.63
+315: Allaire HomeSite 4.0.1
+316: Surflater 1.10
+317: MetaProducts Inquiry 1.0.132
+318: ReGet Deluxe 3.2 (ASProtect)
+319: Macromedia Dreamweaver MX 400 (VBox 4.3 - 4.6x)
+320: Anti-Virus Grisoft 7.0
+321: 3D FotoStudio 1.2
+322: VCDCutter 4.03
+323: CuteZip 1.1
+324: WinRar 2.71
+325: BlackBoard Internet Privacy 5.0
+326: LiveMotion 1.0.2.14 (VBox 4.3 - 4.6x)
+327: F-Secure AntiVirus 4.07.1501
+328: HyperSnap-DX 4.31.01
+329: mIRC 6.01
+330: PentaZip 4.1
+331: Digital Waves 1.0
+332: 12Ghosts XP 5.05
+333: Ashampoo WinOptimizer Suite 1.30
+334: 123 Spam Filter 1.5.5
+335: Acoustica CD Label Maker 1.42
+336: Acoustica CD Burner 4.01
+337: Acoustica MP3 To WAV Converter PLUS 2.5 b20
+338: AlarmWiz 2.00
+339: Antechinus Media Editor 4.0
+340: Advanced WMA Workshop 1.76
+341: Audio Playback Recorder 3.0
+342: Audio Sliders 3.1
+343: Clipcache Plus 2.9
+344: DOC Regenerator 2.01
+345: DU Meter 3.07
+346: Ease Audio Converter 1.20
+347: Visual MP3 4.3.1
+348: Easy Screensaver Creator 1.2.5.163
+349: Visual Text To Speech MP3 1.1
+350: MuzicMan 4.5.322
+351: Ashampoo MP3 Studio Deluxe 1.035
+352: Paragon Encrypted Disk 1.02.004
+353: HyperSnap-DX 4.22.01
+354: ACDSee 4.0
+355: Achille'Shield 3.0
+356: pcAnywhere 9.2.0
+357: Norton Utilities 2001
+358: CMonitor 1.6
+359: Cool Post-IT 1.50
+360: MP3fox 4.0
+361: ZipMagic 2000 3.0
+362: Aladdin Systems (StuffIt)
+363: CollegeBAR 6.0.0
+364: ABC VideoRoll 2.5
+365: CSTiempo 2000 2.1.16
+366: DART Karaoke Studio 1.1
+367: Download Mage Level 1.75
+368: FlashGet(JetCar) 0.91
+369: FTP Serv-U 2.5h
+370: PerformanceTest 3.3
+371: ASProtect 1.2
+372: AtomTime98 2.2
+373: Argentum Coolbase 2.30
+374: Buzof 1.7
+375: AutoMate 5.5.4.0
+376: Active Desktop Calendar 5.3
+377: FontLook 3.6
+378: Macromedia Dreamweaver 3.0
+379: Macromedia Fireworks 3.0
+380: xReminder 3.6
+381: Webcam Screen Saver 1.10
+382: Virtual turntables 1.80.04
+383: Visual Labels 3.2k
+384: Macromedia Flash MX 2004 7.2
+385: AntiCuteAndPaste 1.0.1
+386: IDesk 2.60
+387: WinOmega 5.12.5
+388: MorphInk 1.5.023
+389: Font Creator 3.0
+390: ReadyCode'98
+391: WebClicker 1.0
+392: Easy Registry Compare 1.22
+393: AgendaMSD 2.0
+394: CiberBoss 2.1
+395: Advanced Direct Remailer 2.0
+396: 007 Starr Commander 2.0
+397: PC DataFinder 5.5
+398: Bank Easy 2.1
+399: dBpower Music Converter
+400: SnagIt 4.3.4
+401: UltraEdit 10.20d (Armadillo)
+402: PowerGuard 1.1 (Armadillo)
+402: Ex-Stor5 (Armadillo)
+403: MP3_to_Audio_CD_Maker 2.0.0
+404: AquaCrypt 1.0 (Armadillo)
+405: WebCrypt Pro 2000 4.1 (Armadillo)
+406: NetLightning 2000 (Armadillo)
+407: RamMagic (Armadillo)
+408: Banner Maker Pro 6 (Armadillo)
+409: TaskGuard 2000 1.3a (Armadillo)
+410: Visual MP3 CDBurner 1.3.2
+411: Visual MP3 To Wav Converter 1.2
+412: Visual Text To Speech MP3 1.3
+413: AWinstall 3.6
+414: Easy PDF 2.2.1
+415: PhotoShaman 1.2.2
+416: PDF_reDirect 2.0.14
+417: ZAP 2.0 (Armadillo)
+418: Winrar 3.5 beta 2
+419: Cubis Gold (Armadillo)
+420: Nisqually
+421: Shorcut Doctor 3.1
+422: PacBomber 1.6.1
+423: Ace Screensaver 2.40
+424: Flash Saver Maker 1.68
+425: AIMPR 2.70
+426: All To MP3 Converter v1.6rc3
+427: Audio Edit 3.4
+428: 123 Audio CD Ripper 2.10
+429: Audio converter 4.0 
+430: Calculadora 3TF 2.01
+431: 24x7 Scheduler 3.4.23
+432: AccesImage 5.20
+

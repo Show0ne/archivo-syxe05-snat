@@ -1,0 +1,12 @@
+inicio:
+eob vamos
+run
+
+vamos:
+cmp eip, 0ca57eb
+jne termina
+mov eip, 0ca57ed
+jmp inicio
+
+termina:
+ret

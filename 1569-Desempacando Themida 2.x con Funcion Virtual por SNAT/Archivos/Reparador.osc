@@ -1,0 +1,846 @@
+var inicio_tabla_iat
+var longitud_tabla_iat
+var punteroTabla
+var valorTabla
+var llave_encriptacion
+var antigua_llave
+var flag_virtualizacion
+var flag_excepcion
+var virtualizar
+
+var baseExportacion
+var numberOfNames
+var numberOfFunctions
+var addressOfFunctions
+var addressOfNames
+var addressOfNameOrdinals
+
+var constante1
+var constante2
+var constante3
+var constante4
+var constante5
+var constante6
+
+var base_exe
+var tabla_base_DLLs
+var puntero_base_DLL
+var base_dll
+var direccion_lodsb
+var temp
+var api
+var direccionIAT
+var direccionInstruccion
+var semilla
+var tabla_semillas
+var tabla_semillas_excepcion
+var puntero_tabla_encriptacion
+var tabla_encriptacion
+var contador_registros
+
+mov constante1, 11F1B33A
+mov constante2, 21D17672
+mov constante3, 7BCBA926
+mov constante4, 7C80CD7D
+mov constante5, 5EB0A3E3
+mov constante6, 90B398EE
+
+mov inicio_tabla_iat, 9442CD
+mov longitud_tabla_iat, 7130
+mov llave_encriptacion, 0
+mov antigua_llave, 0
+
+mov tabla_base_DLLs, 6E08E7
+mov direccion_lodsb, 95728E
+mov puntero_tabla_encriptacion, 90A4F9
+mov tabla_semillas_excepcion, 953ADD
+mov contador_registros, 0
+
+lc
+lclr
+
+var log
+mov log, "Reparador.txt"
+wrta log, "///////////// **********               ****************"
+wrta log, "///////////// ********** Inicio SCRIPT ****************"
+
+alloc 1000
+mov tabla_semillas, $RESULT
+eval "Tabla semillas 0x{tabla_semillas}h"
+wrta log, $RESULT
+
+exec
+mov eax, fs:[18]
+mov eax, ds:[eax+030h]
+mov eax,dword ptr ds:[eax+08h]
+ende
+mov base_exe, eax
+
+var oep
+mov oep, 56F986
+
+//////// ****** LLEGAMOS AL OEP
+push oep
+push direccion_lodsb
+call AlOEP
+
+mov punteroTabla, inicio_tabla_iat
+mov base_dll, [puntero_base_DLL]
+
+loop_principal:
+
+push base_dll
+call FijaFlagVirtual
+
+history 0
+
+eval "Actualizando nueva DLL 0x{base_dll}h"
+wrta log,$RESULT
+
+push base_dll
+call ActualizaDLL
+
+push base_dll
+call ExisteTablaSemillas
+cmp $RESULT, 1	; no existe
+je carga_Tabla_semillas
+
+push base_dll
+call CreaTablaSemillas
+
+push base_dll
+call SalvaTablaSemillas
+jmp continua_semillas
+
+carga_Tabla_semillas:
+push base_dll
+call CargaTablaSemillas
+
+continua_semillas:
+history 1
+
+loop:
+mov valorTabla, [punteroTabla]
+cmp valorTabla, EEEEEEEE
+je finDLL
+cmp valorTabla, AAAAAAAA
+je sigue
+cmp valorTabla, FFFFFFFF
+je sigue
+cmp valorTabla, DDDDDDDD
+je sigue
+
+inc contador_registros
+wrta log, "\r\n"
+eval "///////////// ********** Informacion REGISTRO 0x{contador_registros}h"
+wrta log, $RESULT
+
+mov llave_encriptacion, antigua_llave
+mov antigua_llave, valorTabla
+
+xor valorTabla, llave_encriptacion
+ror valorTabla, 3
+sub valorTabla, constante1
+rol valorTabla, 10
+xor valorTabla, constante2
+
+eval "punteroTabla: {punteroTabla}"
+wrta log, $RESULT
+
+mov semilla, valorTabla
+eval "semilla: {semilla}"
+wrta log, $RESULT
+
+cmp [punteroTabla+4], BBBBBBBB
+je casoEspecial
+
+push semilla
+push tabla_semillas
+call BuscaSemilla
+cmp $RESULT, -1
+je abortar			; problemas
+
+mov temp, $RESULT
+
+eval "posicion semilla: {temp}"
+wrta log, $RESULT
+
+shl temp, 1
+add temp, addressOfNameOrdinals
+mov temp, [temp]
+and temp, 0000ffff
+shl temp, 2
+add temp, addressOfFunctions
+mov temp, [temp]
+add temp, base_dll 
+mov api, temp
+
+push base_dll
+call EsKernel
+cmp $RESULT, -1
+je no_ntdll
+
+push api
+call EsNtdll
+cmp $RESULT, -1
+je no_ntdll
+mov api, $RESULT
+
+no_ntdll:
+
+retornoEspecial:
+gn api
+mov nombre, $RESULT
+eval "api: {nombre}"
+wrta log, $RESULT
+
+add punteroTabla, 4
+mov valorTabla, [punteroTabla]
+
+continua:
+mov virtualizar, 0
+cmp flag_virtualizacion, 0
+je desencriptar
+push semilla
+push tabla_semillas_excepcion
+call EsExcepcion
+mov flag_excepcion, $RESULT
+
+mov virtualizar, flag_virtualizacion
+and virtualizar, flag_excepcion
+neg virtualizar
+inc virtualizar
+
+eval "virtualizacion activa: {virtualizar}"
+wrta log, $RESULT
+
+desencriptar:
+push valorTabla
+push virtualizar
+call DesencriptaIAT
+mov temp, $RESULT
+mov direccionIAT, temp
+
+push api
+push direccionIAT
+call ReparaIAT
+
+siguienteInstruccion:
+add punteroTabla, 4
+mov valorTabla, [punteroTabla]
+
+push valorTabla
+call EsCampoValido
+cmp $RESULT, 1
+je es_Valido
+cmp valorTabla, FFFFFFFF
+je loop
+jmp siguienteInstruccion
+
+es_Valido:
+push valorTabla
+push virtualizar
+call DesencriptaInstruccion
+mov temp, $RESULT
+mov direccionInstruccion, temp
+mov temp, [temp]
+and temp, 000000ff
+eval "opcode instruccion 0x{temp}h"
+wrta log, $RESULT
+cmp temp, 90
+je procesaInstruccion
+cmp temp, 0E9
+je procesaInstruccion
+jne siguienteInstruccion
+
+procesaInstruccion:
+cmp [punteroTabla+4], AAAAAAAA
+je reparaJMP
+
+eval "reparando CALL en 0x{direccionInstruccion}h"
+wrta log, $RESULT
+push 1
+push direccionIAT
+push direccionInstruccion
+call ReparaInstruccion
+jmp siguienteInstruccion
+
+reparaJMP:
+eval "reparando JMP en 0x{direccionInstruccion}h"
+wrta log, $RESULT
+push 0
+push direccionIAT
+push direccionInstruccion
+call ReparaInstruccion
+jmp siguienteInstruccion
+
+sigue:
+add punteroTabla, 4
+jmp loop
+
+casoEspecial:
+sub valorTabla, baseExportacion
+shl valorTabla, 2
+add valorTabla, addressOfFunctions
+mov valorTabla, [valorTabla]
+add valorTabla, base_dll
+mov api, valorTabla
+gn api
+mov nombreAPI, $RESULT
+
+eval "Caso ESPECIAL {nombreAPI} en [0x{punteroTabla}]"
+wrta log, $RESULT
+
+add punteroTabla, 4	       ; salteamos las BBBBBBBB
+jmp retornoEspecial
+
+finDLL:
+add punteroTabla, 4
+cmp [punteroTabla], 0	   ; fin de tabla ?
+je termina
+
+mov [puntero_base_DLL], 0  ; borra base anterior
+add puntero_base_DLL, 4
+mov base_dll, [puntero_base_DLL]
+cmp base_dll, 0
+je termina
+
+
+fill tabla_semillas, 1000, 0
+jmp loop_principal
+
+termina:
+fill inicio_tabla_iat, longitud_tabla_iat, 0
+free tabla_encriptacion
+free tabla_semillas
+refresh
+
+eval "Se Repararon 0x{contador_registros}h REGISTROS"
+wrta log, $RESULT
+wrta log, "\r\n"
+MSG $RESULT
+dpe "dumpeado.exe", eip
+popa
+ret
+
+abortar:
+wrta log, "Error de ejecución del script, abortando.."
+MSG "Error buscando semilla en tabla_Semillas"
+ret
+
+
+////////////////// ******************
+BuscaSemilla:
+var Local1
+var Local2
+var Local3
+var Local4
+var contador
+
+pop Local1	; tabla_semillas
+pop Local2  ; semilla
+
+mov contador, -1
+var puntoInicio
+mov puntoInicio, Local1
+mov Local4, puntoInicio
+
+loop_bs:
+inc contador
+mov Local3, [Local4]
+cmp Local3, 0
+je problemas
+add Local4, 4
+cmp Local3, Local2
+jne loop_bs
+jmp finaliza_bs
+
+problemas:
+mov $RESULT, -1   ; Problemas Reparando..
+ret
+
+finaliza_bs:
+mov $RESULT, contador
+ret
+
+
+////////////////// ******************
+DesencriptaIAT:
+var Local1
+pop Local1	; flag_virtualizacion
+var Local2
+pop Local2	; campo_IAT
+
+cmp Local1, 1
+je iat_virtualizada
+
+rol Local2, 5
+add Local2, constante2
+jmp termina_diat
+
+iat_virtualizada:
+sub Local2, constante3
+rol Local2, 5
+xor Local2, constante4
+
+termina_diat:
+add Local2, base_exe	; add base_exe
+
+mov diat, Local2
+eval "Desencripta IAT obtiene: 0x{diat}h"
+wrta log, $RESULT
+
+mov $RESULT, diat
+ret
+
+
+////////////////// ******************
+DesencriptaInstruccion:
+var Local1
+pop Local1	; flag_virtualizacion
+var Local2
+pop Local2	; campo_Instruccion
+
+cmp Local1, 1
+je instruccion_virtualizada
+
+rol Local2, 3
+jmp termina_dins
+
+instruccion_virtualizada:
+sub Local2, constante5
+rol Local2, 5
+xor Local2, constante6
+
+termina_dins:
+add Local2, base_exe	; add base_exe
+
+mov dins, Local2
+eval "Desencripta Instruccion obtiene: 0x{dins}h"
+wrta log, $RESULT
+mov $RESULT, dins
+ret
+
+
+////////////////// ******************
+ReparaIAT:
+var Local1
+pop Local1	; direccionIAT
+var Local2
+pop Local2	; api
+eval "Repara IAT mov [{Local1}], {Local2}"
+wrta log, $RESULT
+mov [Local1], Local2
+ret
+
+
+////////////////// ******************
+ReparaInstruccion:
+var Local1
+pop Local1	; dirección del jmp | call
+var Local2
+pop Local2	; direccion iat
+var Local3  ; call o jmp
+pop Local3
+
+cmp Local3, 1
+je es_call
+eval "jmp dword ptr [{Local2}]"
+jmp fin_repara
+
+es_call:
+eval "call dword ptr [{Local2}]"
+
+fin_repara:
+mov rinst, $RESULT
+eval "Instruccion Ensamblada: {rinst}"
+wrta log, $RESULT
+asm Local1, rinst
+ret
+
+
+////////////////// ******************
+EsKernel:
+var Local1
+pop Local1		; base_dll
+
+gma "KERNEL32", MODULEBASE
+cmp Local1, $RESULT
+je es_kernel
+mov $RESULT, -1
+jmp termina_EsKernel
+
+es_kernel:
+mov $RESULT, 1
+
+termina_EsKernel:
+mov r0, $RESULT
+eval "EsKernel para {Local1} termina con valor: {r0}"
+wrta log, $RESULT
+mov r0, $RESULT
+ret
+
+////////////////// ******************
+EsNtdll:
+var Local1
+var Local2
+var Local3
+
+pop Local1     ; api
+
+gmi Local1, MODULEBASE
+mov Local3, $RESULT
+gma "KERNEL32", MODULEBASE
+cmp Local3, $RESULT
+jne no_reparar
+
+mov Local2, [Local1]
+cmp Local2, 4C44544E	; "NTDL"
+jne no_reparar
+
+add Local1, 6	        ; evita el NTDLL. inicial
+gstr Local1
+gpa [Local1], "NTDLL.dll"
+jmp temina_ntdll
+
+no_reparar:
+mov $RESULT, -1
+
+temina_ntdll:
+mov r, $RESULT
+eval "EsNtdll para {Local1} termina con valor: {r}"
+wrta log, $RESULT
+mov $RESULT, r
+ret
+
+
+////////////////// ******************
+EsCampoValido:
+var Local1
+pop Local1	; siguiente campo
+
+cmp Local1, FFFFFFFF
+je invalido
+cmp Local1, EEEEEEEE
+je invalido
+cmp Local1, DDDDDDDD
+je invalido
+cmp Local1, BBBBBBBB
+je invalido
+cmp Local1, AAAAAAAA
+je invalido
+
+mov $RESULT, 1
+jmp termina_cv
+
+invalido:
+mov $RESULT, 0
+
+termina_cv:
+mov rescv, $RESULT
+eval "EsCampoValido para {Local1} termina con valor: {rescv}"
+wrta log, $RESULT
+mov $RESULT, rescv
+ret
+
+
+////////////////// ******************
+ActualizaDLL:
+var Local1
+pop Local1	; base_dll
+
+xor eax, eax                         
+xor ecx, ecx                         
+xor edx, edx
+mov ecx, Local1
+mov edi, 3C
+mov esi, ecx                         
+add esi, edi      ; puntero a offset PE Signature
+mov eax, [esi]    ; offset PE Signature
+add eax, ecx      ; va PE Signature
+mov ebx, eax                         
+add ebx, 78       ; desplazamiento Export Table
+mov esi, [ebx]    ; offset Export Table
+add esi, ecx      ; va Export Table
+
+mov tabla_exportacion, esi
+mov baseExportacion, [esi+10]
+mov numberOfFunctions, [esi+14]
+mov numberOfNames, [esi+18]
+mov addressOfFunctions, [esi+1C]
+mov addressOfNames, [esi+20]
+mov addressOfNameOrdinals, [esi+24]
+
+add addressOfFunctions, Local1
+add addressOfNames, Local1
+add addressOfNameOrdinals, Local1
+
+wrta log,"Informacion DLL"
+wrta log,"---------------"
+wrta log, tabla_exportacion
+wrta log, baseExportacion
+wrta log, numberOfFunctions
+wrta log, numberOfNames
+wrta log, addressOfFunctions
+wrta log, addressOfNames
+wrta log, addressOfNameOrdinals
+wrta log, "\r\n"
+ret
+
+
+////////////////// ******************
+FijaFlagVirtual:
+var Local1
+pop Local1	; base_dll
+
+gma "KERNEL32", MODULEBASE
+cmp Local1, $RESULT
+je virtualizar
+gma "USER32", MODULEBASE
+cmp Local1, $RESULT
+je virtualizar
+gma "ADVAPI32", MODULEBASE
+cmp Local1, $RESULT
+je virtualizar
+
+mov flag_virtualizacion, 0
+jmp termina_ffv
+
+virtualizar:
+mov flag_virtualizacion, 1
+
+termina_ffv:
+ret
+
+
+////////////////// ******************
+EsExcepcion:
+var Local1
+var Local2
+
+pop Local1	; tabla_semillas_excepcion
+pop Local2  ; semilla
+
+push Local2
+push Local1
+call BuscaSemilla
+cmp $RESULT, -1
+je no_es_excepcion
+mov $RESULT, 1
+jmp termina_ee
+
+no_es_excepcion:
+mov $RESULT, 0
+
+termina_ee:
+ret
+
+
+////////////////// ******************
+CreaTablaSemillas:
+eval "Creando Semillas para: 0x{base_dll}"
+wrta log, $RESULT
+var Local1
+pop Local1
+
+var puntero_tabla_semillas
+var contador_semillas
+mov contador_semillas, 0
+mov puntero_tabla_semillas, tabla_semillas
+
+GMI Local1, EDATATABLE
+mov esi, $RESULT
+mov local_numberOfNames, [esi+18]
+mov local_addressOfNames, [esi+20]
+add local_addressOfNames, Local1
+
+mov ecx, local_addressOfNames          ; addressOfNames
+mov puntero_addressOfFunctions, local_addressOfNames
+
+mov edi, puntero_addressOfFunctions    ; offset_nombre_api
+mov esi, edi
+
+crea_semilla:
+cmp contador_semillas, local_numberOfNames
+je termina_cs
+
+mov esi, [puntero_addressOfFunctions]  ; obtiene offset api
+add esi, Local1	                       ; puntero al nombre siguiente api
+
+mov edi, esi
+xor al, al
+
+gstr edi
+
+mov edi, $RESULT_1
+inc edi
+
+xor ecx, ecx
+dec ecx
+
+loop_crea_semilla:
+
+mov edx, tabla_encriptacion
+
+xor eax, eax
+mov eax, [esi]
+and eax, 000000ff
+xor al, cl
+inc esi
+mov ebx, eax
+shl ebx, 2
+add ebx, edx
+mov eax, [ebx]
+shr ecx, 8
+xor ecx, eax
+dec edi
+
+cmp edi, 0
+jnz loop_crea_semilla
+
+not ecx
+mov [puntero_tabla_semillas], ecx
+
+inc contador_semillas
+add puntero_tabla_semillas, 4
+add puntero_addressOfFunctions, 4
+jmp crea_semilla
+
+error_crea_semilla:
+mov $RESULT, -1
+wrta log, "Error creando Tabla Semillas !"
+ret
+
+termina_cs:
+eval " ********** Tabla Semillas creadas para DLL 0x{base_dll}"
+wrta log, $RESULT
+
+mov $RESULT, puntero_tabla_semillas
+ret
+
+
+////////////////// ******************
+ExisteTablaSemillas:
+var Local1
+pop Local1	; base_dll
+
+var nombreCompleto
+var rutaTabla
+var directorio
+
+eval "{Local1}.bin"
+mov nombreCompleto, $RESULT
+
+GPI CURRENTDIR
+mov directorio, $RESULT
+
+eval "{directorio}{nombreCompleto}"
+mov rutaTabla, $RESULT
+
+alloc 100
+mov buffer, $RESULT
+mov pSecurity, buffer
+add buffer, 10
+mov offset_nombre, buffer
+mov [offset_nombre], rutaTabla
+
+push 0				; hTemplate
+push 80				; Attributes (NORMAL)
+push 3				; Mode (OPEN_EXISTING)
+push pSecurity		; pSecurity
+push 1				; SharedMode (FILE_SHARE_READ)
+push 80000000		; Access (GENERIC_READ)
+push offset_nombre	; FileName 
+exec
+call CreateFileA
+ende
+
+mov manejador, eax
+log manejador
+
+push manejador
+exec
+call CloseHandle
+ende
+
+cmp manejador, FFFFFFFF
+je no_existe
+
+eval "el archivo {rutaTabla} SI existe"
+wrta log, $RESULT
+mov $RESULT, 1
+jmp termina_ees
+
+no_existe:
+eval "el archivo {rutaTabla} NO existe"
+wrta log, $RESULT
+mov $RESULT, 0
+
+termina_ees:
+free buffer
+refresh
+ret
+
+
+////////////////// ******************
+SalvaTablaSemillas:
+var Local1
+pop Local1	; base_dll
+
+eval "{Local1}.bin"	; ruta relativa
+dm tabla_semillas, 1000, $RESULT
+ret
+
+
+////////////////// ******************
+CargaTablaSemillas:
+var Local1
+pop Local1
+
+eval "{Local1}.bin"	; ruta relativa
+lm tabla_semillas, 0, $RESULT
+ret
+
+
+////////////////// ******************
+AlOEP:
+var Local1
+pop Local1		; direccion lodsb
+var Local2
+pop Local2		; OEP
+
+bphws Local2, "x"
+bphws Local1, "x"
+
+inicio:
+eob rompe
+run
+
+rompe:
+cmp eip, Local1
+je SalvarTablas
+cmp eip, oep
+je Termina_alOEP
+jmp inicio
+
+SalvarTablas:
+; salvamos ahora porque en el EntryPoint no están disponibles
+mov puntero_base_DLL, [tabla_base_DLLs]
+mov tabla_encriptacion, [puntero_tabla_encriptacion]
+
+dm tabla_encriptacion, 1000, "Tabla_Encriptacion.bin"
+dm inicio_tabla_iat, longitud_tabla_iat, "Tabla_IAT.bin"
+dm puntero_base_DLL, 1000, "Base_DLLs.bin"
+bphwc Local1
+jmp inicio
+
+Termina_alOEP:
+pusha
+alloc 1000
+mov tabla_encriptacion, $RESULT
+mov puntero_tabla_encriptacion, tabla_encriptacion
+
+lm tabla_encriptacion, 0, "Tabla_Encriptacion.bin"
+lm inicio_tabla_iat, 0, "Tabla_IAT.bin"
+lm puntero_base_DLL, 0, "Base_DLLs.bin"
+ret

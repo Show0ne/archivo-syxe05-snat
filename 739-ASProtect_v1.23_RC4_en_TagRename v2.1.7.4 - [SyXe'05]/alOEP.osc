@@ -1,0 +1,21 @@
+inicio:
+dbh
+eob vamos
+run
+
+vamos:
+cmp eip, 014D39EC
+je ultima
+esti
+jmp inicio
+
+
+ultima:
+bprm 407e8c, 06
+esti
+eob termina
+run
+
+termina:
+bpmc
+ret

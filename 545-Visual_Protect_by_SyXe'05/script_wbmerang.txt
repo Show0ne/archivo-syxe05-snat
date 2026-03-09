@@ -1,0 +1,33 @@
+start:
+eob vamos
+run
+
+vamos:
+CMP eip, 660152
+je Es_GetProcAddress
+CMP eip, 660038
+jne no_cambio
+MOV eip, 660042
+jmp start
+
+no_cambio:
+CMP eip, 660049
+JNE exit
+CMP esi, 77e40000
+JE cambio
+CMP esi, 77d10000
+JE cambio
+JMP start
+
+Es_GetProcAddress:
+MOV eip, 660161
+JMP start
+
+cambio:
+MOV ebx, ecx
+MOV eax, ecx
+jmp start
+
+
+exit:
+ret

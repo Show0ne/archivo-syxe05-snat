@@ -1,0 +1,17 @@
+inicio:
+dbh                     // ocultamos el debugger
+eob vamos               // nos preparamos para cambiar de etiqueta
+run                     // dejamos que corra el programa
+
+vamos:
+cmp eip, 012AFB34       // estamos en la última excepción?
+je termina              // si es así temina el script
+esti                    // Shift+F7
+jmp inicio              // loopeamos...
+
+termina:
+MSG "Ya estás en la última excepción ;)"
+ret
+
+
+

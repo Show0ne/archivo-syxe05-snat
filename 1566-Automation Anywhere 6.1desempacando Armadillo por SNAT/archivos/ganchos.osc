@@ -1,0 +1,94 @@
+var bp1
+var bp2
+var oep
+var api
+var aux
+var log
+
+mov log, "Ganchos.txt"
+wrt log, "\r\n"
+wrta log, " GANCHOS INSTALADOS \r\n"
+wrta log, " ------------------", "\r\n"
+wrta log, "\r\n"
+
+mov bp1, 37dd6e5
+mov bp2, 37dd752
+mov oep, 44e388
+
+bphws bp1, "x"
+bphws bp2, "x"
+bphws oep, "x"
+LC
+
+ejecuta:
+eob inicio
+run
+
+inicio:
+cmp eip, bp1
+je obtener_dll
+cmp eip, bp2
+je obtener_api
+jmp termina
+
+obtener_dll:
+log "DLL: "
+wrta log, "\r\n"
+wrta log, " DLL: "
+mov api, eax
+GMI api, NAME
+log $RESULT
+wrta log, $RESULT
+wrta log, "\r\n"
+jmp ejecuta
+
+obtener_api:
+mov aux, edx
+mul aux, 4
+add aux, eax
+mov api, [aux]
+GN api
+log $RESULT
+wrta log, "   API: "
+wrta log, $RESULT
+wrta log, "\r\n"
+jmp ejecuta
+
+termina:
+bphwc bp1
+bphwc bp2
+bphwc oep
+ret
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

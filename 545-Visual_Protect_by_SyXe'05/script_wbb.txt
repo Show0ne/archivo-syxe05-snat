@@ -1,0 +1,29 @@
+inicio:
+eob vamos
+run
+
+vamos:
+CMP eip, 880038
+jne no_cambio
+MOV eip, 880042
+jmp inicio
+
+no_cambio:
+CMP eip, 880049
+JNE termina
+CMP esi, 77e40000
+JE cambio
+CMP esi, 77d10000
+JE cambio
+JMP inicio
+
+
+
+cambio:
+MOV ebx, ecx
+MOV eax, ecx
+jmp inicio
+
+
+termina:
+ret

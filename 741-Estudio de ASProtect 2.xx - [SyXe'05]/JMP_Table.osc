@@ -1,0 +1,177 @@
+var flag                   // será utilizada como bandera
+var api                    // en ella guardaremos la api
+var base                   // aquí salvamos la base de la DLL
+var pos_iat                // será un puntero a la iat
+var aux                    // variable auxiliar_1
+var aux1                   // variable auxiliar_2
+var ayu                    // variable auxiliar_3
+var otra                   // variable auxiliar_4
+var direccion              // variable auxiliar_5
+
+mov pos_iat, 63f000        // donde ubicaremos la tabla
+mov flag, 0                // se activará tras guardar la primera api
+
+inicio:
+dbh                        // ocultamos el debugger
+bp 631BF8
+bphws 014f3AEE, "x"        // colocamos el primer HBP
+bphws 014f5E4F, "x"        // colocamos el segundo HBP
+bphws 014f5D53, "x"        // colocamos el tercer HBP
+bphws 01730561, "x"        // colocamos el cuarto HBP
+eob vamos                  // nos preparamos para cambiar de etiqueta
+run                        // dejamos correr el programa
+
+vamos:
+cmp eip, 014f3AEE          // estamos en :01503AEE?
+je calls                   // vamos a la zona de calls
+cmp eip, 014f5E4F          // estamos en :01505E4F?
+je jmps                    // vamos a la zona de JMPs
+cmp eip, 014f5D53          // estamos en :01505D53?
+je jmps1                   // vamos igual a la zona de JMPs
+cmp eip, 01730561          // estamos en :0173055F?
+je push                    // vamos a la zona de PUSHes
+jmp termina                // si no estamos en ninguno terminamos
+
+// Procedimiento CALLs
+calls:
+mov api, ebp               // obtenemos la api que está en EBP
+log api                    // la logueamos
+cmp flag, 0                // es la primera vez?
+jne otra_vez               // guardamos directamente en la tabla
+GMI api, MODULEBASE        // Obtenemos su imagebase
+mov base, $RESULT          // y la guardamos en "base"
+
+iguales:
+mov aux, ebx               // dirección del salto a la variable aux
+mov direccion, ebx         // obtenemos la dirección del salto
+cmp direccion, 4079dc      // estamos en el que nos interesa?
+je pausamos                // si es así pausamos el script
+log direccion              // logueamos el valor por si acaso
+mov [pos_iat], api         // salvamos la api en la iat
+mov [aux], #FF25#          // reparamos el call
+add aux, 2                 // reajustamos el puntero
+mov [aux], pos_iat         // y lo dejamos apuntando a la iat
+log pos_iat                // logueamos su valor
+add pos_iat, 4             // apuntamos al siguiente DWORD
+mov flag, 1                // activamos la bandera
+mov eip, 014F3AF4          // salteamos el EIP
+jmp inicio                 // vamos a la etiqueta inicio
+
+otra_vez:
+GMI api, MODULEBASE        // Obtenemos su imagebase
+cmp base, $RESULT          // y la comparamos con "base"
+je iguales                 // si son del mismo tipo la guardamos
+mov base, $RESULT          // sino actualizamos la variable
+add pos_iat, 4             // dejamos separación de ceros 00000000
+jmp iguales                // y vamos a salvarla igualmente
+
+
+// Procedimiento jmps
+jmps:
+mov direccion, esi         // obtenemos la dirección del salto+2
+sub direccion, 2           // obtenemos la dirección del salto
+cmp direccion, 4079dc      // estamos en el que nos interesa?
+je pausamos                // si es así pausamos el script
+log direccion              // logueamos el valor por si acaso
+mov api, ebp               // guardamos la api en su variable
+log api                    // y la logueamos
+cmp flag, 0                // miramos si es la primera pasada
+jne sgute                  // saltará si no es la primera
+GMI api, MODULEBASE        // Obtenemos su imagebase
+mov base, $RESULT          // y la guardamos en "base"
+
+salvo:
+mov otra, esi              // obtenemos la dirección del salto+2
+mov [pos_iat], api         // guardamos la api en la iat
+mov [otra], pos_iat        // hago que el JMP apunte a su sitio
+log pos_iat                // logueamos el destino del salto
+add pos_iat, 4             // apuntamos al siguiente DWORD
+mov flag, 1                // activamos la bandera
+mov eip, 014F5E51          // modificamos el EIP
+jmp inicio                 // vamos a la etiqueta inicio
+
+sgute:
+GMI api, MODULEBASE        // Obtenemos su imagebase
+cmp base, $RESULT          // y la comparamos con "base"
+je salvo                   // si son del mismo tipo salvamos
+mov base, $RESULT          // sino actualizamos la variable
+add pos_iat, 4             // y dejamos una separación de ceros
+jmp salvo                  // y vamos a salvarla
+
+
+// Procedimiento jmps1
+jmps1:
+mov direccion, esi         // obtenemos la dirección del salto+2
+sub direccion, 2           // obtenemos la dirección del salto
+cmp direccion, 4079dc      // estamos en el que nos interesa?
+je pausamos                // si es así pausamos el script
+log direccion              // logueamos el valor por si acaso
+mov api, ebp               // guardamos la api en su variable
+log api                    // y la logueamos
+cmp flag, 0                // miramos si es la primera pasada
+jne sgute1                 // saltará si no es la primera
+GMI api, MODULEBASE        // Obtenemos su imagebase
+mov base, $RESULT          // y la guardamos en "base"
+
+salvo1:
+mov aux1, esi              // obtenemos la dirección del salto+2
+mov [pos_iat], api         // guardamos la api en la iat
+mov [aux1], pos_iat        // hago que el JMP apunte a su sitio
+log pos_iat                // logueamos valor de destino del salto
+add pos_iat, 4             // apuntamos al siguiente DWORD
+mov flag, 1                // activamos la bandera
+mov eip, 014f5D55          // modificamos el EIP
+jmp inicio                 // vamos a la etiqueta inicio
+
+sgute1:
+GMI api, MODULEBASE        // Obtenemos su imagebase
+cmp base, $RESULT          // y la comparamos con "base"
+je salvo1                  // si son del mismo tipo salvamos
+mov base, $RESULT          // sino actualizamos la variable
+add pos_iat, 4             // y dejamos una separación de ceros
+jmp salvo1                 // vamos a la etiqueta salvo1
+
+// Procedimiento PUSHes
+push:
+mov direccion, ecx         // obtenemos la dirección del salto+2
+sub direccion, 2           // obtenemos la dirección del salto
+cmp direccion, 4079dc      // estamos en el que nos interesa?
+je pausamos                // si es así pausamos el script
+log direccion              // logueamos el valor por si acaso
+mov api, edi               // guardamos la api en su variable
+log api                    // y la logueamos
+cmp flag, 0                // miramos si es la primera pasada
+jne sigo                   // saltará si no es la primera
+GMI api, MODULEBASE        // Obtenemos su imagebase
+mov base, $RESULT          // y la guardamos en "base"
+
+salvar:
+mov ayu, ecx
+mov [pos_iat], api         // guardamos la api en la iat
+mov [ayu], pos_iat         // hago que el JMP apunte a su sitio
+log pos_iat                // logueamos valor de destino del salto
+add pos_iat, 4             // apuntamos al siguiente DWORD
+mov flag, 1                // activamos la bandera
+jmp inicio                 // vamos a la etiqueta inicio
+
+sigo:
+GMI api, MODULEBASE        // Obtenemos su imagebase
+cmp base, $RESULT          // y la comparamos con "base"
+je salvar                  // si son del mismo tipo salvamos
+mov base, $RESULT          // sino actualizamos la variable
+add pos_iat, 4             // y dejamos una separación de ceros
+jmp salvar                 // vamos a la etiqueta salvar
+
+pausamos:
+pause                      // lo dejamos en pausa para que funcione
+add pos_iat, 4             // reajustamos el puntero de tabla
+jmp inicio                 // vamos a la etiqueta inicio
+
+termina:
+bc 631BF8
+bphwc 014f3AEE             // quitamos el primer HBP
+bphwc 014f5E4F             // quitamos el segundo HBP
+bphwc 014f5D53             // quitamosel tercer HBP
+bphwc 01730561             // quitamos el cuarto HBP
+MSG "Dumpea ahora y repara la iat con el ImpRec :)"
+ret                        // retornamos el control a Olly

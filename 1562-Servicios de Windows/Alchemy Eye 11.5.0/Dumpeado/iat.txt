@@ -1,0 +1,959 @@
+; Syntax for each function in a thunk (the separator is a TAB)
+; ------------------------------------------------------------
+; Flag   RVA   ModuleName   Ordinal   Name
+;
+; Details for <Valid> parameter:
+; ------------------------------
+; Flag:  0 = valid: no  -> - Name contains the address of the redirected API (you can set
+;                            it to zero if you edit it).
+;                          - Ordinal is not considered but you should let '0000' as value.
+;                          - ModuleName is not considered but you should let '?' as value.
+;
+;        1 = valid: yes -> All next parameters on the line will be considered.
+;                          Function imported by ordinal must have no name (the 4th TAB must
+;                                                                          be there though).
+;
+;        2 = Equivalent to 0 but it is for the loader.
+;
+;        3 = Equivalent to 1 but it is for the loader.
+;
+;        4 = Equivalent to 0 with (R) tag.
+;
+;        5 = Equivalent to 1 with (R) tag.
+;
+; And finally, edit this file as your own risk! :-)
+
+Target: C:\Archivos de programa\Alchemy Eye CLS\eyesrv.exe
+OEP: 0001A3F5	IATRVA: 00132000	IATSize: 00000E44
+
+FThunk: 00132000	NbFunc: 0000002F
+1	00132000	advapi32.dll	00E6	GetAce
+1	00132004	advapi32.dll	0117	GetSidIdentifierAuthority
+1	00132008	advapi32.dll	01F0	RegQueryValueExA
+1	0013200C	advapi32.dll	01E6	RegOpenKeyExA
+1	00132010	advapi32.dll	00D3	EnumServicesStatusA
+1	00132014	advapi32.dll	014F	LookupPrivilegeValueA
+1	00132018	advapi32.dll	001E	AdjustTokenPrivileges
+1	0013201C	advapi32.dll	00E7	GetAclInformation
+1	00132020	advapi32.dll	011A	GetSidSubAuthorityCount
+1	00132024	advapi32.dll	0119	GetSidSubAuthority
+1	00132028	advapi32.dll	0149	LookupAccountSidA
+1	0013202C	advapi32.dll	01BE	QueryServiceConfigA
+1	00132030	advapi32.dll	01AC	OpenProcessToken
+1	00132034	advapi32.dll	011B	GetTokenInformation
+1	00132038	advapi32.dll	001F	AllocateAndInitializeSid
+1	0013203C	advapi32.dll	00DA	EqualSid
+1	00132040	advapi32.dll	00E3	FreeSid
+1	00132044	advapi32.dll	01D3	RegDeleteKeyA
+1	00132048	advapi32.dll	0202	RegisterEventSourceA
+1	0013204C	advapi32.dll	020D	ReportEventA
+1	00132050	advapi32.dll	00B2	DeregisterEventSource
+1	00132054	advapi32.dll	023D	SetServiceStatus
+1	00132058	advapi32.dll	0205	RegisterServiceCtrlHandlerA
+1	0013205C	advapi32.dll	0242	StartServiceA
+1	00132060	advapi32.dll	01D5	RegDeleteValueA
+1	00132064	advapi32.dll	0044	ControlService
+1	00132068	advapi32.dll	00B1	DeleteService
+1	0013206C	advapi32.dll	01CF	RegCreateKeyA
+1	00132070	advapi32.dll	0066	CreateServiceA
+1	00132074	advapi32.dll	0243	StartServiceCtrlDispatcherA
+1	00132078	advapi32.dll	0125	GetUserNameA
+1	0013207C	advapi32.dll	013F	IsValidSid
+1	00132080	advapi32.dll	00F8	GetLengthSid
+1	00132084	advapi32.dll	005C	CopySid
+1	00132088	advapi32.dll	0142	LogonUserA
+1	0013208C	advapi32.dll	012F	ImpersonateLoggedOnUser
+1	00132090	advapi32.dll	01CD	RegConnectRegistryA
+1	00132094	advapi32.dll	0147	LookupAccountNameA
+1	00132098	advapi32.dll	01D0	RegCreateKeyExA
+1	0013209C	advapi32.dll	020F	RevertToSelf
+1	001320A0	advapi32.dll	01AD	OpenSCManagerA
+1	001320A4	advapi32.dll	0115	GetServiceKeyNameA
+1	001320A8	advapi32.dll	01AF	OpenServiceA
+1	001320AC	advapi32.dll	01C3	QueryServiceStatus
+1	001320B0	advapi32.dll	0040	CloseServiceHandle
+1	001320B4	advapi32.dll	01FD	RegSetValueExA
+1	001320B8	advapi32.dll	01CC	RegCloseKey
+
+FThunk: 001320C0	NbFunc: 0000000B
+1	001320C0	comctl32.dll	0034	ImageList_Draw
+1	001320C4	comctl32.dll	003F	ImageList_GetImageInfo
+1	001320C8	comctl32.dll	004B	ImageList_Remove
+1	001320CC	comctl32.dll	003C	ImageList_GetIcon
+1	001320D0	comctl32.dll	002C	ImageList_BeginDrag
+1	001320D4	comctl32.dll	002F	ImageList_Destroy
+1	001320D8	comctl32.dll	002B	ImageList_AddMasked
+1	001320DC	comctl32.dll	002E	ImageList_Create
+1	001320E0	comctl32.dll	0029	ImageList_Add
+1	001320E4	comctl32.dll	0041	ImageList_LoadImage
+1	001320E8	comctl32.dll	003E	ImageList_GetImageCount
+
+FThunk: 001320F0	NbFunc: 00000022
+1	001320F0	gdi32.dll	01DF	PatBlt
+1	001320F4	gdi32.dll	008D	DeleteDC
+1	001320F8	gdi32.dll	0029	CreateBitmapIndirect
+1	001320FC	gdi32.dll	0034	CreateDIBitmap
+1	00132100	gdi32.dll	016C	GetDIBits
+1	00132104	gdi32.dll	0254	UnrealizeObject
+1	00132108	gdi32.dll	0028	CreateBitmap
+1	0013210C	gdi32.dll	0047	CreatePatternBrush
+1	00132110	gdi32.dll	01F0	Polyline
+1	00132114	gdi32.dll	002D	CreateCompatibleBitmap
+1	00132118	gdi32.dll	0203	RoundRect
+1	0013211C	gdi32.dll	0041	CreateHatchBrush
+1	00132120	gdi32.dll	01A7	GetStockObject
+1	00132124	gdi32.dll	01CD	LPtoDP
+1	00132128	gdi32.dll	0033	CreateDIBSection
+1	0013212C	gdi32.dll	01F8	Rectangle
+1	00132130	gdi32.dll	024C	StretchDIBits
+1	00132134	gdi32.dll	0233	SetPixel
+1	00132138	gdi32.dll	0095	Ellipse
+1	0013213C	gdi32.dll	0051	CreateSolidBrush
+1	00132140	gdi32.dll	0048	CreatePen
+1	00132144	gdi32.dll	0090	DeleteObject
+1	00132148	gdi32.dll	0013	BitBlt
+1	0013214C	gdi32.dll	0052	DPtoLP
+1	00132150	gdi32.dll	018F	GetMapMode
+1	00132154	gdi32.dll	01F5	RealizePalette
+1	00132158	gdi32.dll	016D	GetDeviceCaps
+1	0013215C	gdi32.dll	002E	CreateCompatibleDC
+1	00132160	gdi32.dll	0210	SelectObject
+1	00132164	gdi32.dll	0211	SelectPalette
+1	00132168	gdi32.dll	01B6	GetTextExtentPoint32A
+1	0013216C	gdi32.dll	00DE	ExtTextOutA
+1	00132170	gdi32.dll	0197	GetObjectA
+1	00132174	gdi32.dll	003B	CreateFontIndirectA
+
+FThunk: 0013217C	NbFunc: 00000062
+1	0013217C	kernel32.dll	010E	GetComputerNameA
+1	00132180	kernel32.dll	00F1	FreeLibrary
+1	00132184	kernel32.dll	01DE	GetVersion
+1	00132188	kernel32.dll	0199	GetProcAddress
+1	0013218C	kernel32.dll	0062	CreatePipe
+1	00132190	kernel32.dll	00F3	FreeResource
+1	00132194	kernel32.dll	0343	SizeofResource
+1	00132198	kernel32.dll	0258	LockResource
+1	0013219C	kernel32.dll	0344	Sleep
+1	001321A0	kernel32.dll	00E0	FindResourceA
+1	001321A4	kernel32.dll	01AF	GetStartupInfoA
+1	001321A8	kernel32.dll	0140	GetDateFormatA
+1	001321AC	kernel32.dll	01D6	GetTimeFormatA
+1	001321B0	kernel32.dll	03B8	lstrlen
+1	001321B4	kernel32.dll	0219	InitializeCriticalSection
+1	001321B8	kernel32.dll	021E	InterlockedExchange
+1	001321BC	kernel32.dll	0169	GetLastError
+1	001321C0	kernel32.dll	0177	GetModuleHandleA
+1	001321C4	kernel32.dll	01D5	GetTickCount
+1	001321C8	kernel32.dll	01EE	GlobalAlloc
+1	001321CC	kernel32.dll	01F5	GlobalFree
+1	001321D0	kernel32.dll	013F	GetCurrentThreadId
+1	001321D4	kernel32.dll	0175	GetModuleFileNameA
+1	001321D8	kernel32.dll	00CD	FindClose
+1	001321DC	kernel32.dll	00D1	FindFirstFileA
+1	001321E0	kernel32.dll	02C2	SetLastError
+1	001321E4	kernel32.dll	0376	VirtualProtect
+1	001321E8	kernel32.dll	0370	VirtualAlloc
+1	001321EC	kernel32.dll	0373	VirtualFree
+1	001321F0	kernel32.dll	01BC	GetSystemInfo
+1	001321F4	kernel32.dll	0378	VirtualQuery
+1	001321F8	kernel32.dll	0268	MultiByteToWideChar
+1	001321FC	kernel32.dll	01DF	GetVersionExA
+1	00132200	kernel32.dll	0333	SetThreadPriority
+1	00132204	kernel32.dll	01C1	GetSystemTimeAsFileTime
+1	00132208	kernel32.dll	0349	SystemTimeToFileTime
+1	0013220C	kernel32.dll	0246	LoadLibraryExA
+1	00132210	kernel32.dll	0157	GetFileAttributesA
+1	00132214	kernel32.dll	00DA	FindNextFileA
+1	00132218	kernel32.dll	0153	GetExitCodeProcess
+1	0013221C	kernel32.dll	034C	TerminateProcess
+1	00132220	kernel32.dll	0380	WaitForSingleObject
+1	00132224	kernel32.dll	0032	CloseHandle
+1	00132228	kernel32.dll	0063	CreateProcessA
+1	0013222C	kernel32.dll	0097	EnterCriticalSection
+1	00132230	kernel32.dll	01BF	GetSystemTime
+1	00132234	kernel32.dll	024F	LocalFree
+1	00132238	kernel32.dll	00EC	FormatMessageA
+1	0013223C	kernel32.dll	0384	WideCharToMultiByte
+1	00132240	kernel32.dll	024A	LoadResource
+1	00132244	kernel32.dll	0244	LeaveCriticalSection
+1	00132248	kernel32.dll	0080	DeleteCriticalSection
+1	0013224C	kernel32.dll	004C	CreateEventA
+1	00132250	kernel32.dll	0305	SetEvent
+1	00132254	kernel32.dll	034D	TerminateThread
+1	00132258	kernel32.dll	0146	GetDiskFreeSpaceA
+1	0013225C	kernel32.dll	00BA	ExpandEnvironmentStringsA
+1	00132260	kernel32.dll	021D	InterlockedDecrement
+1	00132264	kernel32.dll	0248	LoadLibraryW
+1	00132268	kernel32.dll	02B4	ReleaseMutex
+1	0013226C	kernel32.dll	0195	GetPrivateProfileStringA
+1	00132270	kernel32.dll	0040	CopyFileA
+1	00132274	kernel32.dll	0082	DeleteFileA
+1	00132278	kernel32.dll	005D	CreateMutexA
+1	0013227C	kernel32.dll	0276	OpenMutexA
+1	00132280	kernel32.dll	0051	CreateFileMappingA
+1	00132284	kernel32.dll	0360	UnmapViewOfFile
+1	00132288	kernel32.dll	025B	MapViewOfFile
+1	0013228C	kernel32.dll	0396	WritePrivateProfileStringA
+1	00132290	kernel32.dll	02A7	ReadFile
+1	00132294	kernel32.dll	030A	SetFilePointer
+1	00132298	kernel32.dll	015C	GetFileSize
+1	0013229C	kernel32.dll	0050	CreateFileA
+1	001322A0	kernel32.dll	01CA	GetTempFileNameA
+1	001322A4	kernel32.dll	01CC	GetTempPathA
+1	001322A8	kernel32.dll	0221	InterlockedIncrement
+1	001322AC	kernel32.dll	03B5	lstrcpyn
+1	001322B0	kernel32.dll	00E8	FlushInstructionCache
+1	001322B4	kernel32.dll	013C	GetCurrentProcess
+1	001322B8	kernel32.dll	006D	CreateThread
+1	001322BC	kernel32.dll	02C0	ResetEvent
+1	001322C0	kernel32.dll	0267	MulDiv
+1	001322C4	kernel32.dll	00EE	FreeConsole
+1	001322C8	kernel32.dll	02DF	SetConsoleCtrlHandler
+1	001322CC	kernel32.dll	01B1	GetStdHandle
+1	001322D0	kernel32.dll	000A	AllocConsole
+1	001322D4	kernel32.dll	018F	GetPrivateProfileIntA
+1	001322D8	kernel32.dll	0304	SetErrorMode
+1	001322DC	kernel32.dll	01A6	GetProfileIntA
+1	001322E0	kernel32.dll	0391	WriteFile
+1	001322E4	kernel32.dll	0301	SetEndOfFile
+1	001322E8	kernel32.dll	0261	MoveFileA
+1	001322EC	kernel32.dll	016C	GetLocaleInfoA
+1	001322F0	kernel32.dll	00A8	EnumSystemCodePagesA
+1	001322F4	kernel32.dll	02C3	ResumeThread
+1	001322F8	kernel32.dll	015F	GetFileType
+1	001322FC	kernel32.dll	0245	LoadLibraryA
+1	00132300	kernel32.dll	0092	DuplicateHandle
+
+FThunk: 00132308	NbFunc: 0000019A
+1	00132308	mfc42.dll	1ADA	
+1	0013230C	mfc42.dll	188A	
+1	00132310	mfc42.dll	1ADC	
+1	00132314	mfc42.dll	1835	
+1	00132318	mfc42.dll	0F22	
+1	0013231C	mfc42.dll	1837	
+1	00132320	mfc42.dll	0B30	
+1	00132324	mfc42.dll	0826	
+1	00132328	mfc42.dll	04CC	
+1	0013232C	mfc42.dll	15E8	
+1	00132330	mfc42.dll	0996	
+1	00132334	mfc42.dll	18F5	
+1	00132338	mfc42.dll	02BF	
+1	0013233C	mfc42.dll	0193	
+1	00132340	mfc42.dll	0B0A	
+1	00132344	mfc42.dll	0E00	
+1	00132348	mfc42.dll	021F	
+1	0013234C	mfc42.dll	0323	
+1	00132350	mfc42.dll	021B	
+1	00132354	mfc42.dll	195D	
+1	00132358	mfc42.dll	0180	
+1	0013235C	mfc42.dll	02AE	
+1	00132360	mfc42.dll	0968	
+1	00132364	mfc42.dll	19D7	
+1	00132368	mfc42.dll	0372	
+1	0013236C	mfc42.dll	18F3	
+1	00132370	mfc42.dll	036F	
+1	00132374	mfc42.dll	1543	
+1	00132378	mfc42.dll	074F	
+1	0013237C	mfc42.dll	19AB	
+1	00132380	mfc42.dll	1554	
+1	00132384	mfc42.dll	0AB4	
+1	00132388	mfc42.dll	1900	
+1	0013238C	mfc42.dll	16E0	
+1	00132390	mfc42.dll	04EB	
+1	00132394	mfc42.dll	19F8	
+1	00132398	mfc42.dll	1207	
+1	0013239C	mfc42.dll	1204	
+1	001323A0	mfc42.dll	1202	
+1	001323A4	mfc42.dll	10B2	
+1	001323A8	mfc42.dll	18E7	
+1	001323AC	mfc42.dll	1186	
+1	001323B0	mfc42.dll	09FA	
+1	001323B4	mfc42.dll	09D0	
+1	001323B8	mfc42.dll	1663	
+1	001323BC	mfc42.dll	0F52	
+1	001323C0	mfc42.dll	0441	
+1	001323C4	mfc42.dll	095C	
+1	001323C8	mfc42.dll	0D12	
+1	001323CC	mfc42.dll	14B4	
+1	001323D0	mfc42.dll	14B6	
+1	001323D4	mfc42.dll	0FEF	
+1	001323D8	mfc42.dll	125A	
+1	001323DC	mfc42.dll	14BB	
+1	001323E0	mfc42.dll	14A9	
+1	001323E4	mfc42.dll	120E	
+1	001323E8	mfc42.dll	0E9A	
+1	001323EC	mfc42.dll	032F	
+1	001323F0	mfc42.dll	144F	
+1	001323F4	mfc42.dll	0AA5	
+1	001323F8	mfc42.dll	1652	
+1	001323FC	mfc42.dll	0F71	
+1	00132400	mfc42.dll	0D49	
+1	00132404	mfc42.dll	0231	
+1	00132408	mfc42.dll	103F	
+1	0013240C	mfc42.dll	1040	
+1	00132410	mfc42.dll	04DF	
+1	00132414	mfc42.dll	0269	
+1	00132418	mfc42.dll	145E	
+1	0013241C	mfc42.dll	0128	
+1	00132420	mfc42.dll	035B	
+1	00132424	mfc42.dll	0721	
+1	00132428	mfc42.dll	108E	
+1	0013242C	mfc42.dll	095F	
+1	00132430	mfc42.dll	0BF2	
+1	00132434	mfc42.dll	0BF2	
+1	00132438	mfc42.dll	18C0	
+1	0013243C	mfc42.dll	09CE	
+1	00132440	mfc42.dll	11B4	
+1	00132444	mfc42.dll	166C	
+1	00132448	mfc42.dll	06D2	
+1	0013244C	mfc42.dll	15C9	
+1	00132450	mfc42.dll	0C64	
+1	00132454	mfc42.dll	1144	
+1	00132458	mfc42.dll	1359	
+1	0013245C	mfc42.dll	095F	
+1	00132460	mfc42.dll	1123	
+1	00132464	mfc42.dll	0D7E	
+1	00132468	mfc42.dll	0C7E	
+1	0013246C	mfc42.dll	17C0	
+1	00132470	mfc42.dll	181F	
+1	00132474	mfc42.dll	120F	
+1	00132478	mfc42.dll	114A	
+1	0013247C	mfc42.dll	02C9	
+1	00132480	mfc42.dll	028C	
+1	00132484	mfc42.dll	019E	
+1	00132488	mfc42.dll	0152	
+1	0013248C	mfc42.dll	12D7	
+1	00132490	mfc42.dll	12FA	
+1	00132494	mfc42.dll	1615	
+1	00132498	mfc42.dll	15CF	
+1	0013249C	mfc42.dll	09EC	
+1	001324A0	mfc42.dll	066A	
+1	001324A4	mfc42.dll	0FF3	
+1	001324A8	mfc42.dll	0317	
+1	001324AC	mfc42.dll	020B	
+1	001324B0	mfc42.dll	0370	
+1	001324B4	mfc42.dll	011F	
+1	001324B8	mfc42.dll	17FC	
+1	001324BC	mfc42.dll	16E2	
+1	001324C0	mfc42.dll	16E2	
+1	001324C4	mfc42.dll	0ACB	
+1	001324C8	mfc42.dll	15E3	
+1	001324CC	mfc42.dll	17FC	
+1	001324D0	mfc42.dll	04A3	
+1	001324D4	mfc42.dll	1545	
+1	001324D8	mfc42.dll	07B1	
+1	001324DC	mfc42.dll	07C5	
+1	001324E0	mfc42.dll	0194	
+1	001324E4	mfc42.dll	0161	
+1	001324E8	mfc42.dll	18F1	
+1	001324EC	mfc42.dll	177A	
+1	001324F0	mfc42.dll	0B08	
+1	001324F4	mfc42.dll	02B8	
+1	001324F8	mfc42.dll	0304	
+1	001324FC	mfc42.dll	018A	
+1	00132500	mfc42.dll	01F4	
+1	00132504	mfc42.dll	16E2	
+1	00132508	mfc42.dll	18F9	
+1	0013250C	mfc42.dll	038D	
+1	00132510	mfc42.dll	08B9	
+1	00132514	mfc42.dll	1549	
+1	00132518	mfc42.dll	106D	
+1	0013251C	mfc42.dll	16BD	
+1	00132520	mfc42.dll	0E4E	
+1	00132524	mfc42.dll	0D09	
+1	00132528	mfc42.dll	0817	
+1	0013252C	mfc42.dll	0990	
+1	00132530	mfc42.dll	16CA	
+1	00132534	mfc42.dll	07FC	
+1	00132538	mfc42.dll	0B0B	
+1	0013253C	mfc42.dll	169B	
+1	00132540	mfc42.dll	0E6D	
+1	00132544	mfc42.dll	169B	
+1	00132548	mfc42.dll	0DF5	
+1	0013254C	mfc42.dll	0D88	
+1	00132550	mfc42.dll	16F3	
+1	00132554	mfc42.dll	09FD	
+1	00132558	mfc42.dll	1068	
+1	0013255C	mfc42.dll	04F0	
+1	00132560	mfc42.dll	162E	
+1	00132564	mfc42.dll	16A2	
+1	00132568	mfc42.dll	1668	
+1	0013256C	mfc42.dll	0DF3	
+1	00132570	mfc42.dll	1699	
+1	00132574	mfc42.dll	0209	
+1	00132578	mfc42.dll	18A3	
+1	0013257C	mfc42.dll	0F3F	
+1	00132580	mfc42.dll	10C9	
+1	00132584	mfc42.dll	1025	
+1	00132588	mfc42.dll	094D	
+1	0013258C	mfc42.dll	011B	
+1	00132590	mfc42.dll	0965	
+1	00132594	mfc42.dll	0AC1	
+1	00132598	mfc42.dll	1832	
+1	0013259C	mfc42.dll	1AE8	
+1	001325A0	mfc42.dll	1AF9	
+1	001325A4	mfc42.dll	1A13	
+1	001325A8	mfc42.dll	0F9E	
+1	001325AC	mfc42.dll	0C61	
+1	001325B0	mfc42.dll	07CA	
+1	001325B4	mfc42.dll	0D8A	
+1	001325B8	mfc42.dll	0307	
+1	001325BC	mfc42.dll	1448	
+1	001325C0	mfc42.dll	01F7	
+1	001325C4	mfc42.dll	0718	
+1	001325C8	mfc42.dll	1117	
+1	001325CC	mfc42.dll	12F4	
+1	001325D0	mfc42.dll	0D1C	
+1	001325D4	mfc42.dll	1470	
+1	001325D8	mfc42.dll	049C	
+1	001325DC	mfc42.dll	0498	
+1	001325E0	mfc42.dll	0620	
+1	001325E4	mfc42.dll	1494	
+1	001325E8	mfc42.dll	04F6	
+1	001325EC	mfc42.dll	03BB	
+1	001325F0	mfc42.dll	0B2C	
+1	001325F4	mfc42.dll	10DD	
+1	001325F8	mfc42.dll	047A	
+1	001325FC	mfc42.dll	17E7	
+1	00132600	mfc42.dll	0A0B	
+1	00132604	mfc42.dll	1AE0	
+1	00132608	mfc42.dll	19CD	
+1	0013260C	mfc42.dll	0622	
+1	00132610	mfc42.dll	04AD	
+1	00132614	mfc42.dll	0959	
+1	00132618	mfc42.dll	06EC	
+1	0013261C	mfc42.dll	0DB3	
+1	00132620	mfc42.dll	07B3	
+1	00132624	mfc42.dll	16B1	
+1	00132628	mfc42.dll	025D	
+1	0013262C	mfc42.dll	081D	
+1	00132630	mfc42.dll	0116	
+1	00132634	mfc42.dll	14BC	
+1	00132638	mfc42.dll	12AB	
+1	0013263C	mfc42.dll	16B3	
+1	00132640	mfc42.dll	156A	
+1	00132644	mfc42.dll	07F0	
+1	00132648	mfc42.dll	10EF	
+1	0013264C	mfc42.dll	10EF	
+1	00132650	mfc42.dll	10EF	
+1	00132654	mfc42.dll	10EF	
+1	00132658	mfc42.dll	10EF	
+1	0013265C	mfc42.dll	16A5	
+1	00132660	mfc42.dll	1567	
+1	00132664	mfc42.dll	07CB	
+1	00132668	mfc42.dll	03C7	
+1	0013266C	mfc42.dll	0E85	
+1	00132670	mfc42.dll	10EF	
+1	00132674	mfc42.dll	0451	
+1	00132678	mfc42.dll	039D	
+1	0013267C	mfc42.dll	0486	
+1	00132680	mfc42.dll	035D	
+1	00132684	mfc42.dll	17FB	
+1	00132688	mfc42.dll	0262	
+1	0013268C	mfc42.dll	0668	
+1	00132690	mfc42.dll	044B	
+1	00132694	mfc42.dll	0218	
+1	00132698	mfc42.dll	0497	
+1	0013269C	mfc42.dll	0143	
+1	001326A0	mfc42.dll	1785	
+1	001326A4	mfc42.dll	0280	
+1	001326A8	mfc42.dll	1A11	
+1	001326AC	mfc42.dll	106C	
+1	001326B0	mfc42.dll	03AB	
+1	001326B4	mfc42.dll	1A07	
+1	001326B8	mfc42.dll	0AA1	
+1	001326BC	mfc42.dll	0B04	
+1	001326C0	mfc42.dll	0155	
+1	001326C4	mfc42.dll	028E	
+1	001326C8	mfc42.dll	1ADD	
+1	001326CC	mfc42.dll	0EE3	
+1	001326D0	mfc42.dll	1633	
+1	001326D4	mfc42.dll	0CF6	
+1	001326D8	mfc42.dll	07BB	
+1	001326DC	mfc42.dll	168D	
+1	001326E0	mfc42.dll	1542	
+1	001326E4	mfc42.dll	013D	
+1	001326E8	mfc42.dll	1450	
+1	001326EC	mfc42.dll	027B	
+1	001326F0	mfc42.dll	07BA	
+1	001326F4	mfc42.dll	164E	
+1	001326F8	mfc42.dll	1021	
+1	001326FC	mfc42.dll	106A	
+1	00132700	mfc42.dll	04F7	
+1	00132704	mfc42.dll	061F	
+1	00132708	mfc42.dll	010C	
+1	0013270C	mfc42.dll	0ACC	
+1	00132710	mfc42.dll	10B5	
+1	00132714	mfc42.dll	188B	
+1	00132718	mfc42.dll	083B	
+1	0013271C	mfc42.dll	0B19	
+1	00132720	mfc42.dll	0E1D	
+1	00132724	mfc42.dll	0C36	
+1	00132728	mfc42.dll	015E	
+1	0013272C	mfc42.dll	0E20	
+1	00132730	mfc42.dll	1613	
+1	00132734	mfc42.dll	1AE3	
+1	00132738	mfc42.dll	0162	
+1	0013273C	mfc42.dll	1442	
+1	00132740	mfc42.dll	0B63	
+1	00132744	mfc42.dll	0C37	
+1	00132748	mfc42.dll	15C4	
+1	0013274C	mfc42.dll	0299	
+1	00132750	mfc42.dll	021D	
+1	00132754	mfc42.dll	039B	
+1	00132758	mfc42.dll	0321	
+1	0013275C	mfc42.dll	0811	
+1	00132760	mfc42.dll	04F1	
+1	00132764	mfc42.dll	021A	
+1	00132768	mfc42.dll	0AF1	
+1	0013276C	mfc42.dll	1555	
+1	00132770	mfc42.dll	025B	
+1	00132774	mfc42.dll	0111	
+1	00132778	mfc42.dll	0223	
+1	0013277C	mfc42.dll	039A	
+1	00132780	mfc42.dll	03AC	
+1	00132784	mfc42.dll	1A06	
+1	00132788	mfc42.dll	10B6	
+1	0013278C	mfc42.dll	0E2A	
+1	00132790	mfc42.dll	0E23	
+1	00132794	mfc42.dll	18EF	
+1	00132798	mfc42.dll	1540	
+1	0013279C	mfc42.dll	18FA	
+1	001327A0	mfc42.dll	154A	
+1	001327A4	mfc42.dll	0E4F	
+1	001327A8	mfc42.dll	0669	
+1	001327AC	mfc42.dll	0B2B	
+1	001327B0	mfc42.dll	101B	
+1	001327B4	mfc42.dll	0121	
+1	001327B8	mfc42.dll	169B	
+1	001327BC	mfc42.dll	0265	
+1	001327C0	mfc42.dll	0ED5	
+1	001327C4	mfc42.dll	096E	
+1	001327C8	mfc42.dll	0994	
+1	001327CC	mfc42.dll	10B3	
+1	001327D0	mfc42.dll	0A5C	
+1	001327D4	mfc42.dll	0490	
+1	001327D8	mfc42.dll	0685	
+1	001327DC	mfc42.dll	04B0	
+1	001327E0	mfc42.dll	0DFE	
+1	001327E4	mfc42.dll	112E	
+1	001327E8	mfc42.dll	096B	
+1	001327EC	mfc42.dll	096B	
+1	001327F0	mfc42.dll	07E7	
+1	001327F4	mfc42.dll	096B	
+1	001327F8	mfc42.dll	1118	
+1	001327FC	mfc42.dll	12F5	
+1	00132800	mfc42.dll	039E	
+1	00132804	mfc42.dll	1741	
+1	00132808	mfc42.dll	0FD7	
+1	0013280C	mfc42.dll	18BE	
+1	00132810	mfc42.dll	1266	
+1	00132814	mfc42.dll	0A52	
+1	00132818	mfc42.dll	06E8	
+1	0013281C	mfc42.dll	0217	
+1	00132820	mfc42.dll	108A	
+1	00132824	mfc42.dll	0237	
+1	00132828	mfc42.dll	0E37	
+1	0013282C	mfc42.dll	1148	
+1	00132830	mfc42.dll	0D4A	
+1	00132834	mfc42.dll	14AA	
+1	00132838	mfc42.dll	1131	
+1	0013283C	mfc42.dll	06F0	
+1	00132840	mfc42.dll	0BA6	
+1	00132844	mfc42.dll	096B	
+1	00132848	mfc42.dll	096B	
+1	0013284C	mfc42.dll	07E7	
+1	00132850	mfc42.dll	096B	
+1	00132854	mfc42.dll	06EB	
+1	00132858	mfc42.dll	06EB	
+1	0013285C	mfc42.dll	08FE	
+1	00132860	mfc42.dll	0936	
+1	00132864	mfc42.dll	0942	
+1	00132868	mfc42.dll	08FB	
+1	0013286C	mfc42.dll	0924	
+1	00132870	mfc42.dll	0CF5	
+1	00132874	mfc42.dll	0144	
+1	00132878	mfc42.dll	035A	
+1	0013287C	mfc42.dll	0281	
+1	00132880	mfc42.dll	0268	
+1	00132884	mfc42.dll	0264	
+1	00132888	mfc42.dll	0E0D	
+1	0013288C	mfc42.dll	1149	
+1	00132890	mfc42.dll	1213	
+1	00132894	mfc42.dll	0FF0	
+1	00132898	mfc42.dll	0BA6	
+1	0013289C	mfc42.dll	0EF1	
+1	001328A0	mfc42.dll	0EF1	
+1	001328A4	mfc42.dll	0EF6	
+1	001328A8	mfc42.dll	0BA0	
+1	001328AC	mfc42.dll	0C09	
+1	001328B0	mfc42.dll	0BA9	
+1	001328B4	mfc42.dll	0CBE	
+1	001328B8	mfc42.dll	0C40	
+1	001328BC	mfc42.dll	06F0	
+1	001328C0	mfc42.dll	0BA6	
+1	001328C4	mfc42.dll	0BA6	
+1	001328C8	mfc42.dll	0BA6	
+1	001328CC	mfc42.dll	1479	
+1	001328D0	mfc42.dll	084C	
+1	001328D4	mfc42.dll	098E	
+1	001328D8	mfc42.dll	148D	
+1	001328DC	mfc42.dll	06BF	
+1	001328E0	mfc42.dll	13C9	
+1	001328E4	mfc42.dll	0BA6	
+1	001328E8	mfc42.dll	18E8	
+1	001328EC	mfc42.dll	0807	
+1	001328F0	mfc42.dll	0A58	
+1	001328F4	mfc42.dll	1159	
+1	001328F8	mfc42.dll	12E5	
+1	001328FC	mfc42.dll	0ED6	
+1	00132900	mfc42.dll	14A0	
+1	00132904	mfc42.dll	1101	
+1	00132908	mfc42.dll	18E6	
+1	0013290C	mfc42.dll	142B	
+1	00132910	mfc42.dll	0951	
+1	00132914	mfc42.dll	1479	
+1	00132918	mfc42.dll	1137	
+1	0013291C	mfc42.dll	06EF	
+1	00132920	mfc42.dll	0EF1	
+1	00132924	mfc42.dll	17A4	
+1	00132928	mfc42.dll	09D2	
+1	0013292C	mfc42.dll	0A18	
+1	00132930	mfc42.dll	1479	
+1	00132934	mfc42.dll	16E5	
+1	00132938	mfc42.dll	17FF	
+1	0013293C	mfc42.dll	0A36	
+1	00132940	mfc42.dll	035C	
+1	00132944	mfc42.dll	0219	
+1	00132948	mfc42.dll	0B02	
+1	0013294C	mfc42.dll	03AD	
+1	00132950	mfc42.dll	039C	
+1	00132954	mfc42.dll	021C	
+1	00132958	mfc42.dll	0320	
+1	0013295C	mfc42.dll	0337	
+1	00132960	mfc42.dll	0339	
+1	00132964	mfc42.dll	0B67	
+1	00132968	mfc42.dll	0377	
+1	0013296C	mfc42.dll	0628	
+
+FThunk: 00132974	NbFunc: 00000002
+1	00132974	mpr.dll	0009	WNetAddConnection2A
+1	00132978	mpr.dll	0011	WNetCancelConnectionA
+
+FThunk: 00132980	NbFunc: 00000002
+1	00132980	msimg32.dll	0004	GradientFill
+1	00132984	msimg32.dll	0002	AlphaBlend
+
+FThunk: 0013298C	NbFunc: 0000003A
+1	0013298C	msvcp60.dll	010C	??1_Lockit@std@@QAE@XZ
+1	00132990	msvcp60.dll	004D	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBDABV?$allocator@D@1@@Z
+1	00132994	msvcp60.dll	01DA	??7ios_base@std@@QBE_NXZ
+1	00132998	msvcp60.dll	005E	??0?$basic_stringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@H@Z
+1	0013299C	msvcp60.dll	01AD	??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@H@Z
+1	001329A0	msvcp60.dll	07A5	?str@?$basic_stringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@XZ
+1	001329A4	msvcp60.dll	0621	?length@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ
+1	001329A8	msvcp60.dll	0438	?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
+1	001329AC	msvcp60.dll	02F4	??_D?$basic_stringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXXZ
+1	001329B0	msvcp60.dll	0180	??5?$basic_istream@DU?$char_traits@D@std@@@std@@QAEAAV01@AAJ@Z
+1	001329B4	msvcp60.dll	004E	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBDIABV?$allocator@D@1@@Z
+1	001329B8	msvcp60.dll	002B	??0?$basic_istringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@H@Z
+1	001329BC	msvcp60.dll	019D	??5std@@YAAAV?$basic_istream@DU?$char_traits@D@std@@@0@AAV10@AAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z
+1	001329C0	msvcp60.dll	01E0	??8std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
+1	001329C4	msvcp60.dll	017E	??5?$basic_istream@DU?$char_traits@D@std@@@std@@QAEAAV01@AAH@Z
+1	001329C8	msvcp60.dll	02EC	??_D?$basic_istringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXXZ
+1	001329CC	msvcp60.dll	0510	?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z
+1	001329D0	msvcp60.dll	0474	?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+1	001329D4	msvcp60.dll	01B4	??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z
+1	001329D8	msvcp60.dll	01CE	??6std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@D@Z
+1	001329DC	msvcp60.dll	01D1	??6std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z
+1	001329E0	msvcp60.dll	01CF	??6std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@E@Z
+1	001329E4	msvcp60.dll	010E	??1_Winit@std@@QAE@XZ
+1	001329E8	msvcp60.dll	00A6	??0_Winit@std@@QAE@XZ
+1	001329EC	msvcp60.dll	010A	??1Init@ios_base@std@@QAE@XZ
+1	001329F0	msvcp60.dll	009F	??0Init@ios_base@std@@QAE@XZ
+1	001329F4	msvcp60.dll	0429	?assign@?$char_traits@D@std@@SAXAADABD@Z
+1	001329F8	msvcp60.dll	07AC	?swap@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXAAV12@@Z
+1	001329FC	msvcp60.dll	00A3	??0_Lockit@std@@QAE@XZ
+1	00132A00	msvcp60.dll	00EA	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
+1	00132A04	msvcp60.dll	0145	??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
+1	00132A08	msvcp60.dll	0662	?npos@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@2IB
+1	00132A0C	msvcp60.dll	0508	?empty@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBE_NXZ
+1	00132A10	msvcp60.dll	0541	?find@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIDI@Z
+1	00132A14	msvcp60.dll	0786	?size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ
+1	00132A18	msvcp60.dll	01FB	??A?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAADI@Z
+1	00132A1C	msvcp60.dll	070A	?replace@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@IIID@Z
+1	00132A20	msvcp60.dll	052A	?erase@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@II@Z
+1	00132A24	msvcp60.dll	0838	wctype
+1	00132A28	msvcp60.dll	0218	??Hstd@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@PBD@Z
+1	00132A2C	msvcp60.dll	0345	?_Doraise@logic_error@std@@MBEXXZ
+1	00132A30	msvcp60.dll	00AA	??0bad_alloc@std@@QAE@PBD@Z
+1	00132A34	msvcp60.dll	0110	??1bad_alloc@std@@UAE@XZ
+1	00132A38	msvcp60.dll	00A9	??0bad_alloc@std@@QAE@ABV01@@Z
+1	00132A3C	msvcp60.dll	0623	?length@?$char_traits@D@std@@SAIPBD@Z
+1	00132A40	msvcp60.dll	0526	?eq@?$char_traits@D@std@@SA_NABD0@Z
+1	00132A44	msvcp60.dll	052B	?erase@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEPADPAD0@Z
+1	00132A48	msvcp60.dll	00C7	??0out_of_range@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z
+1	00132A4C	msvcp60.dll	0120	??1out_of_range@std@@UAE@XZ
+1	00132A50	msvcp60.dll	00C6	??0out_of_range@std@@QAE@ABV01@@Z
+1	00132A54	msvcp60.dll	00C2	??0logic_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z
+1	00132A58	msvcp60.dll	011C	??1logic_error@std@@UAE@XZ
+1	00132A5C	msvcp60.dll	07E6	?what@logic_error@std@@UBEPBDXZ
+1	00132A60	msvcp60.dll	00C1	??0logic_error@std@@QAE@ABV01@@Z
+1	00132A64	msvcp60.dll	0434	?begin@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEPADXZ
+1	00132A68	msvcp60.dll	050C	?end@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEPADXZ
+1	00132A6C	msvcp60.dll	0048	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
+1	00132A70	msvcp60.dll	004A	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV?$allocator@D@1@@Z
+
+FThunk: 00132A78	NbFunc: 0000005F
+1	00132A78	msvcrt.dll	013C	_initterm
+1	00132A7C	msvcrt.dll	009C	__setusermatherr
+1	00132A80	msvcrt.dll	006F	__getmainargs
+1	00132A84	msvcrt.dll	00A9	_acmdln
+1	00132A88	msvcrt.dll	0291	exit
+1	00132A8C	msvcrt.dll	0050	_XcptFilter
+1	00132A90	msvcrt.dll	00F7	_exit
+1	00132A94	msvcrt.dll	0035	?terminate@@YAXXZ
+1	00132A98	msvcrt.dll	01B5	_onexit
+1	00132A9C	msvcrt.dll	006C	__dllonexit
+1	00132AA0	msvcrt.dll	0010	??1type_info@@UAE@XZ
+1	00132AA4	msvcrt.dll	02A0	fprintf
+1	00132AA8	msvcrt.dll	02D8	longjmp
+1	00132AAC	msvcrt.dll	0297	fflush
+1	00132AB0	msvcrt.dll	00B7	_adjust_fdiv
+1	00132AB4	msvcrt.dll	027C	abort
+1	00132AB8	msvcrt.dll	00C1	_atoi64
+1	00132ABC	msvcrt.dll	0301	strcoll
+1	00132AC0	msvcrt.dll	02BF	isprint
+1	00132AC4	msvcrt.dll	02DB	mbstowcs
+1	00132AC8	msvcrt.dll	01FA	_stricoll
+1	00132ACC	msvcrt.dll	0205	_strupr
+1	00132AD0	msvcrt.dll	0311	strtoul
+1	00132AD4	msvcrt.dll	0140	_iob
+1	00132AD8	msvcrt.dll	01B7	_open_osfhandle
+1	00132ADC	msvcrt.dll	00FB	_fdopen
+1	00132AE0	msvcrt.dll	02F6	setvbuf
+1	00132AE4	msvcrt.dll	0308	strncmp
+1	00132AE8	msvcrt.dll	02FB	sqrt
+1	00132AEC	msvcrt.dll	0161	_itoa
+1	00132AF0	msvcrt.dll	02BA	iscntrl
+1	00132AF4	msvcrt.dll	027D	abs
+1	00132AF8	msvcrt.dll	01E3	_snprintf
+1	00132AFC	msvcrt.dll	0321	vfprintf
+1	00132B00	msvcrt.dll	0303	strcspn
+1	00132B04	msvcrt.dll	030C	strspn
+1	00132B08	msvcrt.dll	0009	??0exception@@QAE@ABQBD@Z
+1	00132B0C	msvcrt.dll	000F	??1exception@@UAE@XZ
+1	00132B10	msvcrt.dll	0119	_ftol
+1	00132B14	msvcrt.dll	0185	_mbscat
+1	00132B18	msvcrt.dll	018C	_mbsdup
+1	00132B1C	msvcrt.dll	030B	strrchr
+1	00132B20	msvcrt.dll	02FC	srand
+1	00132B24	msvcrt.dll	02FD	sscanf
+1	00132B28	msvcrt.dll	030D	strstr
+1	00132B2C	msvcrt.dll	0310	strtol
+1	00132B30	msvcrt.dll	0055	__CxxLongjmpUnwind
+1	00132B34	msvcrt.dll	01DD	_setjmp3
+1	00132B38	msvcrt.dll	013A	_i64toa
+1	00132B3C	msvcrt.dll	02EF	realloc
+1	00132B40	msvcrt.dll	029F	fopen
+1	00132B44	msvcrt.dll	02A2	fputs
+1	00132B48	msvcrt.dll	0294	fclose
+1	00132B4C	msvcrt.dll	02E2	mktime
+1	00132B50	msvcrt.dll	032E	wcslen
+1	00132B54	msvcrt.dll	02E6	printf
+1	00132B58	msvcrt.dll	02DE	memcmp
+1	00132B5C	msvcrt.dll	02DD	memchr
+1	00132B60	msvcrt.dll	030E	strtod
+1	00132B64	msvcrt.dll	02FF	strchr
+1	00132B68	msvcrt.dll	02BB	isdigit
+1	00132B6C	msvcrt.dll	00C5	_beginthreadex
+1	00132B70	msvcrt.dll	00EE	_except_handler3
+1	00132B74	msvcrt.dll	031B	tolower
+1	00132B78	msvcrt.dll	0142	_isctype
+1	00132B7C	msvcrt.dll	0017	??8type_info@@QBEHABV0@@Z
+1	00132B80	msvcrt.dll	0030	?name@type_info@@QBEPBDXZ
+1	00132B84	msvcrt.dll	031C	toupper
+1	00132B88	msvcrt.dll	02C1	isspace
+1	00132B8C	msvcrt.dll	000A	??0exception@@QAE@ABV0@@Z
+1	00132B90	msvcrt.dll	01C2	_purecall
+1	00132B94	msvcrt.dll	02EE	rand
+1	00132B98	msvcrt.dll	0318	time
+1	00132B9C	msvcrt.dll	02E0	memmove
+1	00132BA0	msvcrt.dll	02FA	sprintf
+1	00132BA4	msvcrt.dll	01F5	_strcmpi
+1	00132BA8	msvcrt.dll	02D9	malloc
+1	00132BAC	msvcrt.dll	02A6	free
+1	00132BB0	msvcrt.dll	0300	strcmp
+1	00132BB4	msvcrt.dll	0049	_CxxThrowException
+1	00132BB8	msvcrt.dll	0189	_mbscpy
+1	00132BBC	msvcrt.dll	0285	atoi
+1	00132BC0	msvcrt.dll	0286	atol
+1	00132BC4	msvcrt.dll	0284	atof
+1	00132BC8	msvcrt.dll	02E1	memset
+1	00132BCC	msvcrt.dll	0054	__CxxFrameHandler
+1	00132BD0	msvcrt.dll	0306	strlen
+1	00132BD4	msvcrt.dll	02DF	memcpy
+1	00132BD8	msvcrt.dll	0082	__p__commode
+1	00132BDC	msvcrt.dll	0087	__p__fmode
+1	00132BE0	msvcrt.dll	009A	__set_app_type
+1	00132BE4	msvcrt.dll	02AE	fwrite
+1	00132BE8	msvcrt.dll	01FD	_strnicmp
+1	00132BEC	msvcrt.dll	01DF	_setmbcp
+1	00132BF0	msvcrt.dll	00D7	_controlfp
+
+FThunk: 00132BF8	NbFunc: 0000000D
+1	00132BF8	odbc32.dll	000D	SQLFetch
+1	00132BFC	odbc32.dll	0003	SQLAllocStmt
+1	00132C00	odbc32.dll	000E	SQLFreeConnect
+1	00132C04	odbc32.dll	0007	SQLConnect
+1	00132C08	odbc32.dll	000F	SQLFreeEnv
+1	00132C0C	odbc32.dll	0001	SQLAllocConnect
+1	00132C10	odbc32.dll	0002	SQLAllocEnv
+1	00132C14	odbc32.dll	0004	SQLBindCol
+1	00132C18	odbc32.dll	0036	SQLTables
+1	00132C1C	odbc32.dll	0039	SQLDataSources
+1	00132C20	odbc32.dll	000B	SQLExecDirect
+1	00132C24	odbc32.dll	0010	SQLFreeStmt
+1	00132C28	odbc32.dll	0009	SQLDisconnect
+
+FThunk: 00132C30	NbFunc: 0000000C
+1	00132C30	oleaut32.dll	0004	SysAllocStringLen
+1	00132C34	oleaut32.dll	00C8	GetErrorInfo
+1	00132C38	oleaut32.dll	000A	VariantCopy
+1	00132C3C	oleaut32.dll	0095	SysStringByteLen
+1	00132C40	oleaut32.dll	000F	SafeArrayCreate
+1	00132C44	oleaut32.dll	0096	SysAllocStringByteLen
+1	00132C48	oleaut32.dll	000C	VariantChangeType
+1	00132C4C	oleaut32.dll	0008	VariantInit
+1	00132C50	oleaut32.dll	0002	SysAllocString
+1	00132C54	oleaut32.dll	0009	VariantClear
+1	00132C58	oleaut32.dll	0006	SysFreeString
+1	00132C5C	oleaut32.dll	00B0	VarCmp
+
+FThunk: 00132C64	NbFunc: 00000008
+1	00132C64	shell32.dll	00D8	ExtractIconA
+1	00132C68	shell32.dll	0138	SHGetPathFromIDList
+1	00132C6C	shell32.dll	012B	SHGetFileInfo
+1	00132C70	shell32.dll	0110	SHBrowseForFolder
+1	00132C74	shell32.dll	0127	SHGetDesktopFolder
+1	00132C78	shell32.dll	0136	SHGetMalloc
+1	00132C7C	shell32.dll	013C	SHGetSpecialFolderLocation
+1	00132C80	shell32.dll	0096	DuplicateIcon
+
+FThunk: 00132C88	NbFunc: 0000003E
+1	00132C88	user32.dll	0203	PostThreadMessageA
+1	00132C8C	user32.dll	0178	GetWindowTextA
+1	00132C90	user32.dll	0031	CharToOemA
+1	00132C94	user32.dll	00C5	EnableWindow
+1	00132C98	user32.dll	02BC	UpdateWindow
+1	00132C9C	user32.dll	023C	SendMessageA
+1	00132CA0	user32.dll	016B	GetWindow
+1	00132CA4	user32.dll	0287	SetWindowTextA
+1	00132CA8	user32.dll	012D	GetMenu
+1	00132CAC	user32.dll	00E5	FindWindowExA
+1	00132CB0	user32.dll	0133	GetMenuItemCount
+1	00132CB4	user32.dll	0135	GetMenuItemInfoA
+1	00132CB8	user32.dll	0263	SetMenuItemInfoA
+1	00132CBC	user32.dll	00FD	GetClassNameA
+1	00132CC0	user32.dll	00E2	ExitWindowsEx
+1	00132CC4	user32.dll	0245	SetCapture
+1	00132CC8	user32.dll	010E	GetDCEx
+1	00132CCC	user32.dll	022B	ReleaseDC
+1	00132CD0	user32.dll	010D	GetDC
+1	00132CD4	user32.dll	0232	ScreenToClient
+1	00132CD8	user32.dll	00E0	EqualRect
+1	00132CDC	user32.dll	00F4	GetCapture
+1	00132CE0	user32.dll	022A	ReleaseCapture
+1	00132CE4	user32.dll	010C	GetCursorPos
+1	00132CE8	user32.dll	01B8	LoadCursorA
+1	00132CEC	user32.dll	024E	SetCursor
+1	00132CF0	user32.dll	01B6	LoadBitmapA
+1	00132CF4	user32.dll	0117	GetFocus
+1	00132CF8	user32.dll	01AD	IsWindowEnabled
+1	00132CFC	user32.dll	01AC	IsWindow
+1	00132D00	user32.dll	0257	SetFocus
+1	00132D04	user32.dll	02D9	wsprintfA
+1	00132D08	user32.dll	0217	RegisterClassA
+1	00132D0C	user32.dll	0061	CreateWindowExA
+1	00132D10	user32.dll	009A	DestroyWindow
+1	00132D14	user32.dll	008F	DefWindowProcA
+1	00132D18	user32.dll	020C	PtInRect
+1	00132D1C	user32.dll	015E	GetSystemMetrics
+1	00132D20	user32.dll	026D	SetRect
+1	00132D24	user32.dll	01F3	OffsetRect
+1	00132D28	user32.dll	029A	SystemParametersInfoA
+1	00132D2C	user32.dll	0193	IntersectRect
+1	00132D30	user32.dll	02B0	UnionRect
+1	00132D34	user32.dll	01A9	IsRectEmpty
+1	00132D38	user32.dll	026E	SetRectEmpty
+1	00132D3C	user32.dll	018B	InflateRect
+1	00132D40	user32.dll	005B	CreateIconIndirect
+1	00132D44	user32.dll	0096	DestroyCursor
+1	00132D48	user32.dll	011B	GetIconInfo
+1	00132D4C	user32.dll	00B8	DrawIconEx
+1	00132D50	user32.dll	0244	SetActiveWindow
+1	00132D54	user32.dll	0175	GetWindowRect
+1	00132D58	user32.dll	01EB	MsgWaitForMultipleObjects
+1	00132D5C	user32.dll	01FE	PeekMessageA
+1	00132D60	user32.dll	013B	GetMessageA
+1	00132D64	user32.dll	02AB	TranslateMessage
+1	00132D68	user32.dll	00A2	DispatchMessageA
+1	00132D6C	user32.dll	0194	InvalidateRect
+1	00132D70	user32.dll	00B4	DrawFocusRect
+1	00132D74	user32.dll	004B	CopyRect
+1	00132D78	user32.dll	015B	GetSysColor
+1	00132D7C	user32.dll	0112	GetDlgItem
+
+FThunk: 00132D84	NbFunc: 00000003
+1	00132D84	version.dll	0001	GetFileVersionInfoA
+1	00132D88	version.dll	000B	VerQueryValueA
+1	00132D8C	version.dll	0002	GetFileVersionInfoSizeA
+
+FThunk: 00132D94	NbFunc: 00000001
+1	00132D94	winmm.dll	009F	sndPlaySoundA
+
+FThunk: 00132D9C	NbFunc: 00000004
+1	00132D9C	winspool.drv	00B9	EnumJobsA
+1	00132DA0	winspool.drv	00EA	EnumPrintersA
+1	00132DA4	winspool.drv	0105	OpenPrinterA
+1	00132DA8	winspool.drv	00F8	GetPrinterA
+
+FThunk: 00132DB0	NbFunc: 0000001C
+1	00132DB0	wsock32.dll	0006	getsockname
+1	00132DB4	wsock32.dll	0033	gethostbyaddr
+1	00132DB8	wsock32.dll	000B	inet_ntoa
+1	00132DBC	wsock32.dll	0015	setsockopt
+1	00132DC0	wsock32.dll	0011	recvfrom
+1	00132DC4	wsock32.dll	0014	sendto
+1	00132DC8	wsock32.dll	0457	EnumProtocolsA
+1	00132DCC	wsock32.dll	0070	WSASetLastError
+1	00132DD0	wsock32.dll	0009	htons
+1	00132DD4	wsock32.dll	000D	listen
+1	00132DD8	wsock32.dll	0016	shutdown
+1	00132DDC	wsock32.dll	000C	ioctlsocket
+1	00132DE0	wsock32.dll	0012	select
+1	00132DE4	wsock32.dll	000A	inet_addr
+1	00132DE8	wsock32.dll	0034	gethostbyname
+1	00132DEC	wsock32.dll	006F	WSAGetLastError
+1	00132DF0	wsock32.dll	0010	recv
+1	00132DF4	wsock32.dll	0013	send
+1	00132DF8	wsock32.dll	0004	connect
+1	00132DFC	wsock32.dll	0002	bind
+1	00132E00	wsock32.dll	0003	closesocket
+1	00132E04	wsock32.dll	0017	socket
+1	00132E08	wsock32.dll	0009	htons
+1	00132E0C	wsock32.dll	0008	htonl
+1	00132E10	wsock32.dll	0039	gethostname
+1	00132E14	wsock32.dll	0008	htonl
+1	00132E18	wsock32.dll	0097	__WSAFDIsSet
+1	00132E1C	wsock32.dll	0001	accept
+
+FThunk: 00132E24	NbFunc: 00000007
+1	00132E24	ole32.dll	003E	CoInitializeSecurity
+1	00132E28	ole32.dll	0011	CoCreateGuid
+1	00132E2C	ole32.dll	003D	CoInitializeEx
+1	00132E30	ole32.dll	0012	CoCreateInstance
+1	00132E34	ole32.dll	010D	OleRun
+1	00132E38	ole32.dll	003C	CoInitialize
+1	00132E3C	ole32.dll	006A	CoUninitialize
+

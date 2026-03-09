@@ -1,0 +1,52 @@
+var posIAT
+var api
+var tabla
+var puntero
+var direc
+
+mov tabla, 40c600       // nos situamos en la tabla de calls_rotos
+
+inicio:
+mov ecx, [tabla]        // cogemos la dirección del call_roto a reparar
+cmp ecx, 0              // miramos si terminó el trabajo
+je termina              // si es así termina el script
+mov direc, ecx          // salvamos la dirección del call a reparar
+log direc
+mov eip, ecx            // sino situamos allí el EIP
+eob vamos               // si salta un BP o una excepción salta a vamos"
+run                     // dejamos correr el programa
+
+vamos:
+cmp eip, 00419276       // mira si tenemos ya la api en EAX
+jne termina             // si no es así termina el trabajo del script
+mov api, eax            // salvamos la api en nuestra variable
+log api                 // logueamos este valor
+jmp localizar           // y vamos a localizar la api en la tabla
+
+localizar:
+mov posIAT, 40d000      // situamos un puntero al inicio de la IAT
+
+sigue:
+mov edx, [posIAT]       // cogemos el contenido de la entrada
+cmp edx, api            // es la misma api que la nuestra?
+je tengo                // si la tenemos vamos a "tengo"
+add posIAT, 4           // apuntamos al siguiente DWORD
+cmp 40d224, posIAT      // mira si hemos llegado al final de tabla
+jb problemas            // si es así hay problemas con la api
+jmp sigue               // sino seguimos loopeando...
+
+tengo:
+mov edx, direc          // recuperamos la dirección del call
+add edx, 2              // apuntamos a los bytes a modificar
+mov [edx], posIAT       // los cambiamos por los correctos
+mov [tabla], 0          // borramos la dirección anterior
+add tabla, 4            // apuntamos a la siguiente entrada
+jmp inicio              // y vamos a por el siguiente
+
+problemas:
+MSG "Hay problemas con una api :("
+ret
+
+termina:
+MSG "Enhorabuena ya tenemos iat¡!!!!"
+ret

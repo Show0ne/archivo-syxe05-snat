@@ -1,0 +1,3 @@
+#define Dumpeado								5
+Cargador						ICON     DISCARDABLE "Cargador.ico"
+Dumpeado						RCDATA   DISCARDABLE "Dumpeado.exe"

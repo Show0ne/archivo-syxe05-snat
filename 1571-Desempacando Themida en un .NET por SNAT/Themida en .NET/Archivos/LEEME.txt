@@ -1,0 +1,3 @@
+Archivos extraídos en Windows XP SP3
+
+Snat.~

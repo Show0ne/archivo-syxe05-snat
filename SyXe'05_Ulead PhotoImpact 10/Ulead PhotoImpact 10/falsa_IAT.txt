@@ -1,0 +1,490 @@
+; Syntax for each function in a thunk (the separator is a TAB)
+; ------------------------------------------------------------
+; Flag   RVA   ModuleName   Ordinal   Name
+;
+; Details for <Valid> parameter:
+; ------------------------------
+; Flag:  0 = valid: no  -> - Name contains the address of the redirected API (you can set
+;                            it to zero if you edit it).
+;                          - Ordinal is not considered but you should let '0000' as value.
+;                          - ModuleName is not considered but you should let '?' as value.
+;
+;        1 = valid: yes -> All next parameters on the line will be considered.
+;                          Function imported by ordinal must have no name (the 4th TAB must
+;                                                                          be there though).
+;
+;        2 = Equivalent to 0 but it is for the loader.
+;
+;        3 = Equivalent to 1 but it is for the loader.
+;
+;        4 = Equivalent to 0 with (R) tag.
+;
+;        5 = Equivalent to 1 with (R) tag.
+;
+; And finally, edit this file as your own risk! :-)
+
+Target: C:\Archivos de programa\Ulead Systems\Ulead PhotoImpact 10 TBYB\Iedit.exe
+OEP: 004D01B0	IATRVA: 004FF000	IATSize: 00000900
+
+FThunk: 004FF000	NbFunc: 00000003
+1	004FF000	kernel32.dll	0364	VirtualAlloc
+1	004FF004	kernel32.dll	004E	CreateFileA
+1	004FF008	kernel32.dll	029D	ReadFile
+
+FThunk: 004FF010	NbFunc: 00000001
+1	004FF010	advapi32.dll	01E1	RegOpenKeyA
+
+FThunk: 004FF018	NbFunc: 00000001
+1	004FF018	apphelp.dll	0001	AllowPermLayer
+
+FThunk: 004FF020	NbFunc: 00000001
+1	004FF020	atl.dll	0001	DllCanUnloadNow
+
+FThunk: 004FF028	NbFunc: 00000001
+1	004FF028	autoenh.dll	0001	AdjustBandC
+
+FThunk: 004FF030	NbFunc: 00000001
+1	004FF030	bar.dll	0003	??0CDocFilmBar@@QAE@XZ
+
+FThunk: 004FF038	NbFunc: 00000001
+1	004FF038	basedv.dll	0005	??0CChildFrame@@QAE@XZ
+
+FThunk: 004FF048	NbFunc: 00000001
+1	004FF048	browse.dll	0004	??0CBitmapTexture@@QAE@XZ
+
+FThunk: 004FF050	NbFunc: 00000001
+1	004FF050	bwsglb.dll	0003	??0CFileFilter@@QAE@ABV0@@Z
+
+FThunk: 004FF058	NbFunc: 00000001
+1	004FF058	bwsui.dll	0002	??0CExString@@QAE@ABV0@@Z
+
+FThunk: 004FF060	NbFunc: 00000001
+1	004FF060	clbcatq.dll	0004	?CreateComponentLibraryTS@@YGJPBGJPAPAUIComponentRecords@@@Z
+
+FThunk: 004FF068	NbFunc: 00000001
+1	004FF068	clrtoclr.dll	0003	ClrHsbToRgb
+
+FThunk: 004FF080	NbFunc: 00000001
+1	004FF080	colorboxinfo.dll	0001	?gfnNewColorMgr@@YAPAUIColorMgr@@XZ
+
+FThunk: 004FF088	NbFunc: 00000001
+1	004FF088	combo.dll	0001	??0CFolderTreeCombo@@QAE@ABV0@@Z
+
+FThunk: 004FF090	NbFunc: 00000001
+1	004FF090	comctl32.dll	0003	ShowHideMenuCtl
+
+FThunk: 004FF098	NbFunc: 00000001
+1	004FF098	comdlg32.dll	0067	ChooseFontA
+
+FThunk: 004FF0A0	NbFunc: 00000001
+1	004FF0A0	commonui.dll	0001	??0CActiveStatic@@QAE@XZ
+
+FThunk: 004FF0A8	NbFunc: 00000001
+1	004FF0A8	comres.dll	0001	COMResModuleInstance
+
+FThunk: 004FF0B0	NbFunc: 00000001
+1	004FF0B0	crypt32.dll	03F5	CloseCertPerformanceData
+
+FThunk: 004FF0B8	NbFunc: 00000001
+1	004FF0B8	davclnt.dll	0002	DavGetDiskSpaceUsage
+
+FThunk: 004FF0C0	NbFunc: 00000001
+1	004FF0C0	drprov.dll	0002	NPAddConnection3
+
+FThunk: 004FF0C8	NbFunc: 00000001
+1	004FF0C8	exifview.dll	0004	??1CEXIFObj@@UAE@XZ
+
+FThunk: 004FF0D0	NbFunc: 00000001
+1	004FF0D0	fourier.dll	0006	?ConvolutionByFFT@CwFourier@@QAE_NPAMPBM1HHHH@Z
+
+FThunk: 004FF0D8	NbFunc: 00000001
+1	004FF0D8	gblurfilter.dll	0002	_GaussBlurEffect@16
+
+FThunk: 004FF0E0	NbFunc: 00000001
+1	004FF0E0	gdi32.dll	0001	AbortDoc
+
+FThunk: 004FF0F0	NbFunc: 00000001
+1	004FF0F0	icm32.dll	0003	CMCheckRGBs
+
+FThunk: 004FF0F8	NbFunc: 00000001
+1	004FF0F8	ierc.dll	0001	GetIERCInstanceHandle
+
+FThunk: 004FF100	NbFunc: 00000001
+1	004FF100	iilist.dll	0002	??0CIIList@@QAE@PAU_IIOData@@@Z
+
+FThunk: 004FF108	NbFunc: 00000001
+1	004FF108	imageenh.dll	0001	fnCreateAutoEnh
+
+FThunk: 004FF110	NbFunc: 00000001
+1	004FF110	imgcore.dll	0003	??0ShadowNode@@QAE@ABV0@@Z
+
+FThunk: 004FF118	NbFunc: 00000001
+1	004FF118	iperc.dll	0001	GetIpeRcInstance
+
+FThunk: 004FF140	NbFunc: 00000001
+1	004FF140	mapi32.dll	000B	MAPILogonEx@20
+
+FThunk: 004FF148	NbFunc: 00000001
+1	004FF148	maxmin.dll	0002	Minimum
+
+FThunk: 004FF150	NbFunc: 00000001
+1	004FF150	mfc42.dll	0006	?classCDataPathProperty@CDataPathProperty@@2UCRuntimeClass@@B
+
+FThunk: 004FF158	NbFunc: 00000001
+1	004FF158	mlang.dll	0071	ConvertINetMultiByteToUnicode
+
+FThunk: 004FF160	NbFunc: 00000001
+1	004FF160	mpr.dll	0003	I_MprSaveConn
+
+FThunk: 004FF168	NbFunc: 00000001
+1	004FF168	msasn1.dll	0001	ASN1BERDecBitString2
+
+FThunk: 004FF170	NbFunc: 00000001
+1	004FF170	mscan.dll	0001	mscanPolyScanLine
+
+FThunk: 004FF178	NbFunc: 00000001
+1	004FF178	mscms.dll	0003	CheckBitmapBits
+
+FThunk: 004FF180	NbFunc: 00000001
+1	004FF180	msctf.dll	0005	TF_InatExtractIcon
+
+FThunk: 004FF188	NbFunc: 00000001
+1	004FF188	msgina.dll	0003	
+
+FThunk: 004FF190	NbFunc: 00000001
+1	004FF190	msvcirt.dll	0005	??0exception@@QAE@XZ
+
+FThunk: 004FF198	NbFunc: 00000001
+1	004FF198	msvcp60.dll	0003	??0?$_Complex_base@O@std@@QAE@ABO0@Z
+
+FThunk: 004FF1A0	NbFunc: 00000001
+1	004FF1A0	msvcrt.dll	0002	??0__non_rtti_object@@QAE@PBD@Z
+
+FThunk: 004FF1A8	NbFunc: 00000001
+1	004FF1A8	msvfw32.dll	0003	DrawDibBegin
+
+FThunk: 004FF1B0	NbFunc: 00000001
+1	004FF1B0	mswsock.dll	0003	AcceptEx
+
+FThunk: 004FF1B8	NbFunc: 00000001
+1	004FF1B8	msxml3.dll	0006	
+
+FThunk: 004FF1C0	NbFunc: 00000001
+1	004FF1C0	netapi32.dll	0002	DsAddressToSiteNamesA
+
+FThunk: 004FF1C8	NbFunc: 00000001
+1	004FF1C8	netrap.dll	0004	RapAuxDataCountOffset
+
+FThunk: 004FF1D0	NbFunc: 00000001
+1	004FF1D0	netui0.dll	0002	??0ALLOC_STR@@QAE@PAGIPBG@Z
+
+FThunk: 004FF1D8	NbFunc: 00000001
+1	004FF1D8	netui1.dll	0003	??0ALIAS_ENUM_ITER@@QAE@AAVALIAS_ENUM@@@Z
+
+FThunk: 004FF1E0	NbFunc: 00000001
+1	004FF1E0	ntdll.dll	0002	RtlConvertPropertyToVariant
+
+FThunk: 004FF1E8	NbFunc: 00000001
+1	004FF1E8	ntlanman.dll	000F	I_SystemFocusDialog
+
+FThunk: 004FF1F0	NbFunc: 00000001
+1	004FF1F0	ntlanman.dll	000D	NPGetCaps
+
+FThunk: 004FF1F8	NbFunc: 00000001
+1	004FF1F8	ntshrui.dll	0004	GetNetResourceFromLocalPath
+
+FThunk: 004FF200	NbFunc: 00000001
+1	004FF200	odbc32.dll	0007	SQLConnect
+
+FThunk: 004FF208	NbFunc: 00000001
+1	004FF208	ole32.dll	000A	CLSIDFromString
+
+FThunk: 004FF210	NbFunc: 00000001
+1	004FF210	oleaut32.dll	0006	SysFreeString
+
+FThunk: 004FF218	NbFunc: 00000001
+1	004FF218	oopattern.dll	0001	??0CDialogDirector@@IAE@XZ
+
+FThunk: 004FF220	NbFunc: 00000001
+1	004FF220	pebase.dll	0004	??0IAlbumDocumentCenter@@QAE@XZ
+
+FThunk: 004FF228	NbFunc: 00000001
+1	004FF228	pecomm.dll	0005	?BufMapBuf@@YAHPAXPAPAX0@Z
+
+FThunk: 004FF230	NbFunc: 00000001
+1	004FF230	peobj.dll	0005	??0PEServiceManager@@QAE@XZ
+
+FThunk: 004FF240	NbFunc: 00000001
+1	004FF240	popview.dll	0003	PopViewOption
+
+FThunk: 004FF260	NbFunc: 00000001
+1	004FF260	rasapi32.dll	0003	DwDeleteSubEntry
+
+FThunk: 004FF268	NbFunc: 00000001
+1	004FF268	rasman.dll	0004	RasActivateRouteEx
+
+FThunk: 004FF280	NbFunc: 00000001
+1	004FF280	rpcrt4.dll	0002	CreateStubFromTypeInfo
+
+FThunk: 004FF288	NbFunc: 00000001
+1	004FF288	rtutils.dll	0003	CreateWaitTimer
+
+FThunk: 004FF290	NbFunc: 00000001
+1	004FF290	samlib.dll	0005	SamChangePasswordUser3
+
+FThunk: 004FF298	NbFunc: 00000001
+1	004FF298	schannel.dll	0003	AcquireCredentialsHandleW
+
+FThunk: 004FF2A0	NbFunc: 00000001
+1	004FF2A0	secur32.dll	0008	AddSecurityPackageA
+
+FThunk: 004FF2A8	NbFunc: 00000001
+1	004FF2A8	seengbase.dll	0002	??0CEffParam@@QAE@XZ
+
+FThunk: 004FF2B0	NbFunc: 00000001
+1	004FF2B0	sensapi.dll	0002	IsDestinationReachableW
+
+FThunk: 004FF2B8	NbFunc: 00000001
+1	004FF2B8	setupapi.dll	0003	CMP_Init_Detection
+
+FThunk: 004FF2C0	NbFunc: 00000001
+1	004FF2C0	shell32.dll	0002	SHChangeNotifyRegister
+
+FThunk: 004FF2C8	NbFunc: 00000001
+1	004FF2C8	shlwapi.dll	0005	
+
+FThunk: 004FF2D8	NbFunc: 00000001
+1	004FF2D8	ss3base.dll	0001	SS3
+
+FThunk: 004FF2F0	NbFunc: 00000001
+1	004FF2F0	tapi32.dll	0002	LAddrParamsInited
+
+FThunk: 004FF2F8	NbFunc: 00000001
+1	004FF2F8	tge.dll	0004	tgeDeriveColorTable
+
+FThunk: 004FF300	NbFunc: 00000001
+1	004FF300	treectl.dll	0005	??0CFileFilterPhoto@@QAE@ABV0@@Z
+
+FThunk: 004FF308	NbFunc: 00000001
+1	004FF308	u32afm.dll	0004	afm3CheckMarkFileStatus
+
+FThunk: 004FF310	NbFunc: 00000001
+1	004FF310	u32aps32.dll	0001	aps32Action
+
+FThunk: 004FF318	NbFunc: 00000001
+1	004FF318	u32base.dll	0001	AddQueue
+
+FThunk: 004FF320	NbFunc: 00000001
+1	004FF320	u32cfg.dll	0005	InitAboutDlgInfoEx
+
+FThunk: 004FF328	NbFunc: 00000001
+1	004FF328	u32clips.dll	0003	CallCreateVarIIList
+
+FThunk: 004FF330	NbFunc: 00000001
+1	004FF330	u32comm.dll	0001	CPUCount
+
+FThunk: 004FF338	NbFunc: 00000001
+1	004FF338	u32cvt.dll	0005	cvt32BufToDIBEx
+
+FThunk: 004FF340	NbFunc: 00000001
+1	004FF340	u32fe.dll	0002	u32FeActionEx
+
+FThunk: 004FF348	NbFunc: 00000001
+1	004FF348	u32feui.dll	0006	u32FeDoAction
+
+FThunk: 004FF350	NbFunc: 00000001
+1	004FF350	u32fido.dll	0008	fmtGetFormatIndexFromProgID
+
+FThunk: 004FF358	NbFunc: 00000001
+1	004FF358	u32file.dll	0006	u32FileGetCompressTypeString
+
+FThunk: 004FF360	NbFunc: 00000001
+1	004FF360	u32lfile.dll	0003	ulfileNet
+
+FThunk: 004FF368	NbFunc: 00000001
+1	004FF368	u32misc.dll	000D	Resample
+
+FThunk: 004FF370	NbFunc: 00000001
+1	004FF370	u32path.dll	0002	?BackupSelectMove@@YAHHPAX@Z
+
+FThunk: 004FF378	NbFunc: 00000001
+1	004FF378	u32plug.dll	0007	u32PiLinkUleadPi
+
+FThunk: 004FF380	NbFunc: 00000001
+1	004FF380	u32prod.dll	0001	GetPRODInstance
+
+FThunk: 004FF388	NbFunc: 00000001
+1	004FF388	u32scan.dll	0002	u32ScanAcquire
+
+FThunk: 004FF390	NbFunc: 00000001
+1	004FF390	u32sel.dll	0001	sel32AntiAlias
+
+FThunk: 004FF398	NbFunc: 00000001
+1	004FF398	u32sn.dll	0002	snGenerate
+
+FThunk: 004FF3A0	NbFunc: 00000001
+1	004FF3A0	u32tu.dll	0001	HslToRgb
+
+FThunk: 004FF3A8	NbFunc: 00000001
+1	004FF3A8	u32tuui.dll	0003	gfnNewHistWnd
+
+FThunk: 004FF3B0	NbFunc: 00000001
+1	004FF3B0	u32tx.dll	0005	u32TxResizeRotate24
+
+FThunk: 004FF3B8	NbFunc: 00000001
+1	004FF3B8	u32txtur.dll	0002	u32Get256ColorTable
+
+FThunk: 004FF3C0	NbFunc: 00000001
+1	004FF3C0	u32xview.dll	0001	??0CxCache@@QAE@ABV0@@Z
+
+FThunk: 004FF3D0	NbFunc: 00000001
+1	004FF3D0	uaboutbox.dll	0001	?ShowAboutBox2Ex@@YAHPAVCWnd@@PAEK@Z
+
+FThunk: 004FF3D8	NbFunc: 00000001
+1	004FF3D8	ucimg.dll	0001	imgCvtDIB24ToMem
+
+FThunk: 004FF3E0	NbFunc: 00000001
+1	004FF3E0	udlfile.dll	0003	udlGetNextMissingFile
+
+FThunk: 004FF3E8	NbFunc: 00000001
+1	004FF3E8	uexiflib.dll	0004	uExifGetFileFormat
+
+FThunk: 004FF3F0	NbFunc: 00000001
+1	004FF3F0	ufcbuf.dll	0001	??0CBuf@@QAE@PAX@Z
+
+FThunk: 004FF400	NbFunc: 00000001
+1	004FF400	ufccnbtn.dll	0002	??0CMultiToolBtn@@QAE@IHIHVCPoint@@@Z
+
+FThunk: 004FF408	NbFunc: 00000001
+1	004FF408	ufccolor.dll	0004	??1CBufWnd@@UAE@XZ
+
+FThunk: 004FF418	NbFunc: 00000001
+1	004FF418	ufccomm.dll	0002	??0CEditTC@@QAE@XZ
+
+FThunk: 004FF420	NbFunc: 00000001
+1	004FF420	ufcdlgbr.dll	0003	??_7CuMiniFrameWnd@@6B@
+
+FThunk: 004FF448	NbFunc: 00000001
+1	004FF448	ufcpnmgr.dll	0006	?GetRuntimeClass@CuPaintManager@@UBEPAUCRuntimeClass@@XZ
+
+FThunk: 004FF458	NbFunc: 00000001
+1	004FF458	ufcpntbp.dll	0005	??1CuCloneBase@@UAE@XZ
+
+FThunk: 004FF460	NbFunc: 00000001
+1	004FF460	ufcpntbs.dll	0004	??0CImageOption@@QAE@XZ
+
+FThunk: 004FF480	NbFunc: 00000001
+1	004FF480	ufcstatu.dll	0006	?GetRuntimeClass@CStatus@@UBEPAUCRuntimeClass@@XZ
+
+FThunk: 004FF488	NbFunc: 00000001
+1	004FF488	uibuilder.dll	0001	UIBuilderGetInstance
+
+FThunk: 004FF490	NbFunc: 00000001
+1	004FF490	uinet.dll	0065	uinetIsOnline
+
+FThunk: 004FF498	NbFunc: 00000001
+1	004FF498	uipl.dll	0003	iplDecimate
+
+FThunk: 004FF4A0	NbFunc: 00000001
+1	004FF4A0	uiplw7.dll	0002	iplDeallocate
+
+FThunk: 004FF4A8	NbFunc: 00000001
+1	004FF4A8	uipp.dll	0003	ippiCannyGetSize
+
+FThunk: 004FF4B0	NbFunc: 00000001
+1	004FF4B0	ul3dui32.dll	0002	GetSliderHandleRect
+
+FThunk: 004FF4B8	NbFunc: 00000001
+1	004FF4B8	ulibgif.dll	0001	uGifFileGetFrameInfo
+
+FThunk: 004FF4C0	NbFunc: 00000001
+1	004FF4C0	ulibjpg.dll	0003	uJpgFileReadEx
+
+FThunk: 004FF4C8	NbFunc: 00000001
+1	004FF4C8	uliblzw.dll	0001	uLzwCompress
+
+FThunk: 004FF4D0	NbFunc: 00000001
+1	004FF4D0	ulibpng.dll	0002	uPngFileRead
+
+FThunk: 004FF4D8	NbFunc: 00000001
+1	004FF4D8	upbgen.dll	0003	upbGetBrushIndex
+
+FThunk: 004FF4E0	NbFunc: 00000001
+1	004FF4E0	upictrl.dll	0002	??0C32BitImageProcessor@@QAE@H@Z
+
+FThunk: 004FF4E8	NbFunc: 00000001
+1	004FF4E8	upvwdlg.dll	0001	??0CRelayoutControl@@IAE@AAVCWnd@@H@Z
+
+FThunk: 004FF4F0	NbFunc: 00000001
+1	004FF4F0	urender.dll	0002	ur3dCreate
+
+FThunk: 004FF4F8	NbFunc: 00000001
+1	004FF4F8	user32.dll	0003	AdjustWindowRectEx
+
+FThunk: 004FF500	NbFunc: 00000001
+1	004FF500	userenv.dll	0067	
+
+FThunk: 004FF508	NbFunc: 00000001
+1	004FF508	ushadow.dll	0002	uCreateFloorShadow
+
+FThunk: 004FF510	NbFunc: 00000001
+1	004FF510	usseng.dll	0004	sseCompress
+
+FThunk: 004FF518	NbFunc: 00000001
+1	004FF518	uwirefrm.dll	0003	?uwSetPathCursor@@YAHPAXHPAUHICON__@@@Z
+
+FThunk: 004FF520	NbFunc: 00000001
+1	004FF520	uwupdate.dll	0002	uwCheck
+
+FThunk: 004FF528	NbFunc: 00000001
+1	004FF528	uxtheme.dll	0003	
+
+FThunk: 004FF530	NbFunc: 00000001
+1	004FF530	version.dll	0003	GetFileVersionInfoSizeW
+
+FThunk: 004FF538	NbFunc: 00000001
+1	004FF538	webbinfo.dll	0004	??0CBrowserInfoArray@@QAE@H@Z
+
+FThunk: 004FF540	NbFunc: 00000001
+1	004FF540	webengine.dll	0005	??0CSLine@@QAE@JJJ@Z
+
+FThunk: 004FF548	NbFunc: 00000001
+1	004FF548	wininet.dll	0068	
+
+FThunk: 004FF550	NbFunc: 00000001
+1	004FF550	winmm.dll	0006	DrvGetModuleHandle
+
+FThunk: 004FF558	NbFunc: 00000001
+1	004FF558	winspool.drv	0068	PerfClose
+
+FThunk: 004FF560	NbFunc: 00000001
+1	004FF560	winsta.dll	0006	ServerLicensingDeactivateCurrentPolicy
+
+FThunk: 004FF568	NbFunc: 00000001
+1	004FF568	ws2_32.dll	0006	getsockname
+
+FThunk: 004FF570	NbFunc: 00000001
+1	004FF570	ws2help.dll	0003	WahCloseNotificationHandleHelper
+
+FThunk: 004FF578	NbFunc: 00000001
+1	004FF578	xctrl.dll	0004	??0CImageHash@@QAE@XZ
+
+FThunk: 004FF580	NbFunc: 00000001
+1	004FF580	xerces.dll	0006	??0AnySimpleTypeDatatypeValidator@xercesc_2_4@@QAE@QAVMemoryManager@1@@Z
+
+FThunk: 004FF588	NbFunc: 00000001
+1	004FF588	xuikit.dll	000A	??0xUIBase@@QAE@PBD@Z
+
+FThunk: 004FF590	NbFunc: 00000001
+1	004FF590	xulparser.dll	0004	DllUnregisterServer
+
+FThunk: 004FF598	NbFunc: 00000001
+1	004FF598	zlib.dll	000B	deflateSetDictionary
+
+FThunk: 004FF5A0	NbFunc: 00000005
+0	004FF5A0	?	0000	30313030
+0	004FF5A4	?	0000	30303130
+0	004FF5A8	?	0000	21303031
+0	004FF5AC	?	0000	21122331
+0	004FF5B0	?	0000	30313030
+

@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+;modificaciones para Acoustica 2.2
+
+[HKEY_CURRENT_USER\Software\Acon AS\Acoustica\2.2\RegisterInfo]
+"Company"="hack-coded"
+"Key"="AC210-92227"
+"Name"="syxe@hack"

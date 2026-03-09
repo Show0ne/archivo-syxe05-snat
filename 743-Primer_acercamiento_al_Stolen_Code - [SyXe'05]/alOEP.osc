@@ -1,0 +1,27 @@
+Inicio:
+dbh                 // oculto el debugger
+eob Vamos           // si BP/Excep salta a "Vamos"
+run                 // dejo correr el programa
+
+Vamos:
+cmp eip, 012AFB34   // Es la última excepción?
+je Ultima           // Si es así va a "Ultima"
+esti                // Equivale a SHIFT+F7
+jmp Inicio          // Al inicio del script
+
+Ultima:
+bprm 00406C60, 04   // BPM de lectura en el OEP
+esti                // Equivale a SHIFT+F7
+eob Termina         // si BP/Excep salta a "Termina"
+run                 // Dejo correr el programa
+
+Termina:
+cmp eip, 012AFDC3   // Cambió la última excepción
+je Otra             // Si fue así salta a "Otra"
+bpmc                // Quito el BPM
+ret                 // Termina el script
+
+Otra:
+esti                // Equivale a SHIFT+F7
+eob Termina         // si BP/Excep salta a "Termina"
+run                 // Dejo correr el programa

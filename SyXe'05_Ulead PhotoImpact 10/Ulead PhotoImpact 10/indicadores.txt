@@ -1,0 +1,55 @@
+The following directories and files were added:(1)
+c:\Archivos de programa\Ulead Systems\Ulead PhotoImpact 10 TBYB\Iedit_OK.exe
+The following directories and files were deleted:(1)
+c:\Archivos de programa\Ulead Systems\Ulead PhotoImpact 10 TBYB\Iedit.exe
+The following files were modified:(9)
+c:\Documents and Settings\All Users\Datos de programa\Ulead Systems\ULEAD32.INI
+c:\Documents and Settings\All Users\Documentos\Config\desktop.idf
+c:\Documents and Settings\All Users\Documentos\Fonts\SWFont9.fnt
+c:\Documents and Settings\All Users\Documentos\Global.sw
+c:\Documents and Settings\All Users\Documentos\Softwrap\ULEADPI10E2004091607\Iedit.sw
+c:\Documents and Settings\SyXe'05\ntuser.dat.LOG
+c:\System Volume Information\_restore{C38607C7-161F-4434-B971-E810E4D05768}\RP36\change.log
+c:\WINDOWS\Prefetch\IEDIT.EXE-274143DE.pf
+c:\WINDOWS\system32\config\software.LOG
+Regis try key values changed: (40)
+HKEY_USERS\S-1-5-21-1606980848-1580436667-1343024091-1003\Software\Logitech\iTouch\Options
+Value "WebUpdateNag": from: "1" to: "0"
+HKEY_USERS\S-1-5-21-1606980848-1580436667-1343024091-1003\Software\Microsoft\smallfont\shell\open
+Value "size10": binary data changed
+HKEY_USERS\S-1-5-21-1606980848-1580436667-1343024091-1003\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{75048700-EF1F-11D0-9888-006097DEACF9}\Count
+Value "HRZR_EHACNGU": from: "08,00,00,00,D5,05,00,00,60,3B,25,A4,39,D5,D0,01" to: "08,00,00,00,D7,05,00,00,60,BF,50,A2,D4,F4,D1,01"
+HKEY_USERS\S-1-5-21-1606980848-1580436667-1343024091-1003\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{75048700-EF1F-11D0-9888-006097DEACF9}\Count
+Value "HRZR_EHACNGU:P:\Nepuvibf qr cebtenzn\Hyrnq Flfgrzf\Hyrnq CubgbVzcnpg 10 GOLO\Vrqvg.rkr": from: "08,00,00,00,20,00,00,00,40,16,60,E1,38,D5,D0,01" to: "08,00,00,00,22,00,00,00,60,BF,50,A2,D4,F4,D1,01"
+HKEY_USERS\S-1-5-21-1606980848-1580436667-1343024091-1003\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{75048700-EF1F-11D0-9888-006097DEACF9}\Count
+Value "HRZR_EHAPCY": from: "05,00,00,00,35,00,00,00,50,79,C1,B9,60,D3,D0,01" to: "08,00,00,00,35,00,00,00,A0,E2,11,E9,39,D5,D0,01"
+HKEY_USERS\S-1-5-21-1606980848-1580436667-1343024091-1003\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{75048700-EF1F-11D0-9888-006097DEACF9}\Count
+Value "HRZR_EHAPCY:gvzrqngr.pcy": from: "03,00,00,00,21,00,00,00,30,9A,D6,C9,22,D2,D0,01" to: "08,00,00,00,21,00,00,00,A0,E2,11,E9,39,D5,D0,01"
+HKEY_USERS\S-1-5-21-1606980848-1580436667-1343024091-1003\Software\Microsoft\Windows\ShellNoRoam\BagMRU\1
+Value "MRUListEx": from: "01,00,00,00,02,00,00,00,00,00,00,00,FF,FF,FF,FF" to: "02,00,00,00,01,00,00,00,00,00,00,00,FF,FF,FF,FF"
+HKEY_USERS\S-1-5-21-1606980848-1580436667-1343024091-1003\Software\Softwrap\Applications
+Value "Iedit": from: "30" to: "32"
+HKEY_USERS\S-1-5-21-1606980848-1580436667-1343024091-1003\Software\Softwrap\E627F6BC9BD4C60C907516B9C934B63FB6584862
+Value "License": binary data changed
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\RNG
+Value "Seed": binary data changed
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Prefetcher
+Value "TracesProcessed": from: "300" to: "301"
+HKEY_CURRENT_USER\Software\Logitech\iTouch\Options
+Value "WebUpdateNag": from: "1" to: "0"
+HKEY_CURRENT_USER\Software\Microsoft\smallfont\shell\open
+Value "size10": binary data changed
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{75048700-EF1F-11D0-9888-006097DEACF9}\Count
+Value "HRZR_EHACNGU": from: "08,00,00,00,D5,05,00,00,60,3B,25,A4,39,D5,D0,01" to: "08,00,00,00,D7,05,00,00,60,BF,50,A2,D4,F4,D1,01"
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{75048700-EF1F-11D0-9888-006097DEACF9}\Count
+Value "HRZR_EHACNGU:P:\Nepuvibf qr cebtenzn\Hyrnq Flfgrzf\Hyrnq CubgbVzcnpg 10 GOLO\Vrqvg.rkr": from: "08,00,00,00,20,00,00,00,40,16,60,E1,38,D5,D0,01" to: "08,00,00,00,22,00,00,00,60,BF,50,A2,D4,F4,D1,01"
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{75048700-EF1F-11D0-9888-006097DEACF9}\Count
+Value "HRZR_EHAPCY": from: "05,00,00,00,35,00,00,00,50,79,C1,B9,60,D3,D0,01" to: "08,00,00,00,35,00,00,00,A0,E2,11,E9,39,D5,D0,01"
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{75048700-EF1F-11D0-9888-006097DEACF9}\Count
+Value "HRZR_EHAPCY:gvzrqngr.pcy": from: "03,00,00,00,21,00,00,00,30,9A,D6,C9,22,D2,D0,01" to: "08,00,00,00,21,00,00,00,A0,E2,11,E9,39,D5,D0,01"
+HKEY_CURRENT_USER\Software\Microsoft\Windows\ShellNoRoam\BagMRU\1
+Value "MRUListEx": from: "01,00,00,00,02,00,00,00,00,00,00,00,FF,FF,FF,FF" to: "02,00,00,00,01,00,00,00,00,00,00,00,FF,FF,FF,FF"
+HKEY_CURRENT_USER\Software\Softwrap\Applications
+Value "Iedit": from: "30" to: "32"
+HKEY_CURRENT_USER\Software\Softwrap\E627F6BC9BD4C60C907516B9C934B63FB6584862
+Value "License": binary data changed

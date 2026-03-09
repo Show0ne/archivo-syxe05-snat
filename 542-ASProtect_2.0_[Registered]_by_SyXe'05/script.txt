@@ -1,0 +1,18 @@
+start:
+eob break
+run
+
+break:
+cmp eip, 00C3A6CC
+jne uno
+log ebp
+jmp start
+
+uno:
+cmp eip, 00C3A7EC
+jne fin
+log eax
+jmp start
+
+fin:
+ret

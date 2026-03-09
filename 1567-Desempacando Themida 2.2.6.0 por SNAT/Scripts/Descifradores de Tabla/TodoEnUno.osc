@@ -1,0 +1,253 @@
+var inicioTabla
+var punteroTabla
+var valorTabla
+var llave_encriptacion
+var antigua_llave
+var addressOfOrdinals
+var addressOfFunctions
+var constante1
+var constante2
+var imageBase
+var base_dll
+var temp
+var api
+var direccionIAT
+var direccionJMP
+var sub64
+var tabla_semillas
+var contador_registros
+
+mov inicioTabla, 5EA52B
+mov llave_encriptacion, 0
+mov antigua_llave, 0
+mov base_dll, 02700000
+mov addressOfOrdinals, 5EA433
+mov addressOfFunctions, 544817
+mov constante1, 76AACDEB  
+mov constante2, 481D5CA2
+mov sub64, 0058358F
+mov imageBase, 40661d
+mov tabla_semillas, 4040B0
+mov contador_registros, 0
+
+lc
+lclr
+
+var oep
+mov oep, 401128
+
+//////// ****** LLEGAMOS AL OEP
+push oep
+call AlOEP
+
+mov punteroTabla, inicioTabla
+Log "///////////// **********               ****************"
+Log "///////////// ********** Inicio SCRIPT ****************"
+Log ""
+
+loop:
+mov valorTabla, [punteroTabla]
+cmp valorTabla, EEEEEEEE
+je termina
+cmp valorTabla, AAAAAAAA
+je sigue
+cmp valorTabla, FFFFFFFF
+je sigue
+cmp valorTabla, DDDDDDDD
+je sigue
+
+inc contador_registros
+eval "///////////// ********** Informacion REGISTRO 0x{contador_registros}"
+Log $RESULT
+
+mov llave_encriptacion, antigua_llave
+mov antigua_llave, valorTabla
+
+xor valorTabla, llave_encriptacion
+ror valorTabla, 3
+sub valorTabla, constante1
+rol valorTabla, 10
+xor valorTabla, constante2
+
+cmp [punteroTabla+4], BBBBBBBB
+je casoEspecial
+
+push valorTabla
+call BuscaSemilla
+cmp $RESULT, -1
+je abortar			; problemas
+
+mov temp, $RESULT
+
+shl temp, 1
+add temp, [addressOfOrdinals]
+mov temp, [temp]
+and temp, 0000ffff
+shl temp, 2
+add temp, [addressOfFunctions] 
+mov temp, [temp]
+add temp, [base_dll] 
+mov api, temp
+
+retornoEspecial:
+Log api
+
+add punteroTabla, 4
+mov valorTabla, [punteroTabla]
+cmp valorTabla, BBBBBBBB
+jne continua
+add punteroTabla, 4
+mov valorTabla, [punteroTabla]
+
+continua:
+push valorTabla
+call desencriptaIAT
+mov temp, $RESULT
+mov direccionIAT, temp
+Log direccionIAT
+
+add punteroTabla, 4
+mov valorTabla, [punteroTabla]
+push valorTabla
+call desencriptaJMP
+mov temp, $RESULT
+mov direccionJMP, temp
+Log direccionJMP
+Log ""
+
+push api
+push direccionIAT
+push direccionJMP
+call Repara
+
+sigue:
+add punteroTabla, 4
+jmp loop
+
+casoEspecial:
+sub valorTabla, [sub64]
+shl valorTabla, 2
+add valorTabla, [addressOfFunctions]
+mov valorTabla, [valorTabla]
+add valorTabla, [base_dll]
+mov api, valorTabla
+gn api
+mov nombreAPI, $RESULT
+eval "Caso ESPECIAL {nombreAPI} en [0x{punteroTabla}]"
+Log $RESULT
+jmp retornoEspecial
+
+
+termina:
+fill 4040B0, 9EC, 0
+eval "Se Repararon 0x{contador_registros}h REGISTROS"
+Log $RESULT
+Log ""
+MSG $RESULT
+ret
+
+abortar:
+Log "Error de ejecución del script, abortando.."
+ret
+
+////////////////// ******************
+BuscaSemilla:
+var Local1
+var Local2
+var Local3
+var contador
+
+pop Local1	; semilla
+
+mov contador, -1
+var puntoInicio
+mov puntoInicio, tabla_semillas
+mov Local3, puntoInicio
+
+loop_bs:
+inc contador
+mov Local2, [Local3]
+cmp Local2, 0
+je problemas
+add Local3, 4
+cmp Local2, Local1
+jne loop_bs
+jmp finaliza
+
+problemas:
+MSG "Problemas Reparando.."
+mov $RESULT, -1
+ret
+
+finaliza:
+mov $RESULT, contador
+ret
+
+////////////////// ******************
+desencriptaIAT:
+var Local1
+pop Local1	; campo_IAT
+
+rol Local1, 5
+add Local1, constante2
+add Local1, [imageBase]	; add imageBase
+mov $RESULT, Local1
+ret
+
+////////////////// ******************
+desencriptaJMP:
+var Local1
+pop Local1	; campo_JMP
+
+rol Local1, 3
+add Local1, [imageBase]	; add imageBase
+mov $RESULT, Local1
+ret
+
+////////////////// ******************
+Repara:
+var Local1
+pop Local1	; direccionJMP
+var Local2
+pop Local2	; direccionIAT
+var Local3
+pop Local3	; api
+mov [Local2], Local3
+eval "jmp dword ptr [{Local2}]"   
+asm Local1, $RESULT
+ret
+
+////////////////// ******************
+AlOEP:
+var lodsb
+mov lodsb, 5F42C7
+
+var Local1
+pop Local1		; OEP
+
+bphws Local1, "x"
+bphws lodsb, "x"
+
+inicio:
+eob rompe
+run
+
+rompe:
+cmp eip, lodsb
+je SalvaTabla
+cmp eip, oep
+je Termina
+jmp inicio
+
+SalvaTabla:
+dm 02D00000, 9EC, "Tabla_Semillas.bin"
+dm 5EA52B, 2B0, "Tabla_IAT.bin"
+dm 02700000, 4, "Base_DLL.bin"
+bphwc lodsb
+jmp inicio
+
+Termina:
+lm 4040B0, 0, "Tabla_Semillas.bin"
+lm 5EA52B, 0, "Tabla_IAT.bin"
+lm 02700000, 4, "Base_DLL.bin"
+ret

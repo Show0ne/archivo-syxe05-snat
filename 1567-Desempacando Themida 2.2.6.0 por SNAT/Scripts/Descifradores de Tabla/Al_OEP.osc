@@ -1,0 +1,32 @@
+var lodsb
+mov lodsb, 5F42C7
+
+var Local1
+pop Local1		; OEP
+
+bphws Local1, "x"
+bphws lodsb, "x"
+
+inicio:
+eob rompe
+run
+
+rompe:
+cmp eip, lodsb
+je SalvaTabla
+cmp eip, oep
+je Termina
+jmp inicio
+
+SalvaTabla:
+dm 02D00000, 9EC, "Tabla_Semillas.bin"
+dm 5EA52B, 2B0, "Tabla_IAT.bin"
+dm 02700000, 4, "Base_DLL.bin"
+bphwc lodsb
+jmp inicio
+
+Termina:
+lm 4040B0, 0, "Tabla_Semillas.bin"
+lm 5EA52B, 0, "Tabla_IAT.bin"
+lm 02700000, 4, "Base_DLL.bin"
+;ret

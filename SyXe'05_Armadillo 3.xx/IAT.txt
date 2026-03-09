@@ -1,0 +1,189 @@
+; Syntax for each function in a thunk (the separator is a TAB)
+; ------------------------------------------------------------
+; Flag   RVA   ModuleName   Ordinal   Name
+;
+; Details for <Valid> parameter:
+; ------------------------------
+; Flag:  0 = valid: no  -> - Name contains the address of the redirected API (you can set
+;                            it to zero if you edit it).
+;                          - Ordinal is not considered but you should let '0000' as value.
+;                          - ModuleName is not considered but you should let '?' as value.
+;
+;        1 = valid: yes -> All next parameters on the line will be considered.
+;                          Function imported by ordinal must have no name (the 4th TAB must
+;                                                                          be there though).
+;
+;        2 = Equivalent to 0 but it is for the loader.
+;
+;        3 = Equivalent to 1 but it is for the loader.
+;
+; And finally, edit this file as your own risk! :-)
+
+Target: C:\Archivos de programa\FreshGames\Cubis Gold\CubisGold.exe
+OEP: 0003A6D9	IATRVA: 0004501C	IATSize: 0000026C
+
+FThunk: 0004501C	NbFunc: 00000001
+1	0004501C	dsound.dll	0001	DirectSoundCreate
+
+FThunk: 00045024	NbFunc: 00000011
+1	00045024	gdi32.dll	01F5	Rectangle
+1	00045028	gdi32.dll	0033	CreateDIBSection
+1	0004502C	gdi32.dll	008D	DeleteDC
+1	00045030	gdi32.dll	002E	CreateCompatibleDC
+1	00045034	gdi32.dll	019D	GetPixel
+1	00045038	gdi32.dll	0230	SetPixel
+1	0004503C	gdi32.dll	0028	CreateBitmap
+1	00045040	gdi32.dll	0214	SetBkColor
+1	00045044	gdi32.dll	016C	GetDeviceCaps
+1	00045048	gdi32.dll	0248	StretchBlt
+1	0004504C	gdi32.dll	01A6	GetStockObject
+1	00045050	gdi32.dll	002D	CreateCompatibleBitmap
+1	00045054	gdi32.dll	020D	SelectObject
+1	00045058	gdi32.dll	0013	BitBlt
+1	0004505C	gdi32.dll	0196	GetObjectA
+1	00045060	gdi32.dll	0051	CreateSolidBrush
+1	00045064	gdi32.dll	0090	DeleteObject
+
+FThunk: 0004506C	NbFunc: 00000051
+1	0004506C	kernel32.dll	0037	CompareStringW
+1	00045070	kernel32.dll	0036	CompareStringA
+1	00045074	kernel32.dll	01AC	GetStringTypeW
+1	00045078	kernel32.dll	02F8	SetEnvironmentVariableA
+1	0004507C	kernel32.dll	021E	IsBadReadPtr
+1	00045080	kernel32.dll	021B	IsBadCodePtr
+1	00045084	kernel32.dll	02F7	SetEndOfFile
+1	00045088	kernel32.dll	0338	Sleep
+1	0004508C	kernel32.dll	007D	DeleteFileA
+1	00045090	kernel32.dll	00CA	FindFirstFileA
+1	00045094	kernel32.dll	00D3	FindNextFileA
+1	00045098	kernel32.dll	01A9	GetStringTypeA
+1	0004509C	kernel32.dll	004E	CreateFileA
+1	000450A0	kernel32.dll	031B	SetStdHandle
+1	000450A4	kernel32.dll	032C	SetUnhandledExceptionFilter
+1	000450A8	kernel32.dll	00C6	FindClose
+1	000450AC	kernel32.dll	0133	GetCurrentDirectoryA
+1	000450B0	kernel32.dll	02F1	SetCurrentDirectoryA
+1	000450B4	kernel32.dll	0046	CreateDirectoryA
+1	000450B8	kernel32.dll	01CB	GetTickCount
+1	000450BC	kernel32.dll	0138	GetCurrentThreadId
+1	000450C0	kernel32.dll	00EA	FreeLibrary
+1	000450C4	kernel32.dll	023B	LoadLibraryA
+1	000450C8	kernel32.dll	0191	GetProcAddress
+1	000450CC	kernel32.dll	0245	LocalFree
+1	000450D0	kernel32.dll	0162	GetLastError
+1	000450D4	kernel32.dll	014A	GetEnvironmentVariableA
+1	000450D8	kernel32.dll	0241	LocalAlloc
+1	000450DC	kernel32.dll	024E	LockResource
+1	000450E0	kernel32.dll	0240	LoadResource
+1	000450E4	kernel32.dll	00D9	FindResourceA
+1	000450E8	kernel32.dll	01F0	GlobalMemoryStatus
+1	000450EC	kernel32.dll	028B	QueryPerformanceCounter
+1	000450F0	kernel32.dll	028C	QueryPerformanceFrequency
+1	000450F4	kernel32.dll	01B2	GetSystemInfo
+1	000450F8	kernel32.dll	01D5	GetVersionExA
+1	000450FC	kernel32.dll	0107	GetComputerNameA
+1	00045100	kernel32.dll	01B0	GetSystemDirectoryA
+1	00045104	kernel32.dll	016F	GetModuleHandleA
+1	00045108	kernel32.dll	025E	MultiByteToWideChar
+1	0004510C	kernel32.dll	0202	HeapFree
+1	00045110	kernel32.dll	01FC	HeapAlloc
+1	00045114	kernel32.dll	0164	GetLocalTime
+1	00045118	kernel32.dll	01CE	GetTimeZoneInformation
+1	0004511C	kernel32.dll	01B5	GetSystemTime
+1	00045120	kernel32.dll	01A6	GetStartupInfoA
+1	00045124	kernel32.dll	0103	GetCommandLineA
+1	00045128	kernel32.dll	01D4	GetVersion
+1	0004512C	kernel32.dll	00B0	ExitProcess
+1	00045130	kernel32.dll	0340	TerminateProcess
+1	00045134	kernel32.dll	0135	GetCurrentProcess
+1	00045138	kernel32.dll	01B7	GetSystemTimeAsFileTime
+1	0004513C	kernel32.dll	02BE	RtlUnwind
+1	00045140	kernel32.dll	0290	RaiseException
+1	00045144	kernel32.dll	0200	HeapDestroy
+1	00045148	kernel32.dll	01FE	HeapCreate
+1	0004514C	kernel32.dll	0367	VirtualFree
+1	00045150	kernel32.dll	0364	VirtualAlloc
+1	00045154	kernel32.dll	0206	HeapReAlloc
+1	00045158	kernel32.dll	0221	IsBadWritePtr
+1	0004515C	kernel32.dll	0030	CloseHandle
+1	00045160	kernel32.dll	00E0	FlushFileBuffers
+1	00045164	kernel32.dll	0385	WriteFile
+1	00045168	kernel32.dll	0378	WideCharToMultiByte
+1	0004516C	kernel32.dll	022D	LCMapStringA
+1	00045170	kernel32.dll	022E	LCMapStringW
+1	00045174	kernel32.dll	0208	HeapSize
+1	00045178	kernel32.dll	00F7	GetCPInfo
+1	0004517C	kernel32.dll	00F0	GetACP
+1	00045180	kernel32.dll	0184	GetOEMCP
+1	00045184	kernel32.dll	0351	UnhandledExceptionFilter
+1	00045188	kernel32.dll	016D	GetModuleFileNameA
+1	0004518C	kernel32.dll	00E8	FreeEnvironmentStringsA
+1	00045190	kernel32.dll	00E9	FreeEnvironmentStringsW
+1	00045194	kernel32.dll	0147	GetEnvironmentStrings
+1	00045198	kernel32.dll	0149	GetEnvironmentStringsW
+1	0004519C	kernel32.dll	024E	LockResource
+1	000451A0	kernel32.dll	01A8	GetStdHandle
+1	000451A4	kernel32.dll	0158	GetFileType
+1	000451A8	kernel32.dll	0300	SetFilePointer
+1	000451AC	kernel32.dll	029D	ReadFile
+
+FThunk: 000451B4	NbFunc: 00000001
+1	000451B4	shell32.dll	0167	ShellExecuteA
+
+FThunk: 000451BC	NbFunc: 00000025
+1	000451BC	user32.dll	0118	GetForegroundWindow
+1	000451C0	user32.dll	01BC	LoadIconA
+1	000451C4	user32.dll	008F	DefWindowProcA
+1	000451C8	user32.dll	00C5	EnableWindow
+1	000451CC	user32.dll	00EC	GetActiveWindow
+1	000451D0	user32.dll	0244	SetActiveWindow
+1	000451D4	user32.dll	00E4	FindWindowA
+1	000451D8	user32.dll	0258	SetForegroundWindow
+1	000451DC	user32.dll	015E	GetSystemMetrics
+1	000451E0	user32.dll	010D	GetDC
+1	000451E4	user32.dll	0100	GetClientRect
+1	000451E8	user32.dll	01F3	OffsetRect
+1	000451EC	user32.dll	0041	ClientToScreen
+1	000451F0	user32.dll	028F	ShowCursor
+1	000451F4	user32.dll	022B	ReleaseDC
+1	000451F8	user32.dll	010F	GetDesktopWindow
+1	000451FC	user32.dll	01DD	MessageBoxA
+1	00045200	user32.dll	01BE	LoadImageA
+1	00045204	user32.dll	0285	SetWindowRgn
+1	00045208	user32.dll	00FD	GetClassNameA
+1	0004520C	user32.dll	00CC	EnumChildWindows
+1	00045210	user32.dll	01B8	LoadCursorA
+1	00045214	user32.dll	00E3	FillRect
+1	00045218	user32.dll	0217	RegisterClassA
+1	0004521C	user32.dll	0096	DestroyCursor
+1	00045220	user32.dll	029A	SystemParametersInfoA
+1	00045224	user32.dll	0061	CreateWindowExA
+1	00045228	user32.dll	024E	SetCursor
+1	0004522C	user32.dll	01FE	PeekMessageA
+1	00045230	user32.dll	02AB	TranslateMessage
+1	00045234	user32.dll	00A2	DispatchMessageA
+1	00045238	user32.dll	009A	DestroyWindow
+1	0004523C	user32.dll	02B4	UnregisterClassA
+1	00045240	user32.dll	01A7	IsIconic
+1	00045244	user32.dll	023C	SendMessageA
+1	00045248	user32.dll	0202	PostQuitMessage
+1	0004524C	user32.dll	0293	ShowWindow
+
+FThunk: 00045254	NbFunc: 00000003
+1	00045254	version.dll	0002	GetFileVersionInfoSizeA
+1	00045258	version.dll	0001	GetFileVersionInfoA
+1	0004525C	version.dll	000B	VerQueryValueA
+
+FThunk: 00045264	NbFunc: 00000002
+1	00045264	wininet.dll	00D6	InternetAttemptConnect
+1	00045268	wininet.dll	00D9	InternetAutodialHangup
+
+FThunk: 00045270	NbFunc: 00000003
+1	00045270	winmm.dll	000C	PlaySound
+1	00045274	winmm.dll	00A6	timeGetTime
+1	00045278	winmm.dll	0043	mciSendStringA
+
+FThunk: 00045280	NbFunc: 00000002
+1	00045280	ws2_32.dll	0073	WSAStartup
+1	00045284	ws2_32.dll	0074	WSACleanup
+

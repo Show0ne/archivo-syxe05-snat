@@ -1,0 +1,80 @@
+//********************************************************
+//* Script para ASProtect 1.2x-1.3x [Registered]
+//* Author: SyXe'05 .:: [CracksLatinoS] ::.
+//* Email: syxe05@gmail.com
+//* S.O: WinXP SP1, OllyDbg 1.10, OllyScript v0.92
+//********************************************************
+
+var OEP                 // guardará el OEP
+var Excep               // guardará la última excepción
+var OtrExcep            // última excepción repetida
+
+Mensajes:
+ask "Introduce el OEP!!"
+cmp $RESULT, 0          // hemos puesto algo?
+je Error                // salta si pulsaste "CANCEL"
+cmp $RESULT, 6          // hemos puesto algo?
+jb PonAlgo              // Salta si el campo está vacío
+mov OEP, $RESULT        // Guardamos el OEP en su variable
+
+Mensajes1:
+ask "Dirección de la última excepción"
+cmp $RESULT, 0          // hemos puesto algo?
+je Error                // salta si pulsaste "CANCEL"
+cmp $RESULT, 6          // hemos puesto algo?
+jb NoExcep              // Salta si el campo está vacío
+mov Excep, $RESULT      // Salvamos la dirección
+
+Mensajes2:
+ask "Dirección de la última excepción"
+cmp $RESULT, 0          // hemos puesto algo?
+je Error                // salta si pulsaste "CANCEL"
+cmp $RESULT, 6          // hemos puesto algo?
+jb NoOtrExcep           // Salta si el campo está vacío
+mov OtrExcep, $RESULT   // Salvamos la dirección
+
+Inicio:
+dbh                     // oculto el debugger
+eob Vamos               // si BP/Excep salta a "vamos"
+run                     // dejo correr el programa
+
+Vamos:
+cmp eip, Excep          // Es la última excepción?
+je Ultima               // Si es así va a "Ultima"
+esti                    // Equivale a SHIFT+F7
+jmp Inicio              // Al inicio del script
+
+Ultima:
+bprm OEP, 04            // BPM de lectura en el OEP
+esti                    // Equivale a SHIFT+F7
+eob Termina             // si BP/Excep salta a "Termina"
+run                     // Dejo correr el programa
+
+Termina:
+cmp eip, OtrExcep       // Cambió la última excepción
+je Otra                 // Si fue así salta a "Otra"
+bpmc                    // Quito el BPM
+ret                     // Termina el script
+
+Otra:
+esti                    // Equivale a SHIFT+F7
+eob Termina             // si BP/Excep salta a "Termina"
+run                     // Dejo correr el programa
+
+Error:
+msg "OEP no introducido ;("
+ret
+
+PonAlgo:
+msg "Si no pones nada será difícl"
+jmp Mensajes                    // Termina el script
+
+NoExcep:
+msg "No sé dónde ocurre la última excepción
+msg "El script no puede continuar!"
+jmp Mensajes1
+
+NoOtrExcep:
+msg "No sé dónde ocurre la última excepción repetida
+msg "El script no puede continuar!"
+jmp Mensajes2
