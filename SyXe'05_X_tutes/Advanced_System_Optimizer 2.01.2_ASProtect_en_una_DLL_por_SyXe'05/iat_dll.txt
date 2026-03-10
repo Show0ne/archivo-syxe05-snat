@@ -1,0 +1,819 @@
+; Syntax for each function in a thunk (the separator is a TAB)
+; ------------------------------------------------------------
+; Flag   RVA   ModuleName   Ordinal   Name
+;
+; Details for <Valid> parameter:
+; ------------------------------
+; Flag:  0 = valid: no  -> - Name contains the address of the redirected API (you can set
+;                            it to zero if you edit it).
+;                          - Ordinal is not considered but you should let '0000' as value.
+;                          - ModuleName is not considered but you should let '?' as value.
+;
+;        1 = valid: yes -> All next parameters on the line will be considered.
+;                          Function imported by ordinal must have no name (the 4th TAB must
+;                                                                          be there though).
+;
+;        2 = Equivalent to 0 but it is for the loader.
+;
+;        3 = Equivalent to 1 but it is for the loader.
+;
+;        4 = Equivalent to 0 with (R) tag.
+;
+;        5 = Equivalent to 1 with (R) tag.
+;
+; And finally, edit this file as your own risk! :-)
+
+Target: c:\archivos de programa\advanced system optimizer 2.01.2\codedll.dll
+OEP: 00037A58	IATRVA: 00041000	IATSize: 00000C48
+
+FThunk: 00041000	NbFunc: 0000003F
+1	00041000	kernel32.dll	0162	GetLastError
+1	00041004	kernel32.dll	00EA	FreeLibrary
+1	00041008	kernel32.dll	0191	GetProcAddress
+1	0004100C	kernel32.dll	023B	LoadLibraryA
+1	00041010	kernel32.dll	02AA	ReleaseMutex
+1	00041014	kernel32.dll	0214	InterlockedExchange
+1	00041018	kernel32.dll	00F0	GetACP
+1	0004101C	kernel32.dll	0165	GetLocaleInfoA
+1	00041020	kernel32.dll	01C6	GetThreadLocale
+1	00041024	kernel32.dll	01D5	GetVersionExA
+1	00041028	kernel32.dll	03A6	lstrcpy
+1	0004102C	kernel32.dll	0338	Sleep
+1	00041030	kernel32.dll	0030	CloseHandle
+1	00041034	kernel32.dll	026E	OpenProcess
+1	00041038	kernel32.dll	02A0	ReadProcessMemory
+1	0004103C	kernel32.dll	0327	SetThreadPriority
+1	00041040	kernel32.dll	0137	GetCurrentThread
+1	00041044	kernel32.dll	02B8	RestoreLastError
+1	00041048	kernel32.dll	0150	GetFileAttributesA
+1	0004104C	kernel32.dll	00CA	FindFirstFileA
+1	00041050	kernel32.dll	00C6	FindClose
+1	00041054	kernel32.dll	0145	GetDriveTypeA
+1	00041058	kernel32.dll	025E	MultiByteToWideChar
+1	0004105C	kernel32.dll	039A	_lopen
+1	00041060	kernel32.dll	0397	_lclose
+1	00041064	kernel32.dll	01B0	GetSystemDirectoryA
+1	00041068	kernel32.dll	01DF	GetWindowsDirectoryA
+1	0004106C	kernel32.dll	03AC	lstrlen
+1	00041070	kernel32.dll	02FE	SetFileAttributesA
+1	00041074	kernel32.dll	007D	DeleteFileA
+1	00041078	kernel32.dll	02AC	RemoveDirectoryA
+1	0004107C	kernel32.dll	01F0	GlobalMemoryStatus
+1	00041080	kernel32.dll	016F	GetModuleHandleA
+1	00041084	kernel32.dll	03A9	lstrcpyn
+1	00041088	kernel32.dll	01E4	GlobalAlloc
+1	0004108C	kernel32.dll	01EF	GlobalLock
+1	00041090	kernel32.dll	01F6	GlobalUnlock
+1	00041094	kernel32.dll	01EB	GlobalFree
+1	00041098	kernel32.dll	0136	GetCurrentProcessId
+1	0004109C	kernel32.dll	014B	GetEnvironmentVariableW
+1	000410A0	kernel32.dll	0378	WideCharToMultiByte
+1	000410A4	kernel32.dll	01AB	GetStringTypeExW
+1	000410A8	kernel32.dll	014A	GetEnvironmentVariableA
+1	000410AC	kernel32.dll	0037	CompareStringW
+1	000410B0	kernel32.dll	03AE	lstrlenW
+1	000410B4	kernel32.dll	01AA	GetStringTypeExA
+1	000410B8	kernel32.dll	03A3	lstrcmpi
+1	000410BC	kernel32.dll	03A5	lstrcmpiW
+1	000410C0	kernel32.dll	0036	CompareStringA
+1	000410C4	kernel32.dll	01D4	GetVersion
+1	000410C8	kernel32.dll	01CB	GetTickCount
+1	000410CC	kernel32.dll	0290	RaiseException
+1	000410D0	kernel32.dll	020F	InitializeCriticalSection
+1	000410D4	kernel32.dll	007B	DeleteCriticalSection
+1	000410D8	kernel32.dll	00B0	ExitProcess
+1	000410DC	kernel32.dll	028B	QueryPerformanceCounter
+1	000410E0	kernel32.dll	0138	GetCurrentThreadId
+1	000410E4	kernel32.dll	01B7	GetSystemTimeAsFileTime
+1	000410E8	kernel32.dll	0090	EnterCriticalSection
+1	000410EC	kernel32.dll	023A	LeaveCriticalSection
+1	000410F0	kernel32.dll	0241	LocalAlloc
+1	000410F4	kernel32.dll	0245	LocalFree
+1	000410F8	kernel32.dll	005B	CreateMutexA
+
+FThunk: 00041100	NbFunc: 000001F4
+1	00041100	mfc71.dll	0C6E	
+1	00041104	mfc71.dll	10A6	
+1	00041108	mfc71.dll	1186	
+1	0004110C	mfc71.dll	0F6D	
+1	00041110	mfc71.dll	09E9	
+1	00041114	mfc71.dll	0E7D	
+1	00041118	mfc71.dll	0E7D	
+1	0004111C	mfc71.dll	0E86	
+1	00041120	mfc71.dll	09E5	
+1	00041124	mfc71.dll	0A56	
+1	00041128	mfc71.dll	09EC	
+1	0004112C	mfc71.dll	0B2E	
+1	00041130	mfc71.dll	0A9A	
+1	00041134	mfc71.dll	057A	
+1	00041138	mfc71.dll	09E9	
+1	0004113C	mfc71.dll	09E9	
+1	00041140	mfc71.dll	09E9	
+1	00041144	mfc71.dll	1420	
+1	00041148	mfc71.dll	063F	
+1	0004114C	mfc71.dll	0677	
+1	00041150	mfc71.dll	0678	
+1	00041154	mfc71.dll	07AC	
+1	00041158	mfc71.dll	1437	
+1	0004115C	mfc71.dll	0552	
+1	00041160	mfc71.dll	1367	
+1	00041164	mfc71.dll	09E9	
+1	00041168	mfc71.dll	1885	
+1	0004116C	mfc71.dll	0EDA	
+1	00041170	mfc71.dll	1887	
+1	00041174	mfc71.dll	05F2	
+1	00041178	mfc71.dll	087C	
+1	0004117C	mfc71.dll	0882	
+1	00041180	mfc71.dll	0965	
+1	00041184	mfc71.dll	0953	
+1	00041188	mfc71.dll	0951	
+1	0004118C	mfc71.dll	0968	
+1	00041190	mfc71.dll	096D	
+1	00041194	mfc71.dll	095A	
+1	00041198	mfc71.dll	096A	
+1	0004119C	mfc71.dll	03A6	
+1	000411A0	mfc71.dll	03A2	
+1	000411A4	mfc71.dll	03A4	
+1	000411A8	mfc71.dll	03A0	
+1	000411AC	mfc71.dll	039B	
+1	000411B0	mfc71.dll	1748	
+1	000411B4	mfc71.dll	0640	
+1	000411B8	mfc71.dll	10BA	
+1	000411BC	mfc71.dll	1272	
+1	000411C0	mfc71.dll	0D4B	
+1	000411C4	mfc71.dll	1059	
+1	000411C8	mfc71.dll	1883	
+1	000411CC	mfc71.dll	13D1	
+1	000411D0	mfc71.dll	0774	
+1	000411D4	mfc71.dll	1420	
+1	000411D8	mfc71.dll	1094	
+1	000411DC	mfc71.dll	0579	
+1	000411E0	mfc71.dll	0E7D	
+1	000411E4	mfc71.dll	0651	
+1	000411E8	mfc71.dll	0654	
+1	000411EC	mfc71.dll	1718	
+1	000411F0	mfc71.dll	060F	
+1	000411F4	mfc71.dll	0686	
+1	000411F8	mfc71.dll	0687	
+1	000411FC	mfc71.dll	082E	
+1	00041200	mfc71.dll	1420	
+1	00041204	mfc71.dll	0CB7	
+1	00041208	mfc71.dll	0CDC	
+1	0004120C	mfc71.dll	10A5	
+1	00041210	mfc71.dll	057A	
+1	00041214	mfc71.dll	09E9	
+1	00041218	mfc71.dll	062D	
+1	0004121C	mfc71.dll	0663	
+1	00041220	mfc71.dll	10B1	
+1	00041224	mfc71.dll	0A9D	
+1	00041228	mfc71.dll	061A	
+1	0004122C	mfc71.dll	142E	
+1	00041230	mfc71.dll	0550	
+1	00041234	mfc71.dll	0D10	
+1	00041238	mfc71.dll	0974	
+1	0004123C	mfc71.dll	0973	
+1	00041240	mfc71.dll	0972	
+1	00041244	mfc71.dll	0971	
+1	00041248	mfc71.dll	1456	
+1	0004124C	mfc71.dll	0653	
+1	00041250	mfc71.dll	171A	
+1	00041254	mfc71.dll	0F86	
+1	00041258	mfc71.dll	12FC	
+1	0004125C	mfc71.dll	12FF	
+1	00041260	mfc71.dll	111B	
+1	00041264	mfc71.dll	111B	
+1	00041268	mfc71.dll	0782	
+1	0004126C	mfc71.dll	111B	
+1	00041270	mfc71.dll	1131	
+1	00041274	mfc71.dll	1122	
+1	00041278	mfc71.dll	12A8	
+1	0004127C	mfc71.dll	11EB	
+1	00041280	mfc71.dll	1052	
+1	00041284	mfc71.dll	104B	
+1	00041288	mfc71.dll	1374	
+1	0004128C	mfc71.dll	0524	
+1	00041290	mfc71.dll	12AD	
+1	00041294	mfc71.dll	104C	
+1	00041298	mfc71.dll	12B6	
+1	0004129C	mfc71.dll	104C	
+1	000412A0	mfc71.dll	115C	
+1	000412A4	mfc71.dll	0E9C	
+1	000412A8	mfc71.dll	1332	
+1	000412AC	mfc71.dll	11A7	
+1	000412B0	mfc71.dll	056B	
+1	000412B4	mfc71.dll	1338	
+1	000412B8	mfc71.dll	0976	
+1	000412BC	mfc71.dll	0976	
+1	000412C0	mfc71.dll	056B	
+1	000412C4	mfc71.dll	056B	
+1	000412C8	mfc71.dll	056B	
+1	000412CC	mfc71.dll	08A2	
+1	000412D0	mfc71.dll	136A	
+1	000412D4	mfc71.dll	1180	
+1	000412D8	mfc71.dll	1180	
+1	000412DC	mfc71.dll	0524	
+1	000412E0	mfc71.dll	1354	
+1	000412E4	mfc71.dll	10BF	
+1	000412E8	mfc71.dll	10BF	
+1	000412EC	mfc71.dll	10F7	
+1	000412F0	mfc71.dll	10F7	
+1	000412F4	mfc71.dll	0524	
+1	000412F8	mfc71.dll	0524	
+1	000412FC	mfc71.dll	1266	
+1	00041300	mfc71.dll	0524	
+1	00041304	mfc71.dll	10F7	
+1	00041308	mfc71.dll	0524	
+1	0004130C	mfc71.dll	0524	
+1	00041310	mfc71.dll	0524	
+1	00041314	mfc71.dll	0524	
+1	00041318	mfc71.dll	0524	
+1	0004131C	mfc71.dll	0524	
+1	00041320	mfc71.dll	1242	
+1	00041324	mfc71.dll	1023	
+1	00041328	mfc71.dll	0516	
+1	0004132C	mfc71.dll	07D8	
+1	00041330	mfc71.dll	1024	
+1	00041334	mfc71.dll	011A	
+1	00041338	mfc71.dll	05D1	
+1	0004133C	mfc71.dll	0B74	
+1	00041340	mfc71.dll	0912	
+1	00041344	mfc71.dll	0FF1	
+1	00041348	mfc71.dll	0381	
+1	0004134C	mfc71.dll	0109	
+1	00041350	mfc71.dll	0248	
+1	00041354	mfc71.dll	0126	
+1	00041358	mfc71.dll	013D	
+1	0004135C	mfc71.dll	0F5D	
+1	00041360	mfc71.dll	09A4	
+1	00041364	mfc71.dll	02FA	
+1	00041368	mfc71.dll	01B1	
+1	0004136C	mfc71.dll	04A9	
+1	00041370	mfc71.dll	07B2	
+1	00041374	mfc71.dll	0391	
+1	00041378	mfc71.dll	0902	
+1	0004137C	mfc71.dll	0361	
+1	00041380	mfc71.dll	05CA	
+1	00041384	mfc71.dll	0C6E	
+1	00041388	mfc71.dll	044A	
+1	0004138C	mfc71.dll	0173	
+1	00041390	mfc71.dll	0497	
+1	00041394	mfc71.dll	015B	
+1	00041398	mfc71.dll	025A	
+1	0004139C	mfc71.dll	04FF	
+1	000413A0	mfc71.dll	1605	
+1	000413A4	mfc71.dll	1700	
+1	000413A8	mfc71.dll	17AE	
+1	000413AC	mfc71.dll	08D8	
+1	000413B0	mfc71.dll	0BAF	
+1	000413B4	mfc71.dll	164E	
+1	000413B8	mfc71.dll	0C6C	
+1	000413BC	mfc71.dll	1657	
+1	000413C0	mfc71.dll	1721	
+1	000413C4	mfc71.dll	1519	
+1	000413C8	mfc71.dll	1526	
+1	000413CC	mfc71.dll	15D4	
+1	000413D0	mfc71.dll	1593	
+1	000413D4	mfc71.dll	160F	
+1	000413D8	mfc71.dll	165F	
+1	000413DC	mfc71.dll	17A9	
+1	000413E0	mfc71.dll	1041	
+1	000413E4	mfc71.dll	17A6	
+1	000413E8	mfc71.dll	15E8	
+1	000413EC	mfc71.dll	17AC	
+1	000413F0	mfc71.dll	15EB	
+1	000413F4	mfc71.dll	09DF	
+1	000413F8	mfc71.dll	0164	
+1	000413FC	mfc71.dll	0D09	
+1	00041400	mfc71.dll	0463	
+1	00041404	mfc71.dll	0944	
+1	00041408	mfc71.dll	076F	
+1	0004140C	mfc71.dll	17B1	
+1	00041410	mfc71.dll	1101	
+1	00041414	mfc71.dll	07A3	
+1	00041418	mfc71.dll	082E	
+1	0004141C	mfc71.dll	082E	
+1	00041420	mfc71.dll	0CAC	
+1	00041424	mfc71.dll	0503	
+1	00041428	mfc71.dll	161A	
+1	0004142C	mfc71.dll	02FD	
+1	00041430	mfc71.dll	02FB	
+1	00041434	mfc71.dll	0A26	
+1	00041438	mfc71.dll	11C7	
+1	0004143C	mfc71.dll	026C	
+1	00041440	mfc71.dll	0EB1	
+1	00041444	mfc71.dll	0462	
+1	00041448	mfc71.dll	0400	
+1	0004144C	mfc71.dll	0C7B	
+1	00041450	mfc71.dll	0612	
+1	00041454	mfc71.dll	181E	
+1	00041458	mfc71.dll	1824	
+1	0004145C	mfc71.dll	05CE	
+1	00041460	mfc71.dll	093F	
+1	00041464	mfc71.dll	0C5C	
+1	00041468	mfc71.dll	0A21	
+1	0004146C	mfc71.dll	0609	
+1	00041470	mfc71.dll	0488	
+1	00041474	mfc71.dll	04A8	
+1	00041478	mfc71.dll	014A	
+1	0004147C	mfc71.dll	024D	
+1	00041480	mfc71.dll	0489	
+1	00041484	mfc71.dll	0443	
+1	00041488	mfc71.dll	0C87	
+1	0004148C	mfc71.dll	018B	
+1	00041490	mfc71.dll	0F31	
+1	00041494	mfc71.dll	027B	
+1	00041498	mfc71.dll	0B8B	
+1	0004149C	mfc71.dll	0C87	
+1	000414A0	mfc71.dll	0B8B	
+1	000414A4	mfc71.dll	10CB	
+1	000414A8	mfc71.dll	0A9F	
+1	000414AC	mfc71.dll	0237	
+1	000414B0	mfc71.dll	02F6	
+1	000414B4	mfc71.dll	0591	
+1	000414B8	mfc71.dll	1602	
+1	000414BC	mfc71.dll	1603	
+1	000414C0	mfc71.dll	133F	
+1	000414C4	mfc71.dll	07B0	
+1	000414C8	mfc71.dll	10A9	
+1	000414CC	mfc71.dll	142D	
+1	000414D0	mfc71.dll	10B5	
+1	000414D4	mfc71.dll	051A	
+1	000414D8	mfc71.dll	087D	
+1	000414DC	mfc71.dll	1455	
+1	000414E0	mfc71.dll	141C	
+1	000414E4	mfc71.dll	057A	
+1	000414E8	mfc71.dll	0615	
+1	000414EC	mfc71.dll	0FB3	
+1	000414F0	mfc71.dll	0978	
+1	000414F4	mfc71.dll	0979	
+1	000414F8	mfc71.dll	0BB0	
+1	000414FC	mfc71.dll	14EC	
+1	00041500	mfc71.dll	03AF	
+1	00041504	mfc71.dll	1328	
+1	00041508	mfc71.dll	0B7B	
+1	0004150C	mfc71.dll	1027	
+1	00041510	mfc71.dll	10D5	
+1	00041514	mfc71.dll	1394	
+1	00041518	mfc71.dll	1391	
+1	0004151C	mfc71.dll	0A37	
+1	00041520	mfc71.dll	0779	
+1	00041524	mfc71.dll	08C6	
+1	00041528	mfc71.dll	101B	
+1	0004152C	mfc71.dll	0FA1	
+1	00041530	mfc71.dll	081B	
+1	00041534	mfc71.dll	0C61	
+1	00041538	mfc71.dll	1181	
+1	0004153C	mfc71.dll	0B7E	
+1	00041540	mfc71.dll	0B16	
+1	00041544	mfc71.dll	0172	
+1	00041548	mfc71.dll	026A	
+1	0004154C	mfc71.dll	0CD6	
+1	00041550	mfc71.dll	160C	
+1	00041554	mfc71.dll	0146	
+1	00041558	mfc71.dll	0C5B	
+1	0004155C	mfc71.dll	1773	
+1	00041560	mfc71.dll	1650	
+1	00041564	mfc71.dll	188E	
+1	00041568	mfc71.dll	14C8	
+1	0004156C	mfc71.dll	04A1	
+1	00041570	mfc71.dll	1899	
+1	00041574	mfc71.dll	14D3	
+1	00041578	mfc71.dll	0C92	
+1	0004157C	mfc71.dll	0B8D	
+1	00041580	mfc71.dll	17E7	
+1	00041584	mfc71.dll	15ED	
+1	00041588	mfc71.dll	0825	
+1	0004158C	mfc71.dll	0C5A	
+1	00041590	mfc71.dll	078B	
+1	00041594	mfc71.dll	024B	
+1	00041598	mfc71.dll	0C5A	
+1	0004159C	mfc71.dll	1653	
+1	000415A0	mfc71.dll	1654	
+1	000415A4	mfc71.dll	02E9	
+1	000415A8	mfc71.dll	1776	
+1	000415AC	mfc71.dll	022D	
+1	000415B0	mfc71.dll	1608	
+1	000415B4	mfc71.dll	0361	
+1	000415B8	mfc71.dll	0D3D	
+1	000415BC	mfc71.dll	0C80	
+1	000415C0	mfc71.dll	0181	
+1	000415C4	mfc71.dll	0B7F	
+1	000415C8	mfc71.dll	1441	
+1	000415CC	mfc71.dll	04AF	
+1	000415D0	mfc71.dll	0444	
+1	000415D4	mfc71.dll	0448	
+1	000415D8	mfc71.dll	1416	
+1	000415DC	mfc71.dll	0182	
+1	000415E0	mfc71.dll	0277	
+1	000415E4	mfc71.dll	08E8	
+1	000415E8	mfc71.dll	08F0	
+1	000415EC	mfc71.dll	0F5B	
+1	000415F0	mfc71.dll	0ABF	
+1	000415F4	mfc71.dll	05A0	
+1	000415F8	mfc71.dll	0789	
+1	000415FC	mfc71.dll	127E	
+1	00041600	mfc71.dll	1073	
+1	00041604	mfc71.dll	132E	
+1	00041608	mfc71.dll	10B3	
+1	0004160C	mfc71.dll	1211	
+1	00041610	mfc71.dll	11E8	
+1	00041614	mfc71.dll	1170	
+1	00041618	mfc71.dll	1170	
+1	0004161C	mfc71.dll	1170	
+1	00041620	mfc71.dll	08E0	
+1	00041624	mfc71.dll	077C	
+1	00041628	mfc71.dll	0AF3	
+1	0004162C	mfc71.dll	0F9D	
+1	00041630	mfc71.dll	0F09	
+1	00041634	mfc71.dll	038B	
+1	00041638	mfc71.dll	01BB	
+1	0004163C	mfc71.dll	02A4	
+1	00041640	mfc71.dll	1773	
+1	00041644	mfc71.dll	0145	
+1	00041648	mfc71.dll	01F6	
+1	0004164C	mfc71.dll	0CD7	
+1	00041650	mfc71.dll	1608	
+1	00041654	mfc71.dll	077D	
+1	00041658	mfc71.dll	1650	
+1	0004165C	mfc71.dll	0CB6	
+1	00041660	mfc71.dll	162C	
+1	00041664	mfc71.dll	1016	
+1	00041668	mfc71.dll	0CF5	
+1	0004166C	mfc71.dll	0233	
+1	00041670	mfc71.dll	0940	
+1	00041674	mfc71.dll	0E6B	
+1	00041678	mfc71.dll	186F	
+1	0004167C	mfc71.dll	03F1	
+1	00041680	mfc71.dll	079C	
+1	00041684	mfc71.dll	0F33	
+1	00041688	mfc71.dll	1318	
+1	0004168C	mfc71.dll	132C	
+1	00041690	mfc71.dll	1541	
+1	00041694	mfc71.dll	100D	
+1	00041698	mfc71.dll	100C	
+1	0004169C	mfc71.dll	08DF	
+1	000416A0	mfc71.dll	183F	
+1	000416A4	mfc71.dll	0FD0	
+1	000416A8	mfc71.dll	037D	
+1	000416AC	mfc71.dll	0131	
+1	000416B0	mfc71.dll	1793	
+1	000416B4	mfc71.dll	103F	
+1	000416B8	mfc71.dll	0303	
+1	000416BC	mfc71.dll	029B	
+1	000416C0	mfc71.dll	059A	
+1	000416C4	mfc71.dll	0B5B	
+1	000416C8	mfc71.dll	1627	
+1	000416CC	mfc71.dll	153E	
+1	000416D0	mfc71.dll	05A4	
+1	000416D4	mfc71.dll	1772	
+1	000416D8	mfc71.dll	1778	
+1	000416DC	mfc71.dll	04A3	
+1	000416E0	mfc71.dll	04A7	
+1	000416E4	mfc71.dll	0341	
+1	000416E8	mfc71.dll	033A	
+1	000416EC	mfc71.dll	183D	
+1	000416F0	mfc71.dll	01BA	
+1	000416F4	mfc71.dll	02A3	
+1	000416F8	mfc71.dll	0224	
+1	000416FC	mfc71.dll	0FCC	
+1	00041700	mfc71.dll	0180	
+1	00041704	mfc71.dll	0275	
+1	00041708	mfc71.dll	13E1	
+1	0004170C	mfc71.dll	08D3	
+1	00041710	mfc71.dll	059F	
+1	00041714	mfc71.dll	04BB	
+1	00041718	mfc71.dll	0487	
+1	0004171C	mfc71.dll	049D	
+1	00041720	mfc71.dll	0D05	
+1	00041724	mfc71.dll	0236	
+1	00041728	mfc71.dll	02F5	
+1	0004172C	mfc71.dll	08C8	
+1	00041730	mfc71.dll	0BAE	
+1	00041734	mfc71.dll	15BE	
+1	00041738	mfc71.dll	145D	
+1	0004173C	mfc71.dll	0452	
+1	00041740	mfc71.dll	11D8	
+1	00041744	mfc71.dll	0F6C	
+1	00041748	mfc71.dll	146A	
+1	0004174C	mfc71.dll	1468	
+1	00041750	mfc71.dll	0B73	
+1	00041754	mfc71.dll	0780	
+1	00041758	mfc71.dll	0EF8	
+1	0004175C	mfc71.dll	1506	
+1	00041760	mfc71.dll	184B	
+1	00041764	mfc71.dll	13EE	
+1	00041768	mfc71.dll	03F2	
+1	0004176C	mfc71.dll	0EDE	
+1	00041770	mfc71.dll	15CF	
+1	00041774	mfc71.dll	07E2	
+1	00041778	mfc71.dll	080F	
+1	0004177C	mfc71.dll	10E6	
+1	00041780	mfc71.dll	1886	
+1	00041784	mfc71.dll	0FAE	
+1	00041788	mfc71.dll	0FC6	
+1	0004178C	mfc71.dll	0CB7	
+1	00041790	mfc71.dll	0407	
+1	00041794	mfc71.dll	14DD	
+1	00041798	mfc71.dll	0C5C	
+1	0004179C	mfc71.dll	0963	
+1	000417A0	mfc71.dll	096F	
+1	000417A4	mfc71.dll	0958	
+1	000417A8	mfc71.dll	095C	
+1	000417AC	mfc71.dll	095E	
+1	000417B0	mfc71.dll	0960	
+1	000417B4	mfc71.dll	0956	
+1	000417B8	mfc71.dll	1471	
+1	000417BC	mfc71.dll	1471	
+1	000417C0	mfc71.dll	0975	
+1	000417C4	mfc71.dll	1180	
+1	000417C8	mfc71.dll	136A	
+1	000417CC	mfc71.dll	030F	
+1	000417D0	mfc71.dll	17E4	
+1	000417D4	mfc71.dll	1453	
+1	000417D8	mfc71.dll	1795	
+1	000417DC	mfc71.dll	1663	
+1	000417E0	mfc71.dll	0427	
+1	000417E4	mfc71.dll	1608	
+1	000417E8	mfc71.dll	08D7	
+1	000417EC	mfc71.dll	0C84	
+1	000417F0	mfc71.dll	0C8A	
+1	000417F4	mfc71.dll	02C5	
+1	000417F8	mfc71.dll	01F5	
+1	000417FC	mfc71.dll	078E	
+1	00041800	mfc71.dll	0500	
+1	00041804	mfc71.dll	1074	
+1	00041808	mfc71.dll	127F	
+1	0004180C	mfc71.dll	16C9	
+1	00041810	mfc71.dll	0573	
+1	00041814	mfc71.dll	0456	
+1	00041818	mfc71.dll	0943	
+1	0004181C	mfc71.dll	17CA	
+1	00041820	mfc71.dll	0874	
+1	00041824	mfc71.dll	101D	
+1	00041828	mfc71.dll	0A61	
+1	0004182C	mfc71.dll	17B3	
+1	00041830	mfc71.dll	11E4	
+1	00041834	mfc71.dll	0B84	
+1	00041838	mfc71.dll	0702	
+1	0004183C	mfc71.dll	0FC3	
+1	00041840	mfc71.dll	023C	
+1	00041844	mfc71.dll	02F8	
+1	00041848	mfc71.dll	0BAF	
+1	0004184C	mfc71.dll	145E	
+1	00041850	mfc71.dll	02E5	
+1	00041854	mfc71.dll	0CF5	
+1	00041858	mfc71.dll	1088	
+1	0004185C	mfc71.dll	0637	
+1	00041860	mfc71.dll	078B	
+1	00041864	mfc71.dll	025D	
+1	00041868	mfc71.dll	0162	
+1	0004186C	mfc71.dll	043C	
+1	00041870	mfc71.dll	07E4	
+1	00041874	mfc71.dll	0C59	
+1	00041878	mfc71.dll	02F1	
+1	0004187C	mfc71.dll	02CB	
+1	00041880	mfc71.dll	1013	
+1	00041884	mfc71.dll	0D49	
+1	00041888	mfc71.dll	0CE6	
+1	0004188C	mfc71.dll	0129	
+1	00041890	mfc71.dll	010A	
+1	00041894	mfc71.dll	0276	
+1	00041898	mfc71.dll	126F	
+1	0004189C	mfc71.dll	0BF0	
+1	000418A0	mfc71.dll	0288	
+1	000418A4	mfc71.dll	019A	
+1	000418A8	mfc71.dll	010A	
+1	000418AC	mfc71.dll	036A	
+1	000418B0	mfc71.dll	0853	
+1	000418B4	mfc71.dll	0B55	
+1	000418B8	mfc71.dll	0303	
+1	000418BC	mfc71.dll	030D	
+1	000418C0	mfc71.dll	0130	
+1	000418C4	mfc71.dll	023F	
+1	000418C8	mfc71.dll	1088	
+1	000418CC	mfc71.dll	0125	
+
+FThunk: 000418D4	NbFunc: 0000005E
+1	000418D4	msvcp71.dll	09A2	?rdstate@ios_base@std@@QBEHXZ
+1	000418D8	msvcp71.dll	0A6C	?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAEHD@Z
+1	000418DC	msvcp71.dll	0522	?_Unlock@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAEXXZ
+1	000418E0	msvcp71.dll	0522	?_Unlock@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAEXXZ
+1	000418E4	msvcp71.dll	0AB5	?tie@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_ostream@DU?$char_traits@D@std@@@2@XZ
+1	000418E8	msvcp71.dll	04DC	?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEXXZ
+1	000418EC	msvcp71.dll	04C0	?_Ipfx@?$basic_istream@GU?$char_traits@G@std@@@std@@QAE_N_N@Z
+1	000418F0	msvcp71.dll	04BF	?_Ipfx@?$basic_istream@DU?$char_traits@D@std@@@std@@QAE_N_N@Z
+1	000418F4	msvcp71.dll	052B	?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@ID@Z
+1	000418F8	msvcp71.dll	06F7	?erase@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@II@Z
+1	000418FC	msvcp71.dll	08AB	?max_size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ
+1	00041900	msvcp71.dll	0532	?append@?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@QAEAAV12@IG@Z
+1	00041904	msvcp71.dll	04D4	?_Myptr@?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@QAEPAGXZ
+1	00041908	msvcp71.dll	04CB	?_Lock@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAEXXZ
+1	0004190C	msvcp71.dll	04CB	?_Lock@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAEXXZ
+1	00041910	msvcp71.dll	0AB5	?tie@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_ostream@DU?$char_traits@D@std@@@2@XZ
+1	00041914	msvcp71.dll	04DC	?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEXXZ
+1	00041918	msvcp71.dll	06FA	?erase@?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@QAEAAV12@II@Z
+1	0004191C	msvcp71.dll	08AC	?max_size@?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@QBEIXZ
+1	00041920	msvcp71.dll	0314	??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
+1	00041924	msvcp71.dll	0304	??A?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAADI@Z
+1	00041928	msvcp71.dll	015F	??0?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@QAE@ABV01@@Z
+1	0004192C	msvcp71.dll	0317	??Y?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@QAEAAV01@PBG@Z
+1	00041930	msvcp71.dll	0306	??A?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@QAEAAGI@Z
+1	00041934	msvcp71.dll	0709	?fill@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEDXZ
+1	00041938	msvcp71.dll	0AF6	?widen@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEDD@Z
+1	0004193C	msvcp71.dll	0AF7	?widen@?$basic_ios@GU?$char_traits@G@std@@@std@@QBEGD@Z
+1	00041940	msvcp71.dll	07D6	?id@?$ctype@G@std@@2V0locale@2@A
+1	00041944	msvcp71.dll	0500	?_Register@facet@locale@std@@QAEXXZ
+1	00041948	msvcp71.dll	045A	?_Getfacet@locale@std@@QBEPBVfacet@12@I@Z
+1	0004194C	msvcp71.dll	07D5	?id@?$ctype@D@std@@2V0locale@2@A
+1	00041950	msvcp71.dll	08DC	?npos@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@2IB
+1	00041954	msvcp71.dll	0ADC	?uncaught_exception@std@@YA_NXZ
+1	00041958	msvcp71.dll	08DC	?npos@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@2IB
+1	0004195C	msvcp71.dll	0252	??1_Lockit@std@@QAE@XZ
+1	00041960	msvcp71.dll	01E3	??0_Lockit@std@@QAE@H@Z
+1	00041964	msvcp71.dll	0883	?length@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ
+1	00041968	msvcp71.dll	0316	??Y?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@QAEAAV01@G@Z
+1	0004196C	msvcp71.dll	0315	??Y?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@QAEAAV01@ABV01@@Z
+1	00041970	msvcp71.dll	0221	??1?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@QAE@XZ
+1	00041974	msvcp71.dll	0163	??0?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@QAE@IG@Z
+1	00041978	msvcp71.dll	0166	??0?$basic_string@GU?$char_traits@G@std@@V?$allocator@G@2@@std@@QAE@PBG@Z
+1	0004197C	msvcp71.dll	04D2	?_Myptr@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEPADXZ
+1	00041980	msvcp71.dll	04D2	?_Myptr@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEPADXZ
+1	00041984	msvcp71.dll	0313	??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z
+1	00041988	msvcp71.dll	0312	??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
+1	0004198C	msvcp71.dll	0156	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ID@Z
+1	00041990	msvcp71.dll	074F	?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV12@XZ
+1	00041994	msvcp71.dll	074F	?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV12@XZ
+1	00041998	msvcp71.dll	070B	?fill@?$basic_ios@GU?$char_traits@G@std@@@std@@QBEGXZ
+1	0004199C	msvcp71.dll	0991	?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ
+1	000419A0	msvcp71.dll	0A3D	?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QAEXH_N@Z
+1	000419A4	msvcp71.dll	0991	?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ
+1	000419A8	msvcp71.dll	0A3D	?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QAEXH_N@Z
+1	000419AC	msvcp71.dll	0A6D	?sputc@?$basic_streambuf@GU?$char_traits@G@std@@@std@@QAEGG@Z
+1	000419B0	msvcp71.dll	0A67	?snextc@?$basic_streambuf@GU?$char_traits@G@std@@@std@@QAEGXZ
+1	000419B4	msvcp71.dll	0A48	?sgetc@?$basic_streambuf@GU?$char_traits@G@std@@@std@@QAEGXZ
+1	000419B8	msvcp71.dll	0A00	?sbumpc@?$basic_streambuf@GU?$char_traits@G@std@@@std@@QAEGXZ
+1	000419BC	msvcp71.dll	0A66	?snextc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAEHXZ
+1	000419C0	msvcp71.dll	0A47	?sgetc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAEHXZ
+1	000419C4	msvcp71.dll	0ABD	?to_char_type@?$char_traits@G@std@@SAGABG@Z
+1	000419C8	msvcp71.dll	0ABD	?to_char_type@?$char_traits@G@std@@SAGABG@Z
+1	000419CC	msvcp71.dll	06F0	?eq@?$char_traits@G@std@@SA_NABG0@Z
+1	000419D0	msvcp71.dll	06D9	?eof@?$char_traits@G@std@@SAGXZ
+1	000419D4	msvcp71.dll	0886	?length@?$char_traits@D@std@@SAIPBD@Z
+1	000419D8	msvcp71.dll	05AA	?copy@?$char_traits@D@std@@SAPADPADPBDI@Z
+1	000419DC	msvcp71.dll	0ABC	?to_char_type@?$char_traits@D@std@@SADABH@Z
+1	000419E0	msvcp71.dll	0ABF	?to_int_type@?$char_traits@D@std@@SAHABD@Z
+1	000419E4	msvcp71.dll	06F2	?eq_int_type@?$char_traits@D@std@@SA_NABH0@Z
+1	000419E8	msvcp71.dll	0454	?_Getcat@facet@locale@std@@SAIPAPBV123@@Z
+1	000419EC	msvcp71.dll	030A	??Bid@locale@std@@QAEIXZ
+1	000419F0	msvcp71.dll	047E	?_Incref@facet@locale@std@@QAEXXZ
+1	000419F4	msvcp71.dll	025C	??1locale@std@@QAE@XZ
+1	000419F8	msvcp71.dll	084A	?is@?$ctype@D@std@@QBE_NFD@Z
+1	000419FC	msvcp71.dll	0433	?_Getcat@?$ctype@D@std@@SAIPAPBVfacet@locale@2@@Z
+1	00041A00	msvcp71.dll	084C	?is@?$ctype@G@std@@QBE_NFG@Z
+1	00041A04	msvcp71.dll	0434	?_Getcat@?$ctype@G@std@@SAIPAPBVfacet@locale@2@@Z
+1	00041A08	msvcp71.dll	09FF	?sbumpc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAEHXZ
+1	00041A0C	msvcp71.dll	07B8	?good@ios_base@std@@QBE_NXZ
+1	00041A10	msvcp71.dll	0602	?do_date_order@?$time_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@MBE?AW4dateorder@time_base@2@XZ
+1	00041A14	msvcp71.dll	056C	?capacity@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ
+1	00041A18	msvcp71.dll	0AFF	?width@ios_base@std@@QAEHH@Z
+1	00041A1C	msvcp71.dll	07B6	?getloc@ios_base@std@@QBE?AVlocale@2@XZ
+1	00041A20	msvcp71.dll	0152	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
+1	00041A24	msvcp71.dll	0159	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
+1	00041A28	msvcp71.dll	0220	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
+1	00041A2C	msvcp71.dll	09BA	?replace@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@IIPBDI@Z
+1	00041A30	msvcp71.dll	0563	?begin@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE?AViterator@12@XZ
+1	00041A34	msvcp71.dll	06CC	?end@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE?AViterator@12@XZ
+1	00041A38	msvcp71.dll	0304	??A?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAADI@Z
+1	00041A3C	msvcp71.dll	04D2	?_Myptr@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEPADXZ
+1	00041A40	msvcp71.dll	0883	?length@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ
+1	00041A44	msvcp71.dll	0883	?length@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ
+1	00041A48	msvcp71.dll	070F	?find@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIDI@Z
+
+FThunk: 00041A50	NbFunc: 0000003C
+1	00041A50	msvcr71.dll	02F6	realloc
+1	00041A54	msvcr71.dll	02E8	memset
+1	00041A58	msvcr71.dll	0256	_winmajor
+1	00041A5C	msvcr71.dll	018D	_mbscpy
+1	00041A60	msvcr71.dll	02E6	memcpy
+1	00041A64	msvcr71.dll	030D	strlen
+1	00041A68	msvcr71.dll	02E7	memmove
+1	00041A6C	msvcr71.dll	0310	strncpy
+1	00041A70	msvcr71.dll	01F6	_splitpath
+1	00041A74	msvcr71.dll	030C	strftime
+1	00041A78	msvcr71.dll	016E	_localtime64
+1	00041A7C	msvcr71.dll	0290	ceil
+1	00041A80	msvcr71.dll	0284	abs
+1	00041A84	msvcr71.dll	0335	wcslen
+1	00041A88	msvcr71.dll	019B	_mbsnbicmp
+1	00041A8C	msvcr71.dll	0046	_CxxThrowException
+1	00041A90	msvcr71.dll	02C0	isalpha
+1	00041A94	msvcr71.dll	0340	wcstombs
+1	00041A98	msvcr71.dll	0006	??0bad_cast@@QAE@PBD@Z
+1	00041A9C	msvcr71.dll	0005	??0bad_cast@@QAE@ABV0@@Z
+1	00041AA0	msvcr71.dll	000A	??0exception@@QAE@ABV0@@Z
+1	00041AA4	msvcr71.dll	000D	??1bad_cast@@UAE@XZ
+1	00041AA8	msvcr71.dll	02E2	mbstowcs
+1	00041AAC	msvcr71.dll	0307	strcmp
+1	00041AB0	msvcr71.dll	0191	_mbsicmp
+1	00041AB4	msvcr71.dll	0301	sprintf
+1	00041AB8	msvcr71.dll	0189	_mbscat
+1	00041ABC	msvcr71.dll	0323	toupper
+1	00041AC0	msvcr71.dll	018B	_mbscmp
+1	00041AC4	msvcr71.dll	0153	_ismbcalpha
+1	00041AC8	msvcr71.dll	02D7	isxdigit
+1	00041ACC	msvcr71.dll	0154	_ismbcdigit
+1	00041AD0	msvcr71.dll	018A	_mbschr
+1	00041AD4	msvcr71.dll	02F7	remove
+1	00041AD8	msvcr71.dll	019A	_mbsnbcpy
+1	00041ADC	msvcr71.dll	028F	calloc
+1	00041AE0	msvcr71.dll	02AD	free
+1	00041AE4	msvcr71.dll	02E0	malloc
+1	00041AE8	msvcr71.dll	0009	??0exception@@QAE@ABQBD@Z
+1	00041AEC	msvcr71.dll	000F	??1exception@@UAE@XZ
+1	00041AF0	msvcr71.dll	01CE	_resetstkoflw
+1	00041AF4	msvcr71.dll	0332	wcscpy
+1	00041AF8	msvcr71.dll	0212	_time64
+1	00041AFC	msvcr71.dll	02F5	rand
+1	00041B00	msvcr71.dll	0257	_winminor
+1	00041B04	msvcr71.dll	01E9	_snprintf
+1	00041B08	msvcr71.dll	007D	__p___argv
+1	00041B0C	msvcr71.dll	031F	time
+1	00041B10	msvcr71.dll	0178	_ltoa
+1	00041B14	msvcr71.dll	007C	__p___argc
+1	00041B18	msvcr71.dll	00F2	_except_handler3
+1	00041B1C	msvcr71.dll	0053	__CxxFrameHandler
+1	00041B20	msvcr71.dll	002F	?terminate@@YAXXZ
+1	00041B24	msvcr71.dll	006D	__dllonexit
+1	00041B28	msvcr71.dll	01B9	_onexit
+1	00041B2C	msvcr71.dll	0010	??1type_info@@UAE@XZ
+1	00041B30	msvcr71.dll	0140	_initterm
+1	00041B34	msvcr71.dll	00BC	_adjust_fdiv
+1	00041B38	msvcr71.dll	004E	__CppXcptFilter
+1	00041B3C	msvcr71.dll	009D	__security_error_handler
+
+FThunk: 00041B44	NbFunc: 00000040
+1	00041B44	xtp8700lib.dll	07B1	?Get@XT_AUX_DATA@@SAAAU1@XZ
+1	00041B48	xtp8700lib.dll	0748	?FillStatusBar@CXTPPaintManager@@UAEXPAVCDC@@PAVCXTPStatusBar@@@Z
+1	00041B4C	xtp8700lib.dll	072E	?FillDockBar@CXTPOffice2003Theme@XTPPaintThemes@@MAEXPAVCDC@@PAVCXTPDockBar@@@Z
+1	00041B50	xtp8700lib.dll	06C4	?DrawStatusBarGripper@CXTPOffice2003Theme@XTPPaintThemes@@MAEXPAVCDC@@VCRect@@@Z
+1	00041B54	xtp8700lib.dll	06C7	?DrawStatusBarPane@CXTPOffice2003Theme@XTPPaintThemes@@MAEXPAVCDC@@AAVCRect@@KV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z
+1	00041B58	xtp8700lib.dll	0480	?AdjustExcludeRect@CXTPOfficeTheme@XTPPaintThemes@@UAEXAAVCRect@@PAVCXTPControl@@@Z
+1	00041B5C	xtp8700lib.dll	0656	?DrawCommandBarSeparator@CXTPOffice2003Theme@XTPPaintThemes@@MAE?AVCSize@@PAVCDC@@PAVCXTPCommandBar@@PAVCXTPControl@@H@Z
+1	00041B60	xtp8700lib.dll	0653	?DrawCommandBarGripper@CXTPOffice2003Theme@XTPPaintThemes@@MAE?AVCSize@@PAVCDC@@PAVCXTPCommandBar@@H@Z
+1	00041B64	xtp8700lib.dll	072B	?FillCommandBarEntry@CXTPOffice2003Theme@XTPPaintThemes@@MAEXPAVCDC@@PAVCXTPCommandBar@@@Z
+1	00041B68	xtp8700lib.dll	1460	?SetColor@CXTPColorManager@@QAEXHK@Z
+1	00041B6C	xtp8700lib.dll	0823	?GetColor@CXTPColorManager@@QAEKH@Z
+1	00041B70	xtp8700lib.dll	1849	?m_instance@CXTPColorManager@@0V1@A
+1	00041B74	xtp8700lib.dll	06A1	?DrawPopupBarGripper@CXTPOffice2003Theme@XTPPaintThemes@@MAEXPAVCDC@@HHHHH@Z
+1	00041B78	xtp8700lib.dll	048E	?AnimateExpanding@CXTPPaintManager@@UAEXPAVCXTPCommandBar@@PAVCDC@@1@Z
+1	00041B7C	xtp8700lib.dll	048C	?Animate@CXTPPaintManager@@UAEXPAVCDC@@0VCRect@@W4XTPAnimationType@@@Z
+1	00041B80	xtp8700lib.dll	083C	?GetCommandBarFont@CXTPPaintManager@@UAEPAVCFont@@PAVCXTPCommandBar@@H@Z
+1	00041B84	xtp8700lib.dll	04A8	?BaseTheme@CXTPOffice2003Theme@XTPPaintThemes@@MAE?AW4XTPPaintTheme@@XZ
+1	00041B88	xtp8700lib.dll	067F	?DrawImage@CXTPOfficeTheme@XTPPaintThemes@@MAEXPAVCDC@@VCPoint@@VCSize@@PAVCXTPImageManagerIcon@@HHHHHH@Z
+1	00041B8C	xtp8700lib.dll	06D0	?DrawTearOffGripper@CXTPOffice2003Theme@XTPPaintThemes@@MAE?AVCSize@@PAVCDC@@VCRect@@HH@Z
+1	00041B90	xtp8700lib.dll	0839	?GetCommandBarBorders@CXTPOffice2003Theme@XTPPaintThemes@@MAE?AVCRect@@PAVCXTPCommandBar@@@Z
+1	00041B94	xtp8700lib.dll	06BE	?DrawSpecialControl@CXTPOffice2003Theme@XTPPaintThemes@@MAE?AVCSize@@PAVCDC@@W4XTPSpecialControl@@PAVCXTPControl@@PAVCXTPCommandBar@@HPAX@Z
+1	00041B98	xtp8700lib.dll	0DDF	?IsOfficeLikeShadow@CXTPOfficeTheme@XTPPaintThemes@@UAEHXZ
+1	00041B9C	xtp8700lib.dll	1317	?RefreshMetrics@CXTPOffice2003Theme@XTPPaintThemes@@MAEXXZ
+1	00041BA0	xtp8700lib.dll	065F	?DrawControlEntry@CXTPPaintManager@@UAEXPAVCDC@@PAVCXTPControl@@@Z
+1	00041BA4	xtp8700lib.dll	065E	?DrawControlEntry@CXTPOfficeTheme@XTPPaintThemes@@UAEXPAVCDC@@VCRect@@HHHHHW4XTPBarPosition@@@Z
+1	00041BA8	xtp8700lib.dll	0697	?DrawListBoxControl@CXTPOfficeTheme@XTPPaintThemes@@UAE?AVCSize@@PAVCDC@@PAVCXTPControl@@VCRect@@HH@Z
+1	00041BAC	xtp8700lib.dll	065C	?DrawControlEdit@CXTPOfficeTheme@XTPPaintThemes@@MAE?AVCSize@@PAVCDC@@PAVCXTPControlEdit@@H@Z
+1	00041BB0	xtp8700lib.dll	065A	?DrawControlComboBox@CXTPOfficeTheme@XTPPaintThemes@@MAE?AVCSize@@PAVCDC@@PAVCXTPControlComboBox@@H@Z
+1	00041BB4	xtp8700lib.dll	06C3	?DrawSplitButtonFrame@CXTPPaintManager@@UAEXPAVCDC@@PAVCXTPControl@@VCRect@@@Z
+1	00041BB8	xtp8700lib.dll	0662	?DrawControlToolBarParent@CXTPPaintManager@@UAE?AVCSize@@PAVCDC@@PAVCXTPControl@@H@Z
+1	00041BBC	xtp8700lib.dll	0661	?DrawControlPopupParent@CXTPOfficeTheme@XTPPaintThemes@@MAE?AVCSize@@PAVCDC@@PAVCXTPControl@@H@Z
+1	00041BC0	xtp8700lib.dll	0CD8	?GetWrap@CXTPControl@@QAEHXZ
+1	00041BC4	xtp8700lib.dll	0CB3	?GetType@CXTPCommandBar@@QAE?AW4XTPBarType@@XZ
+1	00041BC8	xtp8700lib.dll	0AA2	?GetRawRect@CXTPControl@@QAE?AVCRect@@XZ
+1	00041BCC	xtp8700lib.dll	0AA5	?GetRect@CXTPControl@@QAE?AVCRect@@XZ
+1	00041BD0	xtp8700lib.dll	0518	?Color@CXTPPenDC@@QAEXK@Z
+1	00041BD4	xtp8700lib.dll	0C93	?GetTitle@CXTPCommandBar@@QAE?AV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@XZ
+1	00041BD8	xtp8700lib.dll	0CDC	?GetXtremeColor@CXTPPaintManager@@QAEKI@Z
+1	00041BDC	xtp8700lib.dll	1844	?m_fontSmCaption@CXTPPaintManager@@1VCFont@@A
+1	00041BE0	xtp8700lib.dll	0624	?Draw3dRect@CXTPPaintManager@@QAEXPAVCDC@@VCRect@@HH@Z
+1	00041BE4	xtp8700lib.dll	0A7C	?GetPosition@CXTPCommandBar@@QBE?AW4XTPBarPosition@@XZ
+1	00041BE8	xtp8700lib.dll	0E2C	?Line@CXTPPaintManager@@QAEXPAVCDC@@VCPoint@@1@Z
+1	00041BEC	xtp8700lib.dll	00E0	??0CXTPOffice2003Theme@XTPPaintThemes@@QAE@XZ
+1	00041BF0	xtp8700lib.dll	0FCA	?OnFrameWndMsg@CXTPCommandBars@@QAEHIIJPAJ@Z
+1	00041BF4	xtp8700lib.dll	12A7	?PreTranslateFrameMessage@CXTPCommandBars@@QAEHPAUtagMSG@@@Z
+1	00041BF8	xtp8700lib.dll	01FB	??1CXTPFontDC@@UAE@XZ
+1	00041BFC	xtp8700lib.dll	00D0	??0CXTPFontDC@@QAE@PAVCDC@@PAVCFont@@@Z
+1	00041C00	xtp8700lib.dll	01BF	??1CXTPBrushDC@@UAE@XZ
+1	00041C04	xtp8700lib.dll	0081	??0CXTPBrushDC@@QAE@PAUHDC__@@K@Z
+1	00041C08	xtp8700lib.dll	020E	??1CXTPPenDC@@UAE@XZ
+1	00041C0C	xtp8700lib.dll	00E3	??0CXTPPenDC@@QAE@PAUHDC__@@K@Z
+1	00041C10	xtp8700lib.dll	01C0	??1CXTPBufferDC@@UAE@XZ
+1	00041C14	xtp8700lib.dll	0082	??0CXTPBufferDC@@QAE@PAUHDC__@@VCRect@@@Z
+1	00041C18	xtp8700lib.dll	0085	??0CXTPClientRect@@QAE@PBVCWnd@@@Z
+1	00041C1C	xtp8700lib.dll	1492	?SetCustomTheme@CXTPPaintManager@@SAXPAV1@@Z
+1	00041C20	xtp8700lib.dll	0131	??0CXTPWindowRect@@QAE@PBVCWnd@@@Z
+1	00041C24	xtp8700lib.dll	13DF	?SendTrackLost@CXTPMouseManager@@QAEXXZ
+1	00041C28	xtp8700lib.dll	00DD	??0CXTPMouseManager@@QAE@XZ
+1	00041C2C	xtp8700lib.dll	0208	??1CXTPMouseManager@@UAE@XZ
+1	00041C30	xtp8700lib.dll	17BC	?_xtpMouseThreadState@CXTPMouseManager@@0V?$CThreadLocal@VCXTPMouseManager@@@@A
+1	00041C34	xtp8700lib.dll	0E01	?IsTrackedLock@CXTPMouseManager@@QAEHPBVCXTPCommandBar@@@Z
+1	00041C38	xtp8700lib.dll	16C2	?TrackPopupMenu@CXTPCommandBars@@SAHPAVCMenu@@IHHPAVCWnd@@PBUtagRECT@@1PAV1@@Z
+1	00041C3C	xtp8700lib.dll	020B	??1CXTPOffice2003Theme@XTPPaintThemes@@UAE@XZ
+1	00041C40	xtp8700lib.dll	06A5	?DrawRectangle@CXTPOffice2003Theme@XTPPaintThemes@@MAEXPAVCDC@@VCRect@@HHHHHHW4XTPBarPosition@@@Z
+

@@ -1,0 +1,804 @@
+[CPU:  RAM: 1.3Gi/1.9Gi] .02:37 u0_a268@localhost ❯ tree /sdcard/Download/Archivo_SyXe05_Snat
+/sdcard/Download/Archivo_SyXe05_Snat
+├── 1562-Servicios de Windows
+│   ├── Alchemy Eye 11.5.0
+│   │   ├── Dumpeado
+│   │   │   ├── eyesrv_dump_.exe
+│   │   │   └── iat.txt
+│   │   └── eye.zip
+│   ├── Proyecto C++
+│   │   └── ClS
+│   │       ├── ClS
+│   │       │   ├── ClS.cpp
+│   │       │   ├── ClS.vcxproj
+│   │       │   ├── ClS.vcxproj.filters
+│   │       │   ├── ClS.vcxproj.user
+│   │       │   ├── ReadMe.txt
+│   │       │   ├── Release
+│   │       │   │   ├── CL.read.1.tlog
+│   │       │   │   ├── CL.write.1.tlog
+│   │       │   │   ├── ClS.Build.CppClean.log
+│   │       │   │   ├── ClS.exe.intermediate.manifest
+│   │       │   │   ├── ClS.lastbuildstate
+│   │       │   │   ├── ClS.log
+│   │       │   │   ├── ClS.obj
+│   │       │   │   ├── ClS.pch
+│   │       │   │   ├── ClS.unsuccessfulbuild
+│   │       │   │   ├── cl.command.1.tlog
+│   │       │   │   ├── link.command.1.tlog
+│   │       │   │   ├── link.read.1.tlog
+│   │       │   │   ├── link.write.1.tlog
+│   │       │   │   ├── mt.command.1.tlog
+│   │       │   │   ├── mt.read.1.tlog
+│   │       │   │   ├── mt.write.1.tlog
+│   │       │   │   ├── stdafx.obj
+│   │       │   │   └── vc100.pdb
+│   │       │   ├── stdafx.cpp
+│   │       │   ├── stdafx.h
+│   │       │   └── targetver.h
+│   │       ├── ClS.sdf
+│   │       ├── ClS.sln
+│   │       ├── ClS.suo
+│   │       └── Release
+│   │           ├── ClS.exe
+│   │           └── ClS.pdb
+│   ├── Referencias
+│   │   └── Socket_Programming.pdf
+│   └── Servicios de Windows.pdf
+├── 1566-Automation Anywhere 6.1desempacando Armadillo por SNAT
+│   ├── Automation Anywhere 6.1.pdf
+│   └── archivos
+│       ├── ArmAccess.dll
+│       └── ganchos.osc
+├── 1567-Desempacando Themida 2.2.6.0 por SNAT
+│   ├── Scripts
+│   │   ├── Descifradores de Tabla
+│   │   │   ├── Al_OEP.osc
+│   │   │   ├── Reparador.osc
+│   │   │   └── TodoEnUno.osc
+│   │   └── Método Habitual
+│   │       └── repara_iat.osc
+│   ├── Themida en Visual Basic.pdf
+│   ├── Tools
+│   │   ├── 32bit Calculator v1.5 by cybult
+│   │   │   └── Calc15.exe
+│   │   ├── ODBGScript Command Reference v0.1
+│   │   │   └── ODBGScript.chm
+│   │   └── Plugins Olly
+│   │       ├── ODbgScript.dll
+│   │       ├── PhantOm.dll
+│   │       └── StrongOD.dll
+│   └── unpackme
+│       └── Themida 2.2.6.0 UnPackMe_VB6.exe
+├── 1569-Desempacando Themida 2.x con Funcion Virtual por SNAT
+│   ├── Archivos
+│   │   ├── Reparador.osc
+│   │   ├── crea_TablaSemillas.osc
+│   │   ├── rtrace_FV #1_dumpeado.txt
+│   │   ├── rtrace_FV #1_empacado.txt
+│   │   ├── rtrace_FV #2_dumpeado.txt
+│   │   ├── rtrace_FV #2_empacado.txt
+│   │   ├── rtrace_FV #7_dumpeado.txt
+│   │   └── rtrace_FV #7_empacado.txt
+│   ├── Herramientas
+│   │   ├── 32bit Calculator v1.5 by cybult
+│   │   │   └── Calc15.exe
+│   │   ├── ImpREC 1.7e
+│   │   │   ├── Documentation
+│   │   │   │   ├── Loader.txt
+│   │   │   │   ├── News.txt
+│   │   │   │   ├── ReadMe.txt
+│   │   │   │   └── Tips.txt
+│   │   │   ├── History.txt
+│   │   │   ├── ImpREC.ini
+│   │   │   ├── ImportREC.exe
+│   │   │   ├── Plugin
+│   │   │   │   ├── ACProtect #1.dll
+│   │   │   │   ├── ACProtect #2.dll
+│   │   │   │   ├── ASProtect 1.22.dll
+│   │   │   │   ├── ASProtect 1.23 rc4.dll
+│   │   │   │   ├── ASProtect 1.2x Emul API #1.dll
+│   │   │   │   ├── ASProtect 1.2x.dll
+│   │   │   │   ├── ASProtect 1.3.dll
+│   │   │   │   ├── ASProtect 2.xx.dll
+│   │   │   │   ├── Alex Protector.dll
+│   │   │   │   ├── Armadillo 2.6.dll
+│   │   │   │   ├── CoolCrypt.dll
+│   │   │   │   ├── EXEStealth275.dll
+│   │   │   │   ├── Excalibur.dll
+│   │   │   │   ├── ExeCryptor.dll
+│   │   │   │   ├── Expressor 1.5.x.dll
+│   │   │   │   ├── ExtOverlay.dll
+│   │   │   │   ├── GoatsPEMutilator16.dll
+│   │   │   │   ├── HowTo.txt
+│   │   │   │   ├── Krypton 0.4 - 0.5 #1.dll
+│   │   │   │   ├── Krypton 0.4 - 0.5 #2.dll
+│   │   │   │   ├── Krypton 0.5.dll
+│   │   │   │   ├── Morphine.dll
+│   │   │   │   ├── NTKrnl Protector 0.1.x.dll
+│   │   │   │   ├── Null.dll
+│   │   │   │   ├── Obsidium #1.dll
+│   │   │   │   ├── Obsidium #2.dll
+│   │   │   │   ├── Obsidium #3.dll
+│   │   │   │   ├── Obsidium 1.3.dll
+│   │   │   │   ├── Obsidium 1.3.dll.txt
+│   │   │   │   ├── PE123.dll
+│   │   │   │   ├── PELock 1.06 (regged).dll
+│   │   │   │   ├── PELock 1.06 (regged).dll.txt
+│   │   │   │   ├── PELock 1.0x.dll
+│   │   │   │   ├── PESpin.dll
+│   │   │   │   ├── PESpinPlugin.dll
+│   │   │   │   ├── Perplex101.dll
+│   │   │   │   ├── Plugin.txt
+│   │   │   │   ├── PrivateExeProtector 1.8.dll
+│   │   │   │   ├── PrivateExeProtector 1.8.txt
+│   │   │   │   ├── Privilege.dll
+│   │   │   │   ├── Protection Plus 4.x.dll
+│   │   │   │   ├── RLPack 0.7.dll
+│   │   │   │   ├── RLPack 0.x.dll
+│   │   │   │   ├── SDProtector 1.12.dll
+│   │   │   │   ├── SVK Protector #1.dll
+│   │   │   │   ├── SVK Protector #2.dll
+│   │   │   │   ├── TPP.dll
+│   │   │   │   ├── VisualProtect.dll
+│   │   │   │   ├── Yoda Crypter 1.02.dll
+│   │   │   │   ├── tELock 0.92.dll
+│   │   │   │   ├── tELock 0.98 #1.dll
+│   │   │   │   ├── tELock 0.98 #2.dll
+│   │   │   │   ├── tELock 0.98 #3.dll
+│   │   │   │   ├── tELock 0.98 #4.dll
+│   │   │   │   ├── tELock 0.98 #5.dll
+│   │   │   │   ├── tELock 0.99.dll
+│   │   │   │   └── tELock 0.9x.dll
+│   │   │   ├── Plugin Source
+│   │   │   │   ├── ASProtect 1.2x
+│   │   │   │   │   └── Delphi
+│   │   │   │   │       └── aspr.dpr
+│   │   │   │   ├── Morphine 3.3
+│   │   │   │   │   ├── Bak
+│   │   │   │   │   ├── morphine.Asm
+│   │   │   │   │   ├── morphine.Def
+│   │   │   │   │   ├── morphine.Inc
+│   │   │   │   │   ├── morphine.exp
+│   │   │   │   │   ├── morphine.lib
+│   │   │   │   │   ├── morphine.obj
+│   │   │   │   │   └── morphine.rap
+│   │   │   │   ├── PESpin 1.3.04
+│   │   │   │   │   ├── PESpinPlugin.cpp
+│   │   │   │   │   ├── PESpinPlugin.dsp
+│   │   │   │   │   ├── PESpinPlugin.dsw
+│   │   │   │   │   ├── PESpinPlugin.ncb
+│   │   │   │   │   ├── PESpinPlugin.opt
+│   │   │   │   │   ├── PESpinPlugin.plg
+│   │   │   │   │   ├── ReadMe.txt
+│   │   │   │   │   ├── StdAfx.cpp
+│   │   │   │   │   └── StdAfx.h
+│   │   │   │   ├── Perplex 1.01
+│   │   │   │   │   ├── Perplex101.Asm
+│   │   │   │   │   ├── Perplex101.Def
+│   │   │   │   │   ├── Perplex101.Inc
+│   │   │   │   │   ├── Perplex101.RES
+│   │   │   │   │   ├── Perplex101.exp
+│   │   │   │   │   ├── Perplex101.lib
+│   │   │   │   │   ├── Perplex101.obj
+│   │   │   │   │   ├── Perplex101.rap
+│   │   │   │   │   ├── Perplex101.rc
+│   │   │   │   │   └── Res
+│   │   │   │   │       └── Perplex101Ver.rc
+│   │   │   │   ├── RLPack 0.7
+│   │   │   │   │   ├── RLP07.Asm
+│   │   │   │   │   ├── RLP07.Def
+│   │   │   │   │   ├── RLP07.Inc
+│   │   │   │   │   ├── RLP07.exp
+│   │   │   │   │   ├── RLP07.lib
+│   │   │   │   │   ├── RLP07.obj
+│   │   │   │   │   ├── RLP07.rap
+│   │   │   │   │   ├── RLP07.rc
+│   │   │   │   │   └── Res
+│   │   │   │   │       └── RLP07Ver.rc
+│   │   │   │   ├── Yoda 1.02
+│   │   │   │   │   ├── Res
+│   │   │   │   │   │   └── Yoda102Ver.rc
+│   │   │   │   │   ├── Yoda102.Asm
+│   │   │   │   │   ├── Yoda102.Def
+│   │   │   │   │   ├── Yoda102.Inc
+│   │   │   │   │   ├── Yoda102.RES
+│   │   │   │   │   ├── Yoda102.exp
+│   │   │   │   │   ├── Yoda102.lib
+│   │   │   │   │   ├── Yoda102.obj
+│   │   │   │   │   ├── Yoda102.rap
+│   │   │   │   │   └── Yoda102.rc
+│   │   │   │   ├── eXcalibur 1.x
+│   │   │   │   │   ├── Excalibur.dll
+│   │   │   │   │   └── src
+│   │   │   │   │       ├── BuildDLL.bat
+│   │   │   │   │       ├── EXC.asm
+│   │   │   │   │       ├── EXC.def
+│   │   │   │   │       ├── hde.inc
+│   │   │   │   │       └── hde.lib
+│   │   │   │   └── tELock 0.92x
+│   │   │   │       ├── Delphi
+│   │   │   │       │   └── tELock.dpr
+│   │   │   │       ├── Masm
+│   │   │   │       │   ├── BuildDLL.bat
+│   │   │   │       │   ├── tELock.asm
+│   │   │   │       │   └── tELock.def
+│   │   │   │       ├── Tasm
+│   │   │   │       │   ├── BuildDLL.bat
+│   │   │   │       │   ├── W32.inc
+│   │   │   │       │   ├── tELock.asm
+│   │   │   │       │   └── tELock.def
+│   │   │   │       └── VC++
+│   │   │   │           ├── tELock0.92x
+│   │   │   │           │   ├── tELock.cpp
+│   │   │   │           │   └── tELock.dsp
+│   │   │   │           └── tELock0.95
+│   │   │   │               ├── tELock.cpp
+│   │   │   │               └── tELock.dsp
+│   │   │   └── psapi.dll
+│   │   ├── LordPE Deluxe
+│   │   │   └── lordpe.zip
+│   │   ├── ODBGScript Command Reference v0.1
+│   │   │   └── ODBGScript.chm
+│   │   ├── Olly_Themida
+│   │   │   ├── BOOKMARK.DLL
+│   │   │   ├── CmdBar.ini
+│   │   │   ├── DBGHELP.DLL
+│   │   │   ├── OLLYDBG.EXE
+│   │   │   ├── OLLYDBG.HLP
+│   │   │   ├── OllyScripts
+│   │   │   │   ├── ARMADiLLO_Detective_v1_ollyscript.txt
+│   │   │   │   ├── Alex Protector 1.0 beta2 script v0.1.txt
+│   │   │   │   ├── DBPE.2x.oep.txt
+│   │   │   │   ├── anti-debug_lastex.txt
+│   │   │   │   ├── arma37.txt
+│   │   │   │   ├── arma_detach.txt
+│   │   │   │   ├── arma_unpack.txt
+│   │   │   │   ├── aspack.212.dll-unpack.txt
+│   │   │   │   ├── aspack.212.oep.txt
+│   │   │   │   ├── aspack.txt
+│   │   │   │   ├── aspack_1.08.02.txt
+│   │   │   │   ├── aspack_212.txt
+│   │   │   │   ├── aspr_1.22-1.23.oep.stolenbytes.txt
+│   │   │   │   ├── aspr_123_rc4.txt
+│   │   │   │   ├── aspr_130b.txt
+│   │   │   │   ├── aspr_131b.txt
+│   │   │   │   ├── aspr_2.0.oep.txt
+│   │   │   │   ├── aspr_2.0.unpack.txt
+│   │   │   │   ├── aspr_generic.txt
+│   │   │   │   ├── asprbp.txt
+│   │   │   │   ├── asprotect.12.12c.oep.txt
+│   │   │   │   ├── asprotect_13b_stolen_code.txt
+│   │   │   │   ├── asprsoep.txt
+│   │   │   │   ├── asprsto.txt
+│   │   │   │   ├── crypt.1.0.txt
+│   │   │   │   ├── dbpe2x.txt
+│   │   │   │   ├── dbpe_2.x.txt
+│   │   │   │   ├── execryptor_1.5x.txt
+│   │   │   │   ├── exeshield_0x.txt
+│   │   │   │   ├── exestealth_2.7.txt
+│   │   │   │   ├── exestealth_2.74.txt
+│   │   │   │   ├── ezip_10.txt
+│   │   │   │   ├── flexlm.7.2+.txt
+│   │   │   │   ├── fsg_1.33.txt
+│   │   │   │   ├── fsg_1.33_2.txt
+│   │   │   │   ├── fsg_2_0.txt
+│   │   │   │   ├── krypton_0.5.txt
+│   │   │   │   ├── lastex.txt
+│   │   │   │   ├── mew.1.2.txt
+│   │   │   │   ├── mew10_1_0.txt
+│   │   │   │   ├── molebox_2x.txt
+│   │   │   │   ├── morphine_1.2.txt
+│   │   │   │   ├── morphine_13.txt
+│   │   │   │   ├── neolite20.txt
+│   │   │   │   ├── obsidium_1_0061.txt
+│   │   │   │   ├── pcguard_150.txt
+│   │   │   │   ├── pebundle_2x.txt
+│   │   │   │   ├── pecompact_1_76.txt
+│   │   │   │   ├── pecompact_1_84.txt
+│   │   │   │   ├── pediminisher_1_0.txt
+│   │   │   │   ├── pelock_204.txt
+│   │   │   │   ├── pepack10.txt
+│   │   │   │   ├── peshield.txt
+│   │   │   │   ├── pespin_0.3.txt
+│   │   │   │   ├── pespin_0304_vb.txt
+│   │   │   │   ├── pespin_07.txt
+│   │   │   │   ├── petite22.txt
+│   │   │   │   ├── pex_0_99.txt
+│   │   │   │   ├── pklite32_1.1.txt
+│   │   │   │   ├── protection_plus_oep.txt
+│   │   │   │   ├── svkp_13x.txt
+│   │   │   │   ├── svkpoep.txt
+│   │   │   │   ├── telock098.txt
+│   │   │   │   ├── telock_0.9.txt
+│   │   │   │   ├── uprot1_def.txt
+│   │   │   │   ├── uprot1_vb.txt
+│   │   │   │   ├── upx.txt
+│   │   │   │   ├── upx_upxprot.txt
+│   │   │   │   ├── upxprotector_10x.txt
+│   │   │   │   ├── upxscr_rc1.txt
+│   │   │   │   ├── upxshit006.txt
+│   │   │   │   ├── virogen_075.txt
+│   │   │   │   └── y0da_crypter_1.2.txt
+│   │   │   ├── Plugins
+│   │   │   │   ├── ODbgScript.dll
+│   │   │   │   ├── PhantOm.dll
+│   │   │   │   └── StrongOD.dll
+│   │   │   ├── _ollydbg.exe
+│   │   │   ├── _ollydbg.ini
+│   │   │   ├── hideod.ini
+│   │   │   ├── loaddll.exe
+│   │   │   └── ollydbg.ini
+│   │   ├── RDG Packer Detector 0.7.5
+│   │   │   └── RDG_Packer_Detector_v0.7.5.2015.rar
+│   │   └── WinMerge 2.14.0.0
+│   │       └── WinMerge-2.14.0-Setup.exe
+│   ├── Instalador
+│   │   └── evtmsetup.exe
+│   └── Themida en Visual C++.pdf
+├── 1571-Desempacando Themida en un .NET por SNAT
+│   ├── Archivos
+│   │   ├── 79000000.bin
+│   │   ├── Base_DLLs.bin
+│   │   ├── LEEME.txt
+│   │   ├── Reparador.osc
+│   │   ├── Reparador_.txt
+│   │   ├── Tabla_Encriptacion.bin
+│   │   ├── Tabla_IAT.bin
+│   │   └── ildasm_tree.txt
+│   ├── Herramientas
+│   │   ├── MegaDumper.exe
+│   │   ├── RadASM.zip
+│   │   └── Universal_Fixer.exe
+│   ├── Instalador
+│   │   └── DirectAccessSetup.exe
+│   ├── Proyecto RadASM
+│   │   └── DirectLoader
+│   │       ├── Bak
+│   │       ├── Cargador.ico
+│   │       ├── DirectLoader.Asm
+│   │       ├── DirectLoader.Inc
+│   │       ├── DirectLoader.Rc
+│   │       ├── DirectLoader.obj
+│   │       ├── DirectLoader.rap
+│   │       ├── Res
+│   │       │   └── DirectLoaderRes.rc
+│   │       └── Thumbs.db
+│   └── Themida en .NET.pdf
+├── 1575-Jugando con un .NET en dnSpy por SNAT
+│   └── Jugando con un .NET en dnSpy.pdf
+├── 1589-Themida 2.3.9.0 Vba Password Remover por Snat & Apuromafo
+│   ├── Instalador
+│   │   └── vbpsetup.exe
+│   ├── Tablas y Archivos
+│   │   ├── IAT
+│   │   │   └── iat.xml
+│   │   ├── Script
+│   │   │   ├── Reparador.osc
+│   │   │   └── Reparador_.txt
+│   │   ├── Tablas XP SP3
+│   │   │   ├── 76360000.bin
+│   │   │   ├── 773A0000.bin
+│   │   │   ├── 774B0000.bin
+│   │   │   ├── 77DA0000.bin
+│   │   │   ├── 77EF0000.bin
+│   │   │   ├── 7C800000.bin
+│   │   │   ├── 7E390000.bin
+│   │   │   └── 7E6A0000.bin
+│   │   ├── Tablas propias
+│   │   │   ├── Base_DLLs.bin
+│   │   │   ├── Tabla_Encriptacion.bin
+│   │   │   └── Tabla_IAT.bin
+│   │   └── kernel y user virtual
+│   │       ├── Kernel.dmp
+│   │       └── User.dmp
+│   └── Themida 2.3.9.0 Vba Password Remover por Snat & Apuromafo.pdf
+├── 1590-Creacion de una imagen Maestra de Windows XP (WIM) por SNAT
+│   ├── Creación de una imagen Maestra de Windows XP (WIM).pdf
+│   ├── ImageX
+│   │   └── imagex.exe
+│   ├── SysPrep Driver Scanner 3.0.0
+│   │   └── spdrvscn.exe
+│   ├── Sysprep Driver Scanner 2.1.1
+│   │   └── SysPrep Driver Scanner.exe
+│   └── Video
+│       ├── Leeme.txt
+│       └── sysprep_video.exe
+├── 1591-Reverseando mIRC 7.43 por SNAT
+│   └── Reverseando mIRC 7.43.pdf
+├── 1654-Reversing_on_Windows_The_Logon_Quest_por_SyXe'05
+│   ├── AuthenticationPackages
+│   │   ├── Security.rar
+│   │   └── Security0.rar
+│   ├── Reversing_on_Windows_The_Logon_Quest_por_SyXe'05.pdf
+│   ├── Tools
+│   │   └── NTStatus v1.0
+│   │       └── NTStatus.exe
+│   └── scripts
+│       ├── batch
+│       │   ├── Desintegrator.bat
+│       │   ├── Integrator.bat
+│       │   ├── RemoteDesktopEnabler.bat
+│       │   ├── RunasJAR.bat
+│       │   ├── UACDisabler.bat
+│       │   └── UACEnabler.bat
+│       └── python
+│           ├── EnableAllPrivs.py
+│           ├── EnablePriv.py
+│           ├── GainAccess.py
+│           ├── GetIntegrity.py
+│           ├── SetIntegrity.py
+│           └── SetOwner.py
+├── 542-ASProtect_2.0_[Registered]_by_SyXe'05
+│   ├── 1st Startup Manager 1.0.doc
+│   ├── 1st Startup Manager 1.0.pdf
+│   ├── apis.txt
+│   ├── iat.txt
+│   ├── log_apis.txt
+│   └── script.txt
+├── 545-Visual_Protect_by_SyXe'05
+│   ├── Web Boomerang 3.0.doc
+│   ├── Web Boomerang 3.0.pdf
+│   ├── iat_wbb.txt
+│   ├── iat_wbmerang.txt
+│   ├── script_wbb.txt
+│   └── script_wbmerang.txt
+├── 550-Armadillo 2.x Syxe'05
+│   ├── Free Registry Fix 3.0.doc
+│   ├── Free Registry Fix 3.0.pdf
+│   ├── iat.txt
+│   └── script.txt
+├── 551-ASProtect_1_23_RC4_by_SyXe'05
+│   ├── Clip Plus 3.3.doc
+│   ├── Clip Plus 3.3.pdf
+│   └── iat.txt
+├── 583-ASProtect_1.1c_SyXe'05
+│   ├── Cartoonist 1.1.doc
+│   ├── Cartoonist 1.1.pdf
+│   ├── iat.txt
+│   └── script.txt
+├── 611-ASProtect_1.2x - 1.3x_[Registered]_por_SyXe05
+│   ├── DVD Region+CSS Free 5.9.6.8.doc
+│   ├── DVD Region+CSS Free 5.9.6.8.pdf
+│   ├── calls_a_reparar.doc
+│   ├── calls_a_reparar.pdf
+│   ├── iat.txt
+│   ├── script.osc
+│   └── tute_.exe
+├── 612-ASProtect 1.2x - 1.3x_el_TimeTrial_por_SyXe05
+│   ├── DVD Region+CSS Free 5.9.6.8_parte2.doc
+│   └── DVD Region+CSS Free 5.9.6.8_parte2.pdf
+├── 739-ASProtect_v1.23_RC4_en_TagRename v2.1.7.4 - [SyXe'05]
+│   ├── ASProtect_v1.23_RC4_en_TagRename v2.1.7.4__SyXe'05.doc
+│   ├── ASProtect_v1.23_RC4_en_TagRename v2.1.7.4__SyXe'05.pdf
+│   ├── alOEP.osc
+│   └── registro.reg
+├── 740-ASProtect_v1.23_RC4_Registered - [SyXe'05]
+│   ├── ASProtect v1.23 RC4 Registered__por_SyXe'05.doc
+│   ├── ASProtect v1.23 RC4 Registered__por_SyXe'05.pdf
+│   └── iat.txt
+├── 741-Estudio de ASProtect 2.xx - [SyXe'05]
+│   ├── Estudio de ASProtect 2.xx - [SyXe'05].doc
+│   ├── Estudio de ASProtect 2.xx - [SyXe'05].pdf
+│   ├── JMP_Table.osc
+│   └── iat.txt
+├── 742-Magic Utilities 2006 v4.22 - [SyXe'05]
+│   ├── Magic Utilities 2006 v4.22.doc
+│   └── Magic Utilities 2006 v4.22.pdf
+├── 743-Primer_acercamiento_al_Stolen_Code - [SyXe'05]
+│   ├── IATScrambledASProtect.osc
+│   ├── Primer_acercamiento_al_Stolen_Code_parte_1 - [por SyXe'05].doc
+│   ├── Primer_acercamiento_al_Stolen_Code_parte_1 - [por SyXe'05].pdf
+│   ├── Primer_acercamiento_al_Stolen_Code_parte_2 - [por SyXe'05].doc
+│   ├── Primer_acercamiento_al_Stolen_Code_parte_2 - [por SyXe'05].pdf
+│   ├── UltExcep.osc
+│   ├── alOEP.osc
+│   ├── alOEPMejor.osc
+│   └── iat.txt
+├── 744-SecuROM v4.x.x.x - 5.x.x.x - [SyXe'05]
+│   ├── Diablo II_Lord of Destruction.doc
+│   ├── Diablo II_Lord of Destruction.pdf
+│   └── script.osc
+├── 745-SVKP_v1.3x_con_Trucos - [SyXe'05]
+│   ├── Iat.txt
+│   ├── SVKP v1.3x_con_Trucos__por_SyXe'05.doc
+│   ├── SVKP v1.3x_con_Trucos__por_SyXe'05.pdf
+│   └── rdtsc.hex
+├── BG CD Manager 1.41_SyXe'05
+│   ├── BG CD Manager 1.41.doc
+│   ├── BG CD Manager 1.41.pdf
+│   └── iat.txt
+├── C106N3_Hyings_PE_Armor_0.46_SyXe05
+│   ├── C106N3_Hyings_PE_Armor_0.46.doc
+│   ├── C106N3_Hyings_PE_Armor_0.46.pdf
+│   └── tute_.exe
+├── C108N3_UnPackMe_VBOWatch_Protector_2.0.doc_SyXe'05
+│   ├── UnPackMe_VBOWatch_Protector 2.0.doc
+│   ├── UnPackMe_VBOWatch_Protector 2.0.pdf
+│   ├── dumped_.exe
+│   └── iat.txt
+├── C109N3_SyXe'05_Teoria_777-Desempacando UnOpix por SyXe'05
+│   ├── C109N3_SyXe'05.doc
+│   ├── C109N3_SyXe'05.pdf
+│   └── iat.txt
+├── C110N4_VMProtect_1.24_SyXe'05
+│   ├── C110N4_VMProtect_1.24_SyXe'05.doc
+│   ├── C110N4_VMProtect_1.24_SyXe'05.pdf
+│   ├── iat.txt
+│   └── tute_.exe
+├── C111N3_ExeSax_0.91_SyXe'05
+│   ├── C111N3_ExeSax_0.91.doc
+│   ├── C111N3_ExeSax_0.91.pdf
+│   ├── iat.txt
+│   └── tute_.exe
+├── HelpandManual 4.0_SyXe'05
+│   ├── HelpandManual 4.0.doc
+│   └── HelpandManual 4.0.pdf
+├── Primer acercamiento a los Exploits por SNAT
+│   ├── Primer acercamiento a los Exploits.pdf
+│   ├── buffer.bin
+│   ├── exploit1.cpp
+│   └── exploit1.exe
+├── SyXe'05+++_1
+│   ├── McAfee Quick Clean 1.01.0084
+│   │   └── McAfee Quick Clean 1.01.0084.doc
+│   ├── McAfee VirusScan 5.15.002
+│   │   └── McAfee VirusScan 5.15.002.doc
+│   ├── PhotoMeister2.4
+│   │   └── PhotoMeister2.4.doc
+│   ├── TechfactsXP v2.60
+│   │   └── TechfactsXP 2.60.doc
+│   └── Ulead CD & DVD PictureShow 3 Trial
+│       └── Ulead CD & DVD PictureShow 3 Trial.doc
+├── SyXe'05+++_2
+│   ├── 24x7 Scheduler 3.4.23
+│   │   └── 24x7 Scheduler 3.4.23.doc
+│   ├── Adobe Illustrator 10
+│   │   └── Illustrator.doc
+│   ├── Chameleon Desktop 1.3
+│   │   ├── Chameleon Desktop 1.3.doc
+│   │   └── iat_ok.txt
+│   ├── ClonDVD 3.2.3.1
+│   │   ├── CloneCD 3.2.3.1.doc
+│   │   └── CloneDVD2.reg
+│   ├── CloneCD 2.8.3.1
+│   │   └── CloneCD 2.8.3.1.doc
+│   └── CoolPage 2.72
+│       └── CoolPage 2.72.doc
+├── SyXe'05_++tuts
+│   ├── 5 Clicks
+│   │   ├── 5 Clicks.doc
+│   │   └── 5 Clicks.pdf
+│   └── Auto Backup 2.4
+│       ├── Auto Backup 2.4.doc
+│       └── Auto Backup 2.4.pdf
+├── SyXe'05_+tutos
+│   ├── 007 Starr Commander 2.0
+│   │   ├── 007 Starr Commander 2.0.doc
+│   │   ├── 007 Starr Commander 2.0.pdf
+│   │   └── serial.reg
+│   ├── 3D FotoStudio 1.2
+│   │   ├── 3D Foto Studio 1.2.doc
+│   │   ├── 3D Foto Studio 1.2.pdf
+│   │   └── SyXe'05.nfo
+│   ├── AIMPR 2.70
+│   │   ├── IAT_OK.txt
+│   │   ├── aimpr.doc
+│   │   └── aimpr.pdf
+│   ├── AcceImage 5.20
+│   │   ├── AccesImage 5.20.doc
+│   │   └── AccesImage 5.20.pdf
+│   ├── Ace Screensaver 2.40
+│   │   ├── Ace screensaver.doc
+│   │   ├── Ace screensaver.pdf
+│   │   └── Thumbs.db
+│   ├── Acey Ducey Backgammon
+│   │   ├── Acey Ducey Backgammon.doc
+│   │   └── Acey Ducey Backgammon.pdf
+│   ├── Acoustica 2.25b
+│   │   ├── Acoustica 2.25b.doc
+│   │   ├── Acoustica 2.25b.pdf
+│   │   └── Acoustica 2.25b.reg
+│   ├── Add Remove Plus! 2002 3.0.0.146
+│   │   ├── Add Remove Plus! 2002 3.0.doc
+│   │   └── Add Remove Plus! 2002 3.0.pdf
+│   ├── Advanced Uninstaller Pro 2002
+│   │   ├── Advanced Uninstaller Pro 2002.doc
+│   │   └── Advanced Uninstaller Pro 2002.pdf
+│   ├── Advanced WMA Workshop 1.76
+│   │   ├── Advanced WMA Workshop 1.76.doc
+│   │   ├── Advanced WMA Workshop 1.76.pdf
+│   │   └── IAT_OK.txt
+│   └── AgendaMSD 2.0
+│       ├── AgendaMSD.doc
+│       └── AgendaMSD.pdf
+├── SyXe'05_ACProtect 1.0x
+│   ├── ACProtect_1.0x_Cool_Color_Picker_1.1.doc
+│   ├── ACProtect_1.0x_Cool_Color_Picker_1.1.pdf
+│   └── iat_ok.txt
+├── SyXe'05_ASProtect 1 (1).2x-1.3x
+│   ├── CloneDVD 3.6.doc
+│   └── iat_ok.txt
+├── SyXe'05_Armadillo 3 (1).78
+│   ├── File Recover 5.0.1.15.doc
+│   └── iat_ok.txt
+├── SyXe'05_Armadillo 3.xx
+│   ├── CubisGold.doc
+│   ├── IAT.txt
+│   └── script.txt
+├── SyXe'05_Armadillo+CopyMemII
+│   ├── Armadillo+CopyMemII_ARWizard_3.1.doc
+│   ├── Armadillo+CopyMemII_ARWizard_3.1.pdf
+│   └── iat_ok.txt
+├── SyXe'05_CloneDVD 3.6_ASProtect 1.2x-1.3x
+│   └── CloneDVD 3.6.doc
+├── SyXe'05_File Recover 5.0_Armadillo 3.78
+│   └── File Recover 5.0.1.15.doc
+├── SyXe'05_IV_tuts
+│   ├── Absolutely On-Line 2.9
+│   │   └── Absolutely On-Line 2.9.doc
+│   ├── ActualDrawing 5.7
+│   │   ├── ActualDrawing.doc
+│   │   └── registrados.reg
+│   ├── Alchemy Network Inventory 1.4.12
+│   │   └── Alchemy Network Inventory 1.4.12.doc
+│   ├── AnyCapture Screen 2.36
+│   │   └── AnyCapture Screen 2.36.doc
+│   ├── Bank Easy 2.1
+│   │   └── Bank Easy 2.1.doc
+│   ├── ButtonStudio 1.44
+│   │   └── ButtonStudio 1.44.doc
+│   ├── GoLive_CS
+│   │   ├── GoLive.doc
+│   │   └── IAT_OK.txt
+│   └── dictionary2000 5.5
+│       └── dictionary2000 5.5.doc
+├── SyXe'05_IX_tuts
+│   ├── Advanced Tracks Cleaner 1.7.rar
+│   ├── Ares Music 3.0.rar
+│   ├── BrainStorm 3.5.rar
+│   ├── CDP Monitor 2.5.rar
+│   ├── PDF Password Remover v2.2.rar
+│   ├── PEBundle_SWiSHpix.rar
+│   └── Search and Recover 3.rar
+├── SyXe'05_SVKP 1.3x
+│   ├── Registry Medic_parte1.doc
+│   ├── Registry Medic_parte2.doc
+│   └── iat_algo.txt
+├── SyXe'05_Ulead PhotoImpact 10
+│   └── Ulead PhotoImpact 10
+│       ├── Ulead PhotoImpact 10.doc
+│       ├── falsa_IAT.txt
+│       └── indicadores.txt
+├── SyXe'05_VIII_tuts
+│   ├── 1 Click & Lock 2.8.rar
+│   ├── Audio DVD Maker 1.0.rar
+│   ├── Backup dD 1.2.rar
+│   ├── Flash Renamer 4.81.rar
+│   └── UltraEdit Studio.rar
+├── SyXe'05_VII_tuts
+│   ├── Smart Type Assistant 1.3.1.0.doc
+│   ├── SnagIt 7.2.4_anexo.doc
+│   ├── TurboNote 5.4.doc
+│   ├── Visual Day Planner 7.3.doc
+│   ├── Wallpaper Magic 2.5.doc
+│   ├── WipeClean 1.0.doc
+│   └── xReminder Pro 4.2.doc
+├── SyXe'05_VI_tuts
+│   ├── Metal Wax Casting Converter DEMO 3.0.rar
+│   ├── SnagIt 7.2.4.rar
+│   ├── ThumbsUp 4.0.rar
+│   └── Ulead DVD Workshop 2 Trial.rar
+├── SyXe'05_V_tuts
+│   ├── Any Capture Screen 3.06
+│   │   └── AnyCapture.doc
+│   ├── Ashampoo Security Manager 2000 v1.2
+│   │   └── ASManager 2000 1.2.doc
+│   ├── Atomica Deluxe 2.52
+│   │   └── Atomica Deluxe 2.52.doc
+│   ├── Automatic Backup Pro 3.2.0.17
+│   │   └── Automatic Backup Pro 3.2.0.17.doc
+│   ├── Big Money Deluxe v1.22
+│   │   └── WinBM.doc
+│   ├── BoDetect 3.5
+│   │   └── BoDetect 3.5.doc
+│   ├── BurnItTest Pro 3.0
+│   │   └── BurnItTest 3.0.doc
+│   ├── CD-R Diagnostic 0.1.2.0
+│   │   ├── CD-R Diagnostic 0.1.2.0.doc
+│   │   └── mi_nombre.reg
+│   ├── CalcMat 2.0
+│   │   └── CalcMAT 2.0.doc
+│   ├── Cinematograph 2.1.3.0
+│   │   └── Cinematograph 2.1.3.0.doc
+│   └── Cute FTP 7 Pro
+│       └── CuteFTP 7 Professional.doc
+├── SyXe'05_XI_tuts
+│   ├── ConcordFTP 3.0.rar
+│   ├── EDraw Flowchart 1.5.4.rar
+│   ├── ExpressZIP 4.0.rar
+│   └── Icontoy 3.1.rar
+├── SyXe'05_X_tutes
+│   ├── ASProtect_en_una_DLL_por_SyXe'05.rar
+│   ├── Add Remove Plus! 2004 4.1.0.755.rar
+│   ├── Alteros 3D.rar
+│   ├── Armadillo_sencillo_by_SyXe'05.rar
+│   ├── Ide68k 2.0.rar
+│   ├── Macro Scheduler 7.4.007.rar
+│   └── System Mechanic Professional 6.rar
+├── SyXe'05_tutos
+│   ├── ACDSee32 2.41
+│   │   ├── ACDSee32 2.41.doc
+│   │   └── latinos.nfo
+│   ├── ASManager 2000 v1.2
+│   │   ├── ASManager 2000 v1.2.doc
+│   │   └── latinos.nfo
+│   ├── Absolutely On-Line v2.9
+│   │   ├── Absolutely On-Line v2.9.doc
+│   │   └── latinos.nfo
+│   ├── Acoustica v2.25b
+│   │   ├── Acoustica v2.25b.doc
+│   │   └── latinos.nfo
+│   ├── Add Remove Plus! 2002 v3.0
+│   │   ├── Add Remove Plus! 2002 v3.0.doc
+│   │   └── latinos.nfo
+│   ├── AnyCapture Screen 2.36
+│   │   ├── AnyCapture Screen 2.36.doc
+│   │   └── latinos.nfo
+│   ├── Audio MP3 Maker 1.06
+│   │   ├── Audio MP3 Maker 1.06.doc
+│   │   └── latinos.nfo
+│   ├── AxMan 3.12
+│   │   ├── AxMan v3.12.doc
+│   │   └── latinos.nfo
+│   ├── Babylon Translator v3.1
+│   │   ├── Babylon Translator v3.1.doc
+│   │   └── latinos.nfo
+│   ├── Backup My Drivers v2.21
+│   │   ├── Backup My Drivers v2.21.doc
+│   │   └── latinos.nfo
+│   ├── HWShop 2.53
+│   │   ├── HWShop 2.53.doc
+│   │   └── latinos.nfo
+│   ├── Info Tel v5.00
+│   │   ├── Info Tel v5.00.doc
+│   │   └── latinos.nfo
+│   ├── Organizer Plus v1.0
+│   │   ├── Organizer Plus v1.0.doc
+│   │   └── latinos.nfo
+│   ├── PCInvestigator v2.05
+│   │   ├── PCInvestigator v2.05.doc
+│   │   └── latinos.nfo
+│   ├── Piano v2.6.160
+│   │   ├── Piano v2.6.160.doc
+│   │   └── latinos.nfo
+│   ├── Rasputín v1.6
+│   │   ├── Rasputín v1.6.doc
+│   │   └── latinos.nfo
+│   ├── Seven Seas 1.13
+│   │   ├── Seven Seas 1.13.doc
+│   │   └── latinos.nfo
+│   ├── SmartDraw Photo v2.03
+│   │   ├── SmartDraw Photo v2.03.doc
+│   │   └── latinos.nfo
+│   ├── mecawin
+│   │   ├── latinos.nfo
+│   │   └── mecawin.doc
+│   ├── quiztotal v0.82
+│   │   ├── latinos.nfo
+│   │   └── quiztotal v0.82.doc
+│   └── snowball
+│       ├── latinos.nfo
+│       └── snowball.doc
+├── cartoonist_parte2_SyXe'05
+│   ├── cartoonist_parte2.doc
+│   └── cartoonist_parte2.pdf
+├── cracked's.txt
+├── lista.txt
+└── unpacking
+    └── asprotect
+        └── 542-asprotect-2.0-1st-startup-manager
+            └── README.md
+
+200 directories, 600 files
+[CPU:  RAM: 1.3Gi/1.9Gi] .02:38 u0_a268@localhost ❯
