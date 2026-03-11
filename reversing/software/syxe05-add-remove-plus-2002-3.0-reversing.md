@@ -1,100 +1,108 @@
-# Add Remove Plus! 2002 3.0 - Reversing Tutorial
 
-Autor: SyXe'05  
-Categoría: Reversing / Software  
+# Add Remove Plus! 2002 3.0.0.146 – Reversing Tutorial
+
+Autor: SyXe'05
+Categoría: Reversing / Software
+
+## Documento original
+
+Add Remove Plus! 2002 3.0.pdf
 
 ---
 
 ## Introducción
 
-Este tutorial analiza el software **Add Remove Plus! 2002 3.0** desde la perspectiva
-de la ingeniería inversa. El objetivo es estudiar el mecanismo de protección
-implementado por el programa y comprender cómo se determina el estado de registro.
+En este tutorial se analiza **Add Remove Plus! 2002 3.0.0.146**, una aplicación shareware diseñada para gestionar la instalación y desinstalación de programas en Windows.
 
-Durante los primeros años de la escena de reversing, este tipo de aplicaciones
-shareware se utilizaban frecuentemente para aprender técnicas de análisis
-de protecciones y validaciones de licencia.
+El objetivo es estudiar el sistema de protección del programa y localizar la rutina encargada de validar el registro del software.
+
+Este tipo de protecciones era común en aplicaciones shareware de principios de los años 2000.
 
 ---
 
 ## Herramientas utilizadas
 
-Para realizar el análisis se emplean herramientas clásicas de ingeniería inversa:
-
 - OllyDbg
-- Desensambladores
-- Analizadores de ejecutables PE
-- Herramientas de monitorización de APIs
+- PEiD
+- Editor hexadecimal
 
 ---
 
 ## Análisis inicial
 
-El primer paso consiste en examinar el ejecutable para identificar:
+El primer paso consiste en analizar el ejecutable con **PEiD** para determinar si el programa está comprimido o protegido por algún packer.
 
-- Entry Point del programa
-- estructura del archivo PE
-- posibles packers o protecciones
-- llamadas relevantes a APIs del sistema
+PEiD permite identificar:
 
-Este análisis permite comprender cómo se inicia el programa y localizar
-las zonas del código potencialmente relacionadas con el sistema de registro.
+- compresores de ejecutables
+- protectores comerciales
+- firmas conocidas
 
----
-
-## Ejecución bajo debugger
-
-El programa se ejecuta bajo un debugger para observar:
-
-- el flujo de ejecución durante el arranque
-- comparaciones relacionadas con el estado de registro
-- comportamiento del programa en modo limitado
-
-Durante esta fase se buscan instrucciones de comparación (CMP)
-y saltos condicionales (JE, JNE, JNZ) que determinan si el
-software se encuentra registrado.
+En este caso el ejecutable puede analizarse directamente en un depurador.
 
 ---
 
-## Localización de la rutina de validación
+## Análisis dinámico
 
-Mediante el análisis del flujo de ejecución se identifica la función
-responsable de:
+El programa se carga en **OllyDbg** para observar su comportamiento durante la ejecución.
 
-- comprobar el estado de registro
-- habilitar o restringir funcionalidades
-- mostrar mensajes de advertencia del modo trial
+Durante el análisis se buscan:
 
-Estas rutinas suelen contener comparaciones o llamadas internas
-relacionadas con el sistema de licencia.
+- cadenas relacionadas con el registro
+- mensajes de error o advertencia
+- funciones que procesan el serial
+
+Estas referencias ayudan a localizar la zona del código donde se realiza la verificación.
+
+---
+
+## Localización de la verificación
+
+Siguiendo las referencias encontradas se identifica la rutina encargada de validar el serial.
+
+En esta zona del código suelen aparecer instrucciones como:
+
+- CMP
+- TEST
+- JE
+- JNE
+
+Dependiendo del resultado de estas comparaciones el programa decide si continuar como versión registrada o mostrar limitaciones.
 
 ---
 
 ## Modificación del flujo de ejecución
 
-Una vez localizada la rutina de verificación, el comportamiento del
-programa puede modificarse mediante:
+Una vez localizada la verificación crítica se puede modificar el flujo del programa.
 
-- parcheo de saltos condicionales
-- modificación de comparaciones
-- alteración de valores de retorno
+Las técnicas habituales incluyen:
 
-Esto permite redirigir la ejecución hacia el flujo correspondiente
-al modo registrado.
+- invertir un salto condicional
+- forzar la rama válida
+- eliminar la comprobación
 
----
-
-## Resultado
-
-Tras aplicar las modificaciones necesarias, el programa se ejecuta
-como versión registrada, eliminando las restricciones del modo trial.
+Tras aplicar el parche el programa funcionará como versión registrada.
 
 ---
 
-## Notas
+## Verificación
 
-Este tipo de tutoriales representan ejemplos clásicos de reversing
-aplicado a software shareware de principios de los años 2000.
+El ejecutable modificado se guarda y se ejecuta fuera del depurador.
 
-Repositorio del proyecto:
+Si el proceso se ha realizado correctamente:
+
+- el programa funcionará sin limitaciones
+- el registro aparecerá como válido
+
+---
+
+## Conclusión
+
+El análisis de **Add Remove Plus! 2002 3.0.0.146** muestra un ejemplo clásico de protección shareware basada en verificaciones simples.
+
+Mediante técnicas básicas de reversing es posible localizar la rutina de validación y modificar el flujo de ejecución para eliminar las restricciones.
+
+---
+
+Repositorio:
 https://github.com/Show0ne/archivo-syxe05-snat
