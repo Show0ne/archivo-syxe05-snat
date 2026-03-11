@@ -1,0 +1,10 @@
+# workflow local
+pending.txt
+next
+
+# temporales
+*.tmp
+*.log
+
+# backups de editor
+*~
