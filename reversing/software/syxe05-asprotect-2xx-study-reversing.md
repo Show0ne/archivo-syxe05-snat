@@ -1,7 +1,7 @@
 # Estudio de ASProtect 2.xx - Reversing Tutorial
 
 Autor: SyXe'05  
-Categoría: Reversing / Software Protection
+Categoría: Reversing / Protectores
 
 ## PDF original
 
@@ -11,62 +11,67 @@ Estudio de ASProtect 2.xx - [SyXe'05].pdf
 
 ## Introducción
 
-Este documento presenta un estudio del protector **ASProtect 2.xx**, uno de los sistemas de protección shareware más utilizados en aplicaciones Windows durante la primera mitad de los años 2000.
+Este documento presenta un estudio del protector **ASProtect 2.xx**, uno de los sistemas de protección de software más utilizados en aplicaciones Windows durante los años 2000.
 
-ASProtect protege ejecutables mediante técnicas de ofuscación del flujo de ejecución, inserción de código adicional y rutinas de verificación que se ejecutan antes de alcanzar el código real del programa.
+El objetivo del tutorial es comprender la estructura interna del protector, identificar su flujo de ejecución y analizar los mecanismos utilizados para dificultar la ingeniería inversa.
 
-El objetivo del análisis es comprender la estructura del protector y estudiar cómo se comporta el ejecutable protegido durante su inicialización.
+---
+
+## ¿Qué es ASProtect?
+
+ASProtect es un protector de ejecutables diseñado para:
+
+- proteger aplicaciones contra copia ilegal
+- dificultar el análisis con debuggers y disassemblers
+- implementar sistemas de licencias y registro
+
+El protector modifica el ejecutable original añadiendo un **stub de protección** que se ejecuta antes del código real del programa.
+
+---
+
+## Flujo de ejecución típico
+
+Cuando un programa protegido con ASProtect se ejecuta, el flujo habitual es:
+
+1. Entrada al stub del protector
+2. Inicialización de estructuras internas
+3. Verificaciones de integridad
+4. Desencriptado o reconstrucción del código
+5. Salto al **OEP (Original Entry Point)** del programa
+
+---
+
+## Técnicas utilizadas por el protector
+
+Durante el análisis pueden observarse varias técnicas de protección:
+
+- cifrado parcial del código
+- comprobaciones anti-debug
+- verificación de integridad
+- manipulación del flujo de ejecución
+- ofuscación de rutinas internas
+
+Estas técnicas buscan retrasar o dificultar el trabajo del reverser.
 
 ---
 
 ## Herramientas utilizadas
 
+En el tutorial se utilizan herramientas habituales de reversing:
+
 - OllyDbg
 - PE Tools
-- Editor hexadecimal
+- herramientas de análisis de ejecutables
 
 ---
 
-## Características de ASProtect
+## Objetivo del estudio
 
-Durante el análisis se observan varias características típicas del protector:
+El propósito del documento es:
 
-- código inicial previo al OEP
-- múltiples saltos cortos destinados a dificultar el seguimiento del flujo
-- secciones de código ofuscadas
-- rutinas internas de verificación
-
-Estas técnicas complican el análisis estático y obligan a utilizar depuración dinámica para comprender el comportamiento del ejecutable.
-
----
-
-## Flujo de ejecución
-
-Al ejecutar el programa protegido se observa que el flujo de ejecución pasa primero por el código del protector.
-
-Durante esta fase se ejecutan varias rutinas internas encargadas de:
-
-- inicializar el entorno del protector
-- verificar el estado del programa
-- preparar la transferencia de control al código original
-
-Finalmente el flujo alcanza el **Original Entry Point (OEP)** del programa protegido.
-
----
-
-## Observaciones
-
-ASProtect utiliza técnicas de ofuscación relativamente complejas para su época, incluyendo un gran número de saltos cortos y código polimórfico que dificultan la lectura directa del flujo de ejecución.
-
-Estas técnicas hacen necesario el uso de depuración paso a paso para comprender la lógica interna del protector.
-
----
-
-## Resultado
-
-El análisis permite comprender cómo ASProtect 2.xx organiza su código de protección y cómo el ejecutable protegido transfiere finalmente el control al programa original.
-
-Este conocimiento resulta útil para el estudio de aplicaciones protegidas con este sistema.
+- comprender el funcionamiento interno del protector
+- identificar patrones comunes en ejecutables protegidos
+- facilitar el análisis y el unpacking de aplicaciones protegidas con ASProtect
 
 ---
 
