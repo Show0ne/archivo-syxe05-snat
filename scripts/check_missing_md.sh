@@ -3,17 +3,15 @@
 echo "Buscando PDFs sin Markdown..."
 echo
 
-find . -type f -iname "*.pdf" | while read pdf; do
+fd -e pdf . | while read -r pdf; do
 
-    name=$(basename "$pdf")
+    name=$(basename "$pdf" .pdf)
 
-    base=$(echo "$name" \
-        | sed 's/\.pdf$//' \
+    slug=$(echo "$name" \
         | tr '[:upper:]' '[:lower:]' \
-        | sed 's/[ ()]/-/g' \
-        | sed 's/--*/-/g')
+        | sed 's/[^a-z0-9]/-/g')
 
-    md="reversing/software/syxe05-${base}-reversing.md"
+    md="reversing/software/syxe05-${slug}-reversing.md"
 
     if [ ! -f "$md" ]; then
         echo "$pdf"
