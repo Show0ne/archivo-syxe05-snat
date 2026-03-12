@@ -13,8 +13,10 @@ echo "[+] Normalizando PDFs..."
 fd -e pdf -x basename {} .pdf \
 | tr '[:upper:]' '[:lower:]' \
 | tr ' ' '-' \
+| sed 's/[áàäâ]/a/g; s/[éèëê]/e/g; s/[íìïî]/i/g; s/[óòöô]/o/g; s/[úùüû]/u/g; s/ñ/n/g' \
 | sed 's/[^a-z0-9._-]//g' \
 | sed 's/\.pdf$//' \
+| sed 's/-\+/-/g' \
 | sort -u > "$tmp_pdf"
 
 echo "[+] Normalizando Markdown..."
@@ -23,7 +25,9 @@ fd "syxe05-.*\.md$" reversing -x basename {} .md \
 | sed 's/^syxe05-//' \
 | sed 's/-reversing$//' \
 | tr '[:upper:]' '[:lower:]' \
+| sed 's/[áàäâ]/a/g; s/[éèëê]/e/g; s/[íìïî]/i/g; s/[óòöô]/o/g; s/[úùüû]/u/g; s/ñ/n/g' \
 | sed 's/[^a-z0-9._-]//g' \
+| sed 's/-\+/-/g' \
 | sort -u > "$tmp_md"
 
 echo
@@ -40,11 +44,15 @@ echo "[+] Calculando pendientes..."
 
 missing=$(comm -23 "$tmp_pdf" "$tmp_md")
 
-missing_count=$(echo "$missing" | grep -c .)
+missing_count=$(printf "%s\n" "$missing" | grep -c .)
 
 processed=$((pdf_total - missing_count))
 
-progress=$(awk "BEGIN {printf \"%.2f\", ($processed/$pdf_total)*100}")
+if [ "$pdf_total" -eq 0 ]; then
+    progress=0
+else
+    progress=$(awk "BEGIN {printf \"%.2f\", ($processed/$pdf_total)*100}")
+fi
 
 echo
 echo "--------------------------------------"
@@ -67,4 +75,4 @@ fi
 echo
 echo "======================================"
 
-rm "$tmp_pdf" "$tmp_md"	
+rm "$tmp_pdf" "$tmp_md"
