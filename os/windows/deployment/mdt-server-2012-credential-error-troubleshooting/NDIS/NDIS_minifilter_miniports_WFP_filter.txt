@@ -1,0 +1,50 @@
+kd> !ndiskd.filterdriver 84a8c4a0
+
+
+FILTER DRIVER
+
+    WFP LightWeight Filter
+
+    Ndis Handle        84a8c4a0
+    Ndis API Version   v6.20
+    Driver Version     v1.0
+    Driver Object      84a8c8b0
+    Driver Image       wfplwf.sys
+
+    Filter Type        MODIFYING_FILTER
+    Run Type           MANDATORY_FILTER
+    Class              ms_firewall_upper
+    References         3
+
+
+FILTERS
+
+    Filter                                                                     _
+    84960a10 - Adaptador de escritorio Intel(R) PRO/1000 MT-WFP LightWeight Filter-0000
+    85315d60 - VirtualBox Host-Only Ethernet Adapter-WFP LightWeight Filter-0000
+
+
+HANDLERS
+
+    Filter Handler                         Function pointer   Symbol (if available)
+    SetOptionsHandler                      0
+Loading symbols for 8cd30000       wfplwf.sys ->   wfplwf.sys
+*** ERROR: Module load completed but symbols could not be loaded for wfplwf.sys
+    SetFilterModuleOptionsHandler          8cd31504  bp       wfplwf_8cd30000+1504
+    AttachHandler                          8cd316c4  bp       wfplwf_8cd30000+16c4
+    DetachHandler                          8cd3196e  bp       wfplwf_8cd30000+196e
+    RestartHandler                         8cd318e6  bp       wfplwf_8cd30000+18e6
+    PauseHandler                           8cd31006  bp       wfplwf_8cd30000+1006
+    SendNetBufferListsHandler              0
+    SendNetBufferListsCompleteHandler      0
+    CancelSendNetBufferListsHandler        0
+    ReceiveNetBufferListsHandler           0
+    ReturnNetBufferListsHandler            0
+    OidRequestHandler                      8cd31ad2  bp       wfplwf_8cd30000+1ad2
+    OidRequestCompleteHandler              8cd319ca  bp       wfplwf_8cd30000+19ca
+    DirectOidRequestHandler                0
+    DirectOidRequestCompleteHandler        0
+    CancelDirectOidRequestHandler          0
+    DevicePnPEventNotifyHandler            8cd31216  bp       wfplwf_8cd30000+1216
+    NetPnPEventHandler                     8cd31234  bp       wfplwf_8cd30000+1234
+    StatusHandler                          8cd311f8  bp       wfplwf_8cd30000+11f8

@@ -1,0 +1,37 @@
+kd> !ndiskd.protocol 854e15d0
+
+
+PROTOCOL
+
+    RSPNDR
+
+    Ndis Handle        854e15d0
+    Ndis API Version   v6.20
+    Driver Context     NULL
+    Driver Version     v0.0
+    Reference Count    3
+    Flags              [No flags set]
+    Driver Image       rspndr.sys
+
+
+BINDINGS
+
+    Open               Miniport            Miniport Name                       _
+    85692498           857380e0            Adaptador de escritorio Intel(R) PRO/1000 MT
+    84be0008           853080e0            VirtualBox Host-Only Ethernet Adapter
+
+
+HANDLERS
+
+    Protocol Handler                       Function pointer   Symbol (if available)
+    BindAdapterHandlerEx                   8bc288aa  bp       rspndr_8bc27000+18aa
+    UnbindAdapterHandlerEx                 8bc28dce  bp       rspndr_8bc27000+1dce
+    OpenAdapterCompleteHandlerEx           8bc28c98  bp       rspndr_8bc27000+1c98
+    CloseAdapterCompleteHandlerEx          8bc28c66  bp       rspndr_8bc27000+1c66
+    NetPnPEventHandler                     8bc28cba  bp       rspndr_8bc27000+1cba
+    UninstallHandler                       0
+    SendNetBufferListsCompleteHandler      8bc28da6  bp       rspndr_8bc27000+1da6
+    ReceiveNetBufferListsHandler           8bc2914e  bp       rspndr_8bc27000+214e
+    StatusHandlerEx                        8bc294c8  bp       rspndr_8bc27000+24c8
+    OidRequestCompleteHandler              8bc29092  bp       rspndr_8bc27000+2092
+    DirectOidRequestCompleteHandler        0

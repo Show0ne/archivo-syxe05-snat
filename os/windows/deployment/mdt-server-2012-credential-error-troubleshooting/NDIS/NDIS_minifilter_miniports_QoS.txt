@@ -1,0 +1,21 @@
+kd> !ndiskd.filter 856b3e00
+
+
+FILTER
+
+    Adaptador de escritorio Intel(R) PRO/1000 MT-QoS Packet Scheduler-0000
+
+    Ndis Handle        856b3e00
+    Filter Driver      84a2bcf8 - QoS Packet Scheduler
+    Driver Context     855f7a28
+    Miniport           857380e0 - Adaptador de escritorio Intel(R) PRO/1000 MT
+
+    State              Running
+    Datapath           Normal
+    References         1
+    Flags              00000010          ← RUNNING
+
+    Higher Filter      84960a10 - Adaptador de escritorio Intel(R) PRO/1000 MT-WFP LightWeight Filter-0000
+    Lower Filter       8510c008 - Adaptador de escritorio Intel(R) PRO/1000 MT-VirtualBox NDIS Light-Weight Filter-0000
+
+     → Driver handlers

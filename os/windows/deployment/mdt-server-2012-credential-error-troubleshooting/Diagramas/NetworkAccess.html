@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="Generator" content="EDGE Diagrammer v6.49.2119">
+<title>NetworkAccess</title>
+<style type="text/css">
+  img.pacestardiagram {
+    border-width: 0;
+  }
+</style>
+</head>
+<body>
+<p>
+<img class="pacestardiagram" src="NetworkAccess.png" usemap="#linkmap" border="0" alt="">
+<map name="linkmap">
+  <area 
+   title="Token de acceso"
+   shape="rect" coords="762,435,855,460" alt="">
+  <area 
+   title="Token de acceso"
+   shape="rect" coords="793,412,820,439" alt="">
+  <area 
+   title="Network share&#13;----------------------------------------------&#13;UNC path: \\MDTShare\DeploymentShare$"
+   shape="rect" coords="563,486,705,510" alt="">
+  <area 
+   title="Token de acceso&#13;"
+   shape="rect" coords="537,543,630,567" alt="">
+  <area 
+   title="Token de acceso&#13;"
+   shape="rect" coords="568,519,595,546" alt="">
+  <area 
+   title="MDTShare  <<shares>>&#13;----------------------------------------------&#13;&#13;Network share&#13;----------------------------------------------&#13;UNC path: \\MDTShare\DeploymentShare$"
+   shape="rect" coords="427,451,514,476" alt="">
+  <area 
+   title="Network path Security Descriptor"
+   shape="rect" coords="642,462,779,487" alt="">
+  <area 
+   title="First Check&#13;Token vs Security Descriptor (Network share)"
+   shape="poly" coords="578,386,576,387,573,388,571,389,570,391,568,394,
+567,397,567,400,567,402,567,405,568,408,570,411,571,413,573,414,576,415,
+578,416,675,416,678,415,680,414,682,413,683,411,685,408,686,405,686,402,
+686,400,686,397,685,394,683,391,682,389,680,388,678,387,675,386,578,386" alt="">
+  <area 
+   title="Acceso local"
+   shape="rect" coords="350,404,471,429" alt="">
+  <area 
+   title="User Security context"
+   shape="rect" coords="758,515,857,546" alt="">
+  <area 
+   title="Second Check&#13;Token vs Security Descriptor (local folder)"
+   shape="poly" coords="397,551,395,552,392,553,390,554,389,556,387,559,
+386,562,386,565,386,567,386,570,387,573,389,576,390,578,392,579,395,580,
+397,581,494,581,497,580,499,579,501,578,502,576,504,573,505,570,505,567,
+505,565,505,562,504,559,502,556,501,554,499,553,497,552,494,551,397,551" alt="">
+  <area 
+   title="Se pasa el Token de acceso"
+   shape="rect" coords="833,404,925,428" alt="">
+  <area 
+   title="Sistema operativo GNU/Linux"
+   shape="rect" coords="915,546,948,579" alt="">
+  <area 
+   title="Sistema Operativo Windows&#13;"
+   shape="rect" coords="869,547,907,579" alt="">
+  <area 
+   title="Some Machine&#13;Some Architecture"
+   shape="rect" coords="735,304,894,369" alt="">
+  <area 
+   title="User logged-in at Some machine"
+   shape="rect" coords="916,306,951,341" alt="">
+  <area 
+   title="Some machine"
+   shape="rect" coords="898,303,967,371" alt="">
+  <area 
+   title="Network path Security Descriptor"
+   shape="rect" coords="621,461,640,481" alt="">
+  <area 
+   title="Network share&#13;----------------------------------------------&#13;UNC path: \\MDTShare\DeploymentShare$"
+   shape="rect" coords="572,438,616,482" alt="">
+  <area 
+   title="Local Folder Security Descriptor"
+   shape="rect" coords="368,525,534,550" alt="">
+  <area 
+   title="Una máquina desde la red"
+   shape="rect" coords="734,379,962,595" alt="">
+  <area 
+   title="Local Folder Security Descriptor"
+   shape="rect" coords="361,524,381,544" alt="">
+  <area 
+   title="MDTServer                         [SERVER COMPUTER]&#13;-------------------------------------------------&#13;Arquitectura CPU: 64-bit&#13;SO: Windows 2008 Server R2 Datacenter 64-bit&#13;Maestro dominio mdt.cat&#13;08-00-27-BE-28-32&#13;192.168.56.200&#13;&#13;Domain: mdt.cat&#13;Domain Password: joseluis_0&#13;&#13;Administrator: MDT\Administrador&#13;Administrator Password: joseluis_0&#13;"
+   shape="rect" coords="273,107,353,186" alt="">
+  <area 
+   title="MDTShared local folders"
+   shape="rect" coords="325,487,357,519" alt="">
+  <area 
+   title="Carpeta local C:\DeploymentShare"
+   shape="rect" coords="355,502,517,527" alt="">
+  <area 
+   title="MDTShare HardDisk"
+   shape="rect" coords="316,429,367,481" alt="">
+  <area 
+   title="máquina local MDTShare"
+   shape="rect" coords="290,379,522,595" alt="">
+  <area 
+   title="Red NAT de Virtual Box"
+   shape="poly" coords="160,597,173,599,177,603,179,611,189,621,192,644,
+196,652,192,654,171,658,169,660,171,662,1052,664,1041,672,131,676,118,674,
+114,664,118,660,121,662,152,662,154,660,152,658,135,656,133,656,133,646,
+139,642,139,619,144,615,150,603,150,601,160,597,160,597" alt="">
+  <area 
+   title="Virtual Box Builds a NAT Network"
+   shape="poly" coords="314,684,315,686,326,715,325,715,315,710,303,725,
+291,737,280,746,273,750,255,757,239,761,218,761,219,761,237,756,259,744,
+269,736,278,726,293,701,293,700,283,696,283,696,282,695,283,695,314,684,314,684" alt="">
+  <area 
+   title="Sistema Operativo&#13;-----------------------------------------&#13;Windows 2008 Server R2 Datacenter x64&#13;Service Pack 1&#13;"
+   shape="rect" coords="463,112,509,152" alt="">
+  <area 
+   title="Oracle Virtual Box&#13;---------------------------------------&#13;Version:          5.2.18 r124319 (Qt5.6.2)&#13;Architecture: x86-64"
+   shape="rect" coords="160,735,230,803" alt="">
+  <area 
+   title="Virtual Box Builds a NAT Network"
+   shape="rect" coords="229,704,277,733" alt="">
+  <area 
+   title="Sistema Operativo&#13;-------------------------&#13;Windows 7 Ultimate x86&#13;Service Pack 1&#13;"
+   shape="rect" coords="461,313,507,352" alt="">
+  <area 
+   title="MDTShare&#13;Arquitectura: 64-bit&#13;Cliente dominio mdt.cat&#13;dhcp"
+   shape="rect" coords="356,304,522,370" alt="">
+  <area 
+   title="MDTShare      [OWNS RESOURCES]&#13;------------------------------------&#13;Arquitectura CPU: 32-bit&#13;SO: Windows 7 Ultimate 32-Bit&#13;Cliente dominio mdt.cat&#13;08-00-27-1B-B8-B0&#13;dhcp&#13;&#13;Administrator: MDTShare\jlperez&#13;Administrator password: joseluis_0&#13;"
+   shape="rect" coords="283,304,353,372" alt="">
+  <area 
+   title="MDTServer&#13;Arquitectura: 64-bit&#13;Maestro dominio mdt.cat&#13;192.168.56.200&#13;"
+   shape="rect" coords="348,107,522,181" alt="">
+  <area 
+   title="Servicio Directorio Activo&#13;--------------------------------------------&#13;FQDN del raiz:                               mdt.cat&#13;DOMAIN NetBios Name:             MDT&#13;Passwod Controlador Dominio: joseluis_0&#13;"
+   shape="rect" coords="512,216,699,251" alt="">
+  <area 
+   title="Servicio DNS&#13;------------------------------------&#13;Zona Directa:&#13;Tipo de zona: Principal&#13;nombre: dnsioc&#13;&#13;Zona Inversa:&#13;Tipo de zona: Principal&#13;Id de red: 192.168.56&#13;archivo: 56.18.192.in-add.arpa.dns&#13;"
+   shape="rect" coords="406,216,487,252" alt="">
+  <area 
+   title="Servicio DHCP&#13;-------------------------------&#13;&#13;Ámbito&#13;-------------------------------&#13;Nombre: dhcpioc&#13;IP Inicial: 192.168.56.10&#13;IP Final:   192.168.56.190&#13;Concesion [d-h-m]: 08-00-00&#13;&#13;Reservas [2]&#13;-------------------------------&#13;[1] MDTShare&#13;      08-00-27-1B-B8-B0&#13;      192.168.56.100&#13;&#13;[2] Clientex64&#13;      08-00-27-5D-44-67&#13;      192.168.56.150"
+   shape="rect" coords="301,216,381,251" alt="">
+  <area 
+   title="Capa de Servicios&#13;-----------------------------&#13;Active Directory&#13;DHCP&#13;DNS"
+   shape="rect" coords="280,201,726,268" alt="">
+  <area 
+   title="IOC NAT Network&#13;-------------------------------------------------------&#13;Red CIDR:       192.168.56.0/24&#13;Ipciones:         No Soporta DHCP (VirtualBox)&#13;DHCP Server: MDTServer [192.18.56.200]&#13;DNS Server:    MDTServer [192.18.56.200]&#13;&#13;Server#:   MDTServer [192.18.56.200] (AD,DHCP,DNS)&#13;Client@:  MDTShare [dhcp]&#13;Client@:  Clientex64 [dhcp]&#13;Domain:  mdt.cat&#13;&#13;Administrator: MDT\Administrador&#13;Domain Password: joseluis_0"
+   shape="rect" coords="172,572,263,661" alt="">
+  <area 
+   title="IOC NAT Network&#13;-------------------------------------------------------&#13;Red CIDR:       192.168.56.0/24&#13;Ipciones:         No Soporta DHCP (VirtualBox)&#13;DHCP Server: MDTServer [192.18.56.200]&#13;DNS Server:    MDTServer [192.18.56.200]&#13;&#13;Server#:   MDTServer [192.18.56.200] (AD,DHCP,DNS)&#13;Client@:  MDTShare [dhcp]&#13;Client@:  Clientex64 [dhcp]&#13;Domain:  mdt.cat&#13;&#13;Administrator: MDT\Administrador&#13;Domain Password: joseluis_0"
+   shape="rect" coords="264,637,527,662" alt="">
+  <area 
+   title="Physical Layer"
+   shape="rect" coords="499,823,709,855" alt="">
+  <area 
+   title="Hypervisor Layer"
+   shape="rect" coords="496,766,708,797" alt="">
+  <area 
+   title="Máquina Física \\JOSE-PC"
+   shape="rect" coords="19,811,1183,867" alt="">
+  <area 
+   title="MUP Redirector"
+   shape="poly" coords="652,587,698,569,734,537,753,494,753,449,734,406,
+698,374,652,356,602,356,555,374,519,406,500,449,500,494,519,537,555,569,
+602,587,652,587" alt="">
+  <area 
+   title="Dominio mdt.cat"
+   shape="rect" coords="170,51,333,88" alt="">
+  <area 
+   title="Dominio mdt.cat"
+   shape="rect" coords="168,79,1037,656" alt="">
+  <area 
+   title="MV Hypervisor"
+   shape="rect" coords="19,1,1183,812" alt="">
+</map>
+
+</body>
+</html>

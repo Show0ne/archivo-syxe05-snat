@@ -1,0 +1,47 @@
+kd> !miniports
+E1G60I32.sys, v8.4
+  857380e0 NetLuidIndex  6, IfIndex 11,  Adaptador de escritorio Intel(R) PRO/1000 MT
+VBoxNetAdp6.sys, v1.0
+  853080e0 NetLuidIndex  9, IfIndex 13,  VirtualBox Host-Only Ethernet Adapter
+rassstp.sys, v0.0
+  84b9d0e0 NetLuidIndex  0, IfIndex  2,  WAN Miniport (SSTP)
+raspptp.sys, v0.0
+  84b9b0e0 NetLuidIndex  3, IfIndex  4,  WAN Miniport (PPTP)
+raspppoe.sys, v0.0
+  84b980e0 NetLuidIndex  0, IfIndex  5,  WAN Miniport (PPPOE)
+ndiswan.sys, v0.0
+  84b960e0 NetLuidIndex  0, IfIndex  6,  WAN Miniport (IPv6)
+  84b850e0 NetLuidIndex  4, IfIndex  8,  WAN Miniport (IP)
+  84b800e0 NetLuidIndex  1, IfIndex  7,  WAN Miniport (Network Monitor)
+rasl2tp.sys, v0.0
+  84b390e0 NetLuidIndex  2, IfIndex  3,  WAN Miniport (L2TP)
+AgileVpn.sys, v1.0
+  84b8c0e0 NetLuidIndex  1, IfIndex 10,  WAN Miniport (IKEv2)
+tunnel.sys, v1.0
+  84b3b0e0 NetLuidIndex  5, IfIndex 14,  Adaptador ISATAP de Microsoft #2
+  84ac00e0 NetLuidIndex  4, IfIndex 12,  Adaptador ISATAP de Microsoft
+  
+  
+  FILTERS
+  -------------------------------------------------------
+																											Miniport
+  ↑ Adaptador de escritorio Intel(R) PRO/1000 MT-WFP LightWeight Filter-0000				HIGHER FILTER	857380e0 - Adaptador de escritorio Intel(R) PRO/1000 MT
+  ↑ Adaptador de escritorio Intel(R) PRO/1000 MT-QoS Packet Scheduler-0000									857380e0 - Adaptador de escritorio Intel(R) PRO/1000 MT
+  ↑ Adaptador de escritorio Intel(R) PRO/1000 MT-VirtualBox NDIS Light-Weight Filter-0000					857380e0 - Adaptador de escritorio Intel(R) PRO/1000 MT
+
+  MAP
+  -------------------------------------------------------
+  Miniport
+  857380e0 - Adaptador de escritorio Intel(R) PRO/1000 MT
+  Filters
+    Filter List        						   Filter      Filter Driver  Context          _
+    WFP LightWeight Filter-0000        		   84960a10    84a8c4a0       85820e08
+    QoS Packet Scheduler-0000				   856b3e00    84a2bcf8       855f7a28
+    VirtualBox NDIS Light-Weight Filter-0000   8510c008    84ac2008       851572c8
+  Bindings
+  ► TCPIP              854e6008            849225c0           856b24e8
+  ► LLTDIO             856df338            854dc3b8           856922c0
+  ► RSPNDR             85692498            854e15d0           83c812e8
+  
+  ↕◄◄►
+  

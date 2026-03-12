@@ -1,0 +1,71 @@
+[dynamic: ToInstance, provider("CIMWin32"): ToInstance, Locale(1033): ToInstance, UUID("{8502C4B2-5FBB-11D2-AAC1-006008C78BC7}"): ToInstance]
+class Win32_DiskDrive : CIM_DiskDrive
+{
+	[read: ToSubClass, key, Override("DeviceId"): ToSubClass, MappingStrings{"WMI"}: ToSubClass] string DeviceID = NULL;
+	[read: ToSubClass, MappingStrings{"Win32API|Device Input and Output Structures|DISK_GEOMETRY|BytesPerSector"}: ToSubClass] uint32 BytesPerSector;
+	[read: ToSubClass, MappingStrings{"Win32API|Device Input and Output Functions|DeviceIoControl"}: ToSubClass] string InterfaceType;
+	[read: ToSubClass, MappingStrings{"Win32API|Device Input and Output Structures|PARTITION_INFORMATION|RecognizedPartition"}: ToSubClass] uint32 Partitions;
+	[read: ToSubClass, MappingStrings{"Win32API|Device Input and Output Structures|DISK_GEOMETRY|SectorsPerTrack"}: ToSubClass] uint32 SectorsPerTrack;
+	[read: ToSubClass, MappingStrings{"Win32API|Device Input and Output Structures|DISK_GEOMETRY|Cylinders"}: ToSubClass] uint64 TotalCylinders;
+	[read: ToSubClass, MappingStrings{"Win32API|Device Input and Output Structures|DISK_GEOMETRY|TracksPerCylinder"}: ToSubClass] uint32 TotalHeads;
+	[read: ToSubClass, MappingStrings{"Win32API|Device Input and Output Structures|DISK_GEOMETRY|SectorsPerTrack"}: ToSubClass] uint64 TotalSectors;
+	[read: ToSubClass, MappingStrings{"Win32API|Device Input and Output Structures|DISK_GEOMETRY|TracksPerCylinder"}: ToSubClass] uint64 TotalTracks;
+	[read: ToSubClass, MappingStrings{"Win32API|Device Input and Output Structures|DISK_GEOMETRY|TracksPerCylinder"}: ToSubClass] uint32 TracksPerCylinder;
+	[read: ToSubClass, MappingStrings{"Win32API|Windows 95/98 Functions|DRIVE_MAP_INFObtInt13Unit"}: ToSubClass] uint32 Index;
+	[read: ToSubClass, MappingStrings{"Win32Registry|HKEY_LOCAL_MACHINE\\HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port\\Scsi Bus\\Target Id\\Logical Unit Id\\Identifier", "Win32Registry|Manufacturer"}: ToSubClass] string Manufacturer;
+	[read: ToSubClass, MappingStrings{"Win32API|Device Input and Output Structures|DISK_GEOMETRY|MediaType|FixedMedia"}: ToSubClass] boolean MediaLoaded;
+	[read: ToSubClass, MappingStrings{"Win32API|Device Input and Output Structures|DISK_GEOMETRY|MediaType"}: ToSubClass, ValueMap{"Removable media other than floppy", "Fixed hard disk media", "Format is unknown"}: ToSubClass] string MediaType;
+	[read: ToSubClass, MappingStrings{"Win32Registry|HKEY_LOCAL_MACHINE\\HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port\\Scsi Bus\\Target Id\\Logical Unit Id\\Identifier", "Win32Registry|ProductId"}: ToSubClass] string Model;
+	[read: ToSubClass, MappingStrings{"Win32API|Device Input and Output Structures|SCSI_ADDRESS|PathId"}: ToSubClass] uint32 SCSIBus;
+	[read: ToSubClass, MappingStrings{"Win32API|Device Input and Output Structures|SCSI_ADDRESS|Lun"}: ToSubClass] uint16 SCSILogicalUnit;
+	[read: ToSubClass, MappingStrings{"Win32API|Device Input and Output Structures|SCSI_ADDRESS|PortNumber"}: ToSubClass] uint16 SCSIPort;
+	[read: ToSubClass, MappingStrings{"Win32API|Device Input and Output Structures|SCSI_ADDRESS|TargetId"}: ToSubClass] uint16 SCSITargetId;
+	[read: ToSubClass, MappingStrings{"Win32API|Device Input and Output Structures|DISK_GEOMETRY"}: ToSubClass] uint64 Size;
+	[read: ToSubClass, MappingStrings{"Win32API|Device Input and Output Structures|DRIVE_LAYOUT_INFORMATION|Signature"}: ToSubClass] uint32 Signature;
+	[read: ToSubClass, MappingStrings{"Win32API|Device Input and Output Structures|STORAGE_DEVICE_DESCRIPTOR|SerialNumberOffset"}: ToSubClass] string SerialNumber;
+	[read: ToSubClass, MappingStrings{"Win32API|Device Input and Output Structures|STORAGE_DEVICE_DESCRIPTOR|ProductRevisionOffset"}: ToSubClass] string FirmwareRevision;
+};
+
+
+
+INSTANCIA
+------------------------------------------------------
+
+instance of Win32_DiskDrive
+{
+	BytesPerSector = 512;
+	Capabilities = {3, 4, 10};
+	CapabilityDescriptions = {"Random Access", "Supports Writing", "SMART Notification"};
+	Caption = "VBOX HARDDISK ATA Device";
+	ConfigManagerErrorCode = 0;
+	ConfigManagerUserConfig = FALSE;
+	CreationClassName = "Win32_DiskDrive";
+	Description = "Unidad de disco";
+	DeviceID = "\\\\.\\PHYSICALDRIVE1";
+	FirmwareRevision = "1.0";
+	Index = 1;
+	InterfaceType = "IDE";
+	Manufacturer = "(Unidades de disco estándar)";
+	MediaLoaded = TRUE;
+	MediaType = "Fixed hard disk media";
+	Model = "VBOX HARDDISK ATA Device";
+	Name = "\\\\.\\PHYSICALDRIVE1";
+	Partitions = 0;
+	PNPDeviceID = "IDE\\DISKVBOX_HARDDISK___________________________1.0_____\\5&E5E0240&0&2.0.0";
+	SCSIBus = 2;
+	SCSILogicalUnit = 0;
+	SCSIPort = 2;
+	SCSITargetId = 0;
+	SectorsPerTrack = 63;
+	SerialNumber = "42563734323337333266332d3363653566352033";
+	Signature = 0;
+	Size = "10733990400";
+	Status = "OK";
+	SystemCreationClassName = "Win32_ComputerSystem";
+	SystemName = "MDTSHARE";
+	TotalCylinders = "1305";
+	TotalHeads = 255;
+	TotalSectors = "20964825";
+	TotalTracks = "332775";
+	TracksPerCylinder = 255;
+};

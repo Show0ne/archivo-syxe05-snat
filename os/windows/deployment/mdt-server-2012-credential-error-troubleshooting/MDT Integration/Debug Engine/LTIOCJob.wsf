@@ -1,0 +1,62 @@
+<job id="LTIOCJob">
+   <script language="VBScript" src="ZTIUtility.vbs"/>
+   <script language="VBScript" src="IOCDebug.vbs"/>
+   <script language="VBScript">
+ 
+Option Explicit
+RunNewInstance
+
+
+'//----------------------------------------------------------------------------
+'//  Main Class
+'//----------------------------------------------------------------------------
+
+Class LTIOCJob
+
+	Dim iRetVal0
+
+	
+	'//----------------------------------------------------------------------------
+	'//  Constructor to initialize needed global objects
+	'//----------------------------------------------------------------------------
+	
+	Private Sub Class_Initialize
+		If oDebugging.IsDebug Then
+			oShell.Popup "LTIOCJob.wsf Init By: " & oUtility.ScriptName, InitalizerTimeout, "Class Initializer", 64
+		End If
+	End Sub
+	
+	
+	'//----------------------------------------------------------------------------
+	'//  Main routine
+	'//----------------------------------------------------------------------------
+	
+	Function Main
+
+		oDebugging.WriteLog "MAIN",LogTypeInfo
+		oDebugging.ShowMessage oUtility.ScriptName & " MAIN",MessageTimeout,oUtility.ScriptName
+		
+		'//----------------------------------------------------------------------------
+		'//  Launch LTIOCDebug.wsf to set up debug information
+		'//----------------------------------------------------------------------------
+		
+		iRetVal0 = oShell.Run("wscript.exe """ & oUtility.ScriptDir & "\LTIOCDebug.wsf""", 1, true)
+		
+		'//----------------------------------------------------------------------------
+		'//  Launch LiteTouch.wsf to start the deployment process
+		'//----------------------------------------------------------------------------
+		
+		iRetVal0 = iRetVal0 + oShell.Run("wscript.exe """ & oUtility.ScriptDir & _
+		"\LiteTouch.wsf""", 1, true)
+
+		' Obtenemos el status code
+		Main = iRetVal0
+	
+		WScript.Quit Main
+		
+	End Function
+
+End Class
+
+   </script>
+</job>

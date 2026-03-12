@@ -1,0 +1,39 @@
+kd> !ndiskd.protocol 854dc3b8
+
+
+PROTOCOL
+
+    LLTDIO
+
+    Ndis Handle        854dc3b8
+    Ndis API Version   v6.20
+    Driver Context     NULL
+    Driver Version     v0.0
+    Reference Count    3
+    Flags              [No flags set]
+    Driver Image       lltdio.sys
+
+
+BINDINGS
+
+    Open               Miniport            Miniport Name                       _
+    856df338           857380e0            Adaptador de escritorio Intel(R) PRO/1000 MT
+    85167470           853080e0            VirtualBox Host-Only Ethernet Adapter
+
+
+HANDLERS
+
+    Protocol Handler                       Function pointer   Symbol (if available)
+Loading symbols for 8bc17000       lltdio.sys ->   lltdio.sys
+*** ERROR: Module load completed but symbols could not be loaded for lltdio.sys
+    BindAdapterHandlerEx                   8bc18b48  bp       lltdio_8bc17000+1b48
+    UnbindAdapterHandlerEx                 8bc18888  bp       lltdio_8bc17000+1888
+    OpenAdapterCompleteHandlerEx           8bc18652  bp       lltdio_8bc17000+1652
+    CloseAdapterCompleteHandlerEx          8bc18622  bp       lltdio_8bc17000+1622
+    NetPnPEventHandler                     8bc18674  bp       lltdio_8bc17000+1674
+    UninstallHandler                       0
+    SendNetBufferListsCompleteHandler      8bc19274  bp       lltdio_8bc17000+2274
+    ReceiveNetBufferListsHandler           8bc18eda  bp       lltdio_8bc17000+1eda
+    StatusHandlerEx                        8bc187fa  bp       lltdio_8bc17000+17fa
+    OidRequestCompleteHandler              8bc1e202  bp       lltdio_8bc17000+7202
+    DirectOidRequestCompleteHandler        0
