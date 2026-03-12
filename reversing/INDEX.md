@@ -71,6 +71,7 @@
 - [syxe05-clonedvd-3.6-asprotect-reversing](reversing/software/syxe05-clonedvd-3.6-asprotect-reversing.md)
 - [syxe05-concordftp-3.0-reversing](reversing/software/syxe05-concordftp-3.0-reversing.md)
 - [syxe05-coolpage-2.72-reversing](reversing/software/syxe05-coolpage-2.72-reversing.md)
+- [syxe05-cuteftp-7-professional-reversing](reversing/software/syxe05-cuteftp-7-professional-reversing.md)
 - [syxe05-diablo2-lod-securom-reversing](reversing/software/syxe05-diablo2-lod-securom-reversing.md)
 - [syxe05-dvd-region-css-free-5.9.6.8-asprotect-reversing](reversing/software/syxe05-dvd-region-css-free-5.9.6.8-asprotect-reversing.md)
 - [syxe05-dvd-region-css-free-5.9.6.8-parte2-reversing](reversing/software/syxe05-dvd-region-css-free-5.9.6.8-parte2-reversing.md)
