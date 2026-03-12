@@ -1,4 +1,4 @@
-1# Archivo de tutoriales de reversing — SyXe'05 / Snat
+# Archivo de tutoriales de reversing — SyXe'05 / Snat
 
 Este repositorio contiene un archivo histórico de tutoriales de **ingeniería inversa (reverse engineering), unpacking y análisis de protecciones de software** escritos por el mismo autor bajo distintos alias utilizados a lo largo del tiempo.
 
@@ -10,6 +10,14 @@ Alias utilizados en las publicaciones originales:
 Durante parte de este periodo, el trabajo del autor estuvo relacionado con la comunidad y el grupo **CracksLatinos**, una escena hispanohablante centrada en reversing, análisis de protecciones y estudio técnico de software.
 
 El objetivo de este repositorio es **preservar el material original y facilitar su lectura y navegación**.
+
+---
+
+## Índice de tutoriales
+
+La lista completa de tutoriales convertidos a Markdown puede consultarse aquí:
+
+➡ **[Ver índice de tutoriales](reversing/INDEX.md)**
 
 ---
 
@@ -92,6 +100,14 @@ Aliases used in the original publications:
 During part of this period, the author's work was associated with the **CracksLatinos** community, a Spanish-speaking reversing scene focused on reverse engineering and software protection analysis.
 
 The goal of this repository is to **preserve the original material and make it easier to read and navigate**.
+
+---
+
+## Tutorial index
+
+The full list of tutorials converted to Markdown can be found here:
+
+➡ **[View tutorial index](reversing/INDEX.md)**
 
 ---
 
