@@ -8,7 +8,6 @@
 - [1591-reverseando-mirc-7.43-snat](reversing/mirc/1591-reverseando-mirc-7.43-snat.md)
 - [snat-mirc-7.43-reversing](reversing/mirc/snat-mirc-7.43-reversing.md)
 - [snat-servicios-de-windows-reversing](reversing/software/snat-servicios-de-windows-reversing.md)
-- [snat-socket-programming-referencia](reversing/software/snat-socket-programming-referencia.md)
 - [snat-themida-2.2.6.0-visual-basic-unpacking](reversing/software/snat-themida-2.2.6.0-visual-basic-unpacking.md)
 - [syxe05-007-starr-commander-2.0-reversing](reversing/software/syxe05-007-starr-commander-2.0-reversing.md)
 - [syxe05-1-click--lock-2.8-reversing](reversing/software/syxe05-1-click--lock-2.8-reversing.md)
