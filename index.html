@@ -1,33 +1,58 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="UTF-8">
-<title>SyXe'05 Reverse Engineering Archive</title>
+<title>SyXe'05 / Snat Reverse Engineering Archive</title>
 
 <style>
 body{
-font-family: Arial;
-max-width: 900px;
-margin:auto;
-padding:40px;
+font-family: Arial, Helvetica, sans-serif;
+background:#f5f5f5;
+margin:40px;
+color:#222;
 }
 
 h1{
-border-bottom:2px solid #ccc;
+font-size:28px;
+}
+
+h2{
+margin-top:40px;
 }
 
 a{
-color:#0066cc;
 text-decoration:none;
+color:#0066cc;
 }
 
 a:hover{
 text-decoration:underline;
 }
 
-.section{
-margin-top:40px;
+.container{
+max-width:900px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:8px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.search{
+margin-top:20px;
+margin-bottom:30px;
+}
+
+input{
+width:100%;
+padding:10px;
+font-size:16px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+ul{
+line-height:1.8;
 }
 </style>
 
@@ -35,63 +60,72 @@ margin-top:40px;
 
 <body>
 
+<div class="container">
+
 <h1>SyXe'05 / Snat Reverse Engineering Archive</h1>
 
 <p>
-Historical archive of reverse engineering and unpacking tutorials.
+Historical archive of reverse engineering and unpacking tutorials written between the early 2000s and later years.
 </p>
 
-<div class="section">
-<h2>Reversing Tutorials</h2>
-<div id="reversing"></div>
+<p>
+Author: <b>SyXe'05 / Snat</b><br>
+Group: <b>CracksLatinos</b>
+</p>
+
+<div class="search">
+<input type="text" id="search" placeholder="Search tutorial..." onkeyup="filterTutorials()">
 </div>
 
-<div class="section">
+<h2>Reversing Tutorials</h2>
+
+<ul id="reversing">
+
+<li><a href="reversing/software/syxe05-acoustica-2.25b-reversing.md">Acoustica 2.25b</a></li>
+<li><a href="reversing/software/syxe05-alchemy-network-inventory-1.4.12-reversing.md">Alchemy Network Inventory</a></li>
+<li><a href="reversing/software/syxe05-alteros-3d-reversing.md">Alteros 3D</a></li>
+<li><a href="reversing/software/syxe05-any-capture-screen-3.06-reversing.md">Any Capture Screen 3.06</a></li>
+<li><a href="reversing/software/syxe05-anycapture-screen-2.36-reversing.md">AnyCapture Screen 2.36</a></li>
+<li><a href="reversing/software/syxe05-ashampoo-security-manager-2000-v1.2-reversing.md">Ashampoo Security Manager</a></li>
+<li><a href="reversing/software/syxe05-cd-r-diagnostic-0.1.2.0-reversing.md">CD-R Diagnostic</a></li>
+<li><a href="reversing/software/syxe05-system-mechanic-professional-6-reversing.md">System Mechanic Professional 6</a></li>
+
+</ul>
+
 <h2>Unpacking Tutorials</h2>
-<div id="unpacking"></div>
+
+<ul id="unpacking">
+
+<li><a href="unpacking/syxe05-asprotect-golive-cs-unpacking.md">ASProtect – GoLive CS</a></li>
+<li><a href="unpacking/syxe05-burnintest-4.0-armadillo-unpacking.md">Armadillo – BurnInTest 4.0</a></li>
+<li><a href="unpacking/syxe05-advanced-system-optimizer-2.01.2-asprotect-dll-unpacking.md">ASProtect DLL – Advanced System Optimizer</a></li>
+
+</ul>
+
 </div>
 
 <script>
 
-function loadTutorials(path, containerId){
+function filterTutorials(){
 
-fetch("https://api.github.com/repos/Show0ne/archivo-syxe05-snat/contents/" + path)
+let input=document.getElementById("search").value.toLowerCase()
 
-.then(response => response.json())
+let lists=document.querySelectorAll("ul li")
 
-.then(data => {
+lists.forEach(function(item){
 
-const container = document.getElementById(containerId);
+let text=item.innerText.toLowerCase()
 
-data.forEach(file => {
+if(text.includes(input))
+item.style.display=""
+else
+item.style.display="none"
 
-if(file.name.endsWith(".md")){
-
-const link = document.createElement("a");
-
-link.href = file.html_url;
-
-link.textContent = file.name.replace(".md","");
-
-const div = document.createElement("div");
-
-div.appendChild(link);
-
-container.appendChild(div);
+})
 
 }
-
-});
-
-});
-
-}
-
-loadTutorials("reversing/software","reversing");
-loadTutorials("unpacking","unpacking");
 
 </script>
 
 </body>
-
 </html>
