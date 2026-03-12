@@ -87,6 +87,7 @@
 - [syxe05-hwshop-2.53-reversing](reversing/software/syxe05-hwshop-2.53-reversing.md)
 - [syxe05-hyings-pe-armor-0.46-unpacking](reversing/software/syxe05-hyings-pe-armor-0.46-unpacking.md)
 - [syxe05-icontoy-3.1-reversing](reversing/software/syxe05-icontoy-3.1-reversing.md)
+- [syxe05-ide68k-2.0-reversing](reversing/software/syxe05-ide68k-2.0-reversing.md)
 - [syxe05-info-tel-5.00-reversing](reversing/software/syxe05-info-tel-5.00-reversing.md)
 - [syxe05-macro-scheduler-7.4.007-reversing](reversing/software/syxe05-macro-scheduler-7.4.007-reversing.md)
 - [syxe05-magic-utilities-2006-v4.22-reversing](reversing/software/syxe05-magic-utilities-2006-v4.22-reversing.md)
