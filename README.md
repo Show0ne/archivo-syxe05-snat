@@ -1,117 +1,46 @@
 # SyXe'05 / Snat Reverse Engineering Archive
 
-Este repositorio preserva una colección histórica de tutoriales de ingeniería inversa, reversing y unpacking escritos principalmente entre principios de los años 2000 y años posteriores.
+Historical archive of reverse engineering and unpacking tutorials written between the early 2000s and later years.
 
-Muchos de estos documentos fueron publicados originalmente en foros y comunidades de reversing de la época y posteriormente recopilados aquí para su preservación.
+These write-ups were originally published under the aliases **SyXe'05** and **Snat**, and cover classic software protections and reverse engineering techniques used during that era.
 
-La mayoría de los trabajos están firmados bajo los alias:
-
-- SyXe'05
-- Snat
-
-Durante parte de este periodo los trabajos también estuvieron asociados al grupo CracksLatinos.
-
-El objetivo de este repositorio es preservar este material técnico histórico y facilitar su lectura moderna mediante Markdown.
+The purpose of this repository is to preserve these tutorials and make them easily accessible in a structured format.
 
 ---
 
-# Contenido del repositorio
+## Archive Overview
 
-El repositorio contiene dos tipos principales de material.
-
-## PDFs originales
-
-Los documentos originales se conservan en formato PDF dentro de las carpetas históricas del repositorio.
-
-Esto mantiene intacto el archivo original tal como fue publicado.
-
-## Conversión a Markdown
-
-Muchos de los tutoriales han sido convertidos a Markdown para permitir su lectura directa en GitHub y facilitar su preservación a largo plazo.
-
-Los documentos convertidos se encuentran principalmente en:
-
-reversing/
-unpacking/
+- 140+ original tutorials
+- Reverse engineering and unpacking write-ups
+- Material written between the early 2000s and later years
+- Original PDF documents preserved
+- Converted to Markdown for easier reading
 
 ---
 
-# Temáticas
+## Topics Covered
 
-Los tutoriales cubren múltiples áreas clásicas de la ingeniería inversa en Windows:
+The tutorials include analysis of several well-known protection systems used in commercial software.
 
-- reversing de aplicaciones shareware
-- análisis de rutinas de validación de serial
-- parcheo de ejecutables
-- creación de keygens
-- análisis de protecciones comerciales
-- técnicas de unpacking
+Examples include:
 
-Entre los protectores analizados se encuentran:
-
-- ASProtect
 - Armadillo
+- ASProtect
 - Themida
 - VMProtect
-- PECompact
 - SVKP
-- Visual Protect
 
-Las herramientas utilizadas reflejan el ecosistema clásico del reversing de Windows:
+Many of the analyses were originally performed using tools that were common at the time, such as:
 
 - SoftICE
 - W32Dasm
-- OllyDbg
-- utilidades de análisis de ejecutables PE
 
 ---
 
-# Estructura del repositorio
+## Repository Structure
 
-reversing/   → tutoriales de reversing  
-unpacking/   → tutoriales de unpacking de protectores  
-os/          → documentación técnica adicional  
-scripts/     → utilidades para generación de índices  
+The repository is organized into several categories.
 
-Los PDFs originales permanecen en las carpetas históricas del repositorio.
+### Reversing
 
----
-
-# Additional Technical Write-ups
-
-Además de los tutoriales de reversing, el repositorio incluye algunos documentos técnicos relacionados con administración de sistemas y despliegue de sistemas operativos.
-
-Windows Deployment
-
-MDT Server 2012 – Credential Error Troubleshooting  
-os/windows/deployment/mdt-server-2012-credential-error-troubleshooting.md
-
----
-
-# Propósito del repositorio
-
-Este repositorio tiene como objetivo:
-
-- preservar documentación histórica de ingeniería inversa
-- facilitar el acceso y la lectura de estos tutoriales
-- evitar la pérdida de material técnico antiguo
-
-Gran parte de estos textos ya no están disponibles en sus ubicaciones originales.
-
----
-
-# Autoría
-
-Los tutoriales fueron escritos por:
-
-SyXe'05 / Snat
-
-Posteriormente recopilados y preservados en este repositorio.
-
-Algunos documentos adicionales pueden aparecer firmados con el nombre real del autor en el contexto de trabajos académicos o técnicos.
-
----
-
-# Nota
-
-Este repositorio se mantiene con fines históricos y educativos relacionados con el estudio de técnicas de ingeniería inversa y análisis de software.
+Reverse engineering tutorials focused on analysing software protection and registration systems.
