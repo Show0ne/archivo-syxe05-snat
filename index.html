@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>SyXe'05 Reverse Engineering Archive</title>
+
+<style>
+body{
+font-family: Arial;
+max-width: 900px;
+margin:auto;
+padding:40px;
+}
+
+h1{
+border-bottom:2px solid #ccc;
+}
+
+a{
+color:#0066cc;
+text-decoration:none;
+}
+
+a:hover{
+text-decoration:underline;
+}
+
+.section{
+margin-top:40px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>SyXe'05 / Snat Reverse Engineering Archive</h1>
+
+<p>
+Historical archive of reverse engineering and unpacking tutorials.
+</p>
+
+<div class="section">
+<h2>Reversing Tutorials</h2>
+<div id="reversing"></div>
+</div>
+
+<div class="section">
+<h2>Unpacking Tutorials</h2>
+<div id="unpacking"></div>
+</div>
+
+<script>
+
+function loadTutorials(path, containerId){
+
+fetch("https://api.github.com/repos/Show0ne/archivo-syxe05-snat/contents/" + path)
+
+.then(response => response.json())
+
+.then(data => {
+
+const container = document.getElementById(containerId);
+
+data.forEach(file => {
+
+if(file.name.endsWith(".md")){
+
+const link = document.createElement("a");
+
+link.href = file.html_url;
+
+link.textContent = file.name.replace(".md","");
+
+const div = document.createElement("div");
+
+div.appendChild(link);
+
+container.appendChild(div);
+
+}
+
+});
+
+});
+
+}
+
+loadTutorials("reversing/software","reversing");
+loadTutorials("unpacking","unpacking");
+
+</script>
+
+</body>
+
+</html>
