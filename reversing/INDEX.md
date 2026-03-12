@@ -27,6 +27,7 @@
 - [syxe05-acprotect-cool-color-picker-1.1-reversing](reversing/software/syxe05-acprotect-cool-color-picker-1.1-reversing.md)
 - [syxe05-add-remove-plus-2002-3.0-reversing](reversing/software/syxe05-add-remove-plus-2002-3.0-reversing.md)
 - [syxe05-add-remove-plus-2002-v3.0-reversing](reversing/software/syxe05-add-remove-plus-2002-v3.0-reversing.md)
+- [syxe05-add-remove-plus-2004-4.1.0.755-reversing](reversing/software/syxe05-add-remove-plus-2004-4.1.0.755-reversing.md)
 - [syxe05-adobe-illustrator-10-reversing](reversing/software/syxe05-adobe-illustrator-10-reversing.md)
 - [syxe05-advanced-tracks-cleaner-1.7-reversing](reversing/software/syxe05-advanced-tracks-cleaner-1.7-reversing.md)
 - [syxe05-advanced-uninstaller-pro-2002-reversing](reversing/software/syxe05-advanced-uninstaller-pro-2002-reversing.md)
