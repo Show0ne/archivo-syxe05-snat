@@ -35,6 +35,7 @@
 - [syxe05-aimpr-reversing](reversing/software/syxe05-aimpr-reversing.md)
 - [syxe05-anycapture-screen-2.36-reversing](reversing/software/syxe05-anycapture-screen-2.36-reversing.md)
 - [syxe05-ares-music-3.0-reversing](reversing/software/syxe05-ares-music-3.0-reversing.md)
+- [syxe05-armadillo-3.xx-cubisgold-reversing](reversing/software/syxe05-armadillo-3.xx-cubisgold-reversing.md)
 - [syxe05-arwizard-3.1-armadillo-copymemii-reversing](reversing/software/syxe05-arwizard-3.1-armadillo-copymemii-reversing.md)
 - [syxe05-ashampoo-security-manager-2000-v1.2-reversing](reversing/software/syxe05-ashampoo-security-manager-2000-v1.2-reversing.md)
 - [syxe05-asmanager-2000-v1.2-reversing](reversing/software/syxe05-asmanager-2000-v1.2-reversing.md)
