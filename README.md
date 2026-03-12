@@ -1,46 +1,89 @@
 # SyXe'05 / Snat Reverse Engineering Archive
 
-Historical archive of reverse engineering and unpacking tutorials written between the early 2000s and later years.
+Archivo histórico de tutoriales de **reverse engineering y unpacking** escritos originalmente bajo los alias **SyXe'05** y posteriormente **Snat**.
 
-These write-ups were originally published under the aliases **SyXe'05** and **Snat**, and cover classic software protections and reverse engineering techniques used during that era.
+Los textos fueron publicados originalmente en diferentes comunidades técnicas de la época, principalmente dentro de **CracksLatinos**, y ahora han sido reconstruidos y archivados en este repositorio para su preservación.
 
-The purpose of this repository is to preserve these tutorials and make them easily accessible in a structured format.
+Repositorio:
+https://github.com/Show0ne/archivo-syxe05-snat
 
----
-
-## Archive Overview
-
-- 140+ original tutorials
-- Reverse engineering and unpacking write-ups
-- Material written between the early 2000s and later years
-- Original PDF documents preserved
-- Converted to Markdown for easier reading
+Versión web navegable:
+https://show0ne.github.io/archivo-syxe05-snat/
 
 ---
 
-## Topics Covered
+## Contenido del archivo
 
-The tutorials include analysis of several well-known protection systems used in commercial software.
+Este repositorio recopila tutoriales de reversing y unpacking escritos originalmente entre principios de los años 2000 y años posteriores.
 
-Examples include:
+Los análisis cubren diferentes tipos de protecciones y técnicas utilizadas en software comercial de la época.
+
+### Protectores analizados
 
 - Armadillo
 - ASProtect
 - Themida
 - VMProtect
+- PECompact
 - SVKP
+- SecuROM
 
-Many of the analyses were originally performed using tools that were common at the time, such as:
+### Temas tratados
+
+- Reverse engineering de aplicaciones Windows
+- Unpacking de ejecutables protegidos
+- Análisis de algoritmos de registro (serial checks)
+- Identificación del OEP (Original Entry Point)
+- Análisis de protecciones comerciales
+- Técnicas clásicas de reversing
+
+### Herramientas utilizadas en los tutoriales
 
 - SoftICE
 - W32Dasm
+- OllyDbg
+- herramientas clásicas de análisis de binarios
+
+El objetivo de este repositorio es **preservar material histórico de reversing** que fue publicado originalmente en diferentes foros y comunidades técnicas.
 
 ---
 
-## Repository Structure
+## Estructura del repositorio
 
-The repository is organized into several categories.
+El repositorio está organizado en varias secciones principales:
 
-### Reversing
+### reversing
+Tutoriales centrados en el análisis de aplicaciones y mecanismos de protección.
 
-Reverse engineering tutorials focused on analysing software protection and registration systems.
+### unpacking
+Análisis de protectores comerciales y técnicas para localizar el OEP y recuperar ejecutables originales.
+
+### os
+Material relacionado con sistemas operativos, despliegue y troubleshooting técnico.
+
+---
+
+## Contexto histórico
+
+Muchos de estos tutoriales fueron escritos en una época en la que herramientas como **SoftICE** y **W32Dasm** eran habituales en el reversing de aplicaciones Windows.
+
+Algunas de las protecciones analizadas, como **Armadillo** o **ASProtect**, fueron muy populares en el software shareware de principios de los 2000.
+
+Este repositorio pretende conservar ese material como parte de la historia técnica del reversing.
+
+---
+
+## Autor
+
+Alias utilizados en los diferentes periodos:
+
+- **SyXe'05**
+- **Snat**
+
+Actualmente el material se publica desde la cuenta **ShowOne**.
+
+---
+
+## Aviso
+
+Este repositorio se publica únicamente con fines **educativos y de preservación histórica** dentro del ámbito de la ingeniería inversa.
