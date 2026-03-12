@@ -1,177 +1,115 @@
-# Archivo de tutoriales de reversing — SyXe'05 / Snat
+# Archivo histórico de tutoriales de reversing y unpacking
 
-Este repositorio contiene un archivo histórico de tutoriales de **ingeniería inversa (reverse engineering), unpacking y análisis de protecciones de software** escritos por el mismo autor bajo distintos alias utilizados a lo largo del tiempo.
+Este repositorio preserva una colección histórica de tutoriales de ingeniería inversa, reversing y unpacking escritos entre principios de los años 2000 y años posteriores.
 
-Alias utilizados en las publicaciones originales:
+Los artículos fueron publicados originalmente en distintos foros y comunidades de reversing de la época y posteriormente recopilados aquí para su preservación y consulta.
 
-- **SyXe'05** (etapa inicial)
-- **Snat**
+La mayoría de los trabajos están firmados bajo los alias:
 
-Durante parte de este periodo, el trabajo del autor estuvo relacionado con la comunidad y el grupo **CracksLatinos**, una escena hispanohablante centrada en reversing, análisis de protecciones y estudio técnico de software.
+- SyXe'05
+- Snat
 
-El objetivo de este repositorio es **preservar el material original y facilitar su lectura y navegación**.
-
----
-
-## Índice de tutoriales
-
-La lista completa de tutoriales convertidos a Markdown puede consultarse aquí:
-
-➡ **[Ver índice de tutoriales](reversing/INDEX.md)**
+Durante parte de este periodo los trabajos también estuvieron asociados al grupo CracksLatinos.
 
 ---
 
-## Contenido del repositorio
+# Contenido del repositorio
 
-El repositorio incluye:
+El repositorio contiene dos tipos principales de material.
 
-- **PDFs originales** de los tutoriales
-- versiones **Markdown** generadas a partir de los PDFs
-- material organizado por categorías técnicas
+## PDFs originales
 
-Las versiones Markdown se han generado para mejorar la lectura y navegación, mientras que los documentos PDF originales se conservan como **archivo histórico**.
+Los documentos originales se conservan en formato PDF dentro de las carpetas correspondientes a cada pack o publicación.
+
+Esto mantiene intacto el archivo histórico.
+
+## Conversión a Markdown
+
+Muchos de los tutoriales han sido convertidos a Markdown para facilitar su lectura directa desde GitHub y su preservación a largo plazo.
+
+Los archivos convertidos se encuentran principalmente en:
+
+reversing/  
+unpacking/
 
 ---
 
-## Estructura del repositorio
+# Temáticas
 
-El material está organizado por temática técnica.
+Los tutoriales cubren diferentes áreas de la ingeniería inversa clásica de Windows:
 
-### reversing
+- reversing de aplicaciones shareware
+- análisis de rutinas de validación de serial
+- parcheo de ejecutables
+- creación de keygens
+- análisis de protecciones comerciales
+- técnicas de unpacking
 
-Tutoriales de ingeniería inversa clásica, incluyendo:
+Entre los protectores analizados se incluyen:
 
-- análisis de validación de seriales
-- técnicas de parcheo
-- análisis de comportamiento de aplicaciones
-- protecciones shareware clásicas
-
-### unpacking
-
-Tutoriales centrados en el análisis de ejecutables protegidos y packers como:
-
-- Armadillo
 - ASProtect
+- Armadillo
 - Themida
 - VMProtect
 - PECompact
+- SVKP
+- Visual Protect
 
-### exploits / research
+Las herramientas utilizadas reflejan el ecosistema de reversing de la época, incluyendo:
 
-Artículos técnicos y material relacionado con seguridad.
-
-### dotnet
-
-Material relacionado con reversing de aplicaciones .NET.
-
-### os/windows
-
-Artículos técnicos relacionados con Windows y temas de sistema.
+- SoftICE
+- W32Dasm
+- OllyDbg
+- utilidades clásicas de análisis de ejecutables PE
 
 ---
 
-## Notas
+# Estructura del repositorio
 
-- Los archivos Markdown son **conversiones fieles** de los tutoriales originales.
-- Los nombres de archivo mantienen las **convenciones históricas** utilizadas en el material original.
-- Algunos PDFs incluidos en el repositorio son **material de referencia** utilizado junto a los tutoriales y por ello **no todos tienen conversión a Markdown**.
+reversing/     → tutoriales de reversing  
+unpacking/     → tutoriales de unpacking de protectores  
+os/            → documentación técnica adicional  
+scripts/       → utilidades para generación de índices y mantenimiento  
 
----
-
-## Propósito de este archivo
-
-El objetivo de este repositorio es:
-
-- preservar material histórico de reversing
-- centralizar tutoriales escritos a lo largo del tiempo
-- mejorar la accesibilidad y lectura del contenido
+Los PDFs originales permanecen en las carpetas históricas del repositorio.
 
 ---
 
-# Reverse Engineering Tutorial Archive — SyXe'05 / Snat
+# Additional Technical Write-ups
 
-This repository contains a historical archive of **reverse engineering, unpacking and software protection analysis tutorials** written by the same author under different aliases used over time.
+Además de los tutoriales de reversing, el repositorio incluye algunos documentos técnicos relacionados con administración de sistemas y despliegue de sistemas operativos.
 
-Aliases used in the original publications:
+## Windows Deployment
 
-- **SyXe'05**
-- **Snat**
-
-During part of this period, the author's work was associated with the **CracksLatinos** community, a Spanish-speaking reversing scene focused on reverse engineering and software protection analysis.
-
-The goal of this repository is to **preserve the original material and make it easier to read and navigate**.
+MDT Server 2012 – Credential Error Troubleshooting  
+os/windows/deployment/mdt-server-2012-credential-error-troubleshooting.md
 
 ---
 
-## Tutorial index
+# Propósito del repositorio
 
-The full list of tutorials converted to Markdown can be found here:
+Este repositorio tiene como objetivo principal:
 
-➡ **[View tutorial index](reversing/INDEX.md)**
+- preservar material técnico histórico de reversing
+- facilitar la lectura de los tutoriales
+- evitar la pérdida de documentación antigua de ingeniería inversa
 
----
-
-## Repository contents
-
-This repository includes:
-
-- original **PDF tutorials**
-- **Markdown versions** generated from the PDFs
-- material organized by technical categories
-
-Markdown versions were created to improve readability and navigation, while the original PDFs are preserved for historical purposes.
+Muchos de estos textos fueron publicados hace más de dos décadas y ya no están disponibles en sus ubicaciones originales.
 
 ---
 
-## Repository structure
+# Autoría
 
-The material is organized by topic.
+Los tutoriales fueron escritos por:
 
-### reversing
+SyXe'05 / Snat
 
-Classic reverse engineering tutorials such as:
+Posteriormente recopilados y preservados en este repositorio.
 
-- serial validation analysis
-- patching techniques
-- application behavior analysis
-- classic shareware protection analysis
-
-### unpacking
-
-Tutorials focused on protected executables and packers such as:
-
-- Armadillo
-- ASProtect
-- Themida
-- VMProtect
-- PECompact
-
-### exploits / research
-
-Technical articles and security-related research.
-
-### dotnet
-
-Material related to .NET reversing.
-
-### os/windows
-
-Technical research related to Windows.
+Algunos documentos adicionales pueden aparecer firmados con el nombre real del autor en el contexto de trabajos académicos o técnicos.
 
 ---
 
-## Notes
+# Nota
 
-- Markdown files are **faithful conversions** of the original tutorials.
-- File names preserve the **historical naming conventions** of the original material.
-- Some PDFs are **reference documents used alongside tutorials**, so not all PDFs have Markdown equivalents.
-
----
-
-## Purpose
-
-The purpose of this repository is to:
-
-- preserve historical reverse engineering material
-- centralize tutorials written across different years
-- improve accessibility and readability of the content
+Este repositorio tiene fines históricos y educativos relacionados con el estudio de técnicas de ingeniería inversa y análisis de software.
