@@ -1,8 +1,8 @@
-# Archivo histórico de tutoriales de reversing y unpacking
+# SyXe'05 / Snat Reverse Engineering Archive
 
-Este repositorio preserva una colección histórica de tutoriales de ingeniería inversa, reversing y unpacking escritos entre principios de los años 2000 y años posteriores.
+Este repositorio preserva una colección histórica de tutoriales de ingeniería inversa, reversing y unpacking escritos principalmente entre principios de los años 2000 y años posteriores.
 
-Los artículos fueron publicados originalmente en distintos foros y comunidades de reversing de la época y posteriormente recopilados aquí para su preservación y consulta.
+Muchos de estos documentos fueron publicados originalmente en foros y comunidades de reversing de la época y posteriormente recopilados aquí para su preservación.
 
 La mayoría de los trabajos están firmados bajo los alias:
 
@@ -10,6 +10,8 @@ La mayoría de los trabajos están firmados bajo los alias:
 - Snat
 
 Durante parte de este periodo los trabajos también estuvieron asociados al grupo CracksLatinos.
+
+El objetivo de este repositorio es preservar este material técnico histórico y facilitar su lectura moderna mediante Markdown.
 
 ---
 
@@ -19,24 +21,24 @@ El repositorio contiene dos tipos principales de material.
 
 ## PDFs originales
 
-Los documentos originales se conservan en formato PDF dentro de las carpetas correspondientes a cada pack o publicación.
+Los documentos originales se conservan en formato PDF dentro de las carpetas históricas del repositorio.
 
-Esto mantiene intacto el archivo histórico.
+Esto mantiene intacto el archivo original tal como fue publicado.
 
 ## Conversión a Markdown
 
-Muchos de los tutoriales han sido convertidos a Markdown para facilitar su lectura directa desde GitHub y su preservación a largo plazo.
+Muchos de los tutoriales han sido convertidos a Markdown para permitir su lectura directa en GitHub y facilitar su preservación a largo plazo.
 
-Los archivos convertidos se encuentran principalmente en:
+Los documentos convertidos se encuentran principalmente en:
 
-reversing/  
+reversing/
 unpacking/
 
 ---
 
 # Temáticas
 
-Los tutoriales cubren diferentes áreas de la ingeniería inversa clásica de Windows:
+Los tutoriales cubren múltiples áreas clásicas de la ingeniería inversa en Windows:
 
 - reversing de aplicaciones shareware
 - análisis de rutinas de validación de serial
@@ -45,7 +47,7 @@ Los tutoriales cubren diferentes áreas de la ingeniería inversa clásica de Wi
 - análisis de protecciones comerciales
 - técnicas de unpacking
 
-Entre los protectores analizados se incluyen:
+Entre los protectores analizados se encuentran:
 
 - ASProtect
 - Armadillo
@@ -55,21 +57,21 @@ Entre los protectores analizados se incluyen:
 - SVKP
 - Visual Protect
 
-Las herramientas utilizadas reflejan el ecosistema de reversing de la época, incluyendo:
+Las herramientas utilizadas reflejan el ecosistema clásico del reversing de Windows:
 
 - SoftICE
 - W32Dasm
 - OllyDbg
-- utilidades clásicas de análisis de ejecutables PE
+- utilidades de análisis de ejecutables PE
 
 ---
 
 # Estructura del repositorio
 
-reversing/     → tutoriales de reversing  
-unpacking/     → tutoriales de unpacking de protectores  
-os/            → documentación técnica adicional  
-scripts/       → utilidades para generación de índices y mantenimiento  
+reversing/   → tutoriales de reversing  
+unpacking/   → tutoriales de unpacking de protectores  
+os/          → documentación técnica adicional  
+scripts/     → utilidades para generación de índices  
 
 Los PDFs originales permanecen en las carpetas históricas del repositorio.
 
@@ -79,7 +81,7 @@ Los PDFs originales permanecen en las carpetas históricas del repositorio.
 
 Además de los tutoriales de reversing, el repositorio incluye algunos documentos técnicos relacionados con administración de sistemas y despliegue de sistemas operativos.
 
-## Windows Deployment
+Windows Deployment
 
 MDT Server 2012 – Credential Error Troubleshooting  
 os/windows/deployment/mdt-server-2012-credential-error-troubleshooting.md
@@ -88,13 +90,13 @@ os/windows/deployment/mdt-server-2012-credential-error-troubleshooting.md
 
 # Propósito del repositorio
 
-Este repositorio tiene como objetivo principal:
+Este repositorio tiene como objetivo:
 
-- preservar material técnico histórico de reversing
-- facilitar la lectura de los tutoriales
-- evitar la pérdida de documentación antigua de ingeniería inversa
+- preservar documentación histórica de ingeniería inversa
+- facilitar el acceso y la lectura de estos tutoriales
+- evitar la pérdida de material técnico antiguo
 
-Muchos de estos textos fueron publicados hace más de dos décadas y ya no están disponibles en sus ubicaciones originales.
+Gran parte de estos textos ya no están disponibles en sus ubicaciones originales.
 
 ---
 
@@ -112,4 +114,4 @@ Algunos documentos adicionales pueden aparecer firmados con el nombre real del a
 
 # Nota
 
-Este repositorio tiene fines históricos y educativos relacionados con el estudio de técnicas de ingeniería inversa y análisis de software.
+Este repositorio se mantiene con fines históricos y educativos relacionados con el estudio de técnicas de ingeniería inversa y análisis de software.
