@@ -61,6 +61,7 @@
 - [syxe05-calcmat-2.0-reversing](reversing/software/syxe05-calcmat-2.0-reversing.md)
 - [syxe05-cartoonist-1.1-part2-reversing](reversing/software/syxe05-cartoonist-1.1-part2-reversing.md)
 - [syxe05-cartoonist-1.1-reversing](reversing/software/syxe05-cartoonist-1.1-reversing.md)
+- [syxe05-cd-r-diagnostic-0.1.2.0-reversing](reversing/software/syxe05-cd-r-diagnostic-0.1.2.0-reversing.md)
 - [syxe05-cdp-monitor-2.5-reversing](reversing/software/syxe05-cdp-monitor-2.5-reversing.md)
 - [syxe05-chameleon-desktop-1.3-reversing](reversing/software/syxe05-chameleon-desktop-1.3-reversing.md)
 - [syxe05-cinematograph-2.1.3.0-reversing](reversing/software/syxe05-cinematograph-2.1.3.0-reversing.md)
