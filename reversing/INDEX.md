@@ -34,6 +34,7 @@
 - [syxe05-advanced-wma-workshop-1.76-reversing](reversing/software/syxe05-advanced-wma-workshop-1.76-reversing.md)
 - [syxe05-agendamsd-reversing](reversing/software/syxe05-agendamsd-reversing.md)
 - [syxe05-aimpr-reversing](reversing/software/syxe05-aimpr-reversing.md)
+- [syxe05-alchemy-network-inventory-1.4.12-reversing](reversing/software/syxe05-alchemy-network-inventory-1.4.12-reversing.md)
 - [syxe05-alteros-3d-reversing](reversing/software/syxe05-alteros-3d-reversing.md)
 - [syxe05-any-capture-screen-3.06-reversing](reversing/software/syxe05-any-capture-screen-3.06-reversing.md)
 - [syxe05-anycapture-screen-2.36-reversing](reversing/software/syxe05-anycapture-screen-2.36-reversing.md)
