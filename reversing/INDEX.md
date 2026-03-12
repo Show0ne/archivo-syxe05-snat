@@ -107,6 +107,7 @@
 - [syxe05-svkp-1.3x-registry-medic-part1-reversing](reversing/software/syxe05-svkp-1.3x-registry-medic-part1-reversing.md)
 - [syxe05-svkp-1.3x-registry-medic-part2-reversing](reversing/software/syxe05-svkp-1.3x-registry-medic-part2-reversing.md)
 - [syxe05-svkp-1.3x-reversing](reversing/software/syxe05-svkp-1.3x-reversing.md)
+- [syxe05-system-mechanic-professional-6-reversing](reversing/software/syxe05-system-mechanic-professional-6-reversing.md)
 - [syxe05-tagrename-2.1.7.4-asprotect-rc4-reversing](reversing/software/syxe05-tagrename-2.1.7.4-asprotect-rc4-reversing.md)
 - [syxe05-thumbsup-4.0-reversing](reversing/software/syxe05-thumbsup-4.0-reversing.md)
 - [syxe05-turbonote-5.4-reversing](reversing/software/syxe05-turbonote-5.4-reversing.md)
