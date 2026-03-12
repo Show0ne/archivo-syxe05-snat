@@ -15,6 +15,7 @@
 - [syxe05-1st-startup-manager-1.0-asprotect-2.0-reversing](reversing/software/syxe05-1st-startup-manager-1.0-asprotect-2.0-reversing.md)
 - [syxe05-1st-startup-manager-1.0-reversing](reversing/software/syxe05-1st-startup-manager-1.0-reversing.md)
 - [syxe05-24x7-scheduler-3.4.23-reversing](reversing/software/syxe05-24x7-scheduler-3.4.23-reversing.md)
+- [syxe05-3d-foto-studio-1.2-reversing](reversing/software/syxe05-3d-foto-studio-1.2-reversing.md)
 - [syxe05-3d-fotostudio-1.2-reversing](reversing/software/syxe05-3d-fotostudio-1.2-reversing.md)
 - [syxe05-5-clicks-reversing](reversing/software/syxe05-5-clicks-reversing.md)
 - [syxe05-absolutely-on-line-2.9-reversing](reversing/software/syxe05-absolutely-on-line-2.9-reversing.md)
