@@ -1,0 +1,53 @@
+[dynamic: ToInstance, provider("CIMWin32"): ToInstance, SupportsUpdate, Locale(1033): ToInstance, UUID("{8502C4B7-5FBB-11D2-AAC1-006008C78BC7}"): ToInstance]
+class Win32_LogicalDisk : CIM_LogicalDisk
+{
+	[read: ToSubClass, key, Override("DeviceId"): ToSubClass, MappingStrings{"WMI"}: ToSubClass] string DeviceID = NULL;
+	[read: ToSubClass, MappingStrings{"Win32API|File System Functions|GetVolumeInformation|FS_VOL_IS_COMPRESSED"}: ToSubClass] boolean Compressed;
+	[read: ToSubClass, MappingStrings{"Win32API|FileFunctions|GetDriveType"}: ToSubClass] uint32 DriveType;
+	[read: ToSubClass, MappingStrings{"Win32API|File System Functions|GetVolumeInformation"}: ToSubClass] string FileSystem;
+	[read: ToSubClass, MappingStrings{"Win32API|File System Functions|GetVolumeInformation"}: ToSubClass] uint32 MaximumComponentLength;
+	[read: ToSubClass, MappingStrings{"Win32API|Windows Networking Functions|WNetGetConnection"}: ToSubClass] string ProviderName;
+	[read: ToSubClass, MappingStrings{"Win32API|File System Functions|GetVolumeInformation|FS_FILE_COMPRESSION"}: ToSubClass] boolean SupportsFileBasedCompression;
+	[read: ToSubClass, write: ToSubClass, MappingStrings{"Win32API|File System Functions|GetVolumeInformation"}: ToSubClass] string VolumeName;
+	[read: ToSubClass, MappingStrings{"Win32API|File System Functions|GetVolumeInformation"}: ToSubClass] string VolumeSerialNumber;
+	[read: ToSubClass, MappingStrings{"Win32API|Device Input and Output Functions|DeviceIoControl"}: ToSubClass] uint32 MediaType;
+	[read: ToSubClass] boolean SupportsDiskQuotas;
+	[read: ToSubClass] boolean QuotasDisabled;
+	[read: ToSubClass] boolean QuotasIncomplete;
+	[read: ToSubClass] boolean QuotasRebuilding;
+	[read: ToSubClass, MappingStrings{"FSCTL_IS_VOLUME_DIRTY"}: ToSubClass] boolean VolumeDirty;
+	[Implemented, MappingStrings{"Fmifs.dll | Method ChkDskExRoutine"}: ToSubClass] uint32 Chkdsk([in] boolean FixErrors = FALSE, [in] boolean VigorousIndexCheck = TRUE, [in] boolean SkipFolderCycle = TRUE, [in] boolean ForceDismount = FALSE, [in] boolean RecoverBadSectors = FALSE, [in] boolean OkToRunAtBootUp = FALSE);
+	[Static, Implemented, MappingStrings{"Chkntfs.exe"}: ToSubClass] uint32 ScheduleAutoChk([in] string LogicalDisk[]);
+	[Static, Implemented, MappingStrings{"Chkntfs.exe"}: ToSubClass] uint32 ExcludeFromAutochk([in] string LogicalDisk[]);
+};
+
+
+
+INSTANCIA
+------------------------------------------------------
+instance of Win32_LogicalDisk
+{
+	Access = 0;
+	Caption = "C:";
+	Compressed = FALSE;
+	CreationClassName = "Win32_LogicalDisk";
+	Description = "Disco fijo local";
+	DeviceID = "C:";
+	DriveType = 3;
+	FileSystem = "NTFS";
+	FreeSpace = "1675677696";
+	MaximumComponentLength = 255;
+	MediaType = 12;
+	Name = "C:";
+	QuotasDisabled = TRUE;
+	QuotasIncomplete = FALSE;
+	QuotasRebuilding = FALSE;
+	Size = "17072910336";
+	SupportsDiskQuotas = TRUE;
+	SupportsFileBasedCompression = TRUE;
+	SystemCreationClassName = "Win32_ComputerSystem";
+	SystemName = "MDTSHARE";
+	VolumeDirty = FALSE;
+	VolumeName = "";
+	VolumeSerialNumber = "98D10836";
+};

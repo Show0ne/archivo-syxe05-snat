@@ -1,0 +1,37 @@
+kd> !ndiskd.protocol 849225c0
+
+
+PROTOCOL
+
+    TCPIP
+
+    Ndis Handle        849225c0
+    Ndis API Version   v6.20
+    Driver Context     86d29310
+    Driver Version     v0.0
+    Reference Count    3
+    Flags              [No flags set]
+    Driver Image       tcpip.sys
+
+
+BINDINGS
+
+    Open               Miniport            Miniport Name                       _
+    854e6008           857380e0            Adaptador de escritorio Intel(R) PRO/1000 MT
+    85108aa8           853080e0            VirtualBox Host-Only Ethernet Adapter
+
+
+HANDLERS
+
+    Protocol Handler                       Function pointer   Symbol (if available)
+    BindAdapterHandlerEx                   86c4db44  bp       tcpip!FlBindAdapter
+    UnbindAdapterHandlerEx                 86c49483  bp       tcpip!FlUnbindAdapter
+    OpenAdapterCompleteHandlerEx           86d12f35  bp       tcpip!FlOpenAdapterComplete
+    CloseAdapterCompleteHandlerEx          86c488c6  bp       tcpip!FlCloseAdapterComplete
+    NetPnPEventHandler                     86c4e882  bp       tcpip!Fl48PnpEvent
+    UninstallHandler                       0
+    SendNetBufferListsCompleteHandler      86c9e973  bp       tcpip!FlSendNetBufferListChainComplete
+    ReceiveNetBufferListsHandler           86cb33f0  bp       tcpip!FlReceiveNetBufferListChain
+    StatusHandlerEx                        86c4fe9f  bp       tcpip!FlStatus
+    OidRequestCompleteHandler              86caf69f  bp       tcpip!FlDirectRequestComplete
+    DirectOidRequestCompleteHandler        86caf69f  bp       tcpip!FlDirectRequestComplete

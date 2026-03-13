@@ -1,0 +1,21 @@
+kd> !ndiskd.filter 8510c008
+
+
+FILTER
+
+    Adaptador de escritorio Intel(R) PRO/1000 MT-VirtualBox NDIS Light-Weight Filter-0000
+
+    Ndis Handle        8510c008
+    Filter Driver      84ac2008 - VirtualBox NDIS Light-Weight Filter
+    Driver Context     851572c8
+    Miniport           857380e0 - Adaptador de escritorio Intel(R) PRO/1000 MT
+
+    State              Running
+    Datapath           Normal
+    References         1
+    Flags              00000010          ← RUNNING
+
+    Higher Filter      856b3e00 - Adaptador de escritorio Intel(R) PRO/1000 MT-QoS Packet Scheduler-0000
+    Lower Filter       [None]
+
+     → Driver handlers

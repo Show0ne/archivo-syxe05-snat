@@ -1,0 +1,21 @@
+Links:
+
+ Page	Chapter    Reference							    Links to		Page 	Chapter									Marcador
+ ----------------------------------------------------	------------  		------------------------------------------		-----------------------
+  37	6.- Invalid Credentials Troubleshooting  			--->			30		5.-LTI Deployment: First Approach		LTI_Deployment_Bootstrap_cred_added
+  50	6.- Invalid Credentials Troubleshooting             --->			22		4.-Understanding MDT 2012				Deployment_Share_Updated
+  67	7.2.-MDTShare, Deployment Support					--->			16		4.-Understanding MDT 2012				Understanding_MDT_2012_Import_OS
+  70	7.2.-MDTShare, Deployment Support					--->			14		4.-Understanding MDT 2012				Understanding_MDT_2012_create_DShare
+  85	7.3 Clientex64 as a "MDT Client"					--->			84		7.2.-MDTShare, Deployment Support		WinPE_creation
+  86	7.3 Clientex64 as a "MDT Client"					--->			 9		3.-Recreando el entorno					VBox_Host_Only_Ethernet_Adapter_NDIS_mf
+  93	8.-LTI Deployment: Second Chance!					--->			20		4.-Understanding MDT 2012				Understanding_MDT_2012_Select_OS
+  94	8.-LTI Deployment: Second Chance!					--->			12		3.-Recreando el entorno 				Recreando_el_entorno_installing_WAIK
+  97	8.-LTI Deployment: Second Chance!					--->			48		6.-Invalid Credentials Troubleshooting	Invalid_Cred_Troubleshooting_void_AType
+  99	8.-LTI Deployment: Second Chance!					--->			 9		3.-Recreando el entorno					VBox_Host_Only_Ethernet_Adapter_NDIS_mf
+  99	8.-LTI Deployment: Second Chance!					--->			86		7.-Making a Virtual Domain				NDIS_drivers
+ 104	8.-LTI Deployment: Second Chance!					--->			49		6.-Invalid Credentials Troubleshooting	Two_interfaces_Ethernet_802_3_PhyMachine
+ 179   10.-Gaining Control Over the Deployment Process		--->			46		6.-Invalid Credentials Troubleshooting	Definicion_WMI
+ 186   10.-Gaining Control Over the Deployment Process		--->			48		6.-Invalid Credentials Troubleshooting	definicion_asociadores_wmi
+ 228   14.-Last Words										--->			91		8.-LTI Deployment: Second Chance!		answer_files
+ 229   14.-Last Words										--->			79  	7.2 MDTShare, Deployment Support		network_shares_security
+   

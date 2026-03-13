@@ -1,0 +1,38 @@
+[dynamic: ToInstance, provider("CIMWin32"): ToInstance, Locale(1033): ToInstance, UUID("{8502C4B8-5FBB-11D2-AAC1-006008C78BC7}"): ToInstance]
+class Win32_DiskPartition : CIM_DiskPartition
+{
+	[read: ToSubClass, key, Override("DeviceId"): ToSubClass, MappingStrings{"WMI"}: ToSubClass] string DeviceID = NULL;
+	[read: ToSubClass, MappingStrings{"Win32API|File Functions|ReadFile"}: ToSubClass] boolean BootPartition;
+	[read: ToSubClass, MappingStrings{"Win32API|File Functions|ReadFile"}: ToSubClass] uint32 DiskIndex;
+	[read: ToSubClass, MappingStrings{"Win32API"}: ToSubClass] uint32 HiddenSectors;
+	[read: ToSubClass, MappingStrings{"WMI"}: ToSubClass] uint32 Index;
+	[read: ToSubClass, MappingStrings{"Win32API|Device Input and Output Structures|PARTITION_INFORMATION|RewritePartition"}: ToSubClass] boolean RewritePartition;
+	[read: ToSubClass, MappingStrings{"Win32API|File Functions|ReadFile"}: ToSubClass] uint64 Size;
+	[read: ToSubClass, MappingStrings{"Win32API|File Functions|ReadFile"}: ToSubClass] uint64 StartingOffset;
+	[read: ToSubClass, MappingStrings{"Win32API|PartitionRecord|dwPartitionType"}: ToSubClass] string Type;
+};
+
+
+INSTANCIA
+------------------------------------------------------
+
+instance of Win32_DiskPartition
+{
+	BlockSize = "512";
+	Bootable = FALSE;
+	BootPartition = FALSE;
+	Caption = "Disco #0, partición #1";
+	CreationClassName = "Win32_DiskPartition";
+	Description = "Sistema de archivos instalables";
+	DeviceID = "Disk #0, Partition #1";
+	DiskIndex = 0;
+	Index = 1;
+	Name = "Disco #0, partición #1";
+	NumberOfBlocks = "33345536";
+	PrimaryPartition = TRUE;
+	Size = "17072914432";
+	StartingOffset = "105906176";
+	SystemCreationClassName = "Win32_ComputerSystem";
+	SystemName = "MDTSHARE";
+	Type = "Installable File System";
+};

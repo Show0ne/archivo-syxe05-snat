@@ -1,0 +1,63 @@
+kd> !ndiskd.miniport 853080e0
+
+
+MINIPORT
+
+    VirtualBox Host-Only Ethernet Adapter
+
+    Ndis Handle        853080e0
+    Ndis API Version   v6.0
+    Adapter Context    855f9f08
+    Miniport Driver    84bada68 - VBoxNetAdp6.sys  v1.0
+    Ndis Verifier      [No flags set]
+
+    Media Type         802.3
+    Physical Medium    802.3
+    Device Path        \??\Root#NET#0000#{ad498944-762f-11d0-8dcb-00c04fc3358c}\{264D2ACD-B0BB-4F00-AEBF-1902405AB241}
+    Device Object      85308028
+    MAC Address        0a-00-27-00-00-0d
+
+
+STATE
+
+    Miniport           Running
+    Device PnP         Started
+    Datapath           Normal
+    Interface          Up
+    Media              Connected
+    Power              D0
+    References         6
+    User Handles       0
+    Total Resets       0
+    Pending OID        None
+    Flags              2c452000
+        ↑ NOT_BUS_MASTER, DEFAULT_PORT_ACTIVATED, SUPPORTS_MEDIA_SENSE,
+        DOES_NOT_DO_LOOPBACK, MEDIA_CONNECTED
+    PnPFlags           00418023
+        ↑ PM_SUPPORTED, VIRTUAL_DEVICE, DEVICE_POWER_ENABLED,
+        NO_HALT_ON_SUSPEND, RECEIVED_START, NDIS_WDM_DRIVER
+
+
+BINDINGS
+
+    Filter List        Filter              Filter Driver      Context          _
+    WFP LightWeight Filter-0000
+                       85315d60            84a8c4a0           850a24b8
+    QoS Packet Scheduler-0000
+                       855a5368            84a2bcf8           84a59320
+
+    Open List          Open                Protocol           Context          _
+    TCPIP              85108aa8            849225c0           8571b660
+    LLTDIO             85167470            854dc3b8           8517d008
+    RSPNDR             84be0008            854e15d0           854e5008
+
+
+MORE INFORMATION
+
+     → Driver handlers                      → Task offloads
+     → Power management                     → PM protocol offloads
+     → Pending OIDs                         → Timers
+     → Pending NBLs                         → Receive Side Throttling
+     → Wake-on-LAN (WoL)                    → Packet filter
+     → Receive queues                       → Receive filtering
+     → NDIS ports                           → NIC switch
