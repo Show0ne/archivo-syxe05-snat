@@ -8,6 +8,12 @@ body{
 font-family: Arial, sans-serif;
 margin:0;
 background:#f4f4f4;
+color:#111;
+}
+
+.dark{
+background:#121212;
+color:#ddd;
 }
 
 .layout{
@@ -21,10 +27,6 @@ background:#1e1e1e;
 color:white;
 overflow:auto;
 padding:20px;
-}
-
-.sidebar h2{
-margin-top:0;
 }
 
 .sidebar a{
@@ -57,6 +59,10 @@ padding:40px;
 background:white;
 }
 
+.dark .content{
+background:#1a1a1a;
+}
+
 .viewer pre{
 background:#111;
 padding:12px;
@@ -67,7 +73,37 @@ overflow:auto;
 border-radius:3px;
 }
 
-</style></head><body><div class="layout"><div class="sidebar"><h2>Reverse Engineering Archive</h2><input class="search" id="search" placeholder="Search tutorial"><div class="section">
+.toc{
+background:#f0f0f0;
+padding:15px;
+margin-bottom:25px;
+border-radius:5px;
+}
+
+.dark .toc{
+background:#222;
+}
+
+.toc a{
+display:block;
+text-decoration:none;
+color:#0366d6;
+padding:2px 0;
+}
+
+.toggle{
+position:fixed;
+top:15px;
+right:20px;
+padding:6px 10px;
+cursor:pointer;
+background:#444;
+color:white;
+border-radius:4px;
+font-size:13px;
+}
+
+</style></head><body><div class="toggle" onclick="toggleTheme()">🌙 Toggle theme</div><div class="layout"><div class="sidebar"><h2>Reverse Engineering Archive</h2><input class="search" id="search" placeholder="Search tutorial"><div class="section">
 <h3>Reversing</h3>
 <div id="rev"></div>
 </div><div class="section">
@@ -122,14 +158,43 @@ location.hash="tutorial/"+id;
 const raw=await fetch(tutorials[id]);
 const md=await raw.text();
 
-document.getElementById("viewer").innerHTML=
-marked.parse(md);
+let html=marked.parse(md);
+
+document.getElementById("viewer").innerHTML=html;
+
+generateTOC();
 
 document.querySelectorAll("pre code").forEach((block)=>{
 hljs.highlightElement(block);
 });
 
 window.scrollTo(0,0);
+
+}
+
+function generateTOC(){
+
+const viewer=document.getElementById("viewer");
+
+const headers=viewer.querySelectorAll("h1,h2,h3");
+
+if(headers.length===0) return;
+
+let toc='<div class="toc"><b>Table of Contents</b>';
+
+headers.forEach((h,i)=>{
+
+const id="section_"+i;
+
+h.id=id;
+
+toc+=`<a href="#${id}">${h.innerText}</a>`;
+
+});
+
+toc+='</div>';
+
+viewer.insertAdjacentHTML("afterbegin",toc);
 
 }
 
@@ -143,6 +208,30 @@ const id=hash.replace("#tutorial/","");
 
 loadTutorial(id);
 
+}
+
+}
+
+function toggleTheme(){
+
+document.body.classList.toggle("dark");
+
+localStorage.setItem("theme",
+document.body.classList.contains("dark")?"dark":"light");
+
+}
+
+function loadTheme(){
+
+const saved=localStorage.getItem("theme");
+
+if(saved==="dark"){
+document.body.classList.add("dark");
+return;
+}
+
+if(!saved && window.matchMedia("(prefers-color-scheme: dark)").matches){
+document.body.classList.add("dark");
 }
 
 }
@@ -166,6 +255,8 @@ a.style.display=text.includes(filter)?"block":"none";
 });
 
 });
+
+loadTheme();
 
 </script></body>
 </html>
