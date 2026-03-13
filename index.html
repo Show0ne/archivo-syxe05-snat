@@ -1,7 +1,8 @@
 <!DOCTYPE html><html>
 <head>
 <meta charset="utf-8">
-<title>SyXe'05 / Snat Reverse Engineering Archive</title><script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script><style>
+<title>SyXe'05 / Snat Reverse Engineering Archive</title><script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script><link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script><style>
 
 body{
 font-family: Arial, sans-serif;
@@ -57,14 +58,12 @@ background:white;
 }
 
 .viewer pre{
-background:#eee;
+background:#111;
 padding:12px;
 overflow:auto;
 }
 
 .viewer code{
-background:#eee;
-padding:2px 4px;
 border-radius:3px;
 }
 
@@ -125,6 +124,10 @@ const md=await raw.text();
 
 document.getElementById("viewer").innerHTML=
 marked.parse(md);
+
+document.querySelectorAll("pre code").forEach((block)=>{
+hljs.highlightElement(block);
+});
 
 window.scrollTo(0,0);
 
