@@ -22,7 +22,7 @@ height:100vh;
 }
 
 .sidebar{
-width:340px;
+width:350px;
 background:#1e1e1e;
 color:white;
 overflow:auto;
@@ -30,7 +30,6 @@ padding:20px;
 }
 
 .sidebar h3{
-margin-top:20px;
 border-bottom:1px solid #333;
 padding-bottom:5px;
 }
@@ -53,10 +52,6 @@ width:100%;
 padding:8px;
 margin-bottom:15px;
 font-size:14px;
-}
-
-.category{
-margin-bottom:10px;
 }
 
 .content{
@@ -105,7 +100,14 @@ border-radius:4px;
 font-size:13px;
 }
 
-</style></head><body><div class="toggle" onclick="toggleTheme()">🌙 Theme</div><div class="layout"><div class="sidebar"><h2>Reverse Engineering Archive</h2><input class="search" id="search" placeholder="Search tutorial"><h3>Reversing</h3>
+.stats{
+font-size:13px;
+color:#aaa;
+margin-bottom:10px;
+}
+
+</style></head><body><div class="toggle" onclick="toggleTheme()">🌙 Theme</div><div class="layout"><div class="sidebar"><h2>Reverse Engineering Archive</h2><div class="stats" id="stats"></div><input class="search" id="search" placeholder="Search tutorial"><h3>Protections</h3>
+<div id="protections"></div><h3>Reversing</h3>
 <div id="rev"></div><h3>Unpacking</h3>
 <div id="unpack"></div></div><div class="content"><div id="viewer" class="viewer"><h1>SyXe'05 / Snat Archive</h1><p>Historical reverse engineering and unpacking tutorials.</p><p>
 Author: <b>SyXe'05 / Snat</b><br>
@@ -115,8 +117,9 @@ Group: <b>CracksLatinos</b>
 const repo="Show0ne/archivo-syxe05-snat";
 
 const tutorials={};
+const protections={};
 
-function detectCategory(name){
+function detectProtection(name){
 
 name=name.toLowerCase();
 
@@ -125,8 +128,10 @@ if(name.includes("armadillo")) return "Armadillo";
 if(name.includes("asprotect")) return "ASProtect";
 if(name.includes("vmprotect")) return "VMProtect";
 if(name.includes("securom")) return "SecuROM";
+if(name.includes("svkp")) return "SVKP";
+if(name.includes("pecompact")) return "PECompact";
 
-return "Other";
+return null;
 
 }
 
@@ -136,7 +141,7 @@ const url=`https://api.github.com/repos/${repo}/contents/${path}`;
 const response=await fetch(url);
 const files=await response.json();
 
-const categories={};
+const sidebar=document.getElementById(container);
 
 files
 .filter(f=>f.name.endsWith(".md"))
@@ -147,49 +152,74 @@ const id=file.name.replace(".md","");
 
 tutorials[id]=file.download_url;
 
-const cat=detectCategory(id);
+const prot=detectProtection(id);
 
-if(!categories[cat]) categories[cat]=[];
+if(prot){
 
-categories[cat].push(id);
+if(!protections[prot]) protections[prot]=[];
 
-});
+protections[prot].push(id);
 
-const sidebar=document.getElementById(container);
-
-Object.keys(categories).sort().forEach(cat=>{
-
-const div=document.createElement("div");
-div.className="category";
-
-const title=document.createElement("b");
-title.textContent=cat;
-
-div.appendChild(title);
-
-categories[cat].forEach(id=>{
+}
 
 const a=document.createElement("a");
 
 a.textContent=id;
 
-a.onclick=()=>{
-loadTutorial(id);
-};
+a.onclick=()=>loadTutorial(id);
 
-div.appendChild(a);
+sidebar.appendChild(a);
 
 });
 
-sidebar.appendChild(div);
+updateProtectionIndex();
+
+updateStats();
+
+}
+
+function updateProtectionIndex(){
+
+const container=document.getElementById("protections");
+
+container.innerHTML="";
+
+Object.keys(protections).sort().forEach(p=>{
+
+const a=document.createElement("a");
+
+a.textContent=p+" ("+protections[p].length+")";
+
+a.onclick=()=>showProtection(p);
+
+container.appendChild(a);
 
 });
 
 }
 
-async function loadTutorial(id){
+function showProtection(p){
 
-if(!tutorials[id]) return;
+let html=`<h1>${p}</h1>`;
+
+protections[p].forEach(t=>{
+
+html+=`<p><a onclick="loadTutorial('${t}')">${t}</a></p>`;
+
+});
+
+document.getElementById("viewer").innerHTML=html;
+
+}
+
+function updateStats(){
+
+document.getElementById("stats").textContent=
+Object.keys(tutorials).length+" tutorials in archive";
+
+}
+
+async function loadTutorial(id){
 
 location.hash="tutorial/"+id;
 
