@@ -13,11 +13,15 @@ background:#f4f4f4;
 background:white;
 padding:25px;
 border-radius:6px;
-max-width:900px;
+max-width:1000px;
 }
 
 h1{
 margin-top:0;
+}
+
+.section{
+margin-top:35px;
 }
 
 input{
@@ -30,6 +34,7 @@ font-size:14px;
 a{
 text-decoration:none;
 color:#0366d6;
+cursor:pointer;
 }
 
 a:hover{
@@ -40,22 +45,28 @@ li{
 margin:5px 0;
 }
 
-#viewer{
+.viewer{
 margin-top:40px;
-padding-top:20px;
+padding-top:25px;
 border-top:1px solid #ddd;
 }
 
-code{
+.viewer pre{
+background:#eee;
+padding:12px;
+overflow:auto;
+}
+
+.viewer code{
 background:#eee;
 padding:2px 4px;
 border-radius:3px;
 }
 
-pre{
-background:#eee;
-padding:10px;
-overflow:auto;
+.stats{
+margin-top:10px;
+color:#666;
+font-size:14px;
 }
 
 </style></head><body><div class="container"><h1>SyXe'05 / Snat Reverse Engineering Archive</h1><p>
@@ -63,13 +74,21 @@ Historical archive of reverse engineering and unpacking tutorials written betwee
 </p><p>
 <b>Author:</b> SyXe'05 / Snat<br>
 <b>Group:</b> CracksLatinos
-</p><input id="search" placeholder="Search tutorial..."><h2>Reversing Tutorials</h2>
-<ul id="reversing"></ul><h2>Unpacking Tutorials</h2>
-<ul id="unpacking"></ul><div id="viewer"></div></div><script>
+</p><div class="stats">
+<span id="total"></span>
+</div><input id="search" placeholder="Search tutorial..."><div class="section">
+<h2>Reversing Tutorials (<span id="count_rev">0</span>)</h2>
+<ul id="reversing"></ul>
+</div><div class="section">
+<h2>Unpacking Tutorials (<span id="count_unpack">0</span>)</h2>
+<ul id="unpacking"></ul>
+</div><div class="viewer" id="viewer"></div></div><script>
 
 const repo="Show0ne/archivo-syxe05-snat";
 
-async function load(path,id){
+let total=0;
+
+async function load(path,id,count_id){
 
 const url=`https://api.github.com/repos/${repo}/contents/${path}`;
 const response=await fetch(url);
@@ -77,15 +96,19 @@ const files=await response.json();
 
 const list=document.getElementById(id);
 
-files
+const markdown=files
 .filter(f=>f.name.endsWith(".md"))
-.sort((a,b)=>a.name.localeCompare(b.name))
-.forEach(file=>{
+.sort((a,b)=>a.name.localeCompare(b.name));
+
+document.getElementById(count_id).textContent=markdown.length;
+
+total+=markdown.length;
+
+markdown.forEach(file=>{
 
 const li=document.createElement("li");
 const a=document.createElement("a");
 
-a.href="#";
 a.textContent=file.name.replace(".md","");
 
 a.onclick=async()=>{
@@ -105,10 +128,13 @@ list.appendChild(li);
 
 });
 
+document.getElementById("total").textContent=
+"Total tutorials in archive: "+total;
+
 }
 
-load("reversing/software","reversing");
-load("unpacking","unpacking");
+load("reversing/software","reversing","count_rev");
+load("unpacking","unpacking","count_unpack");
 
 document.getElementById("search").addEventListener("input",function(){
 
