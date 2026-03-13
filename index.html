@@ -1,47 +1,63 @@
 <!DOCTYPE html><html>
 <head>
 <meta charset="utf-8">
-<title>SyXe'05 / Snat Reverse Engineering Archive</title><style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
-    background: #f4f4f4;
+<title>SyXe'05 / Snat Reverse Engineering Archive</title><script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script><style>
+
+body{
+font-family: Arial, sans-serif;
+margin:40px;
+background:#f4f4f4;
 }
 
-.container {
-    background: white;
-    padding: 25px;
-    border-radius: 6px;
-    max-width: 900px;
+.container{
+background:white;
+padding:25px;
+border-radius:6px;
+max-width:900px;
 }
 
-h1 {
-    margin-top: 0;
+h1{
+margin-top:0;
 }
 
-h2 {
-    margin-top: 30px;
+input{
+padding:8px;
+width:100%;
+margin-bottom:20px;
+font-size:14px;
 }
 
-input {
-    padding: 8px;
-    width: 100%;
-    margin-bottom: 20px;
-    font-size: 14px;
+a{
+text-decoration:none;
+color:#0366d6;
 }
 
-a {
-    text-decoration: none;
-    color: #0366d6;
+a:hover{
+text-decoration:underline;
 }
 
-a:hover {
-    text-decoration: underline;
+li{
+margin:5px 0;
 }
 
-li {
-    margin: 4px 0;
+#viewer{
+margin-top:40px;
+padding-top:20px;
+border-top:1px solid #ddd;
 }
+
+code{
+background:#eee;
+padding:2px 4px;
+border-radius:3px;
+}
+
+pre{
+background:#eee;
+padding:10px;
+overflow:auto;
+}
+
 </style></head><body><div class="container"><h1>SyXe'05 / Snat Reverse Engineering Archive</h1><p>
 Historical archive of reverse engineering and unpacking tutorials written between the early 2000s and later years.
 </p><p>
@@ -49,54 +65,61 @@ Historical archive of reverse engineering and unpacking tutorials written betwee
 <b>Group:</b> CracksLatinos
 </p><input id="search" placeholder="Search tutorial..."><h2>Reversing Tutorials</h2>
 <ul id="reversing"></ul><h2>Unpacking Tutorials</h2>
-<ul id="unpacking"></ul></div><script>
+<ul id="unpacking"></ul><div id="viewer"></div></div><script>
 
-const repo = "Show0ne/archivo-syxe05-snat";
+const repo="Show0ne/archivo-syxe05-snat";
 
-async function load(path, elementId) {
+async function load(path,id){
 
-    const url = `https://api.github.com/repos/${repo}/contents/${path}`;
+const url=`https://api.github.com/repos/${repo}/contents/${path}`;
+const response=await fetch(url);
+const files=await response.json();
 
-    const response = await fetch(url);
-    const files = await response.json();
+const list=document.getElementById(id);
 
-    const list = document.getElementById(elementId);
+files
+.filter(f=>f.name.endsWith(".md"))
+.sort((a,b)=>a.name.localeCompare(b.name))
+.forEach(file=>{
 
-    files.forEach(file => {
+const li=document.createElement("li");
+const a=document.createElement("a");
 
-        if (file.name.endsWith(".md")) {
+a.href="#";
+a.textContent=file.name.replace(".md","");
 
-            const li = document.createElement("li");
+a.onclick=async()=>{
 
-            const a = document.createElement("a");
+const raw=await fetch(file.download_url);
+const md=await raw.text();
 
-            const raw = file.download_url;
+document.getElementById("viewer").innerHTML=
+marked.parse(md);
 
-            a.href = raw;
-            a.textContent = file.name.replace(".md","");
+window.scrollTo(0,document.body.scrollHeight);
 
-            li.appendChild(a);
+};
 
-            list.appendChild(li);
-        }
+li.appendChild(a);
+list.appendChild(li);
 
-    });
+});
+
 }
 
 load("reversing/software","reversing");
 load("unpacking","unpacking");
 
-document.getElementById("search").addEventListener("input", function() {
+document.getElementById("search").addEventListener("input",function(){
 
-    const filter = this.value.toLowerCase();
+const filter=this.value.toLowerCase();
 
-    document.querySelectorAll("li").forEach(li => {
+document.querySelectorAll("li").forEach(li=>{
 
-        const text = li.textContent.toLowerCase();
+const text=li.textContent.toLowerCase();
+li.style.display=text.includes(filter)?"":"none";
 
-        li.style.display = text.includes(filter) ? "" : "none";
-
-    });
+});
 
 });
 
