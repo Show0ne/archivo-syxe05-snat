@@ -24,26 +24,18 @@ padding:20px;
 
 .sidebar h2{
 margin-top:0;
-font-size:20px;
 }
 
 .sidebar a{
+display:block;
 color:#9cdcfe;
 text-decoration:none;
-cursor:pointer;
-display:block;
 padding:4px 0;
+cursor:pointer;
 }
 
 .sidebar a:hover{
 text-decoration:underline;
-}
-
-.content{
-flex:1;
-overflow:auto;
-padding:40px;
-background:white;
 }
 
 .search{
@@ -51,6 +43,17 @@ width:100%;
 padding:8px;
 margin-bottom:15px;
 font-size:14px;
+}
+
+.section{
+margin-top:20px;
+}
+
+.content{
+flex:1;
+overflow:auto;
+padding:40px;
+background:white;
 }
 
 .viewer pre{
@@ -65,34 +68,20 @@ padding:2px 4px;
 border-radius:3px;
 }
 
-.section{
-margin-top:20px;
-}
-
-.stats{
-font-size:13px;
-color:#bbb;
-margin-bottom:10px;
-}
-
-</style></head><body><div class="layout"><div class="sidebar"><h2>Reverse Engineering Archive</h2><div class="stats" id="stats"></div><input class="search" id="search" placeholder="Search tutorial"><div class="section">
+</style></head><body><div class="layout"><div class="sidebar"><h2>Reverse Engineering Archive</h2><input class="search" id="search" placeholder="Search tutorial"><div class="section">
 <h3>Reversing</h3>
 <div id="rev"></div>
 </div><div class="section">
 <h3>Unpacking</h3>
 <div id="unpack"></div>
-</div></div><div class="content"><div id="viewer" class="viewer"><h1>SyXe'05 / Snat Archive</h1><p>
-Historical reverse engineering and unpacking tutorials.
-</p><p>
+</div></div><div class="content"><div id="viewer" class="viewer"><h1>SyXe'05 / Snat Archive</h1><p>Historical reverse engineering and unpacking tutorials.</p><p>
 Author: <b>SyXe'05 / Snat</b><br>
 Group: <b>CracksLatinos</b>
-</p><p>
-Select a tutorial from the sidebar.
-</p></div></div></div><script>
+</p><p>Select a tutorial from the sidebar.</p></div></div></div><script>
 
 const repo="Show0ne/archivo-syxe05-snat";
 
-let total=0;
+const tutorials={};
 
 async function load(path,container){
 
@@ -102,21 +91,36 @@ const files=await response.json();
 
 const list=document.getElementById(container);
 
-const markdown=files
+files
 .filter(f=>f.name.endsWith(".md"))
-.sort((a,b)=>a.name.localeCompare(b.name));
+.sort((a,b)=>a.name.localeCompare(b.name))
+.forEach(file=>{
 
-total+=markdown.length;
+const id=file.name.replace(".md","");
 
-markdown.forEach(file=>{
+tutorials[id]=file.download_url;
 
 const a=document.createElement("a");
 
-a.textContent=file.name.replace(".md","");
+a.textContent=id;
 
-a.onclick=async()=>{
+a.onclick=()=>{
+loadTutorial(id);
+};
 
-const raw=await fetch(file.download_url);
+list.appendChild(a);
+
+});
+
+}
+
+async function loadTutorial(id){
+
+if(!tutorials[id]) return;
+
+location.hash="tutorial/"+id;
+
+const raw=await fetch(tutorials[id]);
 const md=await raw.text();
 
 document.getElementById("viewer").innerHTML=
@@ -124,19 +128,27 @@ marked.parse(md);
 
 window.scrollTo(0,0);
 
-};
+}
 
-list.appendChild(a);
+function checkHash(){
 
-});
+const hash=location.hash;
 
-document.getElementById("stats").textContent=
-total+" tutorials in archive";
+if(hash.startsWith("#tutorial/")){
+
+const id=hash.replace("#tutorial/","");
+
+loadTutorial(id);
+
+}
 
 }
 
 load("reversing/software","rev");
 load("unpacking","unpack");
+
+window.addEventListener("hashchange",checkHash);
+setTimeout(checkHash,500);
 
 document.getElementById("search").addEventListener("input",function(){
 
