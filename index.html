@@ -22,19 +22,26 @@ height:100vh;
 }
 
 .sidebar{
-width:320px;
+width:340px;
 background:#1e1e1e;
 color:white;
 overflow:auto;
 padding:20px;
 }
 
+.sidebar h3{
+margin-top:20px;
+border-bottom:1px solid #333;
+padding-bottom:5px;
+}
+
 .sidebar a{
 display:block;
 color:#9cdcfe;
 text-decoration:none;
-padding:4px 0;
+padding:3px 0;
 cursor:pointer;
+font-size:14px;
 }
 
 .sidebar a:hover{
@@ -48,8 +55,8 @@ margin-bottom:15px;
 font-size:14px;
 }
 
-.section{
-margin-top:20px;
+.category{
+margin-bottom:10px;
 }
 
 .content{
@@ -69,10 +76,6 @@ padding:12px;
 overflow:auto;
 }
 
-.viewer code{
-border-radius:3px;
-}
-
 .toc{
 background:#f0f0f0;
 padding:15px;
@@ -88,7 +91,6 @@ background:#222;
 display:block;
 text-decoration:none;
 color:#0366d6;
-padding:2px 0;
 }
 
 .toggle{
@@ -103,13 +105,9 @@ border-radius:4px;
 font-size:13px;
 }
 
-</style></head><body><div class="toggle" onclick="toggleTheme()">🌙 Toggle theme</div><div class="layout"><div class="sidebar"><h2>Reverse Engineering Archive</h2><input class="search" id="search" placeholder="Search tutorial"><div class="section">
-<h3>Reversing</h3>
-<div id="rev"></div>
-</div><div class="section">
-<h3>Unpacking</h3>
-<div id="unpack"></div>
-</div></div><div class="content"><div id="viewer" class="viewer"><h1>SyXe'05 / Snat Archive</h1><p>Historical reverse engineering and unpacking tutorials.</p><p>
+</style></head><body><div class="toggle" onclick="toggleTheme()">🌙 Theme</div><div class="layout"><div class="sidebar"><h2>Reverse Engineering Archive</h2><input class="search" id="search" placeholder="Search tutorial"><h3>Reversing</h3>
+<div id="rev"></div><h3>Unpacking</h3>
+<div id="unpack"></div></div><div class="content"><div id="viewer" class="viewer"><h1>SyXe'05 / Snat Archive</h1><p>Historical reverse engineering and unpacking tutorials.</p><p>
 Author: <b>SyXe'05 / Snat</b><br>
 Group: <b>CracksLatinos</b>
 </p><p>Select a tutorial from the sidebar.</p></div></div></div><script>
@@ -118,13 +116,27 @@ const repo="Show0ne/archivo-syxe05-snat";
 
 const tutorials={};
 
+function detectCategory(name){
+
+name=name.toLowerCase();
+
+if(name.includes("themida")) return "Themida";
+if(name.includes("armadillo")) return "Armadillo";
+if(name.includes("asprotect")) return "ASProtect";
+if(name.includes("vmprotect")) return "VMProtect";
+if(name.includes("securom")) return "SecuROM";
+
+return "Other";
+
+}
+
 async function load(path,container){
 
 const url=`https://api.github.com/repos/${repo}/contents/${path}`;
 const response=await fetch(url);
 const files=await response.json();
 
-const list=document.getElementById(container);
+const categories={};
 
 files
 .filter(f=>f.name.endsWith(".md"))
@@ -135,6 +147,28 @@ const id=file.name.replace(".md","");
 
 tutorials[id]=file.download_url;
 
+const cat=detectCategory(id);
+
+if(!categories[cat]) categories[cat]=[];
+
+categories[cat].push(id);
+
+});
+
+const sidebar=document.getElementById(container);
+
+Object.keys(categories).sort().forEach(cat=>{
+
+const div=document.createElement("div");
+div.className="category";
+
+const title=document.createElement("b");
+title.textContent=cat;
+
+div.appendChild(title);
+
+categories[cat].forEach(id=>{
+
 const a=document.createElement("a");
 
 a.textContent=id;
@@ -143,7 +177,11 @@ a.onclick=()=>{
 loadTutorial(id);
 };
 
-list.appendChild(a);
+div.appendChild(a);
+
+});
+
+sidebar.appendChild(div);
 
 });
 
@@ -158,9 +196,8 @@ location.hash="tutorial/"+id;
 const raw=await fetch(tutorials[id]);
 const md=await raw.text();
 
-let html=marked.parse(md);
-
-document.getElementById("viewer").innerHTML=html;
+document.getElementById("viewer").innerHTML=
+marked.parse(md);
 
 generateTOC();
 
@@ -198,20 +235,6 @@ viewer.insertAdjacentHTML("afterbegin",toc);
 
 }
 
-function checkHash(){
-
-const hash=location.hash;
-
-if(hash.startsWith("#tutorial/")){
-
-const id=hash.replace("#tutorial/","");
-
-loadTutorial(id);
-
-}
-
-}
-
 function toggleTheme(){
 
 document.body.classList.toggle("dark");
@@ -238,9 +261,6 @@ document.body.classList.add("dark");
 
 load("reversing/software","rev");
 load("unpacking","unpack");
-
-window.addEventListener("hashchange",checkHash);
-setTimeout(checkHash,500);
 
 document.getElementById("search").addEventListener("input",function(){
 
