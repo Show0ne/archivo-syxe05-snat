@@ -5,50 +5,52 @@
 
 body{
 font-family: Arial, sans-serif;
-margin:40px;
+margin:0;
 background:#f4f4f4;
 }
 
-.container{
-background:white;
-padding:25px;
-border-radius:6px;
-max-width:1000px;
+.layout{
+display:flex;
+height:100vh;
 }
 
-h1{
+.sidebar{
+width:320px;
+background:#1e1e1e;
+color:white;
+overflow:auto;
+padding:20px;
+}
+
+.sidebar h2{
 margin-top:0;
+font-size:20px;
 }
 
-.section{
-margin-top:35px;
-}
-
-input{
-padding:8px;
-width:100%;
-margin-bottom:20px;
-font-size:14px;
-}
-
-a{
+.sidebar a{
+color:#9cdcfe;
 text-decoration:none;
-color:#0366d6;
 cursor:pointer;
+display:block;
+padding:4px 0;
 }
 
-a:hover{
+.sidebar a:hover{
 text-decoration:underline;
 }
 
-li{
-margin:5px 0;
+.content{
+flex:1;
+overflow:auto;
+padding:40px;
+background:white;
 }
 
-.viewer{
-margin-top:40px;
-padding-top:25px;
-border-top:1px solid #ddd;
+.search{
+width:100%;
+padding:8px;
+margin-bottom:15px;
+font-size:14px;
 }
 
 .viewer pre{
@@ -63,50 +65,51 @@ padding:2px 4px;
 border-radius:3px;
 }
 
-.stats{
-margin-top:10px;
-color:#666;
-font-size:14px;
+.section{
+margin-top:20px;
 }
 
-</style></head><body><div class="container"><h1>SyXe'05 / Snat Reverse Engineering Archive</h1><p>
-Historical archive of reverse engineering and unpacking tutorials written between the early 2000s and later years.
-</p><p>
-<b>Author:</b> SyXe'05 / Snat<br>
-<b>Group:</b> CracksLatinos
-</p><div class="stats">
-<span id="total"></span>
-</div><input id="search" placeholder="Search tutorial..."><div class="section">
-<h2>Reversing Tutorials (<span id="count_rev">0</span>)</h2>
-<ul id="reversing"></ul>
+.stats{
+font-size:13px;
+color:#bbb;
+margin-bottom:10px;
+}
+
+</style></head><body><div class="layout"><div class="sidebar"><h2>Reverse Engineering Archive</h2><div class="stats" id="stats"></div><input class="search" id="search" placeholder="Search tutorial"><div class="section">
+<h3>Reversing</h3>
+<div id="rev"></div>
 </div><div class="section">
-<h2>Unpacking Tutorials (<span id="count_unpack">0</span>)</h2>
-<ul id="unpacking"></ul>
-</div><div class="viewer" id="viewer"></div></div><script>
+<h3>Unpacking</h3>
+<div id="unpack"></div>
+</div></div><div class="content"><div id="viewer" class="viewer"><h1>SyXe'05 / Snat Archive</h1><p>
+Historical reverse engineering and unpacking tutorials.
+</p><p>
+Author: <b>SyXe'05 / Snat</b><br>
+Group: <b>CracksLatinos</b>
+</p><p>
+Select a tutorial from the sidebar.
+</p></div></div></div><script>
 
 const repo="Show0ne/archivo-syxe05-snat";
 
 let total=0;
 
-async function load(path,id,count_id){
+async function load(path,container){
 
 const url=`https://api.github.com/repos/${repo}/contents/${path}`;
 const response=await fetch(url);
 const files=await response.json();
 
-const list=document.getElementById(id);
+const list=document.getElementById(container);
 
 const markdown=files
 .filter(f=>f.name.endsWith(".md"))
 .sort((a,b)=>a.name.localeCompare(b.name));
 
-document.getElementById(count_id).textContent=markdown.length;
-
 total+=markdown.length;
 
 markdown.forEach(file=>{
 
-const li=document.createElement("li");
 const a=document.createElement("a");
 
 a.textContent=file.name.replace(".md","");
@@ -119,31 +122,31 @@ const md=await raw.text();
 document.getElementById("viewer").innerHTML=
 marked.parse(md);
 
-window.scrollTo(0,document.body.scrollHeight);
+window.scrollTo(0,0);
 
 };
 
-li.appendChild(a);
-list.appendChild(li);
+list.appendChild(a);
 
 });
 
-document.getElementById("total").textContent=
-"Total tutorials in archive: "+total;
+document.getElementById("stats").textContent=
+total+" tutorials in archive";
 
 }
 
-load("reversing/software","reversing","count_rev");
-load("unpacking","unpacking","count_unpack");
+load("reversing/software","rev");
+load("unpacking","unpack");
 
 document.getElementById("search").addEventListener("input",function(){
 
 const filter=this.value.toLowerCase();
 
-document.querySelectorAll("li").forEach(li=>{
+document.querySelectorAll(".sidebar a").forEach(a=>{
 
-const text=li.textContent.toLowerCase();
-li.style.display=text.includes(filter)?"":"none";
+const text=a.textContent.toLowerCase();
+
+a.style.display=text.includes(filter)?"block":"none";
 
 });
 
