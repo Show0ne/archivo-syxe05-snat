@@ -1,61 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <title>SyXe'05 / Snat Reverse Engineering Archive</title>
 
 <style>
-body{
-font-family: Arial, Helvetica, sans-serif;
-background:#f5f5f5;
-margin:40px;
-color:#222;
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background: #f4f4f4;
 }
 
-h1{
-font-size:28px;
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 6px;
+    max-width: 900px;
 }
 
-h2{
-margin-top:40px;
+h1 {
+    margin-top: 0;
 }
 
-a{
-text-decoration:none;
-color:#0066cc;
+h2 {
+    margin-top: 30px;
 }
 
-a:hover{
-text-decoration:underline;
+input {
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 14px;
 }
 
-.container{
-max-width:900px;
-margin:auto;
-background:white;
-padding:30px;
-border-radius:8px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
+a {
+    text-decoration: none;
+    color: #0366d6;
 }
 
-.search{
-margin-top:20px;
-margin-bottom:30px;
+a:hover {
+    text-decoration: underline;
 }
 
-input{
-width:100%;
-padding:10px;
-font-size:16px;
-border:1px solid #ccc;
-border-radius:5px;
-}
-
-ul{
-line-height:1.8;
+li {
+    margin: 4px 0;
 }
 </style>
-
 </head>
 
 <body>
@@ -69,61 +59,70 @@ Historical archive of reverse engineering and unpacking tutorials written betwee
 </p>
 
 <p>
-Author: <b>SyXe'05 / Snat</b><br>
-Group: <b>CracksLatinos</b>
+<b>Author:</b> SyXe'05 / Snat<br>
+<b>Group:</b> CracksLatinos
 </p>
 
-<div class="search">
-<input type="text" id="search" placeholder="Search tutorial..." onkeyup="filterTutorials()">
-</div>
+<input id="search" placeholder="Search tutorial...">
 
 <h2>Reversing Tutorials</h2>
-
-<ul id="reversing">
-
-<li><a href="reversing/software/syxe05-acoustica-2.25b-reversing.md">Acoustica 2.25b</a></li>
-<li><a href="reversing/software/syxe05-alchemy-network-inventory-1.4.12-reversing.md">Alchemy Network Inventory</a></li>
-<li><a href="reversing/software/syxe05-alteros-3d-reversing.md">Alteros 3D</a></li>
-<li><a href="reversing/software/syxe05-any-capture-screen-3.06-reversing.md">Any Capture Screen 3.06</a></li>
-<li><a href="reversing/software/syxe05-anycapture-screen-2.36-reversing.md">AnyCapture Screen 2.36</a></li>
-<li><a href="reversing/software/syxe05-ashampoo-security-manager-2000-v1.2-reversing.md">Ashampoo Security Manager</a></li>
-<li><a href="reversing/software/syxe05-cd-r-diagnostic-0.1.2.0-reversing.md">CD-R Diagnostic</a></li>
-<li><a href="reversing/software/syxe05-system-mechanic-professional-6-reversing.md">System Mechanic Professional 6</a></li>
-
-</ul>
+<ul id="reversing"></ul>
 
 <h2>Unpacking Tutorials</h2>
-
-<ul id="unpacking">
-
-<li><a href="unpacking/syxe05-asprotect-golive-cs-unpacking.md">ASProtect – GoLive CS</a></li>
-<li><a href="unpacking/syxe05-burnintest-4.0-armadillo-unpacking.md">Armadillo – BurnInTest 4.0</a></li>
-<li><a href="unpacking/syxe05-advanced-system-optimizer-2.01.2-asprotect-dll-unpacking.md">ASProtect DLL – Advanced System Optimizer</a></li>
-
-</ul>
+<ul id="unpacking"></ul>
 
 </div>
 
 <script>
 
-function filterTutorials(){
+const repo = "Show0ne/archivo-syxe05-snat";
 
-let input=document.getElementById("search").value.toLowerCase()
+async function load(path, elementId) {
 
-let lists=document.querySelectorAll("ul li")
+    const url = `https://api.github.com/repos/${repo}/contents/${path}`;
 
-lists.forEach(function(item){
+    const response = await fetch(url);
+    const files = await response.json();
 
-let text=item.innerText.toLowerCase()
+    const list = document.getElementById(elementId);
 
-if(text.includes(input))
-item.style.display=""
-else
-item.style.display="none"
+    files.forEach(file => {
 
-})
+        if (file.name.endsWith(".md")) {
 
+            const li = document.createElement("li");
+
+            const a = document.createElement("a");
+
+            const raw = file.download_url;
+
+            a.href = raw;
+            a.textContent = file.name.replace(".md","");
+
+            li.appendChild(a);
+
+            list.appendChild(li);
+        }
+
+    });
 }
+
+load("reversing/software","reversing");
+load("unpacking","unpacking");
+
+document.getElementById("search").addEventListener("input", function() {
+
+    const filter = this.value.toLowerCase();
+
+    document.querySelectorAll("li").forEach(li => {
+
+        const text = li.textContent.toLowerCase();
+
+        li.style.display = text.includes(filter) ? "" : "none";
+
+    });
+
+});
 
 </script>
 
